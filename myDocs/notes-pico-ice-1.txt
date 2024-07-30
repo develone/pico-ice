@@ -1,0 +1,92 @@
+testing pico-ice-sdk & pico-ice
+Below are the steps I am using to test pico-ice-sdk & pico-ice
+Trying to follow the steps found in pico-ice/Docs/pico_ice_sdk.md
+
+git clone https://github.com/develone/pico-ice-sdk.git -b test-dev
+
+git clone https://github.com/develone/pico-ice.git -b test-dev
+
+cd pico-ice
+
+cp -r ~/pico-ice-sdk/examples/pico_usb_uart my-new-pico-ice-firmware
+
+cd my-new-pico-ice-firmware
+
+rm -rf pico-ice-sdk pico-sdk
+
+git clone https://github.com/tinyvision-ai-inc/pico-ice-sdk
+
+git clone https://github.com/develone/pico-sdk.git
+
+cd pico-sdk
+
+git submodule update --init
+
+Submodule 'lib/btstack' (https://github.com/bluekitchen/btstack.git) registered for path 'lib/btstack'
+Submodule 'lib/cyw43-driver' (https://github.com/georgerobotics/cyw43-driver.git) registered for path 'lib/cyw43-driver'
+Submodule 'lib/lwip' (https://github.com/lwip-tcpip/lwip.git) registered for path 'lib/lwip'
+Submodule 'lib/mbedtls' (https://github.com/Mbed-TLS/mbedtls.git) registered for path 'lib/mbedtls'
+Submodule 'tinyusb' (https://github.com/hathach/tinyusb.git) registered for path 'lib/tinyusb'
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/btstack'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/cyw43-driver'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/lwip'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/mbedtls'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/tinyusb'...
+Submodule path 'lib/btstack': checked out '72ef1732c954d938091467961e41f4aa9b976b34'
+Submodule path 'lib/cyw43-driver': checked out '8ef38a6d32c54f850bff8f189bdca19ded33792a'
+Submodule path 'lib/lwip': checked out '239918ccc173cb2c2a62f41a40fd893f57faf1d6'
+Submodule path 'lib/mbedtls': checked out 'a77287f8fa6b76f74984121fdafc8563147435c8'
+Submodule path 'lib/tinyusb': checked out '86c416d4c0fb38432460b3e11b08b9de76941bf5'
+
+cd ../
+
+mkdir build
+
+cd build
+
+devel@pi5-80:~/pico-ice/my-new-pico-ice-firmware/build $ cmake ..
+PICO_SDK_PATH is /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk
+Defaulting PICO_PLATFORM to rp2040 since not specified.
+Defaulting PICO platform compiler to pico_arm_gcc since not specified.
+-- Defaulting build type to 'Release' since not specified.
+PICO compiler is pico_arm_gcc
+-- The C compiler identification is GNU 12.2.1
+-- The CXX compiler identification is GNU 12.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/arm-none-eabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/arm-none-eabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Build type is Release
+Defaulting PICO target board to pico since not specified.
+Using board configuration from /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/src/boards/include/boards/pico.h
+-- Found Python3: /usr/bin/python3 (found version "3.11.2") found components: Interpreter
+TinyUSB available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+BTstack available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/btstack
+cyw43-driver available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/cyw43-driver
+Pico W Bluetooth build support available.
+lwIP available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/lwip
+mbedtls available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/mbedtls
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/pico-ice/my-new-pico-ice-firmware/build
+
+make
+
+[ 74%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+[ 74%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_usb.c.obj
+/home/devel/pico-ice/my-new-pico-ice-firmware/pico-ice-sdk/src/ice_usb.c:49:10: fatal error: uf2.h: No such file or directory
+49 | #include "uf2.h"
+| ^~~~~~~
+compilation terminated.
+make[2]: *** [CMakeFiles/pico_usb_uart.dir/build.make:877: CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_usb.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1528: CMakeFiles/pico_usb_uart.dir/all] Error 2
+
+make: *** [Makefile:91: all] Error 2
