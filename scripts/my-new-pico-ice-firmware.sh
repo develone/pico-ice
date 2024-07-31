@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf pico-ice-sdk pico-ice
  
 git clone https://github.com/develone/pico-ice-sdk.git -b test-dev
 
