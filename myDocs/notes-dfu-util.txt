@@ -1,0 +1,35 @@
+sudo apt install dfu-util
+devel@pi5-70:~/pico-ice-sdk/examples/ice_makefile_blinky $ dfu-util --help
+Usage: dfu-util [options] ...
+  -h --help			Print this help message
+  -V --version			Print the version number
+  -v --verbose			Print verbose debug statements
+  -l --list			List currently attached DFU capable devices
+  -e --detach			Detach currently attached DFU capable devices
+  -E --detach-delay seconds	Time to wait before reopening a device after detach
+  -d --device <vendor>:<product>[,<vendor_dfu>:<product_dfu>]
+				Specify Vendor/Product ID(s) of DFU device
+  -n --devnum <dnum>		Match given device number (devnum from --list)
+  -p --path <bus-port. ... .port>	Specify path to DFU device
+  -c --cfg <config_nr>		Specify the Configuration of DFU device
+  -i --intf <intf_nr>		Specify the DFU Interface number
+  -S --serial <serial_string>[,<serial_string_dfu>]
+				Specify Serial String of DFU device
+  -a --alt <alt>		Specify the Altsetting of the DFU Interface
+				by name or by number
+  -t --transfer-size <size>	Specify the number of bytes per USB Transfer
+  -U --upload <file>		Read firmware from device into <file>
+  -Z --upload-size <bytes>	Specify the expected upload size in bytes
+  -D --download <file>		Write firmware from <file> into device
+  -R --reset			Issue USB Reset signalling once we're finished
+  -w --wait			Wait for device to appear
+  -s --dfuse-address address<:...>	ST DfuSe mode string, specifying target
+				address for raw file download or upload (not
+				applicable for DfuSe file (.dfu) downloads).
+				Add more DfuSe options separated with ':'
+		leave		Leave DFU mode (jump to application)
+		mass-erase	Erase the whole device (requires "force")
+		unprotect	Erase read protected device (requires "force")
+		will-reset	Expect device to reset (e.g. option bytes write)
+		force		You really know what you are doing!
+		<length>	Length of firmware to upload from device
