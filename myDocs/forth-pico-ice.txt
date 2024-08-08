@@ -1,4 +1,6 @@
 08/08/24
+needed to install gforth on raspberry pi5 
+sudo apt install gforth
 https://discord.com/channels/644405956494753803/1155161075717767189
 https://mecrisp-ice.readthedocs.io/en/latest/
 Mecrisp Ice Unofficial Documentation!
