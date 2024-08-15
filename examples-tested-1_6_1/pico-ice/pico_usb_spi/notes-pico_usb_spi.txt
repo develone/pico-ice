@@ -1,0 +1,40 @@
+************************************
+
+testing pico_usb_spi in examples-tested-1_6_1/pico-ice/
+
+pico-ice-sdk v1.6.1.uf2 firmware running on RP2040.   Needs drag & drop pico_usb_spi.uf2 to pico-ice after the 
+
+Steps to create pico_usb_spi.uf2
+
+
+cd pico_usb_spi/
+
+rm -rf pico-ice-sdk pico-sdk
+
+Needs a pico-ice-sdk that git submodule update --init was previously done.
+ 
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-ice-sdk .
+
+Needs a pico-sdk that git submodule update --init was previously done.
+
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk .
+
+mkdir build
+
+cd build
+
+cmake ..
+
+make
+
+compiles a pico_usb_spi.uf2
+
+rm -f /media/devel/pico-ice/pico*.uf2
+
+testing running a python program. 
+
+examples-tested-1_6_1/pico-ice/pico_usb_spi/pico_usb_spi $ python3 test.py /dev/ttyACM2
+ 
+SRAM ID: b'0d 5d 5b 10 e1 cc 58 2c'
+FLASH ID: b'15'
+************************************
