@@ -29,29 +29,7 @@ make
 
 compiles a pico_blinky.uf2
 
-rm -f /media/devel/pico-ice/pico*.uf2
+cp pico_blinky.uf2 /media/your-username/RPI-RP2/
 
-testing running a python program. 
 
-examples-tested-1_6_1/pico-ice/pico_blinky/pico_blinky $ python3 test.py /dev/ttyACM0
-expect Chip ID
-Traceback (most recent call last):
-  File "/home/devel/tt/pico_blinky/pico_blinky/test.py", line 8, in <module>
-    p.expect('ChipID: 0D 5D 5A B1 C0 21 9D B2')
-  File "/usr/lib/python3/dist-packages/pexpect/spawnbase.py", line 343, in expect
-    return self.expect_list(compiled_pattern_list,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3/dist-packages/pexpect/spawnbase.py", line 372, in expect_list
-    return exp.expect_loop(timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3/dist-packages/pexpect/expect.py", line 181, in expect_loop
-    return self.timeout(e)
-           ^^^^^^^^^^^^^^^
-  File "/usr/lib/python3/dist-packages/pexpect/expect.py", line 144, in timeout
-    raise exc
-pexpect.exceptions.TIMEOUT: Timeout exceeded.
-<pexpect.fdpexpect.fdspawn object at 0x7fff68c69dd0>
-searcher: searcher_re:
-    0: re.compile(b'ChipID: 0D 5D 5A B1 C0 21 9D B2')
-
-************************************
+ ************************************

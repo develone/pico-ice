@@ -1,13 +1,13 @@
 ************************************
 
-testing pico_cram in examples-tested-1_6_1/rp2040/
+testing pico_flash in examples-tested-1_6_1/rp2040/
 
-Needs drag & drop pico_cram.uf2 to RP1-RP2 after the 
+Needs drag & drop pico_flash.uf2 to RP1-RP2 after the 
 
-Steps to create pico_cram.uf2
+Steps to create pico_flash.uf2
 
 
-cd pico_cram/
+cd pico_flash/
 
 rm -rf pico-ice-sdk pico-sdk
 
@@ -27,11 +27,11 @@ cmake ..
 
 make
 
-compiles a pico_cram.uf2
+compiles a pico_flash.uf2
 
 rm -f /media/devel/RP1-RP2/pico*.uf2
 
-examples-tested-1_6_1/rp2040/pico_cram
+examples-tested-1_6_1/rp2040/pico_flash
 
 python3 rgb_blink.py > tmp.txt
 
@@ -52,7 +52,7 @@ uint8_t const rgb_blink[] = {
 
 Ctrl C
 
-cp ../pico_cram.uf2 /media/your-username/RPI-RP2/ 
+cp ../pico_flash.uf2 /media/your-username/RPI-RP2/ 
 
 The D3 led blinks red green blue.  RP1-RP2 icon is removed from the DeskTop
 
