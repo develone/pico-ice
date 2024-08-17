@@ -1,0 +1,87 @@
+cmake ..
+PICO_SDK_PATH is /home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/pico-sdk
+Defaulting PICO_PLATFORM to rp2040 since not specified.
+Defaulting PICO platform compiler to pico_arm_gcc since not specified.
+-- Defaulting build type to 'Release' since not specified.
+PICO compiler is pico_arm_gcc
+-- The C compiler identification is GNU 12.2.1
+-- The CXX compiler identification is GNU 12.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/arm-none-eabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/arm-none-eabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Build type is Release
+Defaulting PICO target board to pico since not specified.
+Using board configuration from /home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/pico-sdk/src/boards/include/boards/pico.h
+-- Found Python3: /usr/bin/python3 (found version "3.11.2") found components: Interpreter 
+TinyUSB available at /home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+BTstack available at /home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/pico-sdk/lib/btstack
+cyw43-driver available at /home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/pico-sdk/lib/cyw43-driver
+Pico W Bluetooth build support available.
+lwIP available at /home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/pico-sdk/lib/lwip
+mbedtls available at /home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/pico-sdk/lib/mbedtls
+fatal: No names found, cannot describe anything.
+CMake Error at CMakeLists.txt:15 (add_executable):
+  add_executable cannot create target "pico_flash" because another target
+  with the same name already exists.  The existing target is an interface
+  library created in source directory
+  "/home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/pico-sdk/src/rp2_common/pico_flash".
+  See documentation for policy CMP0002 for more details.
+
+
+CMake Error at CMakeLists.txt:18 (target_link_libraries):
+  INTERFACE library can only be used with the INTERFACE keyword of
+  target_link_libraries
+
+
+CMake Error at CMakeLists.txt:22 (target_include_directories):
+  target_include_directories may only set INTERFACE properties on INTERFACE
+  targets
+
+
+CMake Error at pico-sdk/src/rp2_common.cmake:6 (add_custom_command):
+  TARGET 'pico_flash' was not created in this directory.
+Call Stack (most recent call first):
+  pico-sdk/src/rp2_common.cmake:23 (pico_add_hex_output)
+  CMakeLists.txt:25 (pico_add_extra_outputs)
+
+
+CMake Error at pico-sdk/src/rp2_common.cmake:11 (add_custom_command):
+  TARGET 'pico_flash' was not created in this directory.
+Call Stack (most recent call first):
+  pico-sdk/src/rp2_common.cmake:24 (pico_add_bin_output)
+  CMakeLists.txt:25 (pico_add_extra_outputs)
+
+
+CMake Error at pico-sdk/src/rp2_common.cmake:16 (add_custom_command):
+  TARGET 'pico_flash' was not created in this directory.
+Call Stack (most recent call first):
+  pico-sdk/src/rp2_common.cmake:25 (pico_add_dis_output)
+  CMakeLists.txt:25 (pico_add_extra_outputs)
+
+
+CMake Error at pico-sdk/src/rp2_common.cmake:30 (target_compile_definitions):
+  target_compile_definitions may only set INTERFACE properties on INTERFACE
+  targets
+Call Stack (most recent call first):
+  CMakeLists.txt:25 (pico_add_extra_outputs)
+
+
+CMake Error at pico-sdk/tools/CMakeLists.txt:72 (add_custom_command):
+  TARGET 'pico_flash' was not created in this directory.
+Call Stack (most recent call first):
+  pico-sdk/src/rp2_common.cmake:47 (pico_add_uf2_output)
+  CMakeLists.txt:25 (pico_add_extra_outputs)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/build/CMakeFiles/CMakeOutput.log".
+See also "/home/devel/tt/examples-tested-1_6_1/rp2040/pico_flash/build/CMakeFiles/CMakeError.log".
