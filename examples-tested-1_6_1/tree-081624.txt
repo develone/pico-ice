@@ -1,0 +1,84 @@
+tree
+.
+├── errors_cmake.txt
+├── pico-ice
+│   ├── pico_sram
+│   │   ├── CMakeLists.txt
+│   │   ├── main.c
+│   │   ├── notes-pico_sram.txt
+│   │   ├── pico-ice-sdk -> ../../
+│   │   ├── pico-sdk -> ../../lib/pico-sdk/
+│   │   ├── pico_sdk_import.cmake
+│   │   ├── README.md
+│   │   └── test.py
+│   ├── pico_sram.uf2
+│   ├── pico_usb_spi
+│   │   ├── CMakeLists.txt
+│   │   ├── main.c
+│   │   ├── notes-pico_usb_spi.txt
+│   │   ├── pico-ice-sdk -> ../../
+│   │   ├── pico_ice_spi.py
+│   │   ├── pico-sdk -> ../../lib/pico-sdk
+│   │   ├── pico_sdk_import.cmake
+│   │   ├── README.md
+│   │   ├── test.py
+│   │   ├── tusb_config.h
+│   │   └── usb_descriptors.c
+│   ├── pico_usb_spi.uf2
+│   ├── pico_usb_uart
+│   │   ├── CMakeLists.txt
+│   │   ├── main.c
+│   │   ├── notes-pico_usb_uart.txt
+│   │   ├── pico-ice-sdk -> ../../
+│   │   ├── pico-sdk -> ../../lib/pico-sdk
+│   │   ├── pico_sdk_import.cmake
+│   │   ├── pico_usb_uart-RP1RP0.png
+│   │   ├── README.md
+│   │   ├── tusb_config.h
+│   │   └── usb_descriptors.c
+│   └── pico_usb_uart.uf2
+└── rp2040
+    ├── pico_blinky
+    │   ├── CMakeLists.txt
+    │   ├── main.c
+    │   ├── note-pico_blinky.txt
+    │   ├── pico-ice-sdk -> ../../
+    │   ├── pico-sdk -> ../../lib/pico-sdk/
+    │   ├── pico_sdk_import.cmake
+    │   └── README.md
+    ├── pico_blinky.uf2
+    ├── pico_cram
+    │   ├── bitstream.h
+    │   ├── CMakeLists.txt
+    │   ├── main.c
+    │   ├── notes-pico_cram.txt
+    │   ├── pico-ice-sdk -> ../../
+    │   ├── pico-sdk -> ../../lib/pico-sdk/
+    │   ├── pico_sdk_import.cmake
+    │   ├── README.md
+    │   ├── rgb_blink.bin
+    │   ├── rgb_blink.h
+    │   └── rgb_blink.py
+    ├── pico_cram.uf2
+    ├── pico_flash
+    │   ├── CMakeLists.txt
+    │   ├── main.c
+    │   ├── notes-pico_flash.txt
+    │   ├── notes-pico_fpga.txt
+    │   ├── pico-ice-sdk -> ../../
+    │   ├── pico-sdk -> ../../lib/pico-sdk/
+    │   ├── pico_sdk_import.cmake
+    │   ├── README.md
+    │   └── test.py
+    ├── pico_fpga
+    │   ├── CMakeLists.txt
+    │   ├── main.c
+    │   ├── pico-ice-sdk -> ../../
+    │   ├── pico-sdk -> ../../lib/pico-sdk/
+    │   ├── pico_sdk_import.cmake
+    │   └── README.md
+    ├── pico_fpga.uf2
+    ├── rgb_blink.bin
+    └── rgb_blink.py
+
+17 directories, 64 files
