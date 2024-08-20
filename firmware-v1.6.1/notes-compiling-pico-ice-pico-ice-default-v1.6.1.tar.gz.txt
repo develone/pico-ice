@@ -1,0 +1,41 @@
+************************************
+
+testing compiling pico-ice-pico-ice-default-v1.6.1.tar.gz
+
+Needs drag & drop pico_cram.uf2 to RP1-RP2 after the 
+
+Steps to create pico_cram.uf2
+
+
+cd firmware-v1.6.1/pico-ice-pico-ice-default-v1.6.1/Firmware/pico-ice-default/
+
+rm -rf pico-ice-sdk pico-sdk
+
+Needs a pico-ice-sdk that git submodule update --init was previously done.
+ 
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-ice-sdk .
+
+Needs a pico-sdk that git submodule update --init was previously done.
+
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk .
+
+mkdir build
+
+cd build
+
+cmake ..
+
+make
+
+compiles a pico_ice_default.uf2
+
+rm -f /media/devel/RP1-RP2/pico*.uf2
+
+cp ../pico_cram.uf2 /media/your-username/RPI-RP2/ 
+
+You have the 3 /dev/ttyACM0  /dev/ttyACM1  /dev/ttyACM2
+pico_sram.uf2 can be tested
+pico_usb_uart.uf2 can be tested 
+pico_usb_spi.uf2 can be tested python3 test.py /dev/ttyACM2  
+
+************************************
