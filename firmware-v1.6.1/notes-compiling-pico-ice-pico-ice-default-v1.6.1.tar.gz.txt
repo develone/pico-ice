@@ -4,7 +4,7 @@ testing compiling pico-ice-pico-ice-default-v1.6.1.tar.gz
 
 Needs drag & drop pico_cram.uf2 to RP1-RP2 after the 
 
-Steps to create pico_cram.uf2
+Steps to create pico_ice_default.uf2
 
 
 cd firmware-v1.6.1/pico-ice-pico-ice-default-v1.6.1/Firmware/pico-ice-default/
