@@ -13,4 +13,4 @@ prog_flash:
 	iceprog $(filename).bin
 
 clean:
-	rm -rf $(filename).blif $(filename).asc $(filename).bin
+	rm -rf $(filename).blif $(filename).asc $(filename).bin $(filename).uf2
