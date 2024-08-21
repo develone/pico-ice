@@ -1,3 +1,6 @@
+`include "UART_TX.v"
+`include "UART_RX.v"
+
 module top (
     input CLK,
     output LED_G,
