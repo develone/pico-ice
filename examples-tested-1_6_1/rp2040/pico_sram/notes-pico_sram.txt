@@ -1,8 +1,8 @@
 ************************************
 
-testing pico_sram in examples-tested-1_6_1/pico-ice/
+testing pico_sram in examples-tested-1_6_1/rp2040/
 
-pico-ice-sdk v1.6.1.uf2 firmware running on RP2040.   Needs drag & drop pico_sram.uf2 to pico-ice after the 
+Needs drag & drop pico_sram.uf2 to RP1-RP2 after the 
 
 Steps to create pico_sram.uf2
 
@@ -29,29 +29,16 @@ make
 
 compiles a pico_sram.uf2
 
-rm -f /media/devel/pico-ice/pico*.uf2
+rm -f /media/devel/RP1-RP2/pico*.uf2
 
-testing running a python program. 
+Serial Device      : /dev/ttyACM0
 
-examples-tested-1_6_1/pico-ice/pico_sram/pico_sram $ python3 test.py /dev/ttyACM0
-expect Chip ID
-Traceback (most recent call last):
-  File "/home/devel/tt/pico_sram/pico_sram/test.py", line 8, in <module>
-    p.expect('ChipID: 0D 5D 5A B1 C0 21 9D B2')
-  File "/usr/lib/python3/dist-packages/pexpect/spawnbase.py", line 343, in expect
-    return self.expect_list(compiled_pattern_list,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3/dist-packages/pexpect/spawnbase.py", line 372, in expect_list
-    return exp.expect_loop(timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3/dist-packages/pexpect/expect.py", line 181, in expect_loop
-    return self.timeout(e)
-           ^^^^^^^^^^^^^^^
-  File "/usr/lib/python3/dist-packages/pexpect/expect.py", line 144, in timeout
-    raise exc
-pexpect.exceptions.TIMEOUT: Timeout exceeded.
-<pexpect.fdpexpect.fdspawn object at 0x7fff68c69dd0>
-searcher: searcher_re:
-    0: re.compile(b'ChipID: 0D 5D 5A B1 C0 21 9D B2')
+minicom
 
-************************************
+ChipID: 0D 5D 5B 10 E1 CC 58 2C                                                 
+0x0000: 01 02 03 04 05 06 07 08                                                 
+ChipID: 0D 5D 5B 10 E1 CC 58 2C                                                 
+0x0000: 01 02 03 04 05 06 07 08                                                 
+ChipID: 0D 5D 5B 10 E1 CC 58 2C                                                 
+0x0000: 01 02 03 04 05 06 07 08
+ ************************************
