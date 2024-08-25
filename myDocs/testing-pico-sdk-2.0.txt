@@ -1,3 +1,23 @@
+master	my-2.0.0
+commit efe2103f9b28458a1615ff096054479743ade236 (HEAD -> master, tag: 2.0.0, origin/master, origin/HEAD)
+Author: graham sanderson <graham.sanderson@raspberrypi.com>
+Date:   Thu Aug 8 06:02:04 2024 -0500
+
+    SDK 2.0.0 release
+tested with pico-ice https://github.com/develone/pico-ice/tree/test-dev/examples-tested-1_6_1/rp2040/pico_sram
+https://github.com/PythonLinks/hanaforth
+master my-1.5.1
+commit 6a7db34ff63345a7badec79ebea3aaef1712f374 (HEAD -> master, origin/master, origin/HEAD)
+Author: graham sanderson <graham.sanderson@raspberrypi.com>
+Date:   Tue Jun 13 17:25:13 2023 -0500
+
+    revert changes to when -nostartfiles is specified in link for 1.5.1 as it can cause link errors with C++; see #1368
+
+commit 8ecc5ababa8ded96ab21d4152a2d9ae69c2fa051
+Author: graham sanderson <graham.sanderson@raspberrypi.com>
+Date:   Tue Jun 13 11:52:27 2023 -0500
+
+    set release version 1.5.1
 Testing pico-sdk with pico_sram.
 
 commit efe2103f9b28458a1615ff096054479743ade236 (HEAD -> master, tag: 2.0.0, origin/master, origin/HEAD)
