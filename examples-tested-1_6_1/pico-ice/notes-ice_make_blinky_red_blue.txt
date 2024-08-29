@@ -1,0 +1,39 @@
+prerequisites
+		icestorm
+		icepll
+		icetime
+			
+		nextpnr-ice40 
+		yosys
+
+This script might be required ". pico-ice/scripts/OSS_CAD_SUITE.sh" which sets the localion of the tools
+needed to find yosys tools
+#!/bin/bash, 
+export OSS_CAD_SUITE=/usr/local/
+echo $OSS_CAD_SUITE
+
+cd pico-ice/examples-tested-1_6_1/pico-ice/ice_makefile_blinky
+		make
+		bin2uf2 -o green.uf2 gateware.bin
+
+cd pico-ice/examples-tested-1_6_1/pico-ice/ice_makefile_blinky_red/
+		make
+		bin2uf2 -o red.uf2 gateware.bin
+diff ice_makefile_blinky/top.sv ice_makefile_blinky_red/top.sv 
+17,18c17,18
+<   assign LED_R = 1'b1;
+<   assign LED_G = counter[N];
+---
+>   assign LED_R = counter[N];
+>   assign LED_G = 1'b1;
+
+cd pico-ice/examples-tested-1_6_1/pico-ice/ice_makefile_blinky_blue/
+		make
+		bin2uf2 -o blue.uf2 gateware.bin
+diff ice_makefile_blinky/top.sv ice_makefile_blinky_blue/top.sv 
+18,19c18,19
+<   assign LED_G = counter[N];
+<   assign LED_B = 1'b1;
+---
+>   assign LED_G = 1'b1;
+>   assign LED_B = counter[N]; 
