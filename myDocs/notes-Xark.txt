@@ -1,0 +1,25 @@
+09/03/24 	mkdir Xark
+
+cd Xark/
+
+git clone https://github.com/develone/upduino-example.git -b test-dev
+
+git clone https://github.com/develone/up5k_vga.git -b test-dev
+
+cd up5k_vga/
+
+git submodule update --init
+
+cd icestorm/
+
+make
+
+cd ../
+
+git clone https://github.com/cc65/cc65.git
+
+cd cc65/
+
+make 
+
+sudo make install
