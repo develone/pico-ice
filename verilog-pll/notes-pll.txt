@@ -1,4 +1,42 @@
 09/05/24
+icepll -i 12 -o 25 -f clk.txt
+
+F_PLLIN:    12.000 MHz (given)
+F_PLLOUT:   25.000 MHz (requested)
+F_PLLOUT:   25.125 MHz (achieved)
+
+FEEDBACK: SIMPLE
+F_PFD:   12.000 MHz
+F_VCO:  804.000 MHz
+
+DIVR:  0 (4'b0000)
+DIVF: 66 (7'b1000010)
+DIVQ:  5 (3'b101)
+
+FILTER_RANGE: 1 (3'b001)
+
+PLL configuration written to: clk.txt
+
+/**
+ * PLL configuration
+ *
+ * This Verilog header file was generated automatically
+ * using the icepll tool from the IceStorm project.
+ * It is intended for use with FPGA primitives SB_PLL40_CORE,
+ * SB_PLL40_PAD, SB_PLL40_2_PAD, SB_PLL40_2F_CORE or SB_PLL40_2F_PAD.
+ * Use at your own risk.
+ *
+ * Given input frequency:        12.000 MHz
+ * Requested output frequency:   25.000 MHz
+ * Achieved output frequency:    25.125 MHz
+ */
+
+.FEEDBACK_PATH("SIMPLE"),
+.DIVR(4'b0000),		// DIVR =  0
+.DIVF(7'b1000010),	// DIVF = 66
+.DIVQ(3'b101),		// DIVQ =  5
+.FILTER_RANGE(3'b001)	// FILTER_RANGE = 1
+
 
 git clone  https://github.com/develone/pico-ice.git -b test-dev
 
