@@ -1,0 +1,10 @@
+fatal error: cstdlib: No such file or directory
+   11 | #include <cstdlib>
+
+include_directories(SYSTEM /usr/include/newlib/c++/8.3.1/arm-none-eabi/)
+include_directories(SYSTEM /usr/include/newlib/c++/8.3.1/)
+
+
+cd ../ ; rm -rf build/; mkdir build; cd build
+
+make VERBOSE=1 > make_output.txt 2>&1
