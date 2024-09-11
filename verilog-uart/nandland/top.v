@@ -24,8 +24,12 @@ UART_RX #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_RX_Inst
 UART_TX #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_TX_Inst
     (.i_Clock(CLK),
      .i_TX_DV(r_TX_DV),
-     .i_TX_Byte(r_TX_Byte)
-    );
+     .i_TX_Byte(r_TX_Byte),
+     .o_TX_Active(w_TX_Active),
+     .o_TX_Serial(UART_TX),
+     .o_TX_Done()
+   );	
+
   always @(posedge w_RX_DV) begin
     if (w_RX_Byte == 8'h31) 
     begin
