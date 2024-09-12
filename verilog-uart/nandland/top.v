@@ -9,7 +9,9 @@ module top (
     input UART_RX,
     output UART_TX
 );
-reg out1;
+reg outr;
+
+reg outg;
 
 parameter c_CLKS_PER_BIT    = 217 ;
 reg r_TX_DV = 0;
@@ -22,7 +24,7 @@ reg [7:0] r_RX_Byte;
   reg [N:0] counter;
   reg		pps;
 
-	// NOTE: PLL 12Mhz -> 40Mhz not exact, but 39.75Mhz is "close enough" for monitors tested
+	// NOTE: PLL 12Mhz -> 25Mhz not exact, but 25.125Mhz is "close enough" for monitors tested
 	// Fin=12, Fout=39.75 (12*(52/16))
 	wire		s_clk;
 	wire clk_25mhz, pll_lock;
@@ -74,14 +76,14 @@ UART_TX #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_TX_Inst
   always @(posedge w_RX_DV) begin
     if (w_RX_Byte == 8'h31) 
     begin
-	out1 <= 1'b0;
+	outg <= 1'b0;
     end
     else
-	out1 <= 1'b1;
+	outg <= 1'b1;
   end
     assign UART_TX = UART_RX;
     
-    assign LED_G = out1;
+    assign LED_G = outr;
     assign r_TX_Byte = r_RX_Byte;
 
   always @(posedge s_clk) begin
@@ -93,9 +95,10 @@ UART_TX #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_TX_Inst
   //3FFFFFFF
   //01234567890123456789012345678901
   //00111111111111111111111111111111
-  assign LED_R = (counter[31:30] == 2'b00);
+  assign ourr = (counter[31:30] == 2'b00);
+  assign LED_R = outr
   
-  assign LED_G = 1'b1;
+  assign LED_G = outg;
   //assign LED_B = 1'b1;
 // Now, we move on to minutes.  We'll count up to 60, and then restart.
 // Well, in actuality, though, our counter will go from 0..59 and then
