@@ -96,7 +96,7 @@ UART_TX #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_TX_Inst
   //01234567890123456789012345678901
   //00111111111111111111111111111111
   assign ourr = (counter[31:30] == 2'b00);
-  assign LED_R = outr
+  assign LED_R = outr;
   
   assign LED_G = outg;
   //assign LED_B = 1'b1;
