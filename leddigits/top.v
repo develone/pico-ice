@@ -67,7 +67,42 @@ assign drvrs[1] = disp_inst_2_o_drvr;
 assign drvrs[4] = disp_inst_5_o_drvr;
 
 
-always @(posedge clk_i) begin: CATBOARD_CNTR_LOGIC
+	// NOTE: PLL 12Mhz -> 40Mhz not exact, but 39.75Mhz is "close enough" for monitors tested
+	// Fin=12, Fout=39.75 (12*(52/16))
+	wire		s_clk;
+	wire clk_48mhz, pll_lock;
+	SB_PLL40_PAD #(
+		.DIVR(4'b0000),		// DIVR =  0
+		.DIVF(7'b0111111),	// DIVF = 63
+		.DIVQ(3'b101),		// DIVQ =  4
+		.FILTER_RANGE(3'b001),
+		.FEEDBACK_PATH("SIMPLE"),
+		.DELAY_ADJUSTMENT_MODE_FEEDBACK("FIXED"),
+		.FDA_FEEDBACK(4'b0000),
+		.DELAY_ADJUSTMENT_MODE_RELATIVE("FIXED"),
+		.FDA_RELATIVE(4'b0000),
+		.SHIFTREG_DIV_MODE(2'b00),
+		.PLLOUT_SELECT("GENCLK"),
+		.ENABLE_ICEGATE(1'b0)
+	)
+	pll_inst (
+		.PACKAGEPIN(clk_i),
+		.PLLOUTCORE(clk_48mhz),
+		.PLLOUTGLOBAL(),
+		.EXTFEEDBACK(),
+		.DYNAMICDELAY(8'h00),
+		.RESETB(1'b1),
+		.BYPASS(1'b0),
+		.LATCHINPUTVALUE(),
+		.LOCK(pll_lock),
+		.SDI(),
+		.SDO(),
+		.SCLK()
+	);
+assign	s_clk = clk_48mhz;
+
+
+always @(posedge s_clk) begin: CATBOARD_CNTR_LOGIC
     cntr <= (cntr + 1);
 end
 
@@ -391,7 +426,7 @@ always @(disp_digit_shf[7], disp_drvr_enbls[7]) begin: CATBOARD_DISP_INST_8_DRVR
 end
 
 
-always @(posedge clk_i) begin: CATBOARD_DISP_SCAN_SEGMENTS_AND_DIGITS
+always @(posedge s_clk) begin: CATBOARD_DISP_SCAN_SEGMENTS_AND_DIGITS
     if ((disp_initialized != 1'b1)) begin
         disp_seg_mask <= 7'b0010101;
         disp_digit_shf <= 8'b00000001;
