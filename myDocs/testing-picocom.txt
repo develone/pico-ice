@@ -1,0 +1,6 @@
+git clone https://github.com/develone/picocom.git -b test-dev 
+cd picocom/
+ls
+make
+
+sudo /home/devel/picocom/picocom -b 1200 /dev/ttyACM0
