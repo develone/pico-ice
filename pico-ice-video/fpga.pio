@@ -1,0 +1,101 @@
+.pio_version 0
+; green
+.define public DIR_PIN 12
+; red
+.define public REQ_PIN 13
+; blue
+.define public FIN_PIN 15
+.define public CLK_PIN 24
+
+.program fpga
+
+start:
+set x, 0
+mov x, ~x
+mov osr, x        ; set pins to out
+out pindirs, 8    ; ...
+set pindirs, 0b11 ; ...
+set pins, 0b01    ; set dir to 1 and req to 0
+irq wait 0        ; wait for system to be ready
+
+wait 1 gpio CLK_PIN
+wait 0 gpio CLK_PIN
+
+set pins, 0b11    ; set dir and req to 1
+
+send_data_loop:
+set x, 0               ; set x to 0
+mov x, ~x
+pull noblock           ; get data from memory
+mov x, ~osr
+jmp !x recv_data_start ; check for end of values
+mov osr, ~x
+wait 1 gpio CLK_PIN    ; synchronize
+wait 0 gpio CLK_PIN    ; synchronize
+out pins, 8            ; output data to pins
+jmp send_data_loop     ; keep sending since no null-terminator
+
+recv_data_start:
+set pins, 0b00      ; set dir and req to 0
+set x, 0            ; reset x to 0
+mov osr, x          ; set pins to in
+out pindirs, 8      ; ...
+set pindirs, 0b01   ; ...
+wait 1 gpio REQ_PIN ; wait for data to be ready, indicated by req signal high
+
+.wrap_target
+wait 1 gpio CLK_PIN ; synchronize
+wait 0 gpio CLK_PIN ; synchronize
+in pins, 8          ; read data from pins
+push noblock        ; write data to memory
+jmp pin start       ; stop receiving data if FPGA is done
+.wrap               ; otherwise keep receiving data
+
+% c-sdk {
+#include <hardware/dma.h>
+
+static int command_dma_channel;
+static int frame_dma_channel;
+
+static void fpga_program_init(PIO pio, uint sm, uint offset, uint bus_base, uint status_base, uint fin_pin)
+{
+    {
+        pio_sm_config c = fpga_program_get_default_config(offset);
+        sm_config_set_in_pins(&c, bus_base);
+        sm_config_set_out_pins(&c, bus_base, 8);
+        sm_config_set_set_pins(&c, status_base, 2);
+        sm_config_set_jmp_pin(&c, fin_pin);
+
+        sm_config_set_in_shift(&c, false, false, 8);
+        sm_config_set_out_shift(&c, false, false, 8);
+
+        pio_sm_init(pio, sm, offset, &c);
+
+        for (int i = 0; i < 8; i++) { pio_gpio_init(pio, bus_base + i); }
+        for (int i = 0; i < 2; i++) { pio_gpio_init(pio, status_base + i); }
+    }
+
+    command_dma_channel = dma_claim_unused_channel(true);
+    frame_dma_channel = dma_claim_unused_channel(true);
+
+    {
+        dma_channel_config c = dma_channel_get_default_config(command_dma_channel);
+        channel_config_set_read_increment(&c, true);
+        channel_config_set_write_increment(&c, false);
+        channel_config_set_transfer_data_size(&c, DMA_SIZE_8);
+        channel_config_set_dreq(&c, pio_get_dreq(pio, sm, true));
+        channel_config_set_chain_to(&c, frame_dma_channel);
+
+        dma_channel_configure(command_dma_channel, &c, &pio->txf[sm], NULL, 0, false);
+    }
+    {
+        dma_channel_config c = dma_channel_get_default_config(frame_dma_channel);
+        channel_config_set_read_increment(&c, false);
+        channel_config_set_write_increment(&c, true);
+        channel_config_set_transfer_data_size(&c, DMA_SIZE_8);
+        channel_config_set_dreq(&c, pio_get_dreq(pio, sm, false));
+
+        dma_channel_configure(frame_dma_channel, &c, NULL, &pio->rxf[sm], FRAME_WIDTH * FRAME_HEIGHT * 2, false);
+    }
+}
+%}
