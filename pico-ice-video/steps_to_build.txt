@@ -24,3 +24,6 @@ cmake ..
 
 make VERBOSE=1 > make_output.txt 2>&1
 
+or make
+
+should see in the build folder pico-ice-video.elf, pico-ice-video.elf.map, pico-ice-video.uf2, and pico-ice-video.dis
