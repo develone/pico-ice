@@ -1,7 +1,5 @@
 cd pico-ice/pico-ice-video
 
-rsync -avl /home/devel/pico-ice-sdk .
-
 env | less 
 #check the varible PICO_SDK_PATH=/home/devel/sdk/pico-sdk which indicates pico-sdk branch my-1.5.1
 #This removes the env variable to pico-sdk branch my-1.5.1 defined in .bashrc
