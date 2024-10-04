@@ -1,0 +1,33 @@
+test-dev	ffa944	05/17/24	Commits on Oct 2, 2024
+9347e8  Commits on Sep 20, 2024 10/04/24
+
+--no-commit
+
+created a new branch test-dev-100424
+
+tar cvfz pico-ice-test-dev-100424.tgz pico-ice
+
+rm -rf pico-ice
+
+git clone git@github.com:develone/pico-ice.git -b test-dev-100424
+
+created a new branch test-dev-100424 of repo pico-ice following a sync with
+https://github.com/tinyvision-ai-inc/pico-ice 
+
+git merge --no-commit origin/test-dev
+
+git commit -a
+
+git push
+
+cd pico-ice
+
+git pull
+
+cd ..
+
+tar cvfz pico-ice-test-dev.tgz pico-ice
+
+rm -rf pico-ice
+
+git clone https://github.com/develone/pico-ice.git -b test-dev-100424
