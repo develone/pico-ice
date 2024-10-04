@@ -1,0 +1,50 @@
+************************************
+
+testing pico_usb_uart in examples-tested-1_6_1/pico-ice/
+
+pico-ice-sdk v1.6.1.uf2 firmware running on RP2040.   Needs drag & drop pico_usb_uart.uf2 to pico-ice after the 
+
+Steps to create pico_usb_uart.uf2
+
+
+cd pico_usb_uart/
+
+rm -rf pico-ice-sdk pico-sdk
+
+Needs a pico-ice-sdk that git submodule update --init was previously done.
+ 
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-ice-sdk .
+
+Needs a pico-sdk that git submodule update --init was previously done.
+
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk .
+
+mkdir build
+
+cd build
+
+cmake ..
+
+make
+
+compiles a pico_usb_uart.uf2
+
+rm -f /media/devel/pico-ice/pico*.uf2
+
+cp pico_usb_uart.uf2 /media/devel/pico-ice/
+
+Tested 2 minicom first on minicom myusb0 and the 2nd sudo minicom -s with port set to /dev/ttyACM0
+
+pico_usb_uart-RP1RP0.png
+
+# pico_usb_uart
+
+In addition to the main USB-UART interface, used for the standard I/O (as used by `<stdio.h>`) (#0),
+a second USB-UART (#1) interface is created:
+
+- mirrors all input from the USB-UART to the FPGA as UART data,
+- mirrors back all UART data from the FPGA to the USB-UART
+
+Any shared I/O pins can be used. In this example, pins 0 and 1 are used.
+
+************************************

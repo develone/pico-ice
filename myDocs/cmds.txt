@@ -1,0 +1,3 @@
+https://discord.com/channels/644405956494753803/985342148884987934
+sudo /home/devel/picocom/picocom --baud 1200  /dev/ttyACM0
+sudo /home/devel/picocom/picocom --baud 115200 --imap crcrlf,lfcrlf /dev/ttyACM1

@@ -1,0 +1,6 @@
+/build
+*.bit
+*.asc
+*.json
+*.log
+*.dfu

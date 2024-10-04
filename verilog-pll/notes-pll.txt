@@ -1,0 +1,117 @@
+09/05/24
+icepll -i 12 -o 25 -f clk.txt
+
+F_PLLIN:    12.000 MHz (given)
+F_PLLOUT:   25.000 MHz (requested)
+F_PLLOUT:   25.125 MHz (achieved)
+
+FEEDBACK: SIMPLE
+F_PFD:   12.000 MHz
+F_VCO:  804.000 MHz
+
+DIVR:  0 (4'b0000)
+DIVF: 66 (7'b1000010)
+DIVQ:  5 (3'b101)
+
+FILTER_RANGE: 1 (3'b001)
+
+PLL configuration written to: clk.txt
+
+/**
+ * PLL configuration
+ *
+ * This Verilog header file was generated automatically
+ * using the icepll tool from the IceStorm project.
+ * It is intended for use with FPGA primitives SB_PLL40_CORE,
+ * SB_PLL40_PAD, SB_PLL40_2_PAD, SB_PLL40_2F_CORE or SB_PLL40_2F_PAD.
+ * Use at your own risk.
+ *
+ * Given input frequency:        12.000 MHz
+ * Requested output frequency:   25.000 MHz
+ * Achieved output frequency:    25.125 MHz
+ */
+
+.FEEDBACK_PATH("SIMPLE"),
+.DIVR(4'b0000),		// DIVR =  0
+.DIVF(7'b1000010),	// DIVF = 66
+.DIVQ(3'b101),		// DIVQ =  5
+.FILTER_RANGE(3'b001)	// FILTER_RANGE = 1
+
+
+git clone  https://github.com/develone/pico-ice.git -b test-dev
+
+cd pico-ice/verilog-pll
+
+git log
+
+commit a4dab3bbb5a586b36bb4d95f2a1641a4e8193ebd
+Author: Ed Vidal Jr <develone@sbcglobal.net>
+Date:   Thu Sep 5 10:16:19 2024 -0600
+
+make
+    
+    === top ===
+    
+       Number of wires:                 21
+       Number of wire bits:            146
+       Number of public wires:          21
+       Number of public wire bits:     146
+       Number of memories:               0
+       Number of memory bits:            0
+       Number of processes:              0
+       Number of cells:                124
+         SB_CARRY                       38
+         SB_DFF                         31
+         SB_DFFESR                       6
+         SB_LUT4                        48
+         SB_PLL40_PAD                    1
+    
+    Info: Device utilisation:
+    Info:            ICESTORM_LC:    59/ 5280     1%
+    Info:           ICESTORM_RAM:     0/   30     0%
+    Info:                  SB_IO:     4/   96     4%
+    Info:                  SB_GB:     1/    8    12%
+    Info:           ICESTORM_PLL:     1/    1   100%
+    Info:            SB_WARMBOOT:     0/    1     0%
+    Info:           ICESTORM_DSP:     0/    8     0%
+    Info:         ICESTORM_HFOSC:     0/    1     0%
+    Info:         ICESTORM_LFOSC:     0/    1     0%
+    Info:                 SB_I2C:     0/    2     0%
+    Info:                 SB_SPI:     0/    2     0%
+    Info:                 IO_I3C:     0/    2     0%
+    Info:            SB_LEDDA_IP:     0/    1     0%
+    Info:            SB_RGBA_DRV:     0/    1     0%
+    Info:         ICESTORM_SPRAM:     0/    4     0%
+    
+    1 warning, 0 errors
+    
+    Info: Program finished normally.
+    icepack test-pll.asc test-pll.bin
+    
+    The pico-ice needs to be mounted on the RPi5
+    
+    df
+    Filesystem     1K-blocks     Used Available Use% Mounted on
+    udev             3947856        0   3947856   0% /dev
+    tmpfs             824576     8608    815968   2% /run
+    /dev/mmcblk0p2 238576544 29773928 196665948  14% /
+    tmpfs            4122816      368   4122448   1% /dev/shm
+    tmpfs               5120       48      5072   1% /run/lock
+    /dev/mmcblk0p1    522230    76418    445812  15% /boot/firmware
+    tmpfs             824560      208    824352   1% /run/user/1000
+    /dev/sda           32640     8397     24244  26% /media/devel/pico-ice
+    
+    rm -f /media/devel/pico-ice/test-pll.uf2
+    
+    bin2uf2 -o test-pll.uf2 test-pll.bin
+    
+    cp test-pll.uf2 /media/devel/pico-ice/
+    
+    Both the green & red led go off.
+    
+    The green led comes back on and the red led blinks at 1 per sec
+    
+    The blue led and comes on after a min.
+
+
+ 

@@ -1,0 +1,255 @@
+testing pico-ice-sdk & pico-ice 
+Below are the steps I am using to test pico-ice-sdk & pico-ice
+Trying to follow the steps found in pico-ice/Docs/pico_ice_sdk.md
+
+git clone https://github.com/develone/pico-ice-sdk.git -b test-dev
+
+git clone https://github.com/develone/pico-ice.git -b test-dev
+
+cd pico-ice
+
+cp -r ~/pico-ice-sdk/examples/pico_usb_uart my-new-pico-ice-firmware
+
+cd my-new-pico-ice-firmware
+
+rm -rf pico-ice-sdk pico-sdk
+
+git clone https://github.com/develone/pico-ice-sdk -b test-dev
+Cloning into 'pico-ice-sdk'...
+remote: Enumerating objects: 3280, done.
+remote: Counting objects: 100% (1006/1006), done.
+remote: Compressing objects: 100% (349/349), done.
+remote: Total 3280 (delta 675), reused 933 (delta 630), pack-reused 2274
+Receiving objects: 100% (3280/3280), 5.45 MiB | 9.07 MiB/s, done.
+Resolving deltas: 100% (2041/2041), done.
+
+cd pico-ice-sdk
+
+git submodule update --init
+Submodule 'lib/pico-sdk' (https://github.com/raspberrypi/pico-sdk) registered for path 'lib/pico-sdk'
+Submodule 'lib/tinyuf2' (https://github.com/adafruit/tinyuf2) registered for path 'lib/tinyuf2'
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-ice-sdk/lib/pico-sdk'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-ice-sdk/lib/tinyuf2'...
+Submodule path 'lib/pico-sdk': checked out 'f396d05f8252d4670d4ea05c8b7ac938ef0cd381'
+Submodule path 'lib/tinyuf2': checked out 'a70bd876a38fec1a204ec1e8051b119bcf6a43eb'
+
+cd ../
+
+git clone https://github.com/develone/pico-sdk.git
+
+cd pico-sdk
+
+git submodule update --init
+
+Submodule 'lib/btstack' (https://github.com/bluekitchen/btstack.git) registered for path 'lib/btstack'
+Submodule 'lib/cyw43-driver' (https://github.com/georgerobotics/cyw43-driver.git) registered for path 'lib/cyw43-driver'
+Submodule 'lib/lwip' (https://github.com/lwip-tcpip/lwip.git) registered for path 'lib/lwip'
+Submodule 'lib/mbedtls' (https://github.com/Mbed-TLS/mbedtls.git) registered for path 'lib/mbedtls'
+Submodule 'tinyusb' (https://github.com/hathach/tinyusb.git) registered for path 'lib/tinyusb'
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/btstack'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/cyw43-driver'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/lwip'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/mbedtls'...
+Cloning into '/home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/tinyusb'...
+Submodule path 'lib/btstack': checked out '72ef1732c954d938091467961e41f4aa9b976b34'
+Submodule path 'lib/cyw43-driver': checked out '8ef38a6d32c54f850bff8f189bdca19ded33792a'
+Submodule path 'lib/lwip': checked out '239918ccc173cb2c2a62f41a40fd893f57faf1d6'
+Submodule path 'lib/mbedtls': checked out 'a77287f8fa6b76f74984121fdafc8563147435c8'
+Submodule path 'lib/tinyusb': checked out '86c416d4c0fb38432460b3e11b08b9de76941bf5'
+
+cd ../
+
+cp -r ~/pico-ice-sdk/examples/* .
+
+mkdir build
+
+cd build
+
+devel@pi5-80:~/pico-ice/my-new-pico-ice-firmware/build $ cmake ..
+PICO_SDK_PATH is /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk
+Defaulting PICO_PLATFORM to rp2040 since not specified.
+Defaulting PICO platform compiler to pico_arm_gcc since not specified.
+-- Defaulting build type to 'Release' since not specified.
+PICO compiler is pico_arm_gcc
+-- The C compiler identification is GNU 12.2.1
+-- The CXX compiler identification is GNU 12.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/arm-none-eabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/arm-none-eabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Build type is Release
+Defaulting PICO target board to pico since not specified.
+Using board configuration from /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/src/boards/include/boards/pico.h
+-- Found Python3: /usr/bin/python3 (found version "3.11.2") found components: Interpreter 
+TinyUSB available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+BTstack available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/btstack
+cyw43-driver available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/cyw43-driver
+Pico W Bluetooth build support available.
+lwIP available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/lwip
+mbedtls available at /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk/lib/mbedtls
+fatal: No names found, cannot describe anything.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/pico-ice/my-new-pico-ice-firmware/build
+
+devel@pi5-80:~/pico-ice/my-new-pico-ice-firmware/build $ make
+[  0%] Creating directories for 'PioasmBuild'
+[  1%] No download step for 'PioasmBuild'
+[  2%] No update step for 'PioasmBuild'
+[  3%] No patch step for 'PioasmBuild'
+[  4%] Performing configure step for 'PioasmBuild'
+loading initial cache file /home/devel/pico-ice/my-new-pico-ice-firmware/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp/PioasmBuild-cache-Release.cmake
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/pico-ice/my-new-pico-ice-firmware/build/pioasm
+[  5%] Performing build step for 'PioasmBuild'
+[ 10%] Building CXX object CMakeFiles/pioasm.dir/main.cpp.o
+[ 20%] Building CXX object CMakeFiles/pioasm.dir/pio_assembler.cpp.o
+[ 30%] Building CXX object CMakeFiles/pioasm.dir/pio_disassembler.cpp.o
+[ 40%] Building CXX object CMakeFiles/pioasm.dir/gen/lexer.cpp.o
+[ 50%] Building CXX object CMakeFiles/pioasm.dir/gen/parser.cpp.o
+[ 60%] Building CXX object CMakeFiles/pioasm.dir/c_sdk_output.cpp.o
+[ 70%] Building CXX object CMakeFiles/pioasm.dir/python_output.cpp.o
+[ 80%] Building CXX object CMakeFiles/pioasm.dir/hex_output.cpp.o
+[ 90%] Building CXX object CMakeFiles/pioasm.dir/ada_output.cpp.o
+[100%] Linking CXX executable pioasm
+[100%] Built target pioasm
+[  6%] No install step for 'PioasmBuild'
+[  7%] Completed 'PioasmBuild'
+[  7%] Built target PioasmBuild
+[  8%] Generating ice_cram.pio.h
+[  8%] Built target pico_ice_sdk_ice_cram_pio_h
+[  9%] Creating directories for 'ELF2UF2Build'
+[ 10%] No download step for 'ELF2UF2Build'
+[ 11%] No update step for 'ELF2UF2Build'
+[ 12%] No patch step for 'ELF2UF2Build'
+[ 13%] Performing configure step for 'ELF2UF2Build'
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/pico-ice/my-new-pico-ice-firmware/build/elf2uf2
+[ 14%] Performing build step for 'ELF2UF2Build'
+[ 50%] Building CXX object CMakeFiles/elf2uf2.dir/main.cpp.o
+[100%] Linking CXX executable elf2uf2
+[100%] Built target elf2uf2
+[ 15%] No install step for 'ELF2UF2Build'
+[ 15%] Completed 'ELF2UF2Build'
+[ 15%] Built target ELF2UF2Build
+[ 16%] Building ASM object pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+[ 17%] Linking ASM executable bs2_default.elf
+[ 17%] Built target bs2_default
+[ 18%] Generating bs2_default.bin
+[ 19%] Generating bs2_default_padded_checksummed.S
+[ 19%] Built target bs2_default_padded_checksummed_asm
+[ 20%] Building C object CMakeFiles/pico_usb_uart.dir/main.c.obj
+[ 21%] Building C object CMakeFiles/pico_usb_uart.dir/usb_descriptors.c.obj
+[ 22%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_fpga.c.obj
+[ 23%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_spi.c.obj
+[ 23%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_flash.c.obj
+[ 24%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_sram.c.obj
+[ 25%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_led.c.obj
+[ 26%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_cram.c.obj
+[ 27%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_wishbone.c.obj
+[ 28%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+[ 29%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+[ 30%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+[ 31%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+[ 32%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+[ 33%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+[ 34%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+[ 35%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+[ 35%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_sync/sem.c.obj
+[ 36%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_sync/lock_core.c.obj
+[ 37%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_sync/mutex.c.obj
+[ 38%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_sync/critical_section.c.obj
+[ 39%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_time/time.c.obj
+[ 40%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+[ 41%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+[ 42%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_util/datetime.c.obj
+[ 43%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_util/pheap.c.obj
+[ 44%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/common/pico_util/queue.c.obj
+[ 45%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+[ 46%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+[ 47%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+[ 48%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+[ 48%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+[ 50%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+[ 51%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+[ 52%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+[ 53%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+[ 54%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+[ 55%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+[ 56%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+[ 57%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+[ 58%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+[ 59%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+[ 60%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+[ 61%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+[ 61%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+[ 62%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+[ 63%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+[ 64%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+[ 65%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+[ 66%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+[ 67%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+[ 68%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+[ 69%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+[ 70%] Building ASM object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+[ 71%] Building CXX object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+[ 72%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+[ 73%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+[ 74%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+[ 74%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/ice_usb.c.obj
+[ 75%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/tinyuf2_main.c.obj
+[ 76%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/tinyuf2_board.c.obj
+[ 77%] Building C object CMakeFiles/pico_usb_uart.dir/pico-ice-sdk/src/tinyuf2_include.c.obj
+[ 78%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+[ 79%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+[ 80%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+[ 81%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+[ 82%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+[ 83%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+[ 84%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
+[ 85%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+[ 86%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+[ 86%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
+[ 87%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+[ 88%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
+[ 89%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
+[ 90%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
+[ 91%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
+[ 92%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
+[ 93%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+[ 94%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
+[ 95%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/tusb.c.obj
+[ 96%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+[ 97%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+[ 98%] Building C object CMakeFiles/pico_usb_uart.dir/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+[100%] Linking CXX executable pico_usb_uart.elf
+[100%] Built target pico_usb_uart
+

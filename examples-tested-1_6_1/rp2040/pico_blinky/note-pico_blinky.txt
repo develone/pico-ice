@@ -1,0 +1,35 @@
+************************************
+
+testing pico_blinky in examples-tested-1_6_1/rp2040/
+
+Needs drag & drop pico_blinky.uf2 to RP1-RP2 after the 
+
+Steps to create pico_blinky.uf2
+
+
+cd pico_blinky/
+
+rm -rf pico-ice-sdk pico-sdk
+
+Needs a pico-ice-sdk that git submodule update --init was previously done.
+ 
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-ice-sdk .
+
+Needs a pico-sdk that git submodule update --init was previously done.
+
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk .
+
+mkdir build
+
+cd build
+
+cmake ..
+
+make
+
+compiles a pico_blinky.uf2
+
+cp pico_blinky.uf2 /media/your-username/RPI-RP2/
+
+
+ ************************************

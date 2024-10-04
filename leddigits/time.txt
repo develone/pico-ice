@@ -1,0 +1,58 @@
+make
+
+bin2uf2 -o test-top.uf2 top.bin
+
+rm -f /media/devel/pico-ice/test-top.uf2
+
+cp test-top.uf2 /media//devel/pico-ice/
+
+no pll	60	2c	44
+44	60	a1	161
+
+21c21
+< // clk_i: Input clock.
+---
+> // s_clk: Input clock.
+68a69,99
+> 	wire		s_clk;
+> 	wire clk_44mhz, pll_lock;
+> 	SB_PLL40_PAD #(
+> 		.DIVR(4'b0000),		// DIVR =  0
+> 		.DIVF(7'b0111010),	// DIVF = 58
+> 		.DIVQ(3'b100),		// DIVQ =  4
+> 		.FILTER_RANGE(3'b001),
+> 		.FEEDBACK_PATH("SIMPLE"),
+> 		.DELAY_ADJUSTMENT_MODE_FEEDBACK("FIXED"),
+> 		.FDA_FEEDBACK(4'b0000),
+> 		.DELAY_ADJUSTMENT_MODE_RELATIVE("FIXED"),
+> 		.FDA_RELATIVE(4'b0000),
+> 		.SHIFTREG_DIV_MODE(2'b00),
+> 		.PLLOUT_SELECT("GENCLK"),
+> 		.ENABLE_ICEGATE(1'b0)
+> 	)
+> 	pll_inst (
+> 		.PACKAGEPIN(clk_i),
+> 		.PLLOUTCORE(clk_44mhz),
+> 		.PLLOUTGLOBAL(),
+> 		.EXTFEEDBACK(),
+> 		.DYNAMICDELAY(8'h00),
+> 		.RESETB(1'b1),
+> 		.BYPASS(1'b0),
+> 		.LATCHINPUTVALUE(),
+> 		.LOCK(pll_lock),
+> 		.SDI(),
+> 		.SDO(),
+> 		.SCLK()
+> 	);
+> assign	s_clk = clk_44mhz;
+70c101,103
+< always @(posedge clk_i) begin: CATBOARD_CNTR_LOGIC
+---
+> 
+> 
+> always @(posedge s_clk) begin: CATBOARD_CNTR_LOGIC
+394c427
+< always @(posedge clk_i) begin: CATBOARD_DISP_SCAN_SEGMENTS_AND_DIGITS
+---
+> always @(posedge s_clk) begin: CATBOARD_DISP_SCAN_SEGMENTS_AND_DIGITS
+

@@ -1,0 +1,4 @@
+set_io -nowarn LED_G            39 # active-low
+set_io -nowarn LED_B            40 # active-low
+set_io -nowarn LED_R            41 # active-low
+set_io -nowarn CLK              35

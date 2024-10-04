@@ -1,0 +1,13 @@
+ldc_set_location -site 35 [get_ports {clk}]
+ldc_set_location -site 41 [get_ports {req}]
+ldc_set_location -site 40 [get_ports {fin}]
+ldc_set_location -site 39 [get_ports {dir}]
+
+ldc_set_location -site 27 [get_ports {data[0]}]
+ldc_set_location -site 25 [get_ports {data[1]}]
+ldc_set_location -site 21 [get_ports {data[2]}]
+ldc_set_location -site 19 [get_ports {data[3]}]
+ldc_set_location -site 26 [get_ports {data[4]}]
+ldc_set_location -site 23 [get_ports {data[5]}]
+ldc_set_location -site 20 [get_ports {data[6]}]
+ldc_set_location -site 18 [get_ports {data[7]}]

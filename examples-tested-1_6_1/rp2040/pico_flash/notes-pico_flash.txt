@@ -1,0 +1,44 @@
+************************************
+
+testing pico_flash in examples-tested-1_6_1/rp2040/
+
+Needs drag & drop pico_ice_flash.uf2 to RP1-RP2 after the 
+
+Steps to create pico_ice_flash.uf2
+
+
+cd pico_flash/
+
+rm -rf pico-ice-sdk pico-sdk
+
+Needs a pico-ice-sdk that git submodule update --init was previously done.
+ 
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-ice-sdk .
+
+Needs a pico-sdk that git submodule update --init was previously done.
+
+rsync -avl /home/devel/pico-ice/my-new-pico-ice-firmware/pico-sdk .
+
+mkdir build
+
+cd build
+
+cmake ..
+
+make
+
+compiles a pico_ice_flash.uf2
+
+Testing pico_ice_flash.uf2
+python3 test.py /dev/ttyACM0 
+from 0x0 to 0x1F
+from 0x20 to 0x3F
+from 0x40 to 0x5F
+from 0x60 to 0x7F
+from 0x80 to 0x9F
+from 0xA0 to 0xBF
+from 0xC0 to 0xDF
+from 0xE0 to 0xFF
+done
+
+************************************

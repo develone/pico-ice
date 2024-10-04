@@ -1,0 +1,265 @@
+master	my-2.0.0
+commit efe2103f9b28458a1615ff096054479743ade236 (HEAD -> master, tag: 2.0.0, origin/master, origin/HEAD)
+Author: graham sanderson <graham.sanderson@raspberrypi.com>
+Date:   Thu Aug 8 06:02:04 2024 -0500
+
+    SDK 2.0.0 release
+tested with pico-ice https://github.com/develone/pico-ice/tree/test-dev/examples-tested-1_6_1/rp2040/pico_sram
+https://github.com/PythonLinks/hanaforth
+master my-1.5.1
+commit 6a7db34ff63345a7badec79ebea3aaef1712f374 (HEAD -> master, origin/master, origin/HEAD)
+Author: graham sanderson <graham.sanderson@raspberrypi.com>
+Date:   Tue Jun 13 17:25:13 2023 -0500
+
+    revert changes to when -nostartfiles is specified in link for 1.5.1 as it can cause link errors with C++; see #1368
+
+commit 8ecc5ababa8ded96ab21d4152a2d9ae69c2fa051
+Author: graham sanderson <graham.sanderson@raspberrypi.com>
+Date:   Tue Jun 13 11:52:27 2023 -0500
+
+    set release version 1.5.1
+Testing pico-sdk with pico_sram.
+
+commit efe2103f9b28458a1615ff096054479743ade236 (HEAD -> master, tag: 2.0.0, origin/master, origin/HEAD)
+Author: graham sanderson <graham.sanderson@raspberrypi.com>
+Date:   Thu Aug 8 06:02:04 2024 -0500
+
+    SDK 2.0.0 release
+
+cmake ..
+PICO_SDK_PATH is /home/devel/pico-sdk
+Defaulting platform (PICO_PLATFORM) to 'rp2040' since not specified.
+Defaulting target board (PICO_BOARD) to 'pico' since not specified.
+Using board configuration from /home/devel/pico-sdk/src/boards/include/boards/pico.h
+Pico Platform (PICO_PLATFORM) is 'rp2040'.
+-- Defaulting build type to 'Release' since not specified.
+Defaulting compiler (PICO_COMPILER) to 'pico_arm_cortex_m0plus_gcc' since not specified.
+Configuring toolchain based on PICO_COMPILER 'pico_arm_cortex_m0plus_gcc'
+Defaulting PICO_GCC_TRIPLE to 'arm-none-eabi'
+-- The C compiler identification is GNU 12.2.1
+-- The CXX compiler identification is GNU 12.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/arm-none-eabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/arm-none-eabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Build type is Release
+CMake Warning at /home/devel/pico-sdk/tools/Findpicotool.cmake:28 (message):
+  No installed picotool with version 2.0.0 found - building from source
+
+  It is recommended to build and install picotool separately, or to set
+  PICOTOOL_FETCH_FROM_GIT_PATH to a common directory for all your SDK
+  projects
+Call Stack (most recent call first):
+  /home/devel/pico-sdk/tools/CMakeLists.txt:138 (find_package)
+  /home/devel/pico-sdk/src/cmake/on_device.cmake:33 (pico_init_picotool)
+  /home/devel/pico-sdk/src/rp2040/boot_stage2/CMakeLists.txt:57 (pico_add_dis_output)
+  /home/devel/pico-sdk/src/rp2040/boot_stage2/CMakeLists.txt:101 (pico_define_boot_stage2)
+
+
+Downloading Picotool
+-- Found Python3: /usr/bin/python3 (found version "3.11.2") found components: Interpreter 
+TinyUSB available at /home/devel/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+BTstack available at /home/devel/pico-sdk/lib/btstack
+cyw43-driver available at /home/devel/pico-sdk/lib/cyw43-driver
+lwIP available at /home/devel/pico-sdk/lib/lwip
+mbedtls available at /home/devel/pico-sdk/lib/mbedtls
+fatal: No names found, cannot describe anything.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/build
+
+make
+[  1%] Creating directories for 'pioasmBuild'
+[  2%] No download step for 'pioasmBuild'
+[  3%] No update step for 'pioasmBuild'
+[  4%] No patch step for 'pioasmBuild'
+[  5%] Performing configure step for 'pioasmBuild'
+Not searching for unused variables given on the command line.
+loading initial cache file /home/devel/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp/pioasmBuild-cache-Release.cmake
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/build/pioasm
+[  6%] Performing build step for 'pioasmBuild'
+[100%] Built target pioasm
+[  7%] Performing install step for 'pioasmBuild'
+[100%] Built target pioasm
+Install the project...
+-- Install configuration: "Release"
+[  8%] Completed 'pioasmBuild'
+[  8%] Built target pioasmBuild
+[  9%] Generating ice_cram.pio.h
+[  9%] Built target pico_ice_sdk_ice_cram_pio_h
+[  9%] Built target picotoolForceReconfigure
+[ 10%] Creating directories for 'picotoolBuild'
+[ 11%] No download step for 'picotoolBuild'
+[ 11%] No update step for 'picotoolBuild'
+[ 12%] No patch step for 'picotoolBuild'
+[ 13%] Performing configure step for 'picotoolBuild'
+Not searching for unused variables given on the command line.
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+.//home/devel/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/build/_deps/picotool/
+-- Using the single-header code from /home/devel/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/build/_deps/picotool-src/lib/nlohmann_json/single_include/
+-- Found Python3: /usr/bin/python3 (found version "3.11.2") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+libUSB is not found - no USB support will be built
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/build/_deps/picotool-build
+[ 14%] Performing build step for 'picotoolBuild'
+[ 67%] Built target mbedcrypto
+[ 75%] Built target mbedx509
+[ 85%] Built target mbedtls
+[ 87%] Built target errors
+[ 88%] Built target elf
+[ 91%] Built target bintool
+[ 93%] Built target elf2uf2
+[100%] Built target picotool
+[ 15%] Performing install step for 'picotoolBuild'
+[ 67%] Built target mbedcrypto
+[ 75%] Built target mbedx509
+[ 85%] Built target mbedtls
+[ 87%] Built target errors
+[ 88%] Built target elf
+[ 91%] Built target bintool
+[ 93%] Built target elf2uf2
+[100%] Built target picotool
+Install the project...
+-- Install configuration: "Release"
+[ 16%] Performing test step for 'picotoolBuild'
+picotool v2.0.0 (Linux, GNU-12.2.0, Release)
+[ 16%] Completed 'picotoolBuild'
+[ 16%] Built target picotoolBuild
+[ 16%] Building ASM object pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+[ 17%] Linking ASM executable bs2_default.elf
+[ 17%] Built target bs2_default
+[ 18%] Generating bs2_default.bin
+[ 19%] Generating bs2_default_padded_checksummed.S
+[ 19%] Built target bs2_default_padded_checksummed_asm
+[ 20%] Building C object CMakeFiles/pico_sram.dir/main.c.obj
+[ 20%] Building C object CMakeFiles/pico_sram.dir/pico-ice-sdk/src/ice_fpga.c.obj
+[ 21%] Building C object CMakeFiles/pico_sram.dir/pico-ice-sdk/src/ice_spi.c.obj
+[ 22%] Building C object CMakeFiles/pico_sram.dir/pico-ice-sdk/src/ice_flash.c.obj
+[ 23%] Building C object CMakeFiles/pico_sram.dir/pico-ice-sdk/src/ice_sram.c.obj
+[ 24%] Building C object CMakeFiles/pico_sram.dir/pico-ice-sdk/src/ice_led.c.obj
+[ 25%] Building C object CMakeFiles/pico_sram.dir/pico-ice-sdk/src/ice_cram.c.obj
+[ 26%] Building C object CMakeFiles/pico_sram.dir/pico-ice-sdk/src/ice_wishbone.c.obj
+[ 27%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+[ 27%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2040/pico_platform/platform.c.obj
+[ 28%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.obj
+[ 29%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/hardware_claim/claim.c.obj
+[ 30%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+[ 31%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
+[ 32%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+[ 33%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
+[ 34%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
+[ 34%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+[ 35%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+[ 36%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+[ 37%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_sync/sem.c.obj
+[ 38%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_sync/lock_core.c.obj
+[ 39%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_sync/mutex.c.obj
+[ 40%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_sync/critical_section.c.obj
+[ 41%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_time/time.c.obj
+[ 41%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+[ 42%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+[ 43%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_util/datetime.c.obj
+[ 44%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_util/pheap.c.obj
+[ 45%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/common/pico_util/queue.c.obj
+[ 46%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+[ 47%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+[ 48%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+[ 48%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+[ 50%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+[ 51%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+[ 52%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.obj
+[ 53%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+[ 54%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+[ 55%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+[ 56%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+[ 56%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+[ 57%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+[ 58%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.obj
+[ 59%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
+[ 60%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj
+[ 61%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+[ 62%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.obj
+[ 63%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.obj
+[ 64%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.obj
+[ 64%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+[ 65%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.obj
+[ 66%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+[ 67%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.obj
+[ 68%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.obj
+[ 69%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+[ 70%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.obj
+[ 71%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_malloc/malloc.c.obj
+[ 71%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+[ 72%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_atomic/atomic.c.obj
+[ 73%] Building CXX object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.obj
+[ 74%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+[ 75%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+[ 76%] Building ASM object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_crt0/crt0.S.obj
+[ 77%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
+[ 78%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+[ 78%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+[ 79%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+[ 80%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+[ 81%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+[ 82%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+[ 83%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+[ 84%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+[ 85%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+[ 85%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
+[ 86%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+[ 87%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+[ 88%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
+[ 89%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+[ 90%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
+[ 91%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
+[ 92%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
+[ 92%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
+[ 93%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
+[ 94%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+[ 95%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
+[ 96%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/tusb.c.obj
+[ 97%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+[ 98%] Building C object CMakeFiles/pico_sram.dir/home/devel/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+[100%] Linking CXX executable pico_sram.elf
+[100%] Built target pico_sram
+
+ChipID: 0D 5D 5B 10 E1 CC 58 2C                                                 
+0x0000: 01 02 03 04 05 06 07 08                                                 
+ChipID: 0D 5D 5B 10 E1 CC 58 2C                                                 
+0x0000: 01 02 03 04 05 06 07 08                                                 
+ChipID: 0D 5D 5B 10 E1 CC 58 2C                                                 
+0x0000: 01 02 03 04 05 06 07 08                                                 
+ChipID: 0D 5D 5B 10 E1 CC 58 2C                                                 
+0x0000: 01 02 03 04 05 06 07 08                                                 
+ChipID: 0D 5D 5B 10 E1 CC 58 2C                                                 
+0x0000: 01 02 03 04 05 06 07 08

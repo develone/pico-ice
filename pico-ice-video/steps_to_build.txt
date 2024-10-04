@@ -1,0 +1,29 @@
+cd pico-ice/pico-ice-video
+
+env | less 
+#check the varible PICO_SDK_PATH=/home/devel/sdk/pico-sdk which indicates pico-sdk branch my-1.5.1
+#This removes the env variable to pico-sdk branch my-1.5.1 defined in .bashrc
+unset PICO_SDK_PATH
+
+#This sets PICO_SDK_PATH=/home/devel/pico-sdk branch my-2.0.0
+#git submodule update --init
+export PICO_SDK_PATH=/home/devel/pico-sdk
+
+env | less 
+#check the varible PICO_SDK_PATH=/home/devel/pico-sdk which indicates pico-sdk branch my-2.0.0
+
+#adds the pico-ice-sdk to the project 
+#git submodule update --init
+rsync -avl /home/devel/pico-ice-sdk .
+
+mkdir build
+
+cd build
+
+cmake ..
+
+make VERBOSE=1 > make_output.txt 2>&1
+
+or make
+
+should see in the build folder pico-ice-video.elf, pico-ice-video.elf.map, pico-ice-video.uf2, and pico-ice-video.dis

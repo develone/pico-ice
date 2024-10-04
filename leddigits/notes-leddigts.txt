@@ -1,0 +1,38 @@
+09/12/24
+git clone https://github.com/develone/pico-ice.git -b test-dev
+cd pico-ice/leddigits
+make 
+bin2uf2 -o test-top.uf2 top.bin
+rm -f /media/devel/pico-ice/test*.uf2
+cp test-top.uf2 /media/devel/pico-ice/
+
+
+Catboard PMOD-3
+ 
+# pin definitions 
+set_io d7_o A15 B4
+set_io d0_o A11 A1
+set_io d5_o B13 B3
+set_io d6_o B15 A4
+set_io d2_o B12 A2
+set_io d3_o B11 B2
+set_io d1_o B10 B1
+set_io clk_i C8 
+set_io d4_o B14 A3
+
+#       654321      
+#	      xxxxxx	PMOD3 A
+#	      xxxxxx  PMOD3 B
+#       654321
+
+		      4321
+		      xxxx	A	
+		      xxxx 	B
+
+					Bottom	Top
+					OUTTER	INNER
+d7			x	28			31	x			d6
+d5			x	32			34	x			d4
+d3			x	36			38	x			d2
+d1	B1	x	42			43	x	A1	d0
+						  

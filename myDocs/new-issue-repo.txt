@@ -1,0 +1,37 @@
+I forked both pico-ice and pico-ice-sdk on 07/25/24.
+At this time I created branches test-dev in both pico-ice and pico-ice-sdk.
+
+pico-ice
+commit 12eea8225a31b25d940c23973c7ff457b6d6097a (origin/main, origin/HEAD)
+Author: Josuah Demangeon <me@josuah.net>
+Date:   Fri May 26 00:58:02 2023 +0200
+
+pico-ice-sdk
+commit 4ebe348ffcb4feb3e2756d101f594679eb02d97c (HEAD -> test-dev, origin/test-dev, origin/main, origin/HEAD)
+Author: Josuah Demangeon <me@josuah.net>
+Date:   Thu Jun 20 23:12:41 2024 +0200
+
+    examples: ice_makefile_blinky: allow blinking with R, G or B easily
+
+On 07/30/24 I noticed This branch is 88 commits behind tinyvision-ai-inc/pico-ice:main.
+pico-ice/Docs 
+_config.yml         ice_flash.md  images           pinout.md
+favicon.ico         ice_fpga.md   index.md         pmods.md
+Gemfile             ice_led.md    learn.md         programming_the_fpga.md
+Gemfile.lock        ice_spi.md    LICENSE          programming_the_mcu.md
+getting_started.md  ice_sram.md   pico_ice_sdk.md
+ice_cram.md         ice_usb.md    pinout
+
+Now pico-ice/Docs
+Doxyfile             images     pmods.md
+doxygen-awesome-css  index.md   programming_the_fpga.md
+DoxygenLayout.xml    learn.md   programming_the_mcu.md
+favicon.ico          pinout
+getting_started.md   pinout.md
+
+This repo https://github.com/tinyvision-ai-inc/pico-ice/tree/main/Docs now is missing some very important files
+needed for understanding the rp2040 functions with ice40UP5K.
+I believe these are missing (ice_flash.md, ice_fpga.md, ice_led.md, ice_spi.md, ice_sram.md, and ice_usb.md).
+
+I added several files in my test-dev branch in pico-ice/myDocs.
+This should have said that I was ahead of tinyvision-ai-inc/pico-ice:main.
