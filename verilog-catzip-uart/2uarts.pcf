@@ -1,0 +1,23 @@
+set_io --warn-no-port rx[0] B5		#PM2-A3
+set_io --warn-no-port tx[0] B3		#PM2-A2
+
+# pin definitions
+set_io led[0] A9
+set_io led[1] B8
+set_io led[2] A7
+set_io led[3] B7
+
+#       654321      
+#	xxxxxx	PMOD2 A
+#	xxxxxx  PMOD2 B
+#       654321
+#
+#PMOD2 A 
+set_io clk C8 		#IOT_197 USER_CLK
+ 
+
+
+set_io --warn-no-port rx[1] B6		#PM2-A4				 
+set_io --warn-no-port tx[1] A1 		#PM2-A1	 
+		 
+		 
