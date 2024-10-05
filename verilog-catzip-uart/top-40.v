@@ -2,12 +2,12 @@
 // File: top.vhd
 //------------------------------------------------------------------------------
 // no timescale needed
-
+`include "uart.v"
 module top(
 input wire clk,
 input wire [uarts - 1:0] rx,
 output wire [uarts - 1:0] tx,
-output wire [3:0] led
+output wire [2:0] led
 );
 
 parameter [31:0] uarts=2;
@@ -37,28 +37,39 @@ reg [4:0] sig_led;
   always @(posedge clk) begin
     sig_counter <= sig_counter + (1);
   end
-	wire	clk_40mhz, pll_locked;
+	// NOTE: PLL 12Mhz -> 40Mhz not exact, but 39.75Mhz is "close enough" for monitors tested
+	// Fin=12, Fout=39.75 (12*(52/16))
 	wire		s_clk;
-	SB_PLL40_CORE #(
+	wire clk_40mhz, pll_lock;
+	SB_PLL40_PAD #(
+		.DIVR(4'b0100),		// DIVR =  4
+		.DIVF(7'b0011111),	// DIVF = 31
+		.DIVQ(3'b100),		// DIVQ =  4
+		.FILTER_RANGE(3'b001),
 		.FEEDBACK_PATH("SIMPLE"),
 		.DELAY_ADJUSTMENT_MODE_FEEDBACK("FIXED"),
+		.FDA_FEEDBACK(4'b0000),
 		.DELAY_ADJUSTMENT_MODE_RELATIVE("FIXED"),
+		.FDA_RELATIVE(4'b0000),
+		.SHIFTREG_DIV_MODE(2'b00),
 		.PLLOUT_SELECT("GENCLK"),
-		.FDA_FEEDBACK(4'b1111),
-		.FDA_RELATIVE(4'b1111),
-		.DIVR(4'b0100),		// DIVR =  4
-		.DIVF(7'b0011111),		// DIVQ =  31
-		.DIVQ(3'b100),		// DIVF =  4
-		.FILTER_RANGE(3'b010)	// FILTER_RANGE = 2
-	) plli (
-		.REFERENCECLK     (clk        ),
-		.PLLOUTCORE     (clk_40mhz    ),
-		.LOCK           (pll_locked  ),
-		.BYPASS         (1'b0         ),
-		.RESETB         (1'b1         )
+		.ENABLE_ICEGATE(1'b0)
+	)
+	pll_inst (
+		.PACKAGEPIN(clk),
+		.PLLOUTCORE(clk_40mhz),
+		.PLLOUTGLOBAL(),
+		.EXTFEEDBACK(),
+		.DYNAMICDELAY(8'h00),
+		.RESETB(1'b1),
+		.BYPASS(1'b0),
+		.LATCHINPUTVALUE(),
+		.LOCK(pll_lock),
+		.SDI(),
+		.SDO(),
+		.SCLK()
 	);
-       	//SB_GB global_buffer(clk_40mhz, s_clk);
-	assign	s_clk = clk_40mhz;
+assign	s_clk = clk_40mhz;
   always @(posedge s_clk) begin
     if(sig_valid[0] == 1'b1) begin
       if(sig_rx_data[7:0] == 8'h31) begin

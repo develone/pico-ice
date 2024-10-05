@@ -1,11 +1,11 @@
-set_io --warn-no-port rx[0] B5		#PM2-A3
-set_io --warn-no-port tx[0] B3		#PM2-A2
+set_io --warn-no-port rx[0] 20		#PMupper-right-B4
+set_io --warn-no-port tx[0] 21		#PMupper-right-A4
 
 # pin definitions
-set_io led[0] A9
-set_io led[1] B8
-set_io led[2] A7
-set_io led[3] B7
+set_io led[0] 41
+set_io led[1] 40
+set_io led[2] 39
+#set_io led[3] B7
 
 #       654321      
 #	xxxxxx	PMOD2 A
@@ -13,11 +13,11 @@ set_io led[3] B7
 #       654321
 #
 #PMOD2 A 
-set_io clk C8 		#IOT_197 USER_CLK
+set_io -nowarn clk 35 		#IOT_197 USER_CLK
  
 
 
-set_io --warn-no-port rx[1] B6		#PM2-A4				 
-set_io --warn-no-port tx[1] A1 		#PM2-A1	 
+set_io --warn-no-port rx[1] 18		#PMupper-right-B2				 
+set_io --warn-no-port tx[1] 23 		#PMupper-right-B1	 
 		 
 		 
