@@ -1,0 +1,14 @@
+git clone https://github.com/develone/pico-ice.git -b test-dev-100424
+
+cd pico-ice/verilog-catzip-uart/
+
+make clean
+
+make
+
+bin2uf2 -o test-top.uf2 top-40.bin
+
+rm -f /media/devel/pico-ice/test-top.uf2
+
+cp test-top.uf2 /media/devel/pico-ice/
+
