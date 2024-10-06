@@ -6,6 +6,7 @@ build:
 	nextpnr-ice40 --package sg48 --up5k --json $(filename).json --pcf $(pcf_file) --asc $(filename).asc
 	icepack $(filename).asc $(filename).bin
 	icetime -d up5k -c 40 top-40.asc
+	bin2uf2 -o test-top.uf2 top-40.bin
 
 prog:
 	iceprog -S $(filename).bin

@@ -1,3 +1,4 @@
+10/06/24 
 git clone https://github.com/develone/pico-ice.git -b test-dev-100424
 
 cd pico-ice/verilog-catzip-uart/
@@ -6,9 +7,86 @@ make clean
 
 make
 
-bin2uf2 -o test-top.uf2 top-40.bin
+This step now done in Makefile bin2uf2 -o test-top.uf2 top-40.bin
+Makefile also tests icetime -d up5k -c 40 top-40.asc to see if it passes.
+// Reading input .asc file..
+// Reading 5k chipdb file..
+// Creating timing netlist..
+// Timing estimate: 19.58 ns (51.07 MHz)
+// Checking 25.00 ns (40.00 MHz) clock constraint: PASSED.
 
 rm -f /media/devel/pico-ice/test-top.uf2
 
 cp test-top.uf2 /media/devel/pico-ice/
+Now in the 2uarts I added 65536 of spram from ice40_ultraplus_examples/spram
+
+Prior to the change of add psram SB_LUT4 now 106. Now SB_LUT4 154
+
+icetime -d up5k -c 40 top-40.asc
+// Reading input .asc file..
+// Reading 5k chipdb file..
+// Creating timing netlist..
+// Timing estimate: 15.93 ns (62.79 MHz)
+// Checking 25.00 ns (40.00 MHz) clock constraint: PASSED.
+
+Now icetime -d up5k -c 40 top-40.asc
+// Reading input .asc file..
+// Reading 5k chipdb file..
+// Creating timing netlist..
+// Timing estimate: 19.58 ns (51.07 MHz)
+// Checking 25.00 ns (40.00 MHz) clock constraint: PASSED.
+
+bin2uf2 -o test-top.uf2 top-40.bin
+  SB_SPRAM256KA spram
+  (
+    .ADDRESS(ram_addr),
+    .DATAIN(ram_data_in),
+    .MASKWREN({ram_wren, ram_wren, ram_wren, ram_wren}),
+    .WREN(ram_wren),
+    .CHIPSELECT(1'b1),
+    .CLOCK(s_clk),
+    .STANDBY(1'b0),
+    .SLEEP(1'b0),
+    .POWEROFF(1'b1),
+    .DATAOUT(ram_data_out)
+  );
+
+=== top ===
+
+   Number of wires:                124
+   Number of wire bits:            564
+   Number of public wires:         124
+   Number of public wire bits:     564
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                402
+     SB_CARRY                       66
+     SB_DFF                          5
+     SB_DFFE                        59
+     SB_DFFESR                      70
+     SB_DFFESS                       2
+     SB_DFFSR                       36
+     SB_DFFSS                        8
+     SB_LUT4                       154
+     SB_PLL40_PAD                    1
+     SB_SPRAM256KA                   1
+
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:   259/ 5280     4%
+Info: 	        ICESTORM_RAM:     0/   30     0%
+Info: 	               SB_IO:     8/   96     8%
+Info: 	               SB_GB:     3/    8    37%
+Info: 	        ICESTORM_PLL:     1/    1   100%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+Info: 	        ICESTORM_DSP:     0/    8     0%
+Info: 	      ICESTORM_HFOSC:     0/    1     0%
+Info: 	      ICESTORM_LFOSC:     0/    1     0%
+Info: 	              SB_I2C:     0/    2     0%
+Info: 	              SB_SPI:     0/    2     0%
+Info: 	              IO_I3C:     0/    2     0%
+Info: 	         SB_LEDDA_IP:     0/    1     0%
+Info: 	         SB_RGBA_DRV:     0/    1     0%
+Info: 	      ICESTORM_SPRAM:     1/    4    25%
 
