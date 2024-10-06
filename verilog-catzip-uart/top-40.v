@@ -3,6 +3,7 @@
 //------------------------------------------------------------------------------
 // no timescale needed
 `include "uart.v"
+`include "jpeg.v"
 `default_nettype	none
 module top(
 input wire clk,
@@ -37,6 +38,36 @@ reg [8 * (uarts - 1) + 7:0] sig_rx_data;
 reg [8 * (uarts - 1) + 7:0] sig_tx_data;  //signal sig_rx_data : std_logic_vector(7 downto 0);
 //signal sig_tx_data : std_logic_vector(7 downto 0);
 reg [4:0] sig_led;
+reg signed [15:0] l0_s [3:0];
+reg signed [15:0] l1_s [3:0];
+reg signed [15:0] l2_s [3:0];
+reg signed [15:0] l3_s [3:0];
+
+reg signed [15:0] r0_s [3:0];
+reg signed [15:0] r1_s [3:0];
+reg signed [15:0] r2_s [3:0];
+reg signed [15:0] r3_s [3:0];
+
+reg signed [15:0] s0_s [3:0];
+reg signed [15:0] s1_s [3:0];
+reg signed [15:0] s2_s [3:0];
+reg signed [15:0] s3_s [3:0];
+
+wire signed [15:0] res0_s [3:0];
+wire signed [15:0] res1_s [3:0];
+wire signed [15:0] res2_s [3:0];
+wire signed [15:0] res3_s [3:0];
+reg f0_i_s [3:0];
+reg f1_i_s [3:0];
+reg f2_i_s [3:0];
+reg f3_i_s [3:0];
+
+
+
+reg e0_o_s [3:0];
+reg e1_o_s [3:0]; 
+reg e2_o_s [3:0];
+reg e3_o_s [3:0]; 
 
   assign led = sig_led;
   assign sig_led[4] = sig_counter[(23)];
@@ -194,5 +225,48 @@ assign	s_clk = clk_40mhz;
 
 
   end
+jpeg jpeg0(
+    .clk(s_clk),
+		.l_s(l0_s[0]),
+		.r_s(r0_s[0]),
+		.s_s(s0_s[0]),
+		.e_o_s(e0_o_s[0]),
+		.f_i_s(f0_i_s[0]),
+		.res_s(res0_s[0])
+  
+); 
+
+jpeg jpeg1(
+    .clk(s_clk),
+		.l_s(l1_s[1]),
+		.r_s(r1_s[1]),
+		.s_s(s1_s[0]),
+		.e_o_s(e1_o_s[1]),
+		.f_i_s(f1_i_s[1]),
+		.res_s(res1_s[0])
+  
+); 
+
+jpeg jpeg2(
+    .clk(s_clk),
+		.l_s(l2_s[2]),
+		.r_s(r2_s[2]),
+		.s_s(s2_s[2]),
+		.e_o_s(e2_o_s[2]),
+		.f_i_s(f2_i_s[2]),
+		.res_s(res2_s[2])
+  
+); 
+
+jpeg jpeg3(
+    .clk(s_clk),
+		.l_s(l3_s[3]),
+		.r_s(r3_s[3]),
+		.s_s(s3_s[3]),
+		.e_o_s(e3_o_s[3]),
+		.f_i_s(f3_i_s[3]),
+		.res_s(res3_s[3])
+  
+); 
 
 endmodule
