@@ -3,6 +3,7 @@
 //------------------------------------------------------------------------------
 // no timescale needed
 `include "uart.v"
+`default_nettype	none
 module top(
 input wire clk,
 input wire [uarts - 1:0] rx,
