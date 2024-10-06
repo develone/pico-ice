@@ -5,6 +5,7 @@ build:
 	yosys -p "synth_ice40 -top top -json $(filename).json" $(filename).v
 	nextpnr-ice40 --package sg48 --up5k --json $(filename).json --pcf $(pcf_file) --asc $(filename).asc
 	icepack $(filename).asc $(filename).bin
+	icetime -d up5k -c 40 top-40.asc
 
 prog:
 	iceprog -S $(filename).bin
