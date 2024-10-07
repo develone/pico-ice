@@ -1,0 +1,46 @@
+$date
+	Mon Oct  7 14:48:40 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	10ps
+$end
+$scope module tb_shadow1 $end
+$var wire 16 ! d15_o [15:0] $end
+$var reg 16 " d15_i [15:0] $end
+$scope module dut $end
+$var wire 16 # d15_i [15:0] $end
+$var wire 16 $ d15_o [15:0] $end
+$var wire 16 % q [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx %
+bx $
+bx #
+bx "
+bx !
+$end
+#100000000000000
+b101000 !
+b101000 $
+b101000 %
+b1010000000000 "
+b1010000000000 #
+#300000000000000
+b100100 !
+b100100 $
+b100100 %
+b10010000000000 "
+b10010000000000 #
+#600000000000000
+b11101100 !
+b11101100 $
+b11101100 %
+b11011100000000 "
+b11011100000000 #
+#3100000000000000
