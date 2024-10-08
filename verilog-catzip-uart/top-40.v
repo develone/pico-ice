@@ -34,8 +34,11 @@ parameter CLOCK_FREQ_HZ = 40000000;
 reg [23:0] sig_counter;
 reg [uarts - 1:0] sig_send;
 reg [uarts - 1:0] sig_valid;
-reg [8 * (uarts - 1) + 7:0] sig_rx_data;
-reg [8 * (uarts - 1) + 7:0] sig_tx_data;  //signal sig_rx_data : std_logic_vector(7 downto 0);
+reg [7:0] sig_rx0_data;
+reg [7:0] sig_tx0_data;  //signal sig_rx_data : std_logic_vector(7 downto 0);
+
+reg [7:0] sig_rx1_data;
+reg [7:0] sig_tx1_data;
 //signal sig_tx_data : std_logic_vector(7 downto 0);
 reg [4:0] sig_led;
 reg signed [15:0] l0_s [3:0];
@@ -76,7 +79,10 @@ reg e3_o_s [3:0];
   //led(1) <= sig_counter(sig_counter'left - 3);
   //led(0) <= sig_counter(sig_counter'left - 4);
   assign sig_send = sig_valid;
-  assign sig_tx_data = sig_rx_data;
+  //assign sig_tx_data = sig_rx_data;
+  assign sig_tx0_data = sig_rx0_data;
+  assign sig_tx1_data = sig_rx1_data;
+   
   always @(posedge clk) begin
     sig_counter <= sig_counter + (1);
   end
@@ -115,40 +121,48 @@ reg e3_o_s [3:0];
 assign	s_clk = clk_40mhz;
   always @(posedge s_clk) begin
     if(sig_valid[0] == 1'b1) begin
-      if(sig_rx_data[7:0] == 8'h31) begin
+      if(sig_rx0_data[7:0] == 8'h31) begin
         //sig_led[0] <=  ~sig_led[0];
       end
-      else if(sig_rx_data[7:0] == 8'h32) begin
+      else if(sig_rx0_data[7:0] == 8'h32) begin
         //sig_led[1] <=  ~sig_led[1];
       end
-      else if(sig_rx_data[7:0] == 8'h33) begin
+      else if(sig_rx0_data[7:0] == 8'h33) begin
         //sig_led[2] <=  ~sig_led[2];
       end
-      else if(sig_rx_data[7:0] == 8'h34) begin
-        sig_led[3] <=  ~sig_led[3];
+      else if(sig_rx0_data[7:0] == 8'h34) begin
+        //sig_led[3] <=  ~sig_led[3];
       end
     end
   end
 
-  genvar i;
-  generate for (i=0; i <= uarts - 1; i = i + 1) begin: gen_loop
-      uart #(
+uart #(
           .BIT_WIDTH(BIT_WIDTH),
       .BAUD_RATE(BAUD_RATE),
       .CLOCK_FREQ_HZ(CLOCK_FREQ_HZ))
-    uart_inst(
+    uart_inst0(
           .clk(s_clk),
-      .rx(rx[i]),
-      .tx(tx[i]),
-      .send(sig_send[i]),
-      .valid(sig_valid[i]),
-      .rx_data(sig_rx_data[7 + 8 * i -: 7 + 1]),
-      .tx_data(sig_tx_data[7 + 8 * i -: 7 + 1]));
+      .rx(rx[0]),
+      .tx(tx[0]),
+      .send(sig_send[0]),
+      .valid(sig_valid[0]),
+      .rx_data(sig_rx0_data),
+      .tx_data(sig_tx0_data)
+    );
 
-  end
-
-
-  endgenerate
+uart #(
+          .BIT_WIDTH(BIT_WIDTH),
+      .BAUD_RATE(BAUD_RATE),
+      .CLOCK_FREQ_HZ(CLOCK_FREQ_HZ))
+    uart_inst1(
+          .clk(s_clk),
+      .rx(rx[1]),
+      .tx(tx[1]),
+      .send(sig_send[1]),
+      .valid(sig_valid[1]),
+      .rx_data(sig_rx1_data),
+      .tx_data(sig_tx1_data)
+    );
 
   SB_SPRAM256KA spram
   (
