@@ -1,4 +1,10 @@
-10/06/24 
+10/07/24 
+Replaced generate loop with 2 instanaces uart_inst0 & uart_inst1
+devel@pi5-80:~ $ 
+sudo /home/devel/picocom/picocom --baud 4000000 --imap crcrlf,lfcrlf /dev/ttyUSB0
+
+sudo /home/devel/picocom/picocom --baud 4000000 --imap crcrlf,lfcrlf /dev/ttyUSB1
+
 git clone https://github.com/develone/pico-ice.git -b test-dev-100424
 
 cd pico-ice/verilog-catzip-uart/
