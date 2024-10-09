@@ -1,0 +1,13 @@
+54c54
+< reg [4:0] sig_led;
+---
+> reg [2:0] sig_led;
+87c87
+<   assign sig_led[4] = sig_counter[(23)];
+---
+>   //assign sig_led[2] = sig_counter[(23)];
+136a137,140
+> 	m_sig_tx1_data <= sig_rx0_data;
+> 	sel1 <= 1'b1;
+> 	sig_send[1] <= 1'b1;
+> 	//sel1 <= 1'b0;
