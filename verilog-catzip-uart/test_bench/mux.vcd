@@ -1,0 +1,59 @@
+$date
+	Wed Oct  9 17:23:35 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	10ps
+$end
+$scope module tb_Mux $end
+$var wire 8 ! z [7:0] $end
+$var reg 8 " a [7:0] $end
+$var reg 8 # b [7:0] $end
+$var reg 1 $ sel $end
+$scope module dut $end
+$var wire 8 % a [7:0] $end
+$var wire 8 & b [7:0] $end
+$var wire 1 $ sel $end
+$var reg 8 ' z [7:0] $end
+$scope begin MUX_MUXLOGIC $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx '
+bx &
+bx %
+x$
+bx #
+bx "
+bx !
+$end
+#100000000000000
+b1111000 "
+b1111000 %
+#300000000000000
+b11011000 !
+b11011000 '
+b11011000 #
+b11011000 &
+#600000000000000
+b1111000 !
+b1111000 '
+1$
+#1000000000000000
+b11011000 !
+b11011000 '
+0$
+#1500000000000000
+b11001000 "
+b11001000 %
+#2100000000000000
+b11111110 !
+b11111110 '
+b11111110 #
+b11111110 &
+#3100000000000000
