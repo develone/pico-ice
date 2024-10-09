@@ -4,6 +4,7 @@
 // no timescale needed
 `include "uart.v"
 `include "jpeg.v"
+`include "Mux.v"
 `default_nettype	none
 module top(
 input wire clk,
@@ -25,6 +26,16 @@ parameter [31:0] uarts=2;
 
   reg [31:0] counter;
 
+wire [7:0] mux_sig_tx0_data;
+reg [7:0] m_sig_tx0_data;
+reg [7:0] i_sig_tx0_data;
+reg sel0;
+
+wire [7:0] mux_sig_tx1_data;
+reg [7:0] m_sig_tx1_data;
+reg [7:0] i_sig_tx1_data;
+reg sel1;
+reg sel;
 parameter IDLE = 0, INIT0 = IDLE+1, INIT1=INIT0+1, INIT2=INIT1+1, INIT3=INIT2+1, RUN = INIT3+1 ;
 
 
@@ -80,8 +91,8 @@ reg e3_o_s [3:0];
   //led(0) <= sig_counter(sig_counter'left - 4);
   assign sig_send = sig_valid;
   //assign sig_tx_data = sig_rx_data;
-  assign sig_tx0_data = sig_rx0_data;
-  assign sig_tx1_data = sig_rx1_data;
+  assign i_sig_tx0_data = sig_rx0_data;
+  assign i_sig_tx1_data = sig_rx1_data;
    
   always @(posedge clk) begin
     sig_counter <= sig_counter + (1);
@@ -147,7 +158,7 @@ uart #(
       .send(sig_send[0]),
       .valid(sig_valid[0]),
       .rx_data(sig_rx0_data),
-      .tx_data(sig_tx0_data)
+      .tx_data(mux_sig_tx0_data)
     );
 
 uart #(
@@ -161,7 +172,7 @@ uart #(
       .send(sig_send[1]),
       .valid(sig_valid[1]),
       .rx_data(sig_rx1_data),
-      .tx_data(sig_tx1_data)
+      .tx_data(mux_sig_tx1_data)
     );
 
   SB_SPRAM256KA spram
@@ -282,5 +293,21 @@ jpeg jpeg3(
 		.res_s(res3_s[3])
   
 ); 
+wire [7:0] mux_sig_tx0_data;
+reg [7:0] m_sig_tx0_data;
+reg [7:0] sig_tx0_data;
 
+Mux tx0(
+    .z(mux_sig_tx0_data),
+    .a(m_sig_tx0_data),
+    .b(i_sig_tx0_data),
+    .sel(sel0)
+);
+
+Mux tx1(
+    .z(mux_sig_tx1_data),
+    .a(m_sig_tx1_data),
+    .b(i_sig_tx1_data),
+    .sel(sel1)
+);
 endmodule
