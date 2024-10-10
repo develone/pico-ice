@@ -293,9 +293,7 @@ jpeg jpeg3(
 		.res_s(res3_s[3])
   
 ); 
-wire [7:0] mux_sig_tx0_data;
-reg [7:0] m_sig_tx0_data;
-reg [7:0] sig_tx0_data;
+ 
 
 Mux tx0(
     .z(mux_sig_tx0_data),

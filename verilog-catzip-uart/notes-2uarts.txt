@@ -1,3 +1,6 @@
+10/10/24
+Added Mux.v
+
 10/07/24 
 Replaced generate loop with 2 instanaces uart_inst0 & uart_inst1
 devel@pi5-80:~ $ 
