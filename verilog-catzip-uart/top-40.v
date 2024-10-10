@@ -51,7 +51,7 @@ reg [7:0] sig_tx0_data;  //signal sig_rx_data : std_logic_vector(7 downto 0);
 reg [7:0] sig_rx1_data;
 reg [7:0] sig_tx1_data;
 //signal sig_tx_data : std_logic_vector(7 downto 0);
-reg [4:0] sig_led;
+reg [2:0] sig_led;
 reg signed [15:0] l0_s [3:0];
 reg signed [15:0] l1_s [3:0];
 reg signed [15:0] l2_s [3:0];
@@ -84,7 +84,7 @@ reg e2_o_s [3:0];
 reg e3_o_s [3:0]; 
 
   assign led = sig_led;
-  assign sig_led[4] = sig_counter[(23)];
+  //assign sig_led[2] = sig_counter[(23)];
   //led(3) <= sig_counter(sig_counter'left - 1);
   //led(2) <= sig_counter(sig_counter'left - 2);
   //led(1) <= sig_counter(sig_counter'left - 3);
