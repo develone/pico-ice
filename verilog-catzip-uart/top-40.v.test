@@ -134,10 +134,12 @@ assign	s_clk = clk_40mhz;
     if(sig_valid[0] == 1'b1) begin
       if(sig_rx0_data[7:0] == 8'h31) begin
         //sig_led[0] <=  ~sig_led[0];
+	//setting the receive data port 0 to a (m_sig_tx1_data) input of Mux
 	m_sig_tx1_data <= sig_rx0_data;
+	//enable a input of Mux
 	sel1 <= 1'b1;
 	sig_send[1] <= 1'b1;
-	//sel1 <= 1'b0;
+	sel1 <= 1'b0;
       end
       else if(sig_rx0_data[7:0] == 8'h32) begin
         //sig_led[1] <=  ~sig_led[1];
@@ -297,9 +299,7 @@ jpeg jpeg3(
 		.res_s(res3_s[3])
   
 ); 
-wire [7:0] mux_sig_tx0_data;
-reg [7:0] m_sig_tx0_data;
-reg [7:0] sig_tx0_data;
+ 
 
 Mux tx0(
     .z(mux_sig_tx0_data),
