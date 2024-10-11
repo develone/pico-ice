@@ -130,22 +130,6 @@ reg e3_o_s [3:0];
 		.SCLK()
 	);
 assign	s_clk = clk_40mhz;
-  always @(posedge s_clk) begin
-    if(sig_valid[0] == 1'b1) begin
-      if(sig_rx0_data[7:0] == 8'h31) begin
-        //sig_led[0] <=  ~sig_led[0];
-      end
-      else if(sig_rx0_data[7:0] == 8'h32) begin
-        //sig_led[1] <=  ~sig_led[1];
-      end
-      else if(sig_rx0_data[7:0] == 8'h33) begin
-        //sig_led[2] <=  ~sig_led[2];
-      end
-      else if(sig_rx0_data[7:0] == 8'h34) begin
-        //sig_led[3] <=  ~sig_led[3];
-      end
-    end
-  end
 
 uart #(
           .BIT_WIDTH(BIT_WIDTH),
@@ -188,6 +172,82 @@ uart #(
     .POWEROFF(1'b1),
     .DATAOUT(ram_data_out)
   );
+
+jpeg jpeg0(
+    .clk(s_clk),
+		.l_s(l0_s[0]),
+		.r_s(r0_s[0]),
+		.s_s(s0_s[0]),
+		.e_o_s(e0_o_s[0]),
+		.f_i_s(f0_i_s[0]),
+		.res_s(res0_s[0])
+  
+); 
+
+jpeg jpeg1(
+    .clk(s_clk),
+		.l_s(l1_s[1]),
+		.r_s(r1_s[1]),
+		.s_s(s1_s[0]),
+		.e_o_s(e1_o_s[1]),
+		.f_i_s(f1_i_s[1]),
+		.res_s(res1_s[0])
+  
+); 
+
+jpeg jpeg2(
+    .clk(s_clk),
+		.l_s(l2_s[2]),
+		.r_s(r2_s[2]),
+		.s_s(s2_s[2]),
+		.e_o_s(e2_o_s[2]),
+		.f_i_s(f2_i_s[2]),
+		.res_s(res2_s[2])
+  
+); 
+
+jpeg jpeg3(
+    .clk(s_clk),
+		.l_s(l3_s[3]),
+		.r_s(r3_s[3]),
+		.s_s(s3_s[3]),
+		.e_o_s(e3_o_s[3]),
+		.f_i_s(f3_i_s[3]),
+		.res_s(res3_s[3])
+  
+); 
+ 
+
+Mux tx0(
+    .z(mux_sig_tx0_data),
+    .a(m_sig_tx0_data),
+    .b(i_sig_tx0_data),
+    .sel(sel0)
+);
+
+Mux tx1(
+    .z(mux_sig_tx1_data),
+    .a(m_sig_tx1_data),
+    .b(i_sig_tx1_data),
+    .sel(sel1)
+);
+
+  always @(posedge s_clk) begin
+    if(sig_valid[0] == 1'b1) begin
+      if(sig_rx0_data[7:0] == 8'h31) begin
+        //sig_led[0] <=  ~sig_led[0];
+      end
+      else if(sig_rx0_data[7:0] == 8'h32) begin
+        //sig_led[1] <=  ~sig_led[1];
+      end
+      else if(sig_rx0_data[7:0] == 8'h33) begin
+        //sig_led[2] <=  ~sig_led[2];
+      end
+      else if(sig_rx0_data[7:0] == 8'h34) begin
+        //sig_led[3] <=  ~sig_led[3];
+      end
+    end
+  end
 
   initial begin
       state <= INIT0;
@@ -250,62 +310,5 @@ uart #(
 
 
   end
-jpeg jpeg0(
-    .clk(s_clk),
-		.l_s(l0_s[0]),
-		.r_s(r0_s[0]),
-		.s_s(s0_s[0]),
-		.e_o_s(e0_o_s[0]),
-		.f_i_s(f0_i_s[0]),
-		.res_s(res0_s[0])
-  
-); 
 
-jpeg jpeg1(
-    .clk(s_clk),
-		.l_s(l1_s[1]),
-		.r_s(r1_s[1]),
-		.s_s(s1_s[0]),
-		.e_o_s(e1_o_s[1]),
-		.f_i_s(f1_i_s[1]),
-		.res_s(res1_s[0])
-  
-); 
-
-jpeg jpeg2(
-    .clk(s_clk),
-		.l_s(l2_s[2]),
-		.r_s(r2_s[2]),
-		.s_s(s2_s[2]),
-		.e_o_s(e2_o_s[2]),
-		.f_i_s(f2_i_s[2]),
-		.res_s(res2_s[2])
-  
-); 
-
-jpeg jpeg3(
-    .clk(s_clk),
-		.l_s(l3_s[3]),
-		.r_s(r3_s[3]),
-		.s_s(s3_s[3]),
-		.e_o_s(e3_o_s[3]),
-		.f_i_s(f3_i_s[3]),
-		.res_s(res3_s[3])
-  
-); 
- 
-
-Mux tx0(
-    .z(mux_sig_tx0_data),
-    .a(m_sig_tx0_data),
-    .b(i_sig_tx0_data),
-    .sel(sel0)
-);
-
-Mux tx1(
-    .z(mux_sig_tx1_data),
-    .a(m_sig_tx1_data),
-    .b(i_sig_tx1_data),
-    .sel(sel1)
-);
 endmodule
