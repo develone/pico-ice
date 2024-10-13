@@ -1,0 +1,75 @@
+Fooled by minicom.
+
+This code started by a fork of https://github.com/iamaiy/vhd2icestorm
+
+This was meant to work at a much lower baud with a much higher clock.
+
+constant BIT_WIDTH		: integer := 11;
+constant BAUD_RATE 		: integer := 9600;
+constant CLOCK_FREQ_HZ 	: integer := 12000000;
+
+It was to provide several uart ports on iCE40.
+
+I tested on catboard which has a 100MHz clock. 
+
+git clone https://github.com/develone/pico-ice.git -b test-dev-100424
+
+devel@pi5-80:~/pico-ice/verilog-catzip-uart $
+
+make 
+Info: Program finished normally.
+icepack top-40.asc top-40.bin
+icetime -d up5k -c 40 top-40.asc
+// Reading input .asc file..
+// Reading 5k chipdb file..
+// Creating timing netlist..
+// Timing estimate: 19.53 ns (51.20 MHz)
+// Checking 25.00 ns (40.00 MHz) clock constraint: PASSED.
+bin2uf2 -o test-top.uf2 top-40.bin
+
+The Makefile now calls yosys, nextpnr, icetime, and bin2uf2 
+
+The next steps were used to test.
+
+rm -f /media/devel/pico-ice/test-top.uf2
+
+cp test-top.uf2 /media/devel/pico-ice/
+
+In 2 shells
+
+sudo /home/devel/picocom/picocom --baud 4000000 --imap crcrlf,lfcrlf /dev/ttyUSB0
+
+sudo /home/devel/picocom/picocom --baud 4000000 --imap crcrlf,lfcrlf /dev/ttyUSB1
+
+At first I did not notice the waring:
+
+!! Settings mismatch !! Type [C-a] [C-v] to see actual port settings
+Type [C-a] [C-h] to see available commands
+Terminal ready
+
+*** baud: 4000000 (9600)
+*** flow: none
+*** parity: none
+*** databits: 8
+*** stopbits: 1
+*** dtr: up
+*** rts: up
+*** mctl: DTR:1 DSR:0 DCD:0 RTS:1 CTS:0 RI:0
+
+My first thought was to reduce the baud to 115200
+
+This is where the next surprize was encountered.
+
+The make resulted in the following error.
+
+Info: Program finished normally.
+icepack top-40.asc top-40.bin
+icetime -d up5k -c 40 top-40.asc
+// Reading input .asc file..
+// Reading 5k chipdb file..
+// Creating timing netlist..
+// Timing estimate: 31.32 ns (31.93 MHz)
+// Checking 25.00 ns (40.00 MHz) clock constraint: FAILED.
+make: *** [Makefile:8: build] Error 1
+
+This is why I asking if someone can explain what is happening.  I have tried to learn Verilog for over 11 years with limited succes. 
