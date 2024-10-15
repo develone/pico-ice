@@ -1,0 +1,36 @@
+10/15/24
+
+lld pkg-config python3 libboost-system-dev libboost-python-dev \
+libboost-filesystem-dev
+icestorm
+commit 738af822905fdcf0466e9dd784b9ae4b0b34987f (HEAD -> master, origin/master, origin/HEAD)
+Merge: c23e99c b171bdf
+Author: Miodrag Milanović <mmicko@gmail.com>
+Date:   Mon Jun 24 15:10:57 2024 +0200
+
+    Merge pull request #335 from maribu/icebram/fix-format-specifiers
+    
+    icebram,icepack: use correct format specifiers for size
+
+nextpnr 
+cmake . -DARCH=ice40
+commit cf42baa43b1ce31e20640eaaa631bc3d3710aad3 (HEAD -> master, origin/master, origin/HEAD)
+Author: Meinhard Kissich <privat@meinhard-kissich.at>
+Date:   Wed Oct 9 18:25:02 2024 +0200
+
+    Fix RNG seed initialization (#1383)
+
+yosys
+commit 81bbde62ca7cc018bf6619429a6ef9dbb40ce140 (HEAD -> main, origin/main, origin/HEAD)
+Author: Emil J. Tywoniak <emil@tywoniak.eu>
+Date:   Tue Oct 15 12:16:02 2024 +0200
+
+    verilog_parser: silence yynerrs warning
+
+New step needed git submodule update --init
+
+make config-gcc 
+
+get errors 
+
+make
