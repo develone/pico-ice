@@ -1,0 +1,22 @@
+#Start recording tcl command: 10/7/2024 10:43:02
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_open "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/mandelbrot.rdf"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 10/8/2024 13:39:09

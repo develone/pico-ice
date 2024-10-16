@@ -1,0 +1,5 @@
+#Start recording tcl command: 10/2/2024 09:00:03
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_open "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/mandelbrot.rdf"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+#Stop recording: 10/2/2024 10:22:38

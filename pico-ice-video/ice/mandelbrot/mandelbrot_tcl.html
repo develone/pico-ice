@@ -1,0 +1,369 @@
+<HTML>
+<HEAD>
+<TITLE>Lattice TCL Log</TITLE>
+<link href="file:///C:/lscc/radiant/2024.1/data/theme/css/light/report.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="file:///C:/lscc/radiant/2024.1/data/theme/css/print/report.css" rel="stylesheet" type="text/css" media="print"/>
+<style type="text/css">
+#toc {
+  position: fixed;
+  right: 2px;
+  top: 2px;
+  padding: 2px 5px 2px 5px;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+}
+#toc_list {
+  display: none;
+  }
+</style>
+
+<script type="text/javascript">
+<!--
+function showTocList() {
+var a = document.getElementById("toc_list");
+a.style.display = "block";
+}
+
+function hideTocList() {
+var a = document.getElementById("toc_list");
+if (a)
+    a.style.display = "none";
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="content" onclick="hideTocList()"><PRE>
+<A name="pn240928081403"></A><B><U><big>pn240928081403</big></U></B>
+#Start recording tcl command: 9/25/2024 13:09:03
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_create -name "mandelbrot" -impl "impl_1" -dev iCE40UP5K-UWG30ITR -performance "High-Performance_1.2V" -synthesis "synplify"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv" "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/constraints.sdc" "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/constraints.pdc"
+prj_save 
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/impl_1/top.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/impl_1/top.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/source/impl_1/top.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_set_device -part iCE40UP5K-SG48I -performance "High-Performance_1.2V"
+prj_run Synthesis -impl impl_1
+prj_run Map -impl impl_1
+prj_run Map -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/xd.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/xd.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+prj_disable_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+prj_enable_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 9/28/2024 08:14:03
+
+
+
+<A name="pn241002102238"></A><B><U><big>pn241002102238</big></U></B>
+#Start recording tcl command: 10/2/2024 09:00:03
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_open "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/mandelbrot.rdf"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+#Stop recording: 10/2/2024 10:22:38
+
+
+
+<A name="pn241003133906"></A><B><U><big>pn241003133906</big></U></B>
+#Start recording tcl command: 10/2/2024 11:19:00
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_open "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/mandelbrot.rdf"
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Map -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/color_converter.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/color_converter.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/framebuffer.sv"
+prj_run PAR -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Map -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+#Stop recording: 10/3/2024 13:39:06
+
+
+
+<A name="pn241004114221"></A><B><U><big>pn241004114221</big></U></B>
+#Start recording tcl command: 10/3/2024 13:54:22
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_open "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/mandelbrot.rdf"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/fifo.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/fifo.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/xd.sv"
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Map -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+prj_set_impl_opt -impl "impl_1" "top" "top"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/xd.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/framebuffer.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/fifo.sv"
+#Stop recording: 10/4/2024 11:42:21
+
+
+
+<A name="pn241004151504"></A><B><U><big>pn241004151504</big></U></B>
+#Start recording tcl command: 10/4/2024 13:54:24
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_open "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/mandelbrot.rdf"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/fifo.sv"
+prj_run Synthesis -impl impl_1
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/coords.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/source/impl_1/renderer.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/source/impl_1/multiplier.sv"
+#Stop recording: 10/4/2024 15:15:04
+
+
+
+<A name="pn241008133909"></A><B><U><big>pn241008133909</big></U></B>
+#Start recording tcl command: 10/7/2024 10:43:02
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_open "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/mandelbrot.rdf"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 10/8/2024 13:39:09
+
+
+
+</PRE></DIV>
+
+<DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#pn240928081403>pn240928081403</A></LI>
+<LI><A href=#pn241002102238>pn241002102238</A></LI>
+<LI><A href=#pn241003133906>pn241003133906</A></LI>
+<LI><A href=#pn241004114221>pn241004114221</A></LI>
+<LI><A href=#pn241004151504>pn241004151504</A></LI>
+<LI><A href=#pn241008133909>pn241008133909</A></LI>
+</UL>
+</DIV>
+
+<button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
+<script type="text/javascript">
+<!--
+var scrollStep = 0;
+function scrollToTop(){
+  var funScroll = function() {
+    var top = document.body.scrollTop;
+    if (top == 0) {
+      scrollStep = 0;
+      return;
+    }
+    if (scrollStep == 0)
+      scrollStep = top/20 + 1;
+    top -= scrollStep;
+    if (top < 0)
+      top = 0;
+    document.body.scrollTop = top;
+    requestAnimationFrame(funScroll);
+  };
+  funScroll();
+}
+
+window.addEventListener('scroll', function(e) {
+  var backToTop = document.getElementById('back_to_top')
+  if (document.body.scrollTop > 0) {
+    backToTop.style.display = 'block';
+  } else {	backToTop.style.display = 'none'  }});
+
+//-->
+</script>
+
+<style type="text/css">
+#back_to_top {
+  bottom:20px; right:20px;
+  width:30px; height:30px;
+  font-size: 20px;
+  padding: 2px 5px 2px 5px;
+  position:fixed;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+  display:none;
+  -webkit-transform: rotate(90deg);
+  -webkit-transform-origin:50% 50%;
+}
+#back_to_top:focus {
+  outline-width:0px;
+}
+</style>
+
+</BODY>
+

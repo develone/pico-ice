@@ -1,0 +1,125 @@
+#Start recording tcl command: 9/25/2024 13:09:03
+#Project Location: C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot; Project name: mandelbrot
+prj_create -name "mandelbrot" -impl "impl_1" -dev iCE40UP5K-UWG30ITR -performance "High-Performance_1.2V" -synthesis "synplify"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv" "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/constraints.sdc" "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/constraints.pdc"
+prj_save 
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/impl_1/top.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/impl_1/top.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/mandelbrot/source/impl_1/top.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_set_device -part iCE40UP5K-SG48I -performance "High-Performance_1.2V"
+prj_run Synthesis -impl impl_1
+prj_run Map -impl impl_1
+prj_run Map -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/top.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/xd.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/xd.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+prj_disable_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+prj_enable_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/ram.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_remove_source "C:/Users/fuzzc/Documents/Hardware/pico-ice/pico-ice-video/ice/spi.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 9/28/2024 08:14:03
