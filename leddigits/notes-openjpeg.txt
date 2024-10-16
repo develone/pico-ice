@@ -1,0 +1,973 @@
+git clone https://github.com/develone/openjpeg.git -b ultibo t_ultibo
+
+cd t_ultibo/build
+
+devel@pi5-80:~/t_ultibo/build $ cmake ../
+CMake Deprecation Warning at CMakeLists.txt:10 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for string.h
+-- Looking for string.h - found
+-- Looking for memory.h
+-- Looking for memory.h - found
+-- Looking for stdlib.h
+-- Looking for stdlib.h - found
+-- Looking for stdio.h
+-- Looking for stdio.h - found
+-- Looking for math.h
+-- Looking for math.h - found
+-- Looking for float.h
+-- Looking for float.h - found
+-- Looking for time.h
+-- Looking for time.h - found
+-- Looking for stdarg.h
+-- Looking for stdarg.h - found
+-- Looking for ctype.h
+-- Looking for ctype.h - found
+-- Looking for assert.h
+-- Looking for assert.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for inttypes.h
+-- Looking for inttypes.h - found
+-- Looking for strings.h
+-- Looking for strings.h - found
+-- Looking for sys/stat.h
+-- Looking for sys/stat.h - found
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Checking for 64-bit off_t
+-- Checking for 64-bit off_t - present
+-- Checking for fseeko/ftello
+-- Checking for fseeko/ftello - present
+-- Large File support - found
+-- Looking for include file malloc.h
+-- Looking for include file malloc.h - found
+-- Looking for _aligned_malloc
+-- Looking for _aligned_malloc - not found
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for memalign
+-- Looking for memalign - found
+-- Found ZLIB: /usr/lib/aarch64-linux-gnu/libz.so (found version "1.2.13") 
+-- Your system seems to have a Z lib available, we will use it to generate PNG lib
+-- Found PNG: /usr/lib/aarch64-linux-gnu/libpng.so (found version "1.6.39") 
+-- Your system seems to have a PNG lib available, we will use it
+-- Found TIFF: /usr/lib/aarch64-linux-gnu/libtiff.so (found version "4.5.0")  
+-- Your system seems to have a TIFF lib available, we will use it
+-- Could NOT find LCMS2 (missing: LCMS2_LIBRARY LCMS2_INCLUDE_DIR) 
+-- Could NOT find LCMS (missing: LCMS_LIBRARY LCMS_INCLUDE_DIR) 
+-- LCMS2 or LCMS lib not found, activate BUILD_THIRDPARTY if you want build it
+CMake Deprecation Warning at tests/nonregression/CMakeLists.txt:3 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/t_ultibo/build
+
+make
+[  1%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/thread.c.o
+[  2%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/bio.c.o
+[  3%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/cio.c.o
+[  5%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/dwt.c.o
+[  6%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/event.c.o
+[  7%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/image.c.o
+[  9%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/invert.c.o
+[ 10%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/j2k.c.o
+[ 11%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/jp2.c.o
+[ 13%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/mct.c.o
+[ 14%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/mqc.c.o
+[ 15%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/openjpeg.c.o
+[ 17%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/opj_clock.c.o
+[ 18%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/pi.c.o
+[ 19%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/raw.c.o
+[ 21%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/t1.c.o
+[ 22%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/t2.c.o
+[ 23%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/tcd.c.o
+[ 25%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/tgt.c.o
+[ 26%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/function_list.c.o
+[ 27%] Building C object src/lib/openjp2/CMakeFiles/openjp2.dir/opj_malloc.c.o
+[ 28%] Linking C static library ../../../bin/libopenjp2.a
+[ 28%] Built target openjp2
+[ 30%] Building C object src/bin/jp2/CMakeFiles/opj_decompress.dir/opj_decompress.c.o
+/home/devel/t_ultibo/src/bin/jp2/opj_decompress.c: In function ‘get_next_file’:
+/home/devel/t_ultibo/src/bin/jp2/opj_decompress.c:452:43: warning: ‘.’ directive writing 1 byte into a region of size between 0 and 4095 [-Wformat-overflow=]
+  452 |                 sprintf(outfilename,"%s/%s.%s",img_fol->imgdirpath,temp_ofname,img_fol->out_format);
+      |                                           ^
+/home/devel/t_ultibo/src/bin/jp2/opj_decompress.c:452:17: note: ‘sprintf’ output 3 or more bytes (assuming 4098) into a destination of size 4096
+  452 |                 sprintf(outfilename,"%s/%s.%s",img_fol->imgdirpath,temp_ofname,img_fol->out_format);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 31%] Building C object src/bin/jp2/CMakeFiles/opj_decompress.dir/convert.c.o
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopnm’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1765:5: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+ 1765 |     while (*tmp) ++tmp; tmp -= 2;
+      |     ^~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1765:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+ 1765 |     while (*tmp) ++tmp; tmp -= 2;
+      |                         ^~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopgx’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1260:5: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-truncation]
+ 1260 |     strncpy(name, outfile, dotpos);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1242:25: note: length computed here
+ 1242 |     const size_t olen = strlen(outfile);
+      |                         ^~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopnm’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1915:13: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-truncation]
+ 1915 |             strncpy(destname, outfile, dotpos);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1912:33: note: length computed here
+ 1912 |             const size_t olen = strlen(outfile);
+      |                                 ^~~~~~~~~~~~~~~
+[ 32%] Building C object src/bin/jp2/CMakeFiles/opj_decompress.dir/convertbmp.c.o
+[ 34%] Building C object src/bin/jp2/CMakeFiles/opj_decompress.dir/index.c.o
+[ 35%] Building C object src/bin/jp2/CMakeFiles/opj_decompress.dir/__/common/color.c.o
+[ 36%] Building C object src/bin/jp2/CMakeFiles/opj_decompress.dir/__/common/opj_getopt.c.o
+[ 38%] Building C object src/bin/jp2/CMakeFiles/opj_decompress.dir/converttif.c.o
+/home/devel/t_ultibo/src/bin/jp2/converttif.c: In function ‘imagetotif’:
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:571:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  571 |     uint32 width, height;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:571:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:572:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  572 |     uint16 bps, tiPhoto;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:572:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:581:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  581 |     bps = (uint16)image->comps[0].prec;
+      |     ^~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:691:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  691 |     width   = (uint32)image->comps[0].w;
+      |     ^~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:692:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  692 |     height  = (uint32)image->comps[0].h;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:696:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  696 |     TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, (uint16)numcomps);
+      |     ^~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c: In function ‘tiftoimage’:
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1258 |     uint16 tiBps, tiPhoto, tiSf, tiSpp, tiPC;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1259:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+ 1259 |     uint32 tiWidth, tiHeight;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1259:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1361:9: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1361 |         uint16* sampleinfo;
+      |         ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1362:9: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1362 |         uint16 extrasamples;
+      |         ^~~~~~
+[ 39%] Building C object src/bin/jp2/CMakeFiles/opj_decompress.dir/convertpng.c.o
+[ 40%] Linking C executable ../../../bin/opj_decompress
+[ 40%] Built target opj_decompress
+[ 42%] Building C object src/bin/jp2/CMakeFiles/opj_compress.dir/opj_compress.c.o
+In function ‘parse_cmdline_encoder’,
+    inlined from ‘main’ at /home/devel/t_ultibo/src/bin/jp2/opj_compress.c:1763:9:
+/home/devel/t_ultibo/src/bin/jp2/opj_compress.c:941:13: warning: ‘strncpy’ specified bound 4 equals destination size [-Wstringop-truncation]
+  941 |             strncpy(progression, opj_optarg, 4);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/opj_compress.c: In function ‘main’:
+/home/devel/t_ultibo/src/bin/jp2/opj_compress.c:542:31: warning: ‘sprintf’ may write a terminating nul past the end of the destination [-Wformat-overflow=]
+  542 |     sprintf(infilename, "%s/%s", img_fol->imgdirpath, image_filename);
+      |                               ^
+In function ‘get_next_file’,
+    inlined from ‘main’ at /home/devel/t_ultibo/src/bin/jp2/opj_compress.c:1799:17:
+/home/devel/t_ultibo/src/bin/jp2/opj_compress.c:542:5: note: ‘sprintf’ output 2 or more bytes (assuming 4097) into a destination of size 4096
+  542 |     sprintf(infilename, "%s/%s", img_fol->imgdirpath, image_filename);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/opj_compress.c: In function ‘main’:
+/home/devel/t_ultibo/src/bin/jp2/opj_compress.c:555:36: warning: ‘.’ directive writing 1 byte into a region of size between 0 and 4095 [-Wformat-overflow=]
+  555 |         sprintf(outfilename, "%s/%s.%s", img_fol->imgdirpath, temp_ofname,
+      |                                    ^
+In function ‘get_next_file’,
+    inlined from ‘main’ at /home/devel/t_ultibo/src/bin/jp2/opj_compress.c:1799:17:
+/home/devel/t_ultibo/src/bin/jp2/opj_compress.c:555:9: note: ‘sprintf’ output 3 or more bytes (assuming 4098) into a destination of size 4096
+  555 |         sprintf(outfilename, "%s/%s.%s", img_fol->imgdirpath, temp_ofname,
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  556 |                 img_fol->out_format);
+      |                 ~~~~~~~~~~~~~~~~~~~~
+[ 43%] Building C object src/bin/jp2/CMakeFiles/opj_compress.dir/convert.c.o
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopnm’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1765:5: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+ 1765 |     while (*tmp) ++tmp; tmp -= 2;
+      |     ^~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1765:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+ 1765 |     while (*tmp) ++tmp; tmp -= 2;
+      |                         ^~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopgx’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1260:5: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-truncation]
+ 1260 |     strncpy(name, outfile, dotpos);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1242:25: note: length computed here
+ 1242 |     const size_t olen = strlen(outfile);
+      |                         ^~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopnm’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1915:13: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-truncation]
+ 1915 |             strncpy(destname, outfile, dotpos);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1912:33: note: length computed here
+ 1912 |             const size_t olen = strlen(outfile);
+      |                                 ^~~~~~~~~~~~~~~
+[ 44%] Building C object src/bin/jp2/CMakeFiles/opj_compress.dir/convertbmp.c.o
+[ 46%] Building C object src/bin/jp2/CMakeFiles/opj_compress.dir/index.c.o
+[ 47%] Building C object src/bin/jp2/CMakeFiles/opj_compress.dir/__/common/color.c.o
+[ 48%] Building C object src/bin/jp2/CMakeFiles/opj_compress.dir/__/common/opj_getopt.c.o
+[ 50%] Building C object src/bin/jp2/CMakeFiles/opj_compress.dir/converttif.c.o
+/home/devel/t_ultibo/src/bin/jp2/converttif.c: In function ‘imagetotif’:
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:571:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  571 |     uint32 width, height;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:571:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:572:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  572 |     uint16 bps, tiPhoto;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:572:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:581:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  581 |     bps = (uint16)image->comps[0].prec;
+      |     ^~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:691:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  691 |     width   = (uint32)image->comps[0].w;
+      |     ^~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:692:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  692 |     height  = (uint32)image->comps[0].h;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:696:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  696 |     TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, (uint16)numcomps);
+      |     ^~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c: In function ‘tiftoimage’:
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1258 |     uint16 tiBps, tiPhoto, tiSf, tiSpp, tiPC;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1259:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+ 1259 |     uint32 tiWidth, tiHeight;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1259:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1361:9: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1361 |         uint16* sampleinfo;
+      |         ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1362:9: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1362 |         uint16 extrasamples;
+      |         ^~~~~~
+[ 51%] Building C object src/bin/jp2/CMakeFiles/opj_compress.dir/convertpng.c.o
+[ 52%] Linking C executable ../../../bin/opj_compress
+[ 52%] Built target opj_compress
+[ 53%] Building C object src/bin/jp2/CMakeFiles/opj_dump.dir/opj_dump.c.o
+[ 55%] Building C object src/bin/jp2/CMakeFiles/opj_dump.dir/convert.c.o
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopnm’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1765:5: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+ 1765 |     while (*tmp) ++tmp; tmp -= 2;
+      |     ^~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1765:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+ 1765 |     while (*tmp) ++tmp; tmp -= 2;
+      |                         ^~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopgx’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1260:5: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-truncation]
+ 1260 |     strncpy(name, outfile, dotpos);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1242:25: note: length computed here
+ 1242 |     const size_t olen = strlen(outfile);
+      |                         ^~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopnm’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1915:13: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-truncation]
+ 1915 |             strncpy(destname, outfile, dotpos);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1912:33: note: length computed here
+ 1912 |             const size_t olen = strlen(outfile);
+      |                                 ^~~~~~~~~~~~~~~
+[ 56%] Building C object src/bin/jp2/CMakeFiles/opj_dump.dir/convertbmp.c.o
+[ 57%] Building C object src/bin/jp2/CMakeFiles/opj_dump.dir/index.c.o
+[ 59%] Building C object src/bin/jp2/CMakeFiles/opj_dump.dir/__/common/color.c.o
+[ 60%] Building C object src/bin/jp2/CMakeFiles/opj_dump.dir/__/common/opj_getopt.c.o
+[ 61%] Building C object src/bin/jp2/CMakeFiles/opj_dump.dir/converttif.c.o
+/home/devel/t_ultibo/src/bin/jp2/converttif.c: In function ‘imagetotif’:
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:571:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  571 |     uint32 width, height;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:571:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:572:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  572 |     uint16 bps, tiPhoto;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:572:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:581:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  581 |     bps = (uint16)image->comps[0].prec;
+      |     ^~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:691:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  691 |     width   = (uint32)image->comps[0].w;
+      |     ^~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:692:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  692 |     height  = (uint32)image->comps[0].h;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:696:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  696 |     TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, (uint16)numcomps);
+      |     ^~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c: In function ‘tiftoimage’:
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1258 |     uint16 tiBps, tiPhoto, tiSf, tiSpp, tiPC;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1259:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+ 1259 |     uint32 tiWidth, tiHeight;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1259:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1361:9: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1361 |         uint16* sampleinfo;
+      |         ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1362:9: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1362 |         uint16 extrasamples;
+      |         ^~~~~~
+[ 63%] Building C object src/bin/jp2/CMakeFiles/opj_dump.dir/convertpng.c.o
+[ 64%] Linking C executable ../../../bin/opj_dump
+[ 64%] Built target opj_dump
+[ 65%] Building C object tests/CMakeFiles/compare_images.dir/compare_images.c.o
+[ 67%] Building C object tests/CMakeFiles/compare_images.dir/__/src/bin/jp2/convert.c.o
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopnm’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1765:5: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+ 1765 |     while (*tmp) ++tmp; tmp -= 2;
+      |     ^~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1765:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+ 1765 |     while (*tmp) ++tmp; tmp -= 2;
+      |                         ^~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopgx’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1260:5: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-truncation]
+ 1260 |     strncpy(name, outfile, dotpos);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1242:25: note: length computed here
+ 1242 |     const size_t olen = strlen(outfile);
+      |                         ^~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c: In function ‘imagetopnm’:
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1915:13: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-truncation]
+ 1915 |             strncpy(destname, outfile, dotpos);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/convert.c:1912:33: note: length computed here
+ 1912 |             const size_t olen = strlen(outfile);
+      |                                 ^~~~~~~~~~~~~~~
+[ 68%] Building C object tests/CMakeFiles/compare_images.dir/__/src/bin/jp2/converttif.c.o
+/home/devel/t_ultibo/src/bin/jp2/converttif.c: In function ‘imagetotif’:
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:571:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  571 |     uint32 width, height;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:571:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:572:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  572 |     uint16 bps, tiPhoto;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:572:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:581:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  581 |     bps = (uint16)image->comps[0].prec;
+      |     ^~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:691:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  691 |     width   = (uint32)image->comps[0].w;
+      |     ^~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:692:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+  692 |     height  = (uint32)image->comps[0].h;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:696:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+  696 |     TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, (uint16)numcomps);
+      |     ^~~~~~~~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c: In function ‘tiftoimage’:
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1258 |     uint16 tiBps, tiPhoto, tiSf, tiSpp, tiPC;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1258:5: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1259:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+ 1259 |     uint32 tiWidth, tiHeight;
+      |     ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1259:5: warning: ‘uint32’ is deprecated [-Wdeprecated-declarations]
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1361:9: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1361 |         uint16* sampleinfo;
+      |         ^~~~~~
+/home/devel/t_ultibo/src/bin/jp2/converttif.c:1362:9: warning: ‘uint16’ is deprecated [-Wdeprecated-declarations]
+ 1362 |         uint16 extrasamples;
+      |         ^~~~~~
+[ 69%] Building C object tests/CMakeFiles/compare_images.dir/__/src/bin/common/opj_getopt.c.o
+[ 71%] Linking C executable ../bin/compare_images
+[ 71%] Built target compare_images
+[ 72%] Building C object tests/CMakeFiles/compare_dump_files.dir/compare_dump_files.c.o
+[ 73%] Building C object tests/CMakeFiles/compare_dump_files.dir/__/src/bin/common/opj_getopt.c.o
+[ 75%] Linking C executable ../bin/compare_dump_files
+[ 75%] Built target compare_dump_files
+[ 76%] Building C object tests/CMakeFiles/j2k_random_tile_access.dir/j2k_random_tile_access.c.o
+[ 77%] Linking C executable ../bin/j2k_random_tile_access
+[ 77%] Built target j2k_random_tile_access
+[ 78%] Building C object tests/CMakeFiles/compare_raw_files.dir/compare_raw_files.c.o
+[ 80%] Building C object tests/CMakeFiles/compare_raw_files.dir/__/src/bin/common/opj_getopt.c.o
+[ 81%] Linking C executable ../bin/compare_raw_files
+[ 81%] Built target compare_raw_files
+[ 82%] Building C object tests/CMakeFiles/test_tile_encoder.dir/test_tile_encoder.c.o
+/home/devel/t_ultibo/tests/test_tile_encoder.c: In function ‘octave_write’:
+/home/devel/t_ultibo/tests/test_tile_encoder.c:289:42: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘int *’ [-Wformat=]
+  289 |         printf("file name %s data ptr 0x%x size %d \n",fn, d_ptr,sz);
+      |                                         ~^                 ~~~~~
+      |                                          |                 |
+      |                                          unsigned int      int *
+      |                                         %ls
+/home/devel/t_ultibo/tests/test_tile_encoder.c: In function ‘octave_write_byte’:
+/home/devel/t_ultibo/tests/test_tile_encoder.c:313:42: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  313 |         printf("file name %s data ptr 0x%x size %d \n",fn, d_ptr,sz);
+      |                                         ~^                 ~~~~~
+      |                                          |                 |
+      |                                          unsigned int      char *
+      |                                         %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c: In function ‘main’:
+/home/devel/t_ultibo/tests/test_tile_encoder.c:415:31: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘char *’ [-Wformat=]
+  415 |         printf("allocating 0x%x 0x%x 0x%x \n",r,g,b);
+      |                              ~^               ~
+      |                               |               |
+      |                               unsigned int    char *
+      |                              %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:415:36: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  415 |         printf("allocating 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                   ~^            ~
+      |                                    |            |
+      |                                    unsigned int char *
+      |                                   %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:415:41: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 4 has type ‘char *’ [-Wformat=]
+  415 |         printf("allocating 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                        ~^         ~
+      |                                         |         |
+      |                                         |         char *
+      |                                         unsigned int
+      |                                        %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:461:31: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘char *’ [-Wformat=]
+  461 |                 printf("in 0x%x 0x%x 0x%x \n",r,g,b);
+      |                              ~^               ~
+      |                               |               |
+      |                               unsigned int    char *
+      |                              %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:461:36: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  461 |                 printf("in 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                   ~^            ~
+      |                                    |            |
+      |                                    unsigned int char *
+      |                                   %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:461:41: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 4 has type ‘char *’ [-Wformat=]
+  461 |                 printf("in 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                        ~^         ~
+      |                                         |         |
+      |                                         |         char *
+      |                                         unsigned int
+      |                                        %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:466:32: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘char *’ [-Wformat=]
+  466 |                 printf("out 0x%x 0x%x 0x%x \n",r,g,b);
+      |                               ~^               ~
+      |                                |               |
+      |                                unsigned int    char *
+      |                               %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:466:37: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  466 |                 printf("out 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                    ~^            ~
+      |                                     |            |
+      |                                     unsigned int char *
+      |                                    %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:466:42: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 4 has type ‘char *’ [-Wformat=]
+  466 |                 printf("out 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                         ~^         ~
+      |                                          |         |
+      |                                          |         char *
+      |                                          unsigned int
+      |                                         %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:590:37: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘char *’ [-Wformat=]
+  590 |                 printf("TRANSFER 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                    ~^               ~
+      |                                     |               |
+      |                                     unsigned int    char *
+      |                                    %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:590:42: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  590 |                 printf("TRANSFER 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                         ~^            ~
+      |                                          |            |
+      |                                          unsigned int char *
+      |                                         %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:590:47: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 4 has type ‘char *’ [-Wformat=]
+  590 |                 printf("TRANSFER 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                              ~^         ~
+      |                                               |         |
+      |                                               |         char *
+      |                                               unsigned int
+      |                                              %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:611:41: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘char *’ [-Wformat=]
+  611 |                 printf("before reset 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                        ~^               ~
+      |                                         |               |
+      |                                         unsigned int    char *
+      |                                        %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:611:46: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  611 |                 printf("before reset 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                             ~^            ~
+      |                                              |            |
+      |                                              unsigned int char *
+      |                                             %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:611:51: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 4 has type ‘char *’ [-Wformat=]
+  611 |                 printf("before reset 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                                  ~^         ~
+      |                                                   |         |
+      |                                                   |         char *
+      |                                                   unsigned int
+      |                                                  %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:800:25: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘char *’ [-Wformat=]
+  800 |         printf("FREE 0x%x 0x%x 0x%x \n",r,g,b);
+      |                        ~^               ~
+      |                         |               |
+      |                         unsigned int    char *
+      |                        %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:800:30: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  800 |         printf("FREE 0x%x 0x%x 0x%x \n",r,g,b);
+      |                             ~^            ~
+      |                              |            |
+      |                              unsigned int char *
+      |                             %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:800:35: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 4 has type ‘char *’ [-Wformat=]
+  800 |         printf("FREE 0x%x 0x%x 0x%x \n",r,g,b);
+      |                                  ~^         ~
+      |                                   |         |
+      |                                   |         char *
+      |                                   unsigned int
+      |                                  %s
+/home/devel/t_ultibo/tests/test_tile_encoder.c:399:27: warning: unused variable ‘sz’ [-Wunused-variable]
+  399 |         int pixels, size, sz;
+      |                           ^~
+/home/devel/t_ultibo/tests/test_tile_encoder.c:399:21: warning: unused variable ‘size’ [-Wunused-variable]
+  399 |         int pixels, size, sz;
+      |                     ^~~~
+/home/devel/t_ultibo/tests/test_tile_encoder.c:399:13: warning: unused variable ‘pixels’ [-Wunused-variable]
+  399 |         int pixels, size, sz;
+      |             ^~~~~~
+/home/devel/t_ultibo/tests/test_tile_encoder.c:374:19: warning: unused variable ‘fp’ [-Wunused-variable]
+  374 |         FILE *in,*fp;
+      |                   ^~
+/home/devel/t_ultibo/tests/test_tile_encoder.c:377:17: warning: ‘__builtin_memcpy’ forming offset [20, 23] is out of the bounds [0, 20] of object ‘fnstr’ with type ‘char[20]’ [-Warray-bounds]
+  377 |                 strcpy(fnstr,"../../lena_rgb_2048.bmp");
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/tests/test_tile_encoder.c:375:18: note: ‘fnstr’ declared here
+  375 |         char *fn,fnstr[20];
+      |                  ^~~~~
+[ 84%] Linking C executable ../bin/test_tile_encoder
+[ 84%] Built target test_tile_encoder
+[ 85%] Building C object tests/CMakeFiles/test_tile_decoder.dir/test_tile_decoder.c.o
+/home/devel/t_ultibo/tests/test_tile_decoder.c: In function ‘writeImage’:
+/home/devel/t_ultibo/tests/test_tile_decoder.c:330:16: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘char *’ [-Wformat=]
+  330 |     printf("0x%x \n",wrbuf);
+      |               ~^     ~~~~~
+      |                |     |
+      |                |     char *
+      |                unsigned int
+      |               %s
+/home/devel/t_ultibo/tests/test_tile_decoder.c: In function ‘main’:
+/home/devel/t_ultibo/tests/test_tile_decoder.c:624:30: warning: pointer targets in assignment from ‘OPJ_BYTE *’ {aka ‘unsigned char *’} to ‘char *’ differ in signedness [-Wpointer-sign]
+  624 |                 b_decompress =  l_data;
+      |                              ^
+/home/devel/t_ultibo/tests/test_tile_decoder.c:625:17: warning: implicit declaration of function ‘octave_write_byte’ [-Wimplicit-function-declaration]
+  625 |                 octave_write_byte(b_decompress_fn,b_decompress,da_x1*da_y1);
+      |                 ^~~~~~~~~~~~~~~~~
+/home/devel/t_ultibo/tests/test_tile_decoder.c:626:30: warning: pointer targets in assignment from ‘OPJ_BYTE *’ {aka ‘unsigned char *’} to ‘char *’ differ in signedness [-Wpointer-sign]
+  626 |                 g_decompress =  l_data+da_x1*da_y1;
+      |                              ^
+/home/devel/t_ultibo/tests/test_tile_decoder.c:628:30: warning: pointer targets in assignment from ‘OPJ_BYTE *’ {aka ‘unsigned char *’} to ‘char *’ differ in signedness [-Wpointer-sign]
+  628 |                 r_decompress =  l_data+da_x1*da_y1+da_x1*da_y1;
+      |                              ^
+/home/devel/t_ultibo/tests/test_tile_decoder.c:453:21: warning: unused variable ‘loop’ [-Wunused-variable]
+  453 |                 int loop;
+      |                     ^~~~
+/home/devel/t_ultibo/tests/test_tile_decoder.c: In function ‘octave_write’:
+/home/devel/t_ultibo/tests/test_tile_decoder.c:696:42: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘int *’ [-Wformat=]
+  696 |         printf("file name %s data ptr 0x%x size %d \n",fn, d_ptr,sz);
+      |                                         ~^                 ~~~~~
+      |                                          |                 |
+      |                                          unsigned int      int *
+      |                                         %ls
+/home/devel/t_ultibo/tests/test_tile_decoder.c: In function ‘octave_write_byte’:
+/home/devel/t_ultibo/tests/test_tile_decoder.c:726:42: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  726 |         printf("file name %s data ptr 0x%x size %d \n",fn, d_ptr,sz);
+      |                                         ~^                 ~~~~~
+      |                                          |                 |
+      |                                          unsigned int      char *
+      |                                         %s
+[ 86%] Linking C executable ../bin/test_tile_decoder
+[ 86%] Built target test_tile_decoder
+[ 88%] Building C object tests/CMakeFiles/include_openjpeg.dir/include_openjpeg.c.o
+[ 89%] Linking C executable ../bin/include_openjpeg
+[ 89%] Built target include_openjpeg
+[ 90%] Building C object tests/CMakeFiles/ppm2rgb3.dir/ppm2rgb3.c.o
+[ 92%] Linking C executable ../bin/ppm2rgb3
+[ 92%] Built target ppm2rgb3
+[ 93%] Building C object tests/unit/CMakeFiles/testempty0.dir/testempty0.c.o
+[ 94%] Linking C executable ../../bin/testempty0
+[ 94%] Built target testempty0
+[ 96%] Building C object tests/unit/CMakeFiles/testempty1.dir/testempty1.c.o
+[ 97%] Linking C executable ../../bin/testempty1
+[ 97%] Built target testempty1
+[ 98%] Building C object tests/unit/CMakeFiles/testempty2.dir/testempty2.c.o
+[100%] Linking C executable ../../bin/testempty2
+[100%] Built target testempty2
+
+ls bin/
+compare_dump_files  include_openjpeg        opj_dump    test_tile_decoder
+compare_images      j2k_random_tile_access  ppm2rgb3    test_tile_encoder
+compare_raw_files   libopenjp2.a            testempty0
+disp_decomp_rgb.m   opj_compress            testempty1
+disp_rgb.m          opj_decompress          testempty2
+
+./opj_compress -h
+
+This is the opj_compress utility from the OpenJPEG project.
+It compresses various image formats with the JPEG 2000 algorithm.
+It has been compiled against openjp2 library v2.2.0.
+
+Default encoding options:
+-------------------------
+
+ * Lossless
+ * 1 tile
+ * RGB->YCC conversion if at least 3 components
+ * Size of precinct : 2^15 x 2^15 (means 1 precinct)
+ * Size of code-block : 64 x 64
+ * Number of resolutions: 6
+ * No SOP marker in the codestream
+ * No EPH marker in the codestream
+ * No sub-sampling in x or y direction
+ * No mode switch activated
+ * Progression order: LRCP
+ * No ROI upshifted
+ * No offset of the origin of the image
+ * No offset of the origin of the tiles
+ * Reversible DWT 5-3
+
+Note:
+-----
+
+The markers written to the main_header are : SOC SIZ COD QCD COM.
+COD and QCD never appear in the tile_header.
+
+Parameters:
+-----------
+
+Required Parameters (except with -h):
+One of the two options -ImgDir or -i must be used
+
+-i <file>
+    Input file
+    Known extensions are <PBM|PGM|PPM|PNM|PAM|PGX|PNG|BMP|TIF|RAW|RAWL|TGA>
+    If used, '-o <file>' must be provided
+-o <compressed file>
+    Output file (accepted extensions are j2k or jp2).
+-ImgDir <dir>
+    Image file Directory path (example ../Images) 
+    When using this option -OutFor must be used
+-OutFor <J2K|J2C|JP2>
+    Output format for compressed files.
+    Required only if -ImgDir is used
+-F <width>,<height>,<ncomp>,<bitdepth>,{s,u}@<dx1>x<dy1>:...:<dxn>x<dyn>
+    Characteristics of the raw input image
+    If subsampling is omitted, 1x1 is assumed for all components
+      Example: -F 512,512,3,8,u@1x1:2x2:2x2
+               for raw 512x512 image with 4:2:0 subsampling
+    Required only if RAW or RAWL input file is provided.
+
+Optional Parameters:
+
+-h
+    Display the help information.
+-r <compression ratio>,<compression ratio>,...
+    Different compression ratios for successive layers.
+    The rate specified for each quality level is the desired
+    compression factor.
+    Decreasing ratios required.
+      Example: -r 20,10,1 means 
+            quality layer 1: compress 20x, 
+            quality layer 2: compress 10x 
+            quality layer 3: compress lossless
+    Options -r and -q cannot be used together.
+-q <psnr value>,<psnr value>,<psnr value>,...
+    Different psnr for successive layers (-q 30,40,50).
+    Increasing PSNR values required.
+    Options -r and -q cannot be used together.
+-n <number of resolutions>
+    Number of resolutions.
+    It corresponds to the number of DWT decompositions +1. 
+    Default: 6.
+-b <cblk width>,<cblk height>
+    Code-block size. The dimension must respect the constraint 
+    defined in the JPEG-2000 standard (no dimension smaller than 4 
+    or greater than 1024, no code-block with more than 4096 coefficients).
+    The maximum value authorized is 64x64. 
+    Default: 64x64.
+-c [<prec width>,<prec height>],[<prec width>,<prec height>],...
+    Precinct size. Values specified must be power of 2. 
+    Multiple records may be supplied, in which case the first record refers
+    to the highest resolution level and subsequent records to lower 
+    resolution levels. The last specified record is right-shifted for each 
+    remaining lower resolution levels.
+    Default: 215x215 at each resolution.
+-t <tile width>,<tile height>
+    Tile size.
+    Default: the dimension of the whole image, thus only one tile.
+-p <LRCP|RLCP|RPCL|PCRL|CPRL>
+    Progression order.
+    Default: LRCP.
+-s  <subX,subY>
+    Subsampling factor.
+    Subsampling bigger than 2 can produce error
+    Default: no subsampling.
+-POC <progression order change>/<progression order change>/...
+    Progression order change.
+    The syntax of a progression order change is the following:
+    T<tile>=<resStart>,<compStart>,<layerEnd>,<resEnd>,<compEnd>,<progOrder>
+      Example: -POC T1=0,0,1,5,3,CPRL/T1=5,0,1,6,3,CPRL
+-SOP
+    Write SOP marker before each packet.
+-EPH
+    Write EPH marker after each header packet.
+-M <key value>
+    Mode switch.
+    [1=BYPASS(LAZY) 2=RESET 4=RESTART(TERMALL)
+    8=VSC 16=ERTERM(SEGTERM) 32=SEGMARK(SEGSYM)]
+    Indicate multiple modes by adding their values.
+      Example: RESTART(4) + RESET(2) + SEGMARK(32) => -M 38
+-TP <R|L|C>
+    Divide packets of every tile into tile-parts.
+    Division is made by grouping Resolutions (R), Layers (L)
+    or Components (C).
+-ROI c=<component index>,U=<upshifting value>
+    Quantization indices upshifted for a component. 
+    Warning: This option does not implement the usual ROI (Region of Interest).
+    It should be understood as a 'Component of Interest'. It offers the 
+    possibility to upshift the value of a component during quantization step.
+    The value after c= is the component number [0, 1, 2, ...] and the value 
+    after U= is the value of upshifting. U must be in the range [0, 37].
+-d <image offset X,image offset Y>
+    Offset of the origin of the image.
+-T <tile offset X,tile offset Y>
+    Offset of the origin of the tiles.
+-I
+    Use the irreversible DWT 9-7.
+-mct <0|1|2>
+    Explicitly specifies if a Multiple Component Transform has to be used.
+    0: no MCT ; 1: RGB->YCC conversion ; 2: custom MCT.
+    If custom MCT, "-m" option has to be used (see hereunder).
+    By default, RGB->YCC conversion is used if there are 3 components or more,
+    no conversion otherwise.
+-m <file>
+    Use array-based MCT, values are coma separated, line by line
+    No specific separators between lines, no space allowed between values.
+    If this option is used, it automatically sets "-mct" option to 2.
+-cinema2K <24|48>
+    Digital Cinema 2K profile compliant codestream.
+	Need to specify the frames per second for a 2K resolution.
+    Only 24 or 48 fps are currently allowed.
+-cinema4K
+    Digital Cinema 4K profile compliant codestream.
+	Frames per second not required. Default value is 24fps.
+-jpip
+    Write jpip codestream index box in JP2 output file.
+    Currently supports only RPCL order.
+-C <comment>
+    Add <comment> in the comment marker segment.
+
+./opj_compress -r 50 -i Xess8digit-1.png -o Xess8digit-1.j2k
+
+[INFO] tile number 1 / 1
+[ERROR] opj_t2_encode_packet(): only 129 bytes remaining in output buffer. 158 needed.
+[ERROR] opj_t2_encode_packet(): only 38 bytes remaining in output buffer. 98 needed.
+[ERROR] opj_t2_encode_packet(): only 54 bytes remaining in output buffer. 98 needed.
+[ERROR] opj_t2_encode_packet(): only 54 bytes remaining in output buffer. 98 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[ERROR] opj_t2_encode_packet(): only 9 bytes remaining in output buffer. 66 needed.
+[INFO] Generated outfile Xess8digit-1.j2k
+encode time: 162 ms
+
+ls -la Xess8digit-1.png Xess8digit-1.j2k 
+-rw-r--r-- 1 devel devel  23862 Oct 16 05:11 Xess8digit-1.j2k
+-rw-r--r-- 1 devel devel 594312 Oct 16 05:03 Xess8digit-1.png
+
+ ./opj_decompress -h
+
+This is the opj_decompress utility from the OpenJPEG project.
+It decompresses JPEG 2000 codestreams to various image formats.
+It has been compiled against openjp2 library v2.2.0.
+
+Parameters:
+-----------
+
+  -ImgDir <directory> 
+	Image file Directory path 
+  -OutFor <PBM|PGM|PPM|PNM|PAM|PGX|PNG|BMP|TIF|RAW|RAWL|TGA>
+    REQUIRED only if -ImgDir is used
+	Output format for decompressed images.
+  -i <compressed file>
+    REQUIRED only if an Input image directory is not specified
+    Currently accepts J2K-files, JP2-files and JPT-files. The file type
+    is identified based on its suffix.
+  -o <decompressed file>
+    REQUIRED
+    Currently accepts formats specified above (see OutFor option)
+    Binary data is written to the file (not ascii). If a PGX
+    filename is given, there will be as many output files as there are
+    components: an indice starting from 0 will then be appended to the
+    output filename, just before the "pgx" extension. If a PGM filename
+    is given and there are more than one component, only the first component
+    will be written to the file.
+  -r <reduce factor>
+    Set the number of highest resolution levels to be discarded. The
+    image resolution is effectively divided by 2 to the power of the
+    number of discarded levels. The reduce factor is limited by the
+    smallest total number of decomposition levels among tiles.
+  -l <number of quality layers to decode>
+    Set the maximum number of quality layers to decode. If there are
+    less quality layers than the specified number, all the quality layers
+    are decoded.
+  -x  
+    Create an index file *.Idx (-x index_name.Idx) 
+  -d <x0,y0,x1,y1>
+    OPTIONAL
+    Decoding area
+    By default all the image is decoded.
+  -t <tile_number>
+    OPTIONAL
+    Set the tile number of the decoded tile. Follow the JPEG2000 convention from left-up to bottom-up
+    By default all tiles are decoded.
+  -p <comp 0 precision>[C|S][,<comp 1 precision>[C|S][,...]]
+    OPTIONAL
+    Force the precision (bit depth) of components.
+    There shall be at least 1 value. Theres no limit on the number of values (comma separated, last values ignored if too much values).
+    If there are less values than components, the last value is used for remaining components.
+    If 'C' is specified (default), values are clipped.
+    If 'S' is specified, values are scaled.
+    A 0 value can be specified (meaning original bit depth).
+  -force-rgb
+    Force output image colorspace to RGB
+  -upsample
+    Downsampled components will be upsampled to image size
+  -split-pnm
+    Split output components to different files when writing to PNM
+  -threads <num_threads>
+    Number of threads to use for decoding.
+./opj_decompress -i Xess8digit-1.j2k -o Xess8digit-1-50_1.png
+
+[INFO] Start to read j2k main header (0).
+[INFO] Main header has been correctly decoded.
+[INFO] No decoded area parameters, set the decoded area to the whole image
+[INFO] Header of tile 1 / 1 has been read.
+[INFO] Generated Outfile Xess8digit-1-50_1.png
+decode time: 22 ms
+
