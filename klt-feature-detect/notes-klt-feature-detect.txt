@@ -1,0 +1,280 @@
+git clone https://github.com/develone/klt-feature-detect.git
+
+cd klt-feature-detect/klt
+
+make
+gcc -c -DNDEBUG  convolve.c
+gcc -c -DNDEBUG  error.c
+gcc -c -DNDEBUG  pnmio.c
+gcc -c -DNDEBUG  pyramid.c
+gcc -c -DNDEBUG  selectGoodFeatures.c
+gcc -c -DNDEBUG  storeFeatures.c
+gcc -c -DNDEBUG  trackFeatures.c
+gcc -c -DNDEBUG  klt.c
+gcc -c -DNDEBUG  klt_util.c
+gcc -c -DNDEBUG  writeFeatures.c
+rm -f libklt.a
+ar ruv libklt.a convolve.o error.o pnmio.o pyramid.o selectGoodFeatures.o storeFeatures.o trackFeatures.o klt.o klt_util.o writeFeatures.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: creating libklt.a
+a - convolve.o
+a - error.o
+a - pnmio.o
+a - pyramid.o
+a - selectGoodFeatures.o
+a - storeFeatures.o
+a - trackFeatures.o
+a - klt.o
+a - klt_util.o
+a - writeFeatures.o
+rm -f *.o
+gcc -O3 -DNDEBUG  -o example1 example1.c -L. -lklt -L/usr/local/lib -L/usr/lib -lm
+gcc -O3 -DNDEBUG  -o example2 example2.c -L. -lklt -L/usr/local/lib -L/usr/lib -lm
+gcc -O3 -DNDEBUG  -o example3 example3.c -L. -lklt -L/usr/local/lib -L/usr/lib -lm
+gcc -O3 -DNDEBUG  -o example4 example4.c -L. -lklt -L/usr/local/lib -L/usr/lib -lm
+gcc -O3 -DNDEBUG  -o example5 example5.c -L. -lklt -L/usr/local/lib -L/usr/lib -lm
+
+
+./example1
+
+
+Tracking context:
+
+	mindist = 10
+	window_width = 7
+	window_height = 7
+	sequentialMode = FALSE
+	smoothBeforeSelecting = TRUE
+	writeInternalImages = FALSE
+	min_eigenvalue = 1
+	min_determinant = 0.010000
+	min_displacement = 0.100000
+	max_iterations = 10
+	max_residue = 10.000000
+	grad_sigma = 1.000000
+	smooth_sigma_fact = 0.100000
+	pyramid_sigma_fact = 0.900000
+	nSkippedPixels = 0
+	borderx = 24
+	bordery = 24
+	nPyramidLevels = 2
+	subsampling = 4
+
+	pyramid_last = NULL
+	pyramid_last_gradx = NULL
+	pyramid_last_grady = NULL
+
+
+(KLT) Selecting the 100 best features from a 320 by 240 image...  
+	100 features found.
+
+In first image:
+Feature #0:  (86.000000,71.000000) with value of 30785
+Feature #1:  (25.000000,137.000000) with value of 26254
+Feature #2:  (257.000000,97.000000) with value of 26179
+Feature #3:  (247.000000,89.000000) with value of 23658
+Feature #4:  (274.000000,73.000000) with value of 23339
+Feature #5:  (98.000000,138.000000) with value of 22970
+Feature #6:  (281.000000,146.000000) with value of 22602
+Feature #7:  (261.000000,73.000000) with value of 21562
+Feature #8:  (241.000000,72.000000) with value of 20968
+Feature #9:  (98.000000,117.000000) with value of 20894
+Feature #10:  (271.000000,92.000000) with value of 20086
+Feature #11:  (260.000000,145.000000) with value of 18628
+Feature #12:  (251.000000,73.000000) with value of 18466
+Feature #13:  (290.000000,196.000000) with value of 18380
+Feature #14:  (150.000000,122.000000) with value of 16856
+Feature #15:  (292.000000,84.000000) with value of 16443
+Feature #16:  (284.000000,74.000000) with value of 16180
+Feature #17:  (138.000000,122.000000) with value of 15954
+Feature #18:  (173.000000,189.000000) with value of 15545
+Feature #19:  (111.000000,112.000000) with value of 15398
+Feature #20:  (282.000000,89.000000) with value of 14747
+Feature #21:  (112.000000,141.000000) with value of 14339
+Feature #22:  (258.000000,109.000000) with value of 14158
+Feature #23:  (94.000000,166.000000) with value of 13366
+Feature #24:  (92.000000,90.000000) with value of 13192
+Feature #25:  (291.000000,113.000000) with value of 12843
+Feature #26:  (142.000000,98.000000) with value of 12619
+Feature #27:  (94.000000,177.000000) with value of 12395
+Feature #28:  (118.000000,59.000000) with value of 12295
+Feature #29:  (113.000000,213.000000) with value of 11954
+Feature #30:  (151.000000,60.000000) with value of 11689
+Feature #31:  (94.000000,148.000000) with value of 11458
+Feature #32:  (131.000000,207.000000) with value of 11096
+Feature #33:  (287.000000,160.000000) with value of 10966
+Feature #34:  (102.000000,214.000000) with value of 10641
+Feature #35:  (268.000000,106.000000) with value of 10529
+Feature #36:  (52.000000,64.000000) with value of 10204
+Feature #37:  (160.000000,195.000000) with value of 10007
+Feature #38:  (157.000000,103.000000) with value of 9594
+Feature #39:  (277.000000,203.000000) with value of 9170
+Feature #40:  (254.000000,184.000000) with value of 9137
+Feature #41:  (204.000000,37.000000) with value of 8690
+Feature #42:  (277.000000,214.000000) with value of 7976
+Feature #43:  (203.000000,70.000000) with value of 7886
+Feature #44:  (139.000000,58.000000) with value of 7794
+Feature #45:  (288.000000,215.000000) with value of 7778
+Feature #46:  (162.000000,60.000000) with value of 7748
+Feature #47:  (260.000000,210.000000) with value of 7459
+Feature #48:  (92.000000,104.000000) with value of 7224
+Feature #49:  (222.000000,200.000000) with value of 7133
+Feature #50:  (133.000000,154.000000) with value of 6685
+Feature #51:  (263.000000,128.000000) with value of 6230
+Feature #52:  (62.000000,139.000000) with value of 6219
+Feature #53:  (204.000000,198.000000) with value of 6211
+Feature #54:  (73.000000,128.000000) with value of 6004
+Feature #55:  (284.000000,130.000000) with value of 5975
+Feature #56:  (183.000000,47.000000) with value of 5903
+Feature #57:  (292.000000,94.000000) with value of 5782
+Feature #58:  (82.000000,188.000000) with value of 5408
+Feature #59:  (55.000000,150.000000) with value of 5367
+Feature #60:  (56.000000,127.000000) with value of 4999
+Feature #61:  (183.000000,115.000000) with value of 4869
+Feature #62:  (249.000000,204.000000) with value of 4679
+Feature #63:  (170.000000,204.000000) with value of 4468
+Feature #64:  (232.000000,202.000000) with value of 4449
+Feature #65:  (75.000000,150.000000) with value of 4414
+Feature #66:  (225.000000,57.000000) with value of 4402
+Feature #67:  (111.000000,131.000000) with value of 4337
+Feature #68:  (184.000000,101.000000) with value of 4184
+Feature #69:  (76.000000,138.000000) with value of 4167
+Feature #70:  (43.000000,116.000000) with value of 4050
+Feature #71:  (137.000000,77.000000) with value of 3854
+Feature #72:  (257.000000,87.000000) with value of 3842
+Feature #73:  (255.000000,165.000000) with value of 3596
+Feature #74:  (225.000000,212.000000) with value of 3560
+Feature #75:  (32.000000,71.000000) with value of 3534
+Feature #76:  (104.000000,151.000000) with value of 3520
+Feature #77:  (160.000000,118.000000) with value of 3401
+Feature #78:  (72.000000,188.000000) with value of 3349
+Feature #79:  (121.000000,115.000000) with value of 3281
+Feature #80:  (121.000000,203.000000) with value of 3278
+Feature #81:  (222.000000,71.000000) with value of 3261
+Feature #82:  (237.000000,212.000000) with value of 3236
+Feature #83:  (95.000000,42.000000) with value of 3223
+Feature #84:  (281.000000,115.000000) with value of 3171
+Feature #85:  (31.000000,105.000000) with value of 3129
+Feature #86:  (203.000000,187.000000) with value of 3114
+Feature #87:  (152.000000,90.000000) with value of 3112
+Feature #88:  (168.000000,70.000000) with value of 2979
+Feature #89:  (76.000000,173.000000) with value of 2897
+Feature #90:  (138.000000,88.000000) with value of 2814
+Feature #91:  (88.000000,213.000000) with value of 2768
+Feature #92:  (184.000000,87.000000) with value of 2712
+Feature #93:  (52.000000,140.000000) with value of 2658
+Feature #94:  (245.000000,101.000000) with value of 2561
+Feature #95:  (226.000000,40.000000) with value of 2561
+Feature #96:  (82.000000,198.000000) with value of 2527
+Feature #97:  (215.000000,190.000000) with value of 2506
+Feature #98:  (169.000000,129.000000) with value of 2406
+Feature #99:  (134.000000,197.000000) with value of 2403
+(KLT) Writing 100 features to PPM file: 'feat1.ppm'
+(KLT) Writing feature list to text file: 'feat1.txt'
+(KLT) Tracking 100 features in a 320 by 240 image...  
+	92 features successfully tracked.
+
+In second image:
+Feature #0:  (81.302605,70.944870) with value of 0
+Feature #1:  (-1.000000,-1.000000) with value of -4
+Feature #2:  (254.788879,97.014748) with value of 0
+Feature #3:  (244.883026,88.973701) with value of 0
+Feature #4:  (271.856445,72.978897) with value of 0
+Feature #5:  (95.021667,137.890747) with value of 0
+Feature #6:  (277.132172,145.989700) with value of 0
+Feature #7:  (258.880585,72.965683) with value of 0
+Feature #8:  (238.868896,71.956512) with value of 0
+Feature #9:  (94.967659,116.965111) with value of 0
+Feature #10:  (268.881744,92.020027) with value of 0
+Feature #11:  (256.343811,144.964600) with value of 0
+Feature #12:  (248.889450,72.987656) with value of 0
+Feature #13:  (286.188477,196.226318) with value of 0
+Feature #14:  (147.814362,121.970627) with value of 0
+Feature #15:  (287.881714,84.073189) with value of 0
+Feature #16:  (-1.000000,-1.000000) with value of -5
+Feature #17:  (135.421371,122.046097) with value of 0
+Feature #18:  (168.281799,188.875595) with value of 0
+Feature #19:  (108.030823,111.970757) with value of 0
+Feature #20:  (-1.000000,-1.000000) with value of -5
+Feature #21:  (109.104355,140.874344) with value of 0
+Feature #22:  (255.896729,109.032486) with value of 0
+Feature #23:  (89.426338,165.949585) with value of 0
+Feature #24:  (87.377823,89.914398) with value of 0
+Feature #25:  (286.920074,113.012115) with value of 0
+Feature #26:  (139.849060,97.929680) with value of 0
+Feature #27:  (89.476891,176.953064) with value of 0
+Feature #28:  (-1.000000,-1.000000) with value of -5
+Feature #29:  (109.148315,212.872894) with value of 0
+Feature #30:  (148.834564,60.006748) with value of 0
+Feature #31:  (-1.000000,-1.000000) with value of -5
+Feature #32:  (126.911720,206.862915) with value of 0
+Feature #33:  (283.166748,160.222382) with value of 0
+Feature #34:  (98.148972,213.838562) with value of 0
+Feature #35:  (265.895355,106.037094) with value of 0
+Feature #36:  (49.456223,63.923912) with value of 0
+Feature #37:  (155.356796,194.910217) with value of 0
+Feature #38:  (154.875259,102.944420) with value of 0
+Feature #39:  (271.972382,203.133194) with value of 0
+Feature #40:  (250.653229,184.177277) with value of 0
+Feature #41:  (202.943558,37.043285) with value of 0
+Feature #42:  (271.932800,214.117355) with value of 0
+Feature #43:  (201.899460,69.959465) with value of 0
+Feature #44:  (136.726578,58.020802) with value of 0
+Feature #45:  (-1.000000,-1.000000) with value of -4
+Feature #46:  (159.854385,60.019398) with value of 0
+Feature #47:  (254.867065,210.106445) with value of 0
+Feature #48:  (87.368988,103.632454) with value of 0
+Feature #49:  (216.437866,200.280579) with value of 0
+Feature #50:  (130.232788,153.868240) with value of 0
+Feature #51:  (260.846924,128.028000) with value of 0
+Feature #52:  (57.064514,138.808441) with value of 0
+Feature #53:  (198.573975,197.978500) with value of 0
+Feature #54:  (68.068077,127.907043) with value of 0
+Feature #55:  (-1.000000,-1.000000) with value of -5
+Feature #56:  (180.812210,47.013153) with value of 0
+Feature #57:  (287.973236,94.098656) with value of 0
+Feature #58:  (77.215683,187.751831) with value of 0
+Feature #59:  (50.141533,149.743866) with value of 0
+Feature #60:  (51.143139,126.891220) with value of 0
+Feature #61:  (180.811417,114.273514) with value of 0
+Feature #62:  (243.929230,204.112976) with value of 0
+Feature #63:  (165.072083,203.948441) with value of 0
+Feature #64:  (226.844315,202.208405) with value of 0
+Feature #65:  (70.137367,149.764450) with value of 0
+Feature #66:  (222.973587,56.942390) with value of 0
+Feature #67:  (108.080177,130.973099) with value of 0
+Feature #68:  (181.646454,100.923889) with value of 0
+Feature #69:  (71.114609,137.844147) with value of 0
+Feature #70:  (38.088856,115.859146) with value of 0
+Feature #71:  (134.784775,76.992371) with value of 0
+Feature #72:  (254.826309,86.972572) with value of 0
+Feature #73:  (251.700668,165.345245) with value of 0
+Feature #74:  (219.322723,212.319382) with value of 0
+Feature #75:  (27.369162,70.938232) with value of 0
+Feature #76:  (101.051392,150.902924) with value of 0
+Feature #77:  (157.797058,117.902252) with value of 0
+Feature #78:  (67.165718,187.783829) with value of 0
+Feature #79:  (118.093239,114.976646) with value of 0
+Feature #80:  (117.333138,202.915024) with value of 0
+Feature #81:  (220.160950,69.993088) with value of 0
+Feature #82:  (231.863235,212.076080) with value of 0
+Feature #83:  (92.226120,41.897926) with value of 0
+Feature #84:  (277.030090,115.755394) with value of 0
+Feature #85:  (26.324064,104.816154) with value of 0
+Feature #86:  (197.876221,186.971313) with value of 0
+Feature #87:  (149.866440,89.982376) with value of 0
+Feature #88:  (165.780548,69.987434) with value of 0
+Feature #89:  (71.168991,172.850998) with value of 0
+Feature #90:  (135.796555,87.768066) with value of 0
+Feature #91:  (83.384995,212.809555) with value of 0
+Feature #92:  (181.718719,86.954895) with value of 0
+Feature #93:  (47.215267,139.760010) with value of 0
+Feature #94:  (241.389175,100.243759) with value of 0
+Feature #95:  (223.954041,40.009640) with value of 0
+Feature #96:  (77.201675,197.688293) with value of 0
+Feature #97:  (209.735764,190.137390) with value of 0
+Feature #98:  (164.943893,129.196304) with value of 0
+Feature #99:  (-1.000000,-1.000000) with value of -5
+(KLT) Writing 92 features to PPM file: 'feat2.ppm'
+(KLT) Writing feature list to binary file: 'feat2.fl'
+(KLT) Writing feature list to text file: 'feat2.txt'
