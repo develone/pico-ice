@@ -50,12 +50,18 @@ int main()
 		board_init_after_tusb();
 	}
 
-	start_next_frame();
-
 	while (true)
 	{
-		printf("%d %d |", command_buffer[0], command_buffer[1]);
-		for (int i = 0; i < 8; i++) { printf(" %d", gpio_get(i)); }
+		uint8_t val = 0;
+		for (int i = 0; i < 8; i++)
+		{
+			val |= gpio_get(i) << i;
+		}
+		printf("%d %d %d | %3d |", gpio_get(DIR_PIN), gpio_get(REQ_PIN), gpio_get(FIN_PIN), val);
+		for (int i = 0; i < 12; i++)
+		{
+			printf(" %3d", frame_buffer[i]);
+		}
 		printf("\n");
 		tud_task();
 		video_task();

@@ -44,11 +44,11 @@ set pindirs, 0b01   ; ...
 wait 1 gpio REQ_PIN ; wait for data to be ready, indicated by req signal high
 
 .wrap_target
-wait 1 gpio CLK_PIN ; synchronize
-wait 0 gpio CLK_PIN ; synchronize
 in pins, 8          ; read data from pins
 push noblock        ; write data to memory
+wait 0 gpio CLK_PIN ; synchronize
 jmp pin start       ; stop receiving data if FPGA is done
+wait 1 gpio CLK_PIN ; synchronize
 .wrap               ; otherwise keep receiving data
 
 % c-sdk {
