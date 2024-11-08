@@ -1,0 +1,729 @@
+11/07/24
+https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf
+
+mkdir test-micropython
+
+cd tes-micropython
+
+git clone https://github.com/micropython/micropython.git --branch master
+
+cd micropython/
+
+git submodule update --init
+
+devel@pi5-80:~/test-micropython/micropython $ make -C mpy-cross
+make: Entering directory '/home/devel/test-micropython/micropython/mpy-cross'
+Use make V=1 or set BUILD_VERBOSE in your environment to increase build verbosity.
+mkdir -p build/genhdr
+GEN build/genhdr/mpversion.h
+GEN build/genhdr/qstr.i.last
+GEN build/genhdr/qstr.split
+GEN build/genhdr/qstrdefs.collected.h
+QSTR updated
+GEN build/genhdr/qstrdefs.generated.h
+GEN build/genhdr/moduledefs.split
+GEN build/genhdr/moduledefs.collected
+Module registrations updated
+GEN build/genhdr/moduledefs.h
+GEN build/genhdr/root_pointers.split
+GEN build/genhdr/root_pointers.collected
+Root pointer registrations updated
+GEN build/genhdr/root_pointers.h
+mkdir -p build/py/
+mkdir -p build/shared/runtime/
+CC ../py/mpstate.c
+CC ../py/nlr.c
+CC ../py/nlrx86.c
+CC ../py/nlrx64.c
+CC ../py/nlrthumb.c
+CC ../py/nlraarch64.c
+CC ../py/nlrmips.c
+CC ../py/nlrpowerpc.c
+CC ../py/nlrxtensa.c
+CC ../py/nlrrv32.c
+CC ../py/nlrrv64.c
+CC ../py/nlrsetjmp.c
+CC ../py/malloc.c
+CC ../py/gc.c
+CC ../py/pystack.c
+CC ../py/qstr.c
+CC ../py/vstr.c
+CC ../py/mpprint.c
+CC ../py/unicode.c
+CC ../py/mpz.c
+CC ../py/reader.c
+CC ../py/lexer.c
+CC ../py/parse.c
+CC ../py/scope.c
+CC ../py/compile.c
+CC ../py/emitcommon.c
+CC ../py/emitbc.c
+CC ../py/asmbase.c
+CC ../py/asmx64.c
+CC ../py/emitnx64.c
+CC ../py/asmx86.c
+CC ../py/emitnx86.c
+CC ../py/asmthumb.c
+CC ../py/emitnthumb.c
+CC ../py/emitinlinethumb.c
+CC ../py/asmarm.c
+CC ../py/emitnarm.c
+CC ../py/asmxtensa.c
+CC ../py/emitnxtensa.c
+CC ../py/emitinlinextensa.c
+CC ../py/emitnxtensawin.c
+CC ../py/asmrv32.c
+CC ../py/emitnrv32.c
+CC ../py/emitndebug.c
+CC ../py/formatfloat.c
+CC ../py/parsenumbase.c
+CC ../py/parsenum.c
+CC ../py/emitglue.c
+CC ../py/persistentcode.c
+CC ../py/runtime.c
+CC ../py/runtime_utils.c
+CC ../py/scheduler.c
+CC ../py/nativeglue.c
+CC ../py/pairheap.c
+CC ../py/ringbuf.c
+CC ../py/cstack.c
+CC ../py/stackctrl.c
+CC ../py/argcheck.c
+CC ../py/warning.c
+CC ../py/profile.c
+CC ../py/map.c
+CC ../py/obj.c
+CC ../py/objarray.c
+CC ../py/objattrtuple.c
+CC ../py/objbool.c
+CC ../py/objboundmeth.c
+CC ../py/objcell.c
+CC ../py/objclosure.c
+CC ../py/objcomplex.c
+CC ../py/objdeque.c
+CC ../py/objdict.c
+CC ../py/objenumerate.c
+CC ../py/objexcept.c
+CC ../py/objfilter.c
+CC ../py/objfloat.c
+CC ../py/objfun.c
+CC ../py/objgenerator.c
+CC ../py/objgetitemiter.c
+CC ../py/objint.c
+CC ../py/objint_longlong.c
+CC ../py/objint_mpz.c
+CC ../py/objlist.c
+CC ../py/objmap.c
+CC ../py/objmodule.c
+CC ../py/objobject.c
+CC ../py/objpolyiter.c
+CC ../py/objproperty.c
+CC ../py/objnone.c
+CC ../py/objnamedtuple.c
+CC ../py/objrange.c
+CC ../py/objreversed.c
+CC ../py/objringio.c
+CC ../py/objset.c
+CC ../py/objsingleton.c
+CC ../py/objslice.c
+CC ../py/objstr.c
+CC ../py/objstrunicode.c
+CC ../py/objstringio.c
+CC ../py/objtuple.c
+CC ../py/objtype.c
+CC ../py/objzip.c
+CC ../py/opmethods.c
+CC ../py/sequence.c
+CC ../py/stream.c
+CC ../py/binary.c
+CC ../py/builtinimport.c
+CC ../py/builtinevex.c
+CC ../py/builtinhelp.c
+CC ../py/modarray.c
+CC ../py/modbuiltins.c
+CC ../py/modcollections.c
+CC ../py/modgc.c
+CC ../py/modio.c
+CC ../py/modmath.c
+CC ../py/modcmath.c
+CC ../py/modmicropython.c
+CC ../py/modstruct.c
+CC ../py/modsys.c
+CC ../py/moderrno.c
+CC ../py/modthread.c
+CC ../py/vm.c
+CC ../py/bc.c
+CC ../py/showbc.c
+CC ../py/repl.c
+CC ../py/smallint.c
+CC ../py/frozenmod.c
+CC main.c
+CC gccollect.c
+CC ../shared/runtime/gchelper_generic.c
+LINK build/mpy-cross
+   text	   data	    bss	    dec	    hex	filename
+ 463440	  15072	    840	 479352	  75078	build/mpy-cross
+make: Leaving directory '/home/devel/test-micropython/micropython/mpy-cross'
+cd ports/rp2
+
+devel@pi5-80:~/test-micropython/micropython/ports/rp2 $ make
+[ -e build-RPI_PICO/Makefile ] || cmake -S . -B build-RPI_PICO -DPICO_BUILD_DOCS=0 -DMICROPY_BOARD=RPI_PICO -DMICROPY_BOARD_DIR="/home/devel/test-micropython/micropython/ports/rp2/boards/RPI_PICO"
+PICO_SDK_PATH is /home/devel/test-micropython/micropython/lib/pico-sdk
+Target board (PICO_BOARD) is 'pico'.
+Using board configuration from /home/devel/test-micropython/micropython/lib/pico-sdk/src/boards/include/boards/pico.h
+Pico Platform (PICO_PLATFORM) is 'rp2040'.
+Defaulting compiler (PICO_COMPILER) to 'pico_arm_cortex_m0plus_gcc' since not specified.
+Configuring toolchain based on PICO_COMPILER 'pico_arm_cortex_m0plus_gcc'
+Defaulting PICO_GCC_TRIPLE to 'arm-none-eabi'
+-- The C compiler identification is GNU 12.2.1
+-- The CXX compiler identification is GNU 12.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/arm-none-eabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/arm-none-eabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+Build type is MinSizeRel
+CMake Warning at /home/devel/test-micropython/micropython/lib/pico-sdk/tools/Findpicotool.cmake:28 (message):
+  No installed picotool with version 2.0.0 found - building from source
+
+  It is recommended to build and install picotool separately, or to set
+  PICOTOOL_FETCH_FROM_GIT_PATH to a common directory for all your SDK
+  projects
+Call Stack (most recent call first):
+  /home/devel/test-micropython/micropython/lib/pico-sdk/tools/CMakeLists.txt:138 (find_package)
+  /home/devel/test-micropython/micropython/lib/pico-sdk/src/cmake/on_device.cmake:33 (pico_init_picotool)
+  /home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2040/boot_stage2/CMakeLists.txt:57 (pico_add_dis_output)
+  /home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2040/boot_stage2/CMakeLists.txt:101 (pico_define_boot_stage2)
+
+
+Downloading Picotool
+-- Found Python3: /usr/bin/python3 (found version "3.11.2") found components: Interpreter 
+TinyUSB available at /home/devel/test-micropython/micropython/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+BTstack available at /home/devel/test-micropython/micropython/lib/btstack
+lwIP available at /home/devel/test-micropython/micropython/lib/lwip
+Found User C Module(s): 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/test-micropython/micropython/ports/rp2/build-RPI_PICO
+make -s -C build-RPI_PICO || (echo -e "See \033[1;31mhttps://github.com/micropython/micropython/wiki/Build-Troubleshooting\033[0m"; false)
+[  0%] Built target picotoolForceReconfigure
+[  0%] Creating directories for 'picotoolBuild'
+[  0%] No download step for 'picotoolBuild'
+[  1%] No update step for 'picotoolBuild'
+[  1%] No patch step for 'picotoolBuild'
+[  1%] Performing configure step for 'picotoolBuild'
+Not searching for unused variables given on the command line.
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+.//home/devel/test-micropython/micropython/ports/rp2/build-RPI_PICO/_deps/picotool/
+-- Using the single-header code from /home/devel/test-micropython/micropython/ports/rp2/build-RPI_PICO/_deps/picotool-src/lib/nlohmann_json/single_include/
+lib/mbedtls submodule needs to be initialized for bintool hashing/signing
+mbedtls not found - no signing/hashing support will be built
+libUSB is not found - no USB support will be built
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/test-micropython/micropython/ports/rp2/build-RPI_PICO/_deps/picotool-build
+[  1%] Performing build step for 'picotoolBuild'
+[ 14%] Built target errors
+[ 28%] Built target elf
+[ 42%] Built target bintool
+[ 57%] Built target elf2uf2
+[100%] Built target picotool
+[  2%] Performing install step for 'picotoolBuild'
+[ 14%] Built target errors
+[ 28%] Built target elf
+[ 42%] Built target bintool
+[ 57%] Built target elf2uf2
+[100%] Built target picotool
+Install the project...
+-- Install configuration: "Release"
+[  2%] Performing test step for 'picotoolBuild'
+picotool v2.0.0 (Linux, GNU-12.2.0, Release)
+[  2%] Completed 'picotoolBuild'
+[  2%] Built target picotoolBuild
+[  2%] Building ASM object pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+[  2%] Linking ASM executable bs2_default.elf
+[  2%] Built target bs2_default
+[  2%] Generating bs2_default.bin
+[  3%] Generating bs2_default_padded_checksummed.S
+[  3%] Built target bs2_default_padded_checksummed_asm
+GEN /home/devel/test-micropython/micropython/ports/rp2/build-RPI_PICO/genhdr/mpversion.h
+[  3%] Built target BUILD_VERSION_HEADER
+[  4%] Generating genhdr/pins.h, pins_RPI_PICO.c
+[  4%] Generating genhdr/qstr.i.last
+[  4%] Generating genhdr/qstr.split
+[  4%] Generating genhdr/qstrdefs.collected.h
+QSTR updated
+[  4%] Generating genhdr/qstrdefs.preprocessed.h
+[  4%] Generating genhdr/qstrdefs.generated.h
+[  4%] Generating genhdr/root_pointers.split
+[  5%] Generating genhdr/root_pointers.collected
+Root pointer registrations updated
+[  5%] Generating genhdr/root_pointers.h
+MPY rp2.py
+MPY _boot_fat.py
+MPY _boot.py
+MPY asyncio/__init__.py
+MPY asyncio/core.py
+MPY asyncio/event.py
+MPY asyncio/funcs.py
+MPY asyncio/lock.py
+MPY asyncio/stream.py
+MPY uasyncio.py
+MPY onewire.py
+MPY ds18x20.py
+MPY dht.py
+MPY neopixel.py
+GEN /home/devel/test-micropython/micropython/ports/rp2/build-RPI_PICO/frozen_content.c
+[  5%] Built target BUILD_FROZEN_CONTENT
+[  5%] Generating genhdr/moduledefs.split
+[  5%] Generating genhdr/moduledefs.collected
+Module registrations updated
+[  5%] Generating genhdr/moduledefs.h
+[  6%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/argcheck.c.obj
+[  6%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/asmarm.c.obj
+[  6%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/asmbase.c.obj
+[  6%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/asmrv32.c.obj
+[  7%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/asmthumb.c.obj
+[  7%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/asmx64.c.obj
+[  7%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/asmx86.c.obj
+[  7%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/asmxtensa.c.obj
+[  7%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/bc.c.obj
+[  8%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/binary.c.obj
+[  8%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/builtinevex.c.obj
+[  8%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/builtinhelp.c.obj
+[  8%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/builtinimport.c.obj
+[  8%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/compile.c.obj
+[  9%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/cstack.c.obj
+[  9%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitbc.c.obj
+[  9%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitcommon.c.obj
+[  9%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitglue.c.obj
+[ 10%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitinlinethumb.c.obj
+[ 10%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitinlinextensa.c.obj
+[ 10%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitnarm.c.obj
+[ 10%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitndebug.c.obj
+[ 10%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitnrv32.c.obj
+[ 11%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitnthumb.c.obj
+[ 11%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitnx64.c.obj
+[ 11%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitnx86.c.obj
+[ 11%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitnxtensa.c.obj
+[ 12%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/emitnxtensawin.c.obj
+[ 12%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/formatfloat.c.obj
+[ 12%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/frozenmod.c.obj
+[ 12%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/gc.c.obj
+[ 12%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/lexer.c.obj
+[ 13%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/malloc.c.obj
+[ 13%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/map.c.obj
+[ 13%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modarray.c.obj
+[ 13%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modbuiltins.c.obj
+[ 14%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modcmath.c.obj
+[ 14%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modcollections.c.obj
+[ 14%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modgc.c.obj
+[ 14%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modio.c.obj
+[ 14%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modmath.c.obj
+[ 15%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modmicropython.c.obj
+[ 15%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modstruct.c.obj
+[ 15%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modsys.c.obj
+[ 15%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/modthread.c.obj
+[ 15%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/moderrno.c.obj
+[ 16%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/mpprint.c.obj
+[ 16%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/mpstate.c.obj
+[ 16%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/mpz.c.obj
+[ 16%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nativeglue.c.obj
+[ 17%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlr.c.obj
+[ 17%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrmips.c.obj
+[ 17%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrpowerpc.c.obj
+[ 17%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrrv32.c.obj
+[ 17%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrrv64.c.obj
+[ 18%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrsetjmp.c.obj
+[ 18%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrthumb.c.obj
+[ 18%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrx64.c.obj
+[ 18%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrx86.c.obj
+[ 19%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/nlrxtensa.c.obj
+[ 19%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/obj.c.obj
+[ 19%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objarray.c.obj
+[ 19%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objattrtuple.c.obj
+[ 19%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objbool.c.obj
+[ 20%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objboundmeth.c.obj
+[ 20%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objcell.c.obj
+[ 20%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objclosure.c.obj
+[ 20%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objcomplex.c.obj
+[ 21%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objdeque.c.obj
+[ 21%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objdict.c.obj
+[ 21%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objenumerate.c.obj
+[ 21%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objexcept.c.obj
+[ 21%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objfilter.c.obj
+[ 22%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objfloat.c.obj
+[ 22%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objfun.c.obj
+[ 22%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objgenerator.c.obj
+[ 22%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objgetitemiter.c.obj
+[ 22%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objint.c.obj
+[ 23%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objint_longlong.c.obj
+[ 23%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objint_mpz.c.obj
+[ 23%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objlist.c.obj
+[ 23%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objmap.c.obj
+[ 24%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objmodule.c.obj
+[ 24%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objnamedtuple.c.obj
+[ 24%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objnone.c.obj
+[ 24%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objobject.c.obj
+[ 24%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objpolyiter.c.obj
+[ 25%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objproperty.c.obj
+[ 25%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objrange.c.obj
+[ 25%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objreversed.c.obj
+[ 25%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objringio.c.obj
+[ 26%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objset.c.obj
+[ 26%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objsingleton.c.obj
+[ 26%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objslice.c.obj
+[ 26%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objstr.c.obj
+[ 26%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objstringio.c.obj
+[ 27%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objstrunicode.c.obj
+[ 27%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objtuple.c.obj
+[ 27%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objtype.c.obj
+[ 27%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/objzip.c.obj
+[ 28%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/opmethods.c.obj
+[ 28%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/pairheap.c.obj
+[ 28%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/parse.c.obj
+[ 28%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/parsenum.c.obj
+[ 28%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/parsenumbase.c.obj
+[ 29%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/persistentcode.c.obj
+[ 29%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/profile.c.obj
+[ 29%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/pystack.c.obj
+[ 29%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/qstr.c.obj
+[ 29%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/reader.c.obj
+[ 30%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/repl.c.obj
+[ 30%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/ringbuf.c.obj
+[ 30%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/runtime.c.obj
+[ 30%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/runtime_utils.c.obj
+[ 31%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/scheduler.c.obj
+[ 31%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/scope.c.obj
+[ 31%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/sequence.c.obj
+[ 31%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/showbc.c.obj
+[ 31%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/smallint.c.obj
+[ 32%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/stackctrl.c.obj
+[ 32%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/stream.c.obj
+[ 32%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/unicode.c.obj
+[ 32%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/vm.c.obj
+[ 33%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/vstr.c.obj
+[ 33%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/py/warning.c.obj
+[ 33%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/libc/abort_.c.obj
+[ 33%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/libc/printf.c.obj
+[ 33%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/btstack/modbluetooth_btstack.c.obj
+[ 34%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_adc.c.obj
+[ 34%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_adc_block.c.obj
+[ 34%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_bitstream.c.obj
+[ 34%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_i2c.c.obj
+[ 35%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_i2s.c.obj
+[ 35%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_mem.c.obj
+[ 35%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_pulse.c.obj
+[ 35%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_pwm.c.obj
+[ 35%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_signal.c.obj
+[ 36%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_spi.c.obj
+[ 36%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_uart.c.obj
+[ 36%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_usb_device.c.obj
+[ 36%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/machine_wdt.c.obj
+[ 36%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modbluetooth.c.obj
+[ 37%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modframebuf.c.obj
+[ 37%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modlwip.c.obj
+[ 37%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modmachine.c.obj
+[ 37%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modnetwork.c.obj
+[ 38%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modonewire.c.obj
+[ 38%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modasyncio.c.obj
+[ 38%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modbinascii.c.obj
+[ 38%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modcryptolib.c.obj
+[ 38%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/moductypes.c.obj
+[ 39%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/moddeflate.c.obj
+[ 39%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modhashlib.c.obj
+[ 39%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modheapq.c.obj
+[ 39%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modjson.c.obj
+[ 40%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modos.c.obj
+[ 40%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modplatform.c.obj
+[ 40%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modrandom.c.obj
+[ 40%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modre.c.obj
+[ 40%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modselect.c.obj
+[ 41%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modsocket.c.obj
+[ 41%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modtls_axtls.c.obj
+[ 41%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modtls_mbedtls.c.obj
+[ 41%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modtime.c.obj
+[ 42%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modvfs.c.obj
+[ 42%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modwebsocket.c.obj
+[ 42%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/modwebrepl.c.obj
+[ 42%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/network_cyw43.c.obj
+[ 42%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/network_lwip.c.obj
+[ 43%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/network_ninaw10.c.obj
+[ 43%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/network_ppp_lwip.c.obj
+[ 43%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/network_wiznet5k.c.obj
+[ 43%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/os_dupterm.c.obj
+[ 43%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs.c.obj
+[ 44%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs_blockdev.c.obj
+[ 44%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs_fat.c.obj
+[ 44%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs_fat_diskio.c.obj
+[ 44%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs_fat_file.c.obj
+[ 45%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs_lfs.c.obj
+[ 45%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs_posix.c.obj
+[ 45%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs_posix_file.c.obj
+[ 45%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/vfs_reader.c.obj
+[ 45%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/virtpin.c.obj
+[ 46%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/extmod/nimble/modbluetooth_nimble.c.obj
+[ 46%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/littlefs/lfs1.c.obj
+[ 46%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/littlefs/lfs1_util.c.obj
+[ 46%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/littlefs/lfs2.c.obj
+[ 47%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/littlefs/lfs2_util.c.obj
+[ 47%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/oofatfs/ff.c.obj
+[ 47%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/oofatfs/ffunicode.c.obj
+[ 47%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/netutils/dhcpserver.c.obj
+[ 47%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/netutils/netutils.c.obj
+[ 48%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/netutils/trace.c.obj
+[ 48%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/readline/readline.c.obj
+[ 48%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/runtime/gchelper_native.c.obj
+[ 48%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/runtime/interrupt_char.c.obj
+[ 49%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/runtime/mpirq.c.obj
+[ 49%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/runtime/pyexec.c.obj
+[ 49%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/runtime/stdout_helpers.c.obj
+[ 49%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/runtime/softtimer.c.obj
+[ 49%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/runtime/sys_stdio_mphal.c.obj
+[ 50%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/timeutils/timeutils.c.obj
+[ 50%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/tinyusb/mp_usbd.c.obj
+[ 50%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/tinyusb/mp_usbd_cdc.c.obj
+[ 50%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/tinyusb/mp_usbd_descriptor.c.obj
+[ 50%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/tinyusb/mp_usbd_runtime.c.obj
+[ 51%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/shared/runtime/gchelper_thumb1.s.obj
+[ 51%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/drivers/bus/softspi.c.obj
+[ 51%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/drivers/dht/dht.c.obj
+[ 51%] Building C object CMakeFiles/firmware.dir/clocks_extra.c.obj
+[ 52%] Building C object CMakeFiles/firmware.dir/datetime_patch.c.obj
+[ 52%] Building C object CMakeFiles/firmware.dir/fatfs_port.c.obj
+[ 52%] Building C object CMakeFiles/firmware.dir/help.c.obj
+[ 52%] Building C object CMakeFiles/firmware.dir/machine_bitstream.c.obj
+[ 52%] Building C object CMakeFiles/firmware.dir/machine_i2c.c.obj
+[ 53%] Building C object CMakeFiles/firmware.dir/machine_pin.c.obj
+[ 53%] Building C object CMakeFiles/firmware.dir/machine_rtc.c.obj
+[ 53%] Building C object CMakeFiles/firmware.dir/machine_spi.c.obj
+[ 53%] Building C object CMakeFiles/firmware.dir/machine_timer.c.obj
+[ 54%] Building C object CMakeFiles/firmware.dir/main.c.obj
+[ 54%] Building C object CMakeFiles/firmware.dir/modrp2.c.obj
+[ 54%] Building C object CMakeFiles/firmware.dir/mphalport.c.obj
+[ 54%] Building C object CMakeFiles/firmware.dir/mpnetworkport.c.obj
+[ 54%] Building C object CMakeFiles/firmware.dir/mpthreadport.c.obj
+[ 55%] Building C object CMakeFiles/firmware.dir/mutex_extra.c.obj
+[ 55%] Building C object CMakeFiles/firmware.dir/pendsv.c.obj
+[ 55%] Building C object CMakeFiles/firmware.dir/rp2_flash.c.obj
+[ 55%] Building C object CMakeFiles/firmware.dir/rp2_pio.c.obj
+[ 56%] Building C object CMakeFiles/firmware.dir/rp2_dma.c.obj
+[ 56%] Building C object CMakeFiles/firmware.dir/uart.c.obj
+[ 56%] Building C object CMakeFiles/firmware.dir/usbd.c.obj
+[ 56%] Building C object CMakeFiles/firmware.dir/msc_disk.c.obj
+[ 56%] Building C object CMakeFiles/firmware.dir/mbedtls/mbedtls_port.c.obj
+[ 57%] Building C object CMakeFiles/firmware.dir/pins_RPI_PICO.c.obj
+[ 57%] Building C object CMakeFiles/firmware.dir/frozen_content.c.obj
+[ 57%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls_errors/mp_mbedtls_errors.c.obj
+[ 57%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/aes.c.obj
+[ 57%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/aesni.c.obj
+[ 58%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/asn1parse.c.obj
+[ 58%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/asn1write.c.obj
+[ 58%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/base64.c.obj
+[ 58%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/bignum_core.c.obj
+[ 59%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/bignum_mod.c.obj
+[ 59%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/bignum_mod_raw.c.obj
+[ 59%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/bignum.c.obj
+[ 59%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/camellia.c.obj
+[ 59%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ccm.c.obj
+[ 60%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/chacha20.c.obj
+[ 60%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/chachapoly.c.obj
+[ 60%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/cipher.c.obj
+[ 60%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/cipher_wrap.c.obj
+[ 61%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/nist_kw.c.obj
+[ 61%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/aria.c.obj
+[ 61%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/cmac.c.obj
+[ 61%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/mps_reader.c.obj
+[ 61%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/mps_trace.c.obj
+[ 62%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ctr_drbg.c.obj
+[ 62%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/debug.c.obj
+[ 62%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/des.c.obj
+[ 62%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/dhm.c.obj
+[ 63%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ecdh.c.obj
+[ 63%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ecdsa.c.obj
+[ 63%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ecjpake.c.obj
+[ 63%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ecp.c.obj
+[ 63%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ecp_curves.c.obj
+[ 64%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/entropy.c.obj
+[ 64%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/entropy_poll.c.obj
+[ 64%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/gcm.c.obj
+[ 64%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/hmac_drbg.c.obj
+[ 64%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/md5.c.obj
+[ 65%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/md.c.obj
+[ 65%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/oid.c.obj
+[ 65%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/padlock.c.obj
+[ 65%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/pem.c.obj
+[ 66%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/pk.c.obj
+[ 66%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/pkcs12.c.obj
+[ 66%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/pkcs5.c.obj
+[ 66%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/pkparse.c.obj
+[ 66%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/pk_wrap.c.obj
+[ 67%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/pkwrite.c.obj
+[ 67%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/platform.c.obj
+[ 67%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/platform_util.c.obj
+[ 67%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/poly1305.c.obj
+[ 68%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ripemd160.c.obj
+[ 68%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/rsa.c.obj
+[ 68%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/rsa_alt_helpers.c.obj
+[ 68%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/sha1.c.obj
+[ 68%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/sha256.c.obj
+[ 69%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/sha512.c.obj
+[ 69%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_cache.c.obj
+[ 69%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_ciphersuites.c.obj
+[ 69%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_tls12_client.c.obj
+[ 70%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_tls12_server.c.obj
+[ 70%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_client.c.obj
+[ 70%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_cookie.c.obj
+[ 70%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_debug_helpers_generated.c.obj
+[ 70%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_msg.c.obj
+[ 71%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_ticket.c.obj
+[ 71%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/ssl_tls.c.obj
+[ 71%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/timing.c.obj
+[ 71%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/constant_time.c.obj
+[ 71%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/x509.c.obj
+[ 72%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/x509_create.c.obj
+[ 72%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/x509_crl.c.obj
+[ 72%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/x509_crt.c.obj
+[ 72%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/x509_csr.c.obj
+[ 73%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/x509write_crt.c.obj
+[ 73%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/mbedtls/library/x509write_csr.c.obj
+[ 73%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+[ 73%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2040/pico_platform/platform.c.obj
+[ 73%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.obj
+[ 74%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/hardware_claim/claim.c.obj
+[ 74%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+[ 74%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
+[ 74%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+[ 75%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+[ 75%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+[ 75%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_sync/sem.c.obj
+[ 75%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_sync/lock_core.c.obj
+[ 75%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_sync/mutex.c.obj
+[ 76%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_sync/critical_section.c.obj
+[ 76%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_time/time.c.obj
+[ 76%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+[ 76%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+[ 77%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_util/datetime.c.obj
+[ 77%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_util/pheap.c.obj
+[ 77%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/common/pico_util/queue.c.obj
+[ 77%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
+[ 77%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+[ 78%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+[ 78%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+[ 78%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+[ 78%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.obj
+[ 78%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+[ 79%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+[ 79%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+[ 79%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+[ 79%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
+[ 80%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+[ 80%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+[ 80%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+[ 80%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+[ 80%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_aon_timer/aon_timer.c.obj
+[ 81%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj
+[ 81%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+[ 81%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+[ 81%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.obj
+[ 82%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
+[ 82%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj
+[ 82%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+[ 82%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.obj
+[ 82%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.obj
+[ 83%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.obj
+[ 83%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+[ 83%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.obj
+[ 83%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+[ 84%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+[ 84%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/acoshf.c.obj
+[ 84%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/asinfacosf.c.obj
+[ 84%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/asinhf.c.obj
+[ 84%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/atan2f.c.obj
+[ 85%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/atanf.c.obj
+[ 85%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/atanhf.c.obj
+[ 85%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/ef_rem_pio2.c.obj
+[ 85%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/erf_lgamma.c.obj
+[ 85%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/fmodf.c.obj
+[ 86%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/kf_cos.c.obj
+[ 86%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/kf_rem_pio2.c.obj
+[ 86%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/kf_sin.c.obj
+[ 86%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/kf_tan.c.obj
+[ 87%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/log1pf.c.obj
+[ 87%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/math.c.obj
+[ 87%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/nearbyintf.c.obj
+[ 87%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/roundf.c.obj
+[ 87%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/sf_cos.c.obj
+[ 88%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/sf_erf.c.obj
+[ 88%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/sf_frexp.c.obj
+[ 88%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/sf_ldexp.c.obj
+[ 88%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/sf_modf.c.obj
+[ 89%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/sf_sin.c.obj
+[ 89%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/sf_tan.c.obj
+[ 89%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/wf_lgamma.c.obj
+[ 89%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/wf_tgamma.c.obj
+[ 89%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/libm/ef_sqrt.c.obj
+[ 90%] Building C object CMakeFiles/firmware.dir/libm_extra.c.obj
+[ 90%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.obj
+[ 90%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.obj
+[ 90%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.obj
+[ 91%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_malloc/malloc.c.obj
+[ 91%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+[ 91%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_atomic/atomic.c.obj
+[ 91%] Building CXX object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.obj
+[ 91%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+[ 92%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+[ 92%] Building ASM object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_crt0/crt0.S.obj
+[ 92%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
+[ 92%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+[ 92%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+[ 93%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+[ 93%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+[ 93%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/tusb.c.obj
+[ 93%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/common/tusb_fifo.c.obj
+[ 94%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+[ 94%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+[ 94%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/device/usbd.c.obj
+[ 94%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/device/usbd_control.c.obj
+[ 94%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/audio/audio_device.c.obj
+[ 95%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+[ 95%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+[ 95%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
+[ 95%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/hid/hid_device.c.obj
+[ 96%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/midi/midi_device.c.obj
+[ 96%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/msc/msc_device.c.obj
+[ 96%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
+[ 96%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/net/ncm_device.c.obj
+[ 96%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
+[ 97%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+[ 97%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/tinyusb/src/class/video/video_device.c.obj
+[ 97%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+[ 97%] Building C object CMakeFiles/firmware.dir/home/devel/test-micropython/micropython/lib/pico-sdk/src/rp2_common/cmsis/stub/CMSIS/Device/RP2040/Source/system_RP2040.c.obj
+[ 98%] Linking CXX executable firmware.elf
+   text	   data	    bss	    dec	    hex	filename
+ 335088	      0	   5592	 340680	  532c8	/home/devel/test-micropython/micropython/ports/rp2/build-RPI_PICO/firmware.elf
+[100%] Built target firmware
+
+devel@pi5-80:~/test-micropython/micropython/ports/rp2 $ ls build-RPI_PICO/
+CMakeCache.txt              cmake_install.cmake  firmware.elf      frozen_mpy  pico_flash_region.ld
+CMakeDoxyfile.in            _deps                firmware.elf.map  generated   pico-sdk
+CMakeDoxygenDefaults.cmake  firmware.bin         firmware.uf2      genhdr      pins_RPI_PICO.c
+CMakeFiles                  firmware.dis         frozen_content.c  Makefile
