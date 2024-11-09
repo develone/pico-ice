@@ -1,0 +1,17 @@
+programmed pico-ice tinyQV/pico_ice/tinyqv.uf2
+programmed rp2040 pico-ice/MicroPython/uf2-file/pico-ice/MicroPython/uf2-file
+A bit concern sice pico-ice disappeared.
+ran thonny with /home/devel/tinyQV/pico_ice/micropython
+	run_tinyqv.py which needed pga_flash_prog.py
+	test_psram.py
+MPY: soft reboot
+59 59 f9 f9 fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd 
+33 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 
+2a ab ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 
+2a ab ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 
+33 bf ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 
+33 bf ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+	
+/home/devel/pico-ice/myDocs/testing-pico-ice/pico_ice_default_firmware_v1.6.1.uf2
+
+/home/devel/pico-ice/leddigits/test-top.uf2
