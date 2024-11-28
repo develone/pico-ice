@@ -1,3 +1,12 @@
 https://discord.com/channels/644405956494753803/985342148884987934
 sudo /home/devel/picocom/picocom --baud 1200  /dev/ttyACM0
 sudo /home/devel/picocom/picocom --baud 115200 --imap crcrlf,lfcrlf /dev/ttyACM1
+ctrl a x to exit
+: test 200 0 do i depth . loop;
+welcome 
+words
+: test 200 0 do i depth . loop ;
+: 2t test test ;
+: 4t 2t 2t ;
+: 8t 4t 4t ;
+: 16t 8t ;
