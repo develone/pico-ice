@@ -1,0 +1,59 @@
+mpremote connect /dev/ttyACM0 + mount .
+
+python show current directory 
+print(os.getcwd())
+
+python list files in current directory
+cwd = os.getcwd()
+files = os.listdir(cwd)
+print(files)
+
+['uart_monitor.py', 'load_spi_ram.py', 'test-blink-pico.py', 'iCE40-blink.py', 'testing-mpremote.txt', 'hello.py', 'fpga_flash_prog.py', '8_hello.py', 'remote', 'run_nanov.py', 'nanoV.bin']
+
+ tree 
+.
+├── 8_hello.py
+├── fpga_flash_prog.py
+├── hello.py
+├── load_spi_ram.py
+├── remote
+│   └── nanoV.bin
+├── run_nanov.py
+├── test-blink-pico.py
+└── uart_monitor.py
+
+2 directories, 8 files
+mpremote connect /dev/ttyACM0 + mount . + exec "import os; os.chdir('/'); import fpga_flash_prog; fpga_flash_prog.program('/remote/tinyqv.bin')"  
+
+trying a step process. step 1 (env) devel@pi5-80:~/virtual-python-xstools/micropython $ mpremote connect /dev/ttyACM0 + mount .
+step 2 >>> import fpga_flash_prog
+00 ef 15 
+******.----------------.
+*******.----------------.
+******.----------------.
+******.----------------.
+******.----------------.
+*******.----------------.
+*******.----------------.
+******.----------------.
+******.----------------.
+******.----------------.
+******.----------------.
+******.----------------.
+*******.----------------.
+*******.----------------.
+*******.----------------.
+*******.----------------.
+*******.----------------.
+*******.----------------.
+*******.----------------.
+******.----------------.
+******.----------------.
+*******.----------------.
+*******.----------------.
+******.----------------.
+******.----------------.
+******.-------.
+Program done
+Verify done
+ff 00 00 ff 7e aa 99 7e 51 00 01 05 92 00 20 62
