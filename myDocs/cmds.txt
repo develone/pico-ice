@@ -10,3 +10,8 @@ words
 : 4t 2t 2t ;
 : 8t 4t 4t ;
 : 16t 8t ;
+1984383623
+dup
+dup
+binary .
+hex .
