@@ -4,12 +4,12 @@ set_io -nowarn ICE_25           25
 set_io -nowarn ICE_27           27
  
 # pin definitions 
-set_io -nowarn ICE_d7_o 28
-set_io -nowarn ICE_d0_o 43 
-set_io -nowarn ICE_d5_o 32 
-set_io -nowarn ICE_d6_o 31
-set_io -nowarn ICE_d2_o 38
-set_io -nowarn ICE_d3_o 36 
-set_io -nowarn ICE_d1_o 42 
+set_io -nowarn ICE_d_7 28
+set_io -nowarn ICE_d_0 43 
+set_io -nowarn ICE_d_5 32 
+set_io -nowarn ICE_d_6 31
+set_io -nowarn ICE_d_2 38
+set_io -nowarn ICE_d_3 36 
+set_io -nowarn ICE_d_1 42 
 
 set_io -nowarn ICE_d4_o 34 
