@@ -1,0 +1,66 @@
+This is what I did to fix pi5-70 now 2 system have PipelineC working.
+
+devel@pi5-70:~/oss-cad-suite/share/yosys/plugins $ ln -sf /usr/local/share/yosys/plugins/ghdl.so
+
+This is not the correct method to fix.
+
+After installing ghdl with apt remaking ghdl ghdl-yosys-plugin.  I was still
+getting an error with the make gateware.bin command.
+
+devel@pi5-70:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ make gateware.bin 
+/home/devel/oss-cad-suite/bin/yosys -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+make: *** [Makefile:24: gateware.bin] Error 1
+
+devel@pi5-70:~/oss-cad-suite/share/yosys/plugins $ ls -la
+
+ERROR: Can't load module `./ghdl': /home/devel/oss-cad-suite/lib/../share/yosys/plugins/ghdl.so: cannot open shared object file: No such file or directory
+total 46236
+drwxr-xr-x  2 devel devel     4096 Nov 29 15:30 .
+drwxr-xr-x 25 devel devel     4096 Nov 27 20:33 ..
+-rwxr-xr-x  1 devel devel  1673960 Nov 27 20:33 eqy_combine.so
+-rwxr-xr-x  1 devel devel  6127720 Nov 27 20:33 eqy_partition.so
+-rwxr-xr-x  1 devel devel  1941640 Nov 27 20:33 eqy_recode.so
+lrwxrwxrwx  1 devel devel       38 Nov 29 15:30 ghdl.so -> /usr/local/share/yosys/plugins/ghdl.so
+-rwxr-xr-x  1 devel devel 37582840 Nov 27 20:39 slang.so
+
+devel@pi5-70:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ make gateware.bin 
+/home/devel/oss-cad-suite/bin/yosys -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+/home/devel/oss-cad-suite/bin/nextpnr-ice40 -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc
+/home/devel/oss-cad-suite/bin/icepack gateware.asc gateware.bin
+devel@pi5-70:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ bin2uf2 -o gateware.uf2 gateware.bin 
+devel@pi5-70:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ scp gateware.uf2 pi5-80:/media/devel/pico-ice/
+gateware.uf2                                  100%  204KB  10.6MB/s   00:00 
+
+This is what I did to fix pi5-90 now 3 system have PipelineC working.
+
+devel@pi5-90:~/oss-cad-suite/share/yosys/plugins $ ln -sf /usr/local/share/yosys/plugins/ghdl.so
+
+This is not the correct method to fix.
+
+After installing ghdl with apt remaking ghdl ghdl-yosys-plugin.  I was still
+getting an error with the make gateware.bin command.
+
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ make gateware.bin 
+/home/devel/oss-cad-suite/bin/yosys -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+make: *** [Makefile:24: gateware.bin] Error 1
+
+devel@pi5-90:~/oss-cad-suite/share/yosys/plugins $ ls -la
+
+ERROR: Can't load module `./ghdl': /home/devel/oss-cad-suite/lib/../share/yosys/plugins/ghdl.so: cannot open shared object file: No such file or directory
+total 46236
+drwxr-xr-x  2 devel devel     4096 Nov 29 15:30 .
+drwxr-xr-x 25 devel devel     4096 Nov 27 20:33 ..
+-rwxr-xr-x  1 devel devel  1673960 Nov 27 20:33 eqy_combine.so
+-rwxr-xr-x  1 devel devel  6127720 Nov 27 20:33 eqy_partition.so
+-rwxr-xr-x  1 devel devel  1941640 Nov 27 20:33 eqy_recode.so
+lrwxrwxrwx  1 devel devel       38 Nov 29 15:30 ghdl.so -> /usr/local/share/yosys/plugins/ghdl.so
+-rwxr-xr-x  1 devel devel 37582840 Nov 27 20:39 slang.so
+
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ make gateware.bin 
+/home/devel/oss-cad-suite/bin/yosys -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+/home/devel/oss-cad-suite/bin/nextpnr-ice40 -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc
+/home/devel/oss-cad-suite/bin/icepack gateware.asc gateware.bin
+devel@pi5-70:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ bin2uf2 -o gateware.uf2 gateware.bin 
+devel@pi5-70:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ scp gateware.uf2 pi5-80:/media/devel/pico-ice/
+gateware.uf2                                  100%  204KB  10.6MB/s   00:00 
+
