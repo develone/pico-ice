@@ -1,0 +1,15 @@
+set_io -nowarn clk_44p0         35 # 44MHz clock in default firmware
+# UART in default RP firmware
+set_io -nowarn ICE_25           25
+set_io -nowarn ICE_27           27
+ 
+# pin definitions 
+set_io -nowarn ICE_d7_o 28
+set_io -nowarn ICE_d0_o 43 
+set_io -nowarn ICE_d5_o 32 
+set_io -nowarn ICE_d6_o 31
+set_io -nowarn ICE_d2_o 38
+set_io -nowarn ICE_d3_o 36 
+set_io -nowarn ICE_d1_o 42 
+
+set_io -nowarn ICE_d4_o 34 
