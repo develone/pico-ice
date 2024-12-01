@@ -1,7 +1,7 @@
-YOSYS = $(OSS_CAD_SUITE)/bin/yosys
-NEXTPNR = $(OSS_CAD_SUITE)/bin/nextpnr-ice40
-ICEPACK = $(OSS_CAD_SUITE)/bin/icepack
-DFU_UTIL = $(OSS_CAD_SUITE)/bin/dfu-util
+YOSYS = $(OSS_CAD_SUITE)/yosys
+NEXTPNR = $(OSS_CAD_SUITE)/nextpnr-ice40
+ICEPACK = $(OSS_CAD_SUITE)/icepack
+DFU_UTIL = $(OSS_CAD_SUITE)/dfu-util
 BIN2UF2 = bin2uf2
 PIPELINEC = $(PIPELINEC_REPO)/src/pipelinec
 
