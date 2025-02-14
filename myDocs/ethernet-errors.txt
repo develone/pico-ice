@@ -1,0 +1,89 @@
+devel@pi5-80:~/PipelineC $ git pull
+Already up to date.
+commit cb8e24b68e52012c90cf969a04fd048ba361075a (HEAD -> test-dev, origin/test-dev)
+Merge: 6161654 9064332
+Author: develone <develone@sbcglobal.net>
+Date:   Thu Feb 13 18:20:35 2025 -0700
+
+    Merge branch 'JulianKemmerer:master' into test-dev
+
+commit 90643327e633816931d8cd9363e2804d02234366 (origin/master, origin/HEAD)
+Author: JulianKemmerer <julian.v.kemmerer@gmail.com>
+Date:   Thu Feb 13 19:41:38 2025 -0500
+
+    eth 8b fix incorrect reg of header data resulting in lost dst mac except for first byte
+
+devel@pi5-80:~/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec $ ls -la
+total 56
+drwxr-xr-x 2 devel devel 4096 Feb 14 16:15 .
+drwxr-xr-x 3 devel devel 4096 Feb 14 16:06 ..
+-rw-r--r-- 1 devel devel   92 Feb 14 16:06 eth_clocks.py
+-rw-r--r-- 1 devel devel 4534 Feb 14 16:06 ethernet_top.c
+-rw-r--r-- 1 devel devel  691 Feb 14 16:06 ethernet_top.sv
+-rw-r--r-- 1 devel devel  784 Feb 14 16:06 ice40.pcf
+-rw-r--r-- 1 devel devel 2111 Feb 14 16:06 Makefile
+-rw-r--r-- 1 devel devel 1290 Feb 14 16:15 pipelinec.log
+-rw-r--r-- 1 devel devel   26 Feb 14 16:15 pll_clk_mhz.h
+-rw-r--r-- 1 devel devel 2736 Feb 14 16:06 README.md
+-rw-r--r-- 1 devel devel 2168 Feb 14 16:06 top.h
+-rw-r--r-- 1 devel devel  431 Feb 14 16:06 top_pins.svh
+-rw-r--r-- 1 devel devel 1191 Feb 14 16:06 top.sv
+
+devel@pi5-80:~/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec $ make clean
+rm -f lextab.py
+rm -f yacctab.py
+rm -f pll_clk_mhz.h
+rm -f -r pipelinec_output
+rm -f pipelinec.log
+rm -f pll.v
+rm -f *.json *.asc *.bin *.uf2
+rm -f yosys_stderr.log
+rm -f dfu_util.log
+
+-bash: devel@pi5-80:~/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec: No such file or directory
+devel@pi5-80:~/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec $ make pipelinec 
+echo "#define PLL_CLK_MHZ 25.0\n" > pll_clk_mhz.h
+/home/devel/PipelineC/src/pipelinec top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+Traceback (most recent call last):
+  File "/home/devel/PipelineC/src/pipelinec", line 220, in <module>
+    parser_state = C_TO_LOGIC.PARSE_FILE(c_file)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devel/PipelineC/src/C_TO_LOGIC.py", line 9988, in PARSE_FILE
+    all_code_files = get_included_files(c_filename)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devel/PipelineC/src/C_TO_LOGIC.py", line 214, in get_included_files
+    include_str = GET_SHELL_CMD_OUTPUT(cmd)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devel/PipelineC/src/C_TO_LOGIC.py", line 254, in GET_SHELL_CMD_OUTPUT
+    raise Exception(e_text)
+Exception: Command failed:
+cpp -MM -MG -I/home/devel/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec/pipelinec_output/var_clock_cross.h -I/home/devel/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec/pipelinec_output/type_array_N_t.h -I/home/devel/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h -I/home/devel/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec/pipelinec_output/func_FSM.h -I/home/devel/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec/pipelinec_output/func_SINGLE_INST.h -I/home/devel/PipelineC/ -I/home/devel/PipelineC/pipelinec/include/ -I/home/devel/PipelineC/include/ -D__PIPELINEC__ /home/devel/pico-ice/PipelineC/ethernet021425/ice_makefile_pipelinec/top.c
+
+
+
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+make: *** [Makefile:51: pipelinec] Error 1
+
