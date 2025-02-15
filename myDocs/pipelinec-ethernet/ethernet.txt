@@ -23,7 +23,7 @@ devel@pi5-80:~/pico-ice/PipelineC/ethernet/ice_makefile_pipelinec $ make gatewar
 /home/devel/oss-cad-suite//bin/nextpnr-ice40 -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc --freq 25.0
 /home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
 devel@pi5-80:~/pico-ice/PipelineC/ethernet/ice_makefile_pipelinec $ bin2uf2 -o gateware.uf2 gateware.bin
-devel@pi5-70:~/pico-ice/PipelineC/ethernet/ice_makefile_pipelinec $ make clean
+devel@pi5-70:~/pico-ice/PipelineC/ethernet021425-new/ice_makefile_pipelinec $ make clean
 rm -f lextab.py
 rm -f yacctab.py
 rm -f pll_clk_mhz.h
@@ -33,12 +33,12 @@ rm -f pll.v
 rm -f *.json *.asc *.bin *.uf2
 rm -f yosys_stderr.log
 rm -f dfu_util.log
-devel@pi5-70:~/pico-ice/PipelineC/ethernet/ice_makefile_pipelinec $ make pipelinec 
+devel@pi5-70:~/pico-ice/PipelineC/ethernet021425-new/ice_makefile_pipelinec $ make pipelinec 
 echo "#define PLL_CLK_MHZ 25.0\n" > pll_clk_mhz.h
 /home/devel/PipelineC/src/pipelinec pong_top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
-devel@pi5-70:~/pico-ice/PipelineC/ethernet/ice_makefile_pipelinec $ make gateware.bin 
+devel@pi5-70:~/pico-ice/PipelineC/ethernet021425-new/ice_makefile_pipelinec $ make gateware.bin 
 /home/devel/oss-cad-suite//bin/icepll -q -i 12 -o 25.0 -p -m -f pll.v
 /home/devel/oss-cad-suite//bin/yosys -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv pll.v; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
 /home/devel/oss-cad-suite//bin/nextpnr-ice40 -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc --freq 25.0
 /home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
-devel@pi5-70:~/pico-ice/PipelineC/ethernet/ice_makefile_pipelinec $ bin2uf2 -o gateware.uf2 gateware.bin
+devel@pi5-70:~/pico-ice/PipelineC/ethernet021425-new/ice_makefile_pipelinec $ bin2uf2 -o gateware.uf2 gateware.bin
