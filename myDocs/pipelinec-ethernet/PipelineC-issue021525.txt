@@ -1,0 +1,61 @@
+devel@pi5-70:
+tar cvfz PipelineC-6161654-021525.tgz PipelineC/
+commit 61616541dce691c6f6196596bec8cb597a4c7f9f (HEAD -> test-dev, origin/test-dev)
+Merge: 077994c 8fd76fb
+Author: develone <develone@sbcglobal.net>
+Date:   Sat Jan 11 14:22:33 2025 -0700
+
+    Merge branch 'JulianKemmerer:master' into test-dev
+
+commit 8fd76fb430017d823924d507b2a050b50f928773 (origin/master, origin/HEAD)
+Author: JulianKemmerer <julian.v.kemmerer@gmail.com>
+Date:   Wed Jan 8 17:16:00 2025 -0500
+
+    update readme for pico ice example
+
+ 2009  make clean
+ 2010  make pipelinec 
+ 2011  make gateware.bin 
+ 2012  bin2uf2 -o gateware.uf2 gateware.bin 
+ 2013  scp gateware.uf2 pi5-90:/media/devel/pico-ice/
+devel@pi5-70:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $
+devel@pi5-70:~/pico-ice/PipelineC/ethernet021425-new/ice_makefile_pipelinec $
+make clean
+55a3c5670a15192e9ee07abddb2c04483806cf88  ice40.pcf
+b185d19d2ec9d004354d07f15290ee228c410684  Makefile
+8df138288b44b857174fe0dc425c999d806d36a6  pong_top.c
+3f99b9fc2531befd90ac8da3409f53a7fc3d025d  README.md
+6139f47363427f67ce139d4166459147f8b6910f  top.c
+f06ae6d9259c27984d9a8cdb5c433a101f71e7ac  top.h
+c996a206d4f94bd2c832f4272d074c467722c4bb  top.sv
+devel@pi5-70:~/pico-ice/PipelineC/ethernet021425-new/ice_makefile_pipelinec $ make pipelinec 
+echo "#define PLL_CLK_MHZ 25.0\n" > pll_clk_mhz.h
+/home/devel/PipelineC/src/pipelinec pong_top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+devel@pi5-70:~/pico-ice/PipelineC/ethernet021425-new/ice_makefile_pipelinec $ make gateware.bin 
+/home/devel/oss-cad-suite//bin/icepll -q -i 12 -o 25.0 -p -m -f pll.v
+/home/devel/oss-cad-suite//bin/yosys -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv pll.v; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+/home/devel/oss-cad-suite//bin/nextpnr-ice40 -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc --freq 25.0
+/home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
+devel@pi5-70:~/pico-ice/PipelineC/ethernet021425-new/ice_makefile_pipelinec $ bin2uf2 -o gateware.uf2 gateware.bin
+
+devel@pi5-70:~/PipelineC $ git pull
+remote: Enumerating objects: 338, done.
+remote: Counting objects: 100% (300/300), done.
+remote: Compressing objects: 100% (148/148), done.
+remote: Total 260 (delta 182), reused 173 (delta 97), pack-reused 0 (from 0)
+Receiving objects: 100% (260/260), 52.33 KiB | 1.80 MiB/s, done.
+Resolving deltas: 100% (182/182), completed with 30 local objects.
+From https://github.com/develone/PipelineC
+   6161654..ff24c29  test-dev   -> origin/test-dev
+   8fd76fb..707142c  master     -> origin/master
+Updating 6161654..ff24c29
+error: Your local changes to the following files would be overwritten by merge:
+	examples/pico-ice/ice_makefile_pipelinec/Makefile
+Please commit your changes or stash them before you merge.
+aborting
+
+devel@pi5-70:~/PipelineC $ git checkout examples
+Updated 1 path from the index
+devel@pi5-70:~/PipelineC $ git pull
+
+Aborting
