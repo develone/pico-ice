@@ -1,0 +1,123 @@
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:253:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_stream_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:265:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:277:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_rx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(16 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd:111:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_8;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd:131:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_deserializer_o_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer/uart_serializer_0CLK_e02a63ae.vhd:44:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_serializer_o_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd:158:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_8;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd:178:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_serializer_serializer_in_to_out_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd:259:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_tx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd:272:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_tx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint8_t/BIN_OP_GTE_uint16_t_uint8_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(8 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint8_t/BIN_OP_GTE_uint16_t_uint8_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint8_t_uint8_t/BIN_OP_GTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(8 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint8_t_uint8_t/BIN_OP_GTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint8_t_uint8_t/BIN_OP_LTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(8 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint8_t_uint8_t/BIN_OP_LTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/vga_timing.h/vga_timing/vga_timing_0CLK_0360cf5e.vhd:248:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : vga_signals_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint10_t/BIN_OP_LT_uint12_t_uint10_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(10 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint10_t/BIN_OP_LT_uint12_t_uint10_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint9_t/BIN_OP_LT_uint12_t_uint9_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(9 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint9_t/BIN_OP_LT_uint12_t_uint9_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint10_t/BIN_OP_GTE_uint12_t_uint10_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(10 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint10_t/BIN_OP_GTE_uint12_t_uint10_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint9_t/BIN_OP_GTE_uint12_t_uint9_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(9 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint9_t/BIN_OP_GTE_uint12_t_uint9_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/test_pattern.h/test_pattern/test_pattern_0CLK_489cc62a.vhd:44:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : test_pattern_out_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/test_pattern.h/moving_box_logic/moving_box_logic_0CLK_08de2a73.vhd:209:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : vga_pos_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/test_pattern.h/get_pixel_color/get_pixel_color_0CLK_a4cf7e55.vhd:450:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/test_pattern.h/get_pixel_color/get_pixel_color_0CLK_a4cf7e55.vhd:460:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/test_pattern.h/get_pixel_color/get_pixel_color_0CLK_a4cf7e55.vhd:470:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/test_pattern.h/get_pixel_color/get_pixel_color_0CLK_a4cf7e55.vhd:484:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : pixel_t;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/test_pattern.h/get_pixel_color/get_pixel_color_0CLK_a4cf7e55.vhd:497:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(7 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/vga/test_pattern.h/get_pixel_color/get_pixel_color_0CLK_a4cf7e55.vhd:505:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint12_t/BIN_OP_GTE_uint12_t_uint12_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(12 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint12_t/BIN_OP_GTE_uint12_t_uint12_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint13_t/BIN_OP_LT_uint12_t_uint13_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(12 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint13_t/BIN_OP_LT_uint12_t_uint13_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/pipelinec_top.vhd:46:11:warning: unhandled attribute "dont_touch" [-Wunhandled-attribute]
+attribute dont_touch of clk_25p0: signal is "true";
+          ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/pipelinec_top.vhd:44:11:warning: unhandled attribute "syn_keep" [-Wunhandled-attribute]
+attribute syn_keep of clk_25p0: signal is true;
+          ^

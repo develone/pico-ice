@@ -1,0 +1,59 @@
+
+██████╗ ██╗██████╗ ███████╗██╗     ██╗███╗   ██╗███████╗ ██████╗
+██╔══██╗██║██╔══██╗██╔════╝██║     ██║████╗  ██║██╔════╝██╔════╝
+██████╔╝██║██████╔╝█████╗  ██║     ██║██╔██╗ ██║█████╗  ██║     
+██╔═══╝ ██║██╔═══╝ ██╔══╝  ██║     ██║██║╚██╗██║██╔══╝  ██║     
+██║     ██║██║     ███████╗███████╗██║██║ ╚████║███████╗╚██████╗
+╚═╝     ╚═╝╚═╝     ╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝ ╚═════╝
+
+Output directory: /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output
+================== Parsing C Code to Logical Hierarchy ================================
+Parsing: /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/top.c
+Preprocessing file...
+Parsing C syntax...
+Parsing non-function definitions...
+Matching clock domain: main function uart_rx_mac based on shared global variable uart_rx_mac_out_ready used with clock domain for main function uart_main @ 25.0 MHz, Group: None
+Matching clock domain: main function uart_tx_mac based on shared global variable uart_tx_mac_word_in used with clock domain for main function uart_main @ 25.0 MHz, Group: None
+Matching clock domain: main function vga_4b_connect based on shared global variable vga_r_8b_to_4b used with clock domain for main function vga_r_connect @ 25.0 MHz, Group: None
+Parsing derived fsm logic functions...
+Doing old-style code generation based on PipelineC supported text patterns...
+Elaborating function dataflow...
+Using OPEN_TOOLS synthesizing for part: ICE40UP5K-SG48
+Elaborating dataflow of function: uart_rx_1b
+Elaborating dataflow of function: uart_tx_1b
+Elaborating dataflow of function: uart_deserializer
+Elaborating dataflow of function: uart_serializer_serializer_in_to_out
+Elaborating dataflow of function: uart_serializer
+Elaborating dataflow of function: uart_rx_mac
+Elaborating dataflow of function: uart_tx_mac
+Elaborating dataflow of function: vga_4b_connect
+Elaborating dataflow of function: vga_timing
+Elaborating dataflow of function: blinky_main
+Elaborating dataflow of function: uart_main
+Elaborating dataflow of function: moving_box_logic
+Elaborating dataflow of function: get_pixel_color
+Elaborating dataflow of function: test_pattern
+Elaborating dataflow of function: vga_pmod_main
+Elaborating user function hierarchies down to raw HDL logic...
+... found: BIN_OP_GTE_uint16_t_uint16_t
+... found: BIN_OP_GTE_uint16_t_uint8_t
+... found: BIN_OP_GTE_uint8_t_uint8_t
+... found: BIN_OP_LTE_uint8_t_uint8_t
+... found: BIN_OP_LT_uint12_t_uint10_t
+... found: BIN_OP_LT_uint12_t_uint9_t
+... found: BIN_OP_GTE_uint12_t_uint10_t
+... found: BIN_OP_GTE_uint12_t_uint9_t
+... found: BIN_OP_GTE_uint12_t_uint12_t
+... found: BIN_OP_LT_uint12_t_uint13_t
+Doing obvious logic trimming/collapsing...
+Writing generated PipelineC code from elaboration to output directories...
+Writing cache of parsed information to file...
+================== Writing Resulting Logic to File ================================
+Writing log of integer module instances: /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/integer_module_instances.log
+Writing VHDL files for all functions (before any added pipelining)...
+Writing multi main top level files...
+Writing the constant struct+enum definitions as defined from C code...
+Writing global wire definitions as parsed from C code...
+Writing output files before adding pipelining...
+Output VHDL files: /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/vhdl_files.txt
+Done.
