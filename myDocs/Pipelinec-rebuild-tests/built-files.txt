@@ -1,0 +1,81 @@
+02/17/25
+This worked before today 
+/home/devel/pico-ice/PipelineC/vga-pll/ice_makefile_pipelinec
+make pipelinec 
+echo "#define PLL_CLK_MHZ 25.0\n" > pll_clk_mhz.h
+/home/devel/PipelineC/src/pipelinec top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+make: *** [Makefile:42: pipelinec] Error 255
+
+
+It looks like variable pmod_1b_o1 isn't declared? /home/devel/PipelineC/include/vga/vga_wires.c:7:49
+
+git checkout  6161   This confirms that pico-ice is dependent on PipelineC.
+
+commit 61616541dce691c6f6196596bec8cb597a4c7f9f (HEAD)
+Merge: 077994c 8fd76fb
+Author: develone <develone@sbcglobal.net>
+Date:   Sat Jan 11 14:22:33 2025 -0700
+
+    Merge branch 'JulianKemmerer:master' into test-dev
+
+make pipelinec
+make gateware.bin 
+bin2uf2 -o gateware.uf2 gateware.bin
+devel@pi5-80:~/pico-ice/PipelineC/vga-pll/ice_makefile_pipelinec $ cp gateware.uf2 /media/devel/pico-ice/
+vga_colorbar works. 
+cd ../../vga-pong/examples/pico-ice/ice_makefile_pipelinec
+
+make clean 
+make pipelinec
+make gateware.bin 
+bin2uf2 -o gateware.uf2 gateware.bin
+devel@pi5-80:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ cp gateware.uf2 /media/devel/pico-ice/
+vga_pong works
+Welcome to minicom 2.8
+
+OPTIONS: I18n 
+Port /dev/ttyACM1, 08:49:55
+
+Press CTRL-A Z for help on special keys
+w moves left paddle up
+s moves left paddle dn
+i moves right paddle up
+k moves right paddle dn
+
+
+commit ff24c29192f5a479eed5e34c54ba3eabc5d1ec67 (HEAD -> test-dev, origin/test-dev)
+Merge: cb8e24b 707142c
+Author: develone <develone@sbcglobal.net>
+Date:   Fri Feb 14 20:25:24 2025 -0700
+
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $
+
+    Merge branch 'JulianKemmerer:master' into test-dev
+
+make clean
+make pipelinec
+make gateware.bin
+bin2uf2 -o gateware.uf2 gateware.bin
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec $ cp gateware.uf2 /media/devel/pico-ice/
+green led blink
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $
+
+
+make clean
+make pipelinec
+make gateware.bin
+bin2uf2 -o gateware.uf2 gateware.bin
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ cp gateware.uf2 /media/devel/pico-ice/
+red led blink
+
+devel@pi5-80:~ $ minicom ACM1
+
+Welcome to minicom 2.8
+
+OPTIONS: I18n 
+Port /dev/ttyACM1, 09:57:18
+
+Press CTRL-A Z for help on special keys
+
+ÿ_123ABC
+
