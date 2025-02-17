@@ -140,3 +140,49 @@ devel@pi5-70:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipeli
 devel@pi5-70:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ bin2uf2 -o gateware.uf2 gateware.bin 
 devel@pi5-70:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ scp gateware.uf2 pi5-80:/media/devel/pico-ice/
 gateware.uf2                                  100%  204KB  10.5MB/s   00:00
+
+devel@pi5-80:~/PipelineC/examples/pico-ice/ice_makefile_pipelinec $ git log
+
+commit ff24c29192f5a479eed5e34c54ba3eabc5d1ec67 (HEAD -> test-dev, origin/test-dev)
+Merge: cb8e24b 707142c
+Author: develone <develone@sbcglobal.net>
+Date:   Fri Feb 14 20:25:24 2025 -0700
+
+    Merge branch 'JulianKemmerer:master' into test-dev
+devel@pi5-80:~/PipelineC/examples/pico-ice/ice_makefile_pipelinec $ shasum *
+ee68b7740f394ebe0a82ffb8e7664e71e8e9347f  eth_clocks.py
+e1f8c6e487fad8a84e9076d6aa30679223d7dda8  ethernet_top.c
+b9ad3899c37c95ed8e5d5feef2567141220bd4c2  ethernet_top.sv
+8d5a6aef4154b1b3a02f2a538f0a363a94b75363  ice40.pcf
+1a7a370020f54ad7334f51373928bfb2d0badbcb  Makefile
+8df138288b44b857174fe0dc425c999d806d36a6  pong_top.c
+03a2e9c6c0140282760ea7d7ad8444b1192f0191  README.md
+6139f47363427f67ce139d4166459147f8b6910f  top.c
+233085bd86ec52672963ace41411af019b5aee3a  top.h
+50e93c2eb3bc0a882bb596597ab64be061cba5e7  top_pins.svh
+ebf8bb80532f2bb104bde1702e923e261339a300  top.sv
+devel@pi5-80:~/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec $ shasum *
+ee68b7740f394ebe0a82ffb8e7664e71e8e9347f  eth_clocks.py
+e1f8c6e487fad8a84e9076d6aa30679223d7dda8  ethernet_top.c
+b9ad3899c37c95ed8e5d5feef2567141220bd4c2  ethernet_top.sv
+8d5a6aef4154b1b3a02f2a538f0a363a94b75363  ice40.pcf
+1a7a370020f54ad7334f51373928bfb2d0badbcb  Makefile
+2aaf39996b1284bdc5bab21a9ef9f2cb264764bf  pi5-90
+3b8e46ade095f202ebe1ba7cfe71e2d0e0105a31  pmod-eth.txt
+8df138288b44b857174fe0dc425c999d806d36a6  pong_top.c
+03a2e9c6c0140282760ea7d7ad8444b1192f0191  README.md
+6139f47363427f67ce139d4166459147f8b6910f  top.c
+233085bd86ec52672963ace41411af019b5aee3a  top.h
+50e93c2eb3bc0a882bb596597ab64be061cba5e7  top_pins.svh
+ebf8bb80532f2bb104bde1702e923e261339a300  top.sv
+
+The steps below should build the pmod-ethernet.
+devel@pi5-80:~/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec $ make clean
+
+make pipelinec
+make gateware.bin
+bin2uf2 -o gateware.uf2 gateware.bin
+The pico-ice on pi5-80 is currently display the vga colorbar.
+
+cp gateware.uf2 /media/devel/pico-ice/
+
