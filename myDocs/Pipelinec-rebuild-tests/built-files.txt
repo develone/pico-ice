@@ -186,3 +186,14 @@ The pico-ice on pi5-80 is currently display the vga colorbar.
 
 cp gateware.uf2 /media/devel/pico-ice/
 
+pi5-70 or pi5-80
+devel@pi5-80:~/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec $
+devel@pi5-70:~/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec $
+make clean
+make pipelinec TOP_NAME=ethernet_top
+make gateware.bin TOP_NAME=ethernet_top
+bin2uf2 -o gateware.uf2 gateware.bin
+scp gateware.uf2 pi5-90:/media/devel/pico-ice/
+devel@pi5-90:~/PipelineC/examples/arty/src/eth $ sudo ./loopback_test 
+Test passed!
+
