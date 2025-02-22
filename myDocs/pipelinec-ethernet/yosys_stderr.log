@@ -487,6 +487,9 @@
 /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/net/rmii_eth_mac.h/rmii_tx_mac/rmii_tx_mac_0CLK_6e754937.vhd:541:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
   variable return_output : unsigned(1 downto 0);
            ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/net/rmii_eth_mac.h/rmii_tx_mac/rmii_tx_mac_0CLK_6e754937.vhd:552:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : rmii_tx_mac_t;
+           ^
 /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/VAR_REF_RD_uint32_t_uint32_t_16_VAR_7a60/VAR_REF_RD_uint32_t_uint32_t_16_VAR_7a60_0CLK_8bf83e3e.vhd:68:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
   variable return_output : unsigned(3 downto 0);
            ^
@@ -523,11 +526,11 @@
 /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/net/eth_8.h/eth_8_tx/eth_8_tx_0CLK_67fe881f.vhd:353:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
   variable return_output : unsigned(7 downto 0);
            ^
-/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/net/eth_8.h/eth_8_tx/eth_8_tx_0CLK_67fe881f.vhd:363:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
-  variable return_output : eth_header_t;
-           ^
-/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/net/eth_8.h/eth_8_tx/eth_8_tx_0CLK_67fe881f.vhd:375:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/net/eth_8.h/eth_8_tx/eth_8_tx_0CLK_67fe881f.vhd:362:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
   variable return_output : uint8_t_1;
+           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/net/eth_8.h/eth_8_tx/eth_8_tx_0CLK_67fe881f.vhd:374:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : eth_header_t;
            ^
 /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/include/net/eth_8.h/eth_8_tx/eth_8_tx_0CLK_67fe881f.vhd:389:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
   variable return_output : eth_8_tx_t;
@@ -562,12 +565,12 @@ attribute dont_touch of clk_25p0: signal is "true";
 /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/pipelinec_top.vhd:36:11:warning: unhandled attribute "syn_keep" [-Wunhandled-attribute]
 attribute syn_keep of clk_25p0: signal is true;
           ^
+/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/pipelinec_fifo_fwft.vhd:29:10:note: found RAM "mem", width: 10 bits, depth: 16
+  signal mem              : mem_type(2**ADDR_WIDTH-1 downto 0):= (others => (others => '0'));
+         ^
 /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/pipelinec_async_fifo_fwft.vhd:90:8:note: found RAM "mem", width: 10 bits, depth: 8
 signal mem              : mem_type(2**ADDR_WIDTH-1 downto 0):= (others => (others => '0'));
        ^
 /home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/pipelinec_fifo_fwft.vhd:29:10:note: found RAM "mem", width: 112 bits, depth: 2
-  signal mem              : mem_type(2**ADDR_WIDTH-1 downto 0):= (others => (others => '0'));
-         ^
-/home/devel/pico-ice/PipelineC/pmod-ethernet/ice_makefile_pipelinec/pipelinec_output/built_in/pipelinec_fifo_fwft.vhd:29:10:note: found RAM "mem", width: 10 bits, depth: 16
   signal mem              : mem_type(2**ADDR_WIDTH-1 downto 0):= (others => (others => '0'));
          ^
