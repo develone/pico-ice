@@ -1,0 +1,306 @@
+Info: Generated random seed: 13644992732305610773
+Info: constrained 'clk_12p0' to bel 'X12/Y31/io1'
+Info: constrained 'ICE_39' to bel 'X4/Y31/io0'
+Info: constrained 'ICE_40' to bel 'X5/Y31/io0'
+Info: constrained 'ICE_41' to bel 'X6/Y31/io0'
+Info: constrained 'ICE_25' to bel 'X19/Y31/io1'
+Info: constrained 'ICE_27' to bel 'X18/Y31/io1'
+Info: constrained 'ICE_45' to bel 'X7/Y0/io1'
+Info: constrained 'ICE_47' to bel 'X6/Y0/io0'
+Info: constrained 'ICE_2' to bel 'X8/Y0/io0'
+Info: constrained 'ICE_4' to bel 'X9/Y0/io0'
+Info: constrained 'ICE_44' to bel 'X6/Y0/io1'
+Info: constrained 'ICE_46' to bel 'X5/Y0/io0'
+Info: constrained 'ICE_48' to bel 'X7/Y0/io0'
+Info: constrained 'ICE_3' to bel 'X9/Y0/io1'
+Info: constrained 'ICE_31' to bel 'X16/Y31/io1'
+Info: constrained 'ICE_34' to bel 'X13/Y31/io1'
+Info: constrained 'ICE_38' to bel 'X8/Y31/io1'
+Info: constrained 'ICE_43' to bel 'X9/Y31/io0'
+Info: constrained 'ICE_36' to bel 'X9/Y31/io1'
+Info: constrained 'ICE_42' to bel 'X8/Y31/io0'
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:      280 LCs used as LUT4 only
+Info:      217 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:       35 LCs used as DFF only
+Info: Packing carries..
+Info:      162 LCs used as CARRY only
+Info: Packing indirect carry+LUT pairs...
+Info:       36 LUTs merged into carry LCs
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info:   constrained PLL 'pll_inst.uut' to X12/Y31/pll_3
+Info: Packing special functions..
+Info: Packing PLLs..
+Info:   PLL 'pll_inst.uut' has LOCK output, need to pass all outputs via LUT
+Info:   LUT strategy for LOCK: move all users to new LUT
+Info:   constrained 'pll_inst.uut_PLL$nextpnr_LOCK_lut_through' to X1/Y30/lc0
+Info: Promoting globals..
+Info: promoting pll_clk (fanout 252)
+Info: promoting pipelinec_inst.global_to_module[107] [reset] (fanout 32)
+Info: promoting pipelinec_inst.vga_pmod_main_0clk_101ea77c.test_pattern_top_c_l44_c41_c3ae.moving_box_logic_test_pattern_h_l185_c23_1268.bin_op_eq_test_pattern_h_l36_c6_8178_return_output [reset] (fanout 25)
+Info: promoting pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_cfd8.bin_op_eq_uart_mac_h_l55_c6_279a.left_SB_DFFESS_Q_S [reset] (fanout 18)
+Info: promoting pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_I3_O [cen] (fanout 39)
+Info: promoting pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_cfd8.o_bit_stream_mux_uart_mac_h_l85_c5_5b8f.iftrue.data_SB_LUT4_I2_O [cen] (fanout 16)
+Info: Constraining chains...
+Info:       48 LCs used to legalise carry chains.
+Info: Checksum: 0xacf1d422
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:     709/   5280    13%
+Info: 	        ICESTORM_RAM:       0/     30     0%
+Info: 	               SB_IO:      20/     96    20%
+Info: 	               SB_GB:       6/      8    75%
+Info: 	        ICESTORM_PLL:       1/      1   100%
+Info: 	         SB_WARMBOOT:       0/      1     0%
+Info: 	        ICESTORM_DSP:       0/      8     0%
+Info: 	      ICESTORM_HFOSC:       0/      1     0%
+Info: 	      ICESTORM_LFOSC:       0/      1     0%
+Info: 	              SB_I2C:       0/      2     0%
+Info: 	              SB_SPI:       0/      2     0%
+Info: 	              IO_I3C:       0/      2     0%
+Info: 	         SB_LEDDA_IP:       0/      1     0%
+Info: 	         SB_RGBA_DRV:       0/      1     0%
+Info: 	      ICESTORM_SPRAM:       0/      4     0%
+
+Info: Placed 22 cells based on constraints.
+Info: Creating initial analytic placement for 311 cells, random placement wirelen = 12078.
+Info:     at initial placer iter 0, wirelen = 485
+Info:     at initial placer iter 1, wirelen = 463
+Info:     at initial placer iter 2, wirelen = 434
+Info:     at initial placer iter 3, wirelen = 443
+Info: Running main analytical placer, max placement attempts per cell = 67712.
+Info:     at iteration #1, type ALL: wirelen solved = 492, spread = 2269, legal = 2458; time = 0.02s
+Info:     at iteration #2, type ALL: wirelen solved = 512, spread = 1997, legal = 2241; time = 0.03s
+Info:     at iteration #3, type ALL: wirelen solved = 510, spread = 2023, legal = 2188; time = 0.02s
+Info:     at iteration #4, type ALL: wirelen solved = 603, spread = 1895, legal = 2175; time = 0.02s
+Info:     at iteration #5, type ALL: wirelen solved = 562, spread = 1842, legal = 2174; time = 0.03s
+Info:     at iteration #6, type ALL: wirelen solved = 628, spread = 1879, legal = 2061; time = 0.03s
+Info:     at iteration #7, type ALL: wirelen solved = 611, spread = 1729, legal = 2013; time = 0.02s
+Info:     at iteration #8, type ALL: wirelen solved = 653, spread = 1793, legal = 1985; time = 0.02s
+Info:     at iteration #9, type ALL: wirelen solved = 677, spread = 1773, legal = 2132; time = 0.02s
+Info:     at iteration #10, type ALL: wirelen solved = 703, spread = 1846, legal = 2162; time = 0.02s
+Info:     at iteration #11, type ALL: wirelen solved = 699, spread = 1660, legal = 1882; time = 0.02s
+Info:     at iteration #12, type ALL: wirelen solved = 774, spread = 1744, legal = 1925; time = 0.02s
+Info:     at iteration #13, type ALL: wirelen solved = 775, spread = 1747, legal = 1957; time = 0.02s
+Info:     at iteration #14, type ALL: wirelen solved = 807, spread = 1731, legal = 1922; time = 0.02s
+Info:     at iteration #15, type ALL: wirelen solved = 826, spread = 1976, legal = 2153; time = 0.02s
+Info:     at iteration #16, type ALL: wirelen solved = 824, spread = 1845, legal = 2135; time = 0.02s
+Info: HeAP Placer Time: 0.45s
+Info:   of which solving equations: 0.27s
+Info:   of which spreading cells: 0.02s
+Info:   of which strict legalisation: 0.05s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 175, wirelen = 1882
+Info:   at iteration #5: temp = 0.000000, timing cost = 170, wirelen = 1566
+Info:   at iteration #10: temp = 0.000000, timing cost = 178, wirelen = 1493
+Info:   at iteration #15: temp = 0.000000, timing cost = 183, wirelen = 1444
+Info:   at iteration #20: temp = 0.000000, timing cost = 169, wirelen = 1408
+Info:   at iteration #22: temp = 0.000000, timing cost = 168, wirelen = 1407 
+Info: SA placement time 0.63s
+
+Info: Max frequency for clock 'pll_clk_$glb_clk': 28.37 MHz (PASS at 25.00 MHz)
+
+Info: Max delay <async>                  -> posedge pll_clk_$glb_clk: 5.19 ns
+Info: Max delay posedge pll_clk_$glb_clk -> <async>                 : 8.61 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [  4757,   6334) |*************+
+Info: [  6334,   7911) |**********+
+Info: [  7911,   9488) |+
+Info: [  9488,  11065) |*+
+Info: [ 11065,  12642) |*******+
+Info: [ 12642,  14219) |*******+
+Info: [ 14219,  15796) |+
+Info: [ 15796,  17373) |+
+Info: [ 17373,  18950) |*********+
+Info: [ 18950,  20527) |******+
+Info: [ 20527,  22104) |*******+
+Info: [ 22104,  23681) |*********+
+Info: [ 23681,  25258) |**********+
+Info: [ 25258,  26835) |***************+
+Info: [ 26835,  28412) |*******************+
+Info: [ 28412,  29989) |******************************+
+Info: [ 29989,  31566) |***************************+
+Info: [ 31566,  33143) |*****************************+
+Info: [ 33143,  34720) |***********************+
+Info: [ 34720,  36297) |************************************************************ 
+Info: Checksum: 0xd96e6aba
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 2191 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      280        594 |  280   594 |      1518|       0.18       0.18|
+Info:       2000 |      382       1319 |  102   725 |       640|       0.08       0.27|
+Info:       2676 |      417       1921 |   35   602 |         0|       0.30       0.57|
+Info: Routing complete.
+Info: Router1 time 0.57s
+Info: Checksum: 0x146b735a
+
+Info: Critical path report for clock 'pll_clk_$glb_clk' (posedge -> posedge):
+Info:       type curr  total name
+Info:   clk-to-q  1.39  1.39 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.bin_op_eq_uart_mac_h_l131_c6_1d1d.left_SB_DFF_Q_D_SB_LUT4_O_LC.O
+Info:    routing  1.76  3.15 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.bin_op_eq_uart_mac_h_l131_c6_1d1d_left[1] (11,26) -> (11,25)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_15_D_SB_LUT4_O_I1_SB_LUT4_O_LC.I0
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  1.28  4.43 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_15_D_SB_LUT4_O_I1_SB_LUT4_O_LC.O
+Info:    routing  1.76  6.20 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_15_D_SB_LUT4_O_I0[1] (11,25) -> (10,24)
+Info:                          Sink $nextpnr_ICESTORM_LC_41.I1
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:8.8-8.10
+Info:      logic  0.68  6.87 Source $nextpnr_ICESTORM_LC_41.COUT
+Info:    routing  0.00  6.87 Net $nextpnr_ICESTORM_LC_41$O (10,24) -> (10,24)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_15_D_SB_LUT4_O_I1_SB_LUT4_I3_LC.CIN
+Info:      logic  0.28  7.15 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_15_D_SB_LUT4_O_I1_SB_LUT4_I3_LC.COUT
+Info:    routing  0.00  7.15 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_O_I2[3] (10,24) -> (10,24)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.28  7.43 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  7.43 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_LUT4_O_I2[3] (10,24) -> (10,24)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.28  7.70 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  7.70 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_11_D_SB_LUT4_O_I1_SB_LUT4_O_I1[3] (10,24) -> (10,24)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_11_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_I2_LC.CIN
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.28  7.98 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_11_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_I2_LC.COUT
+Info:    routing  0.00  7.98 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_10_D_SB_LUT4_O_I1_SB_LUT4_O_I1[3] (10,24) -> (10,24)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_10_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_I2_LC.CIN
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.28  8.26 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_10_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_I2_LC.COUT
+Info:    routing  0.00  8.26 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_10_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO (10,24) -> (10,24)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_I2_LC.CIN
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.28  8.54 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_I2_LC.COUT
+Info:    routing  0.00  8.54 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO (10,24) -> (10,24)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_LUT4_I3_LC.CIN
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.28  8.82 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_LUT4_I3_LC.COUT
+Info:    routing  0.56  9.37 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO (10,24) -> (10,25)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_LC.CIN
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.28  9.65 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_LC.COUT
+Info:    routing  0.00  9.65 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (10,25) -> (10,25)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.28  9.93 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.66  10.59 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_1_I2[3] (10,25) -> (10,25)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_1_LC.I3
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.87  11.47 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_1_LC.O
+Info:    routing  1.76  13.23 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O[2] (10,25) -> (10,26)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_2_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_2_LC.I2
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  1.21  14.43 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_2_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_2_LC.O
+Info:    routing  1.76  16.19 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_2_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O[3] (10,26) -> (10,26)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_2_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_1_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  17.07 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_2_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_1_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.O
+Info:    routing  1.76  18.83 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_2_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_1_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O[1] (10,26) -> (10,26)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_I3_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  19.70 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_I3_SB_LUT4_O_LC.O
+Info:    routing  1.76  21.46 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_I3[1] (10,26) -> (11,26)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_LC.I3
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  22.34 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_LC.O
+Info:    routing  1.76  24.10 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_12_D_SB_LUT4_O_I2_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O[3] (11,26) -> (12,25)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_O_1_LC.I3
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  24.97 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_O_1_LC.O
+Info:    routing  1.76  26.73 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.bin_op_eq_uart_mac_h_l131_c6_1d1d.left_SB_DFF_Q_1_D_SB_LUT4_O_I1[3] (12,25) -> (13,26)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_I3_LC.I3
+Info:                          Defined in:
+Info:                               /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  27.61 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_I3_LC.O
+Info:    routing  2.33  29.94 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_I3_O (13,26) -> (13,31)
+Info:                          Sink $gbuf_pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_I3_O_$glb_ce.USER_SIGNAL_TO_GLOBAL_BUFFER
+Info:      logic  1.59  31.52 Source $gbuf_pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_I3_O_$glb_ce.GLOBAL_BUFFER_OUTPUT
+Info:    routing  0.70  32.23 Net pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_1964.clk_counter_mux_uart_mac_h_l131_c3_8f9e.iffalse_SB_DFF_Q_13_D_SB_LUT4_O_I0_SB_LUT4_I3_O_SB_LUT4_I3_O_$glb_ce (13,31) -> (11,20)
+Info:                          Sink pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_529f.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_d832.bin_op_eq_uart_mac_h_l196_c588_533c.left_SB_DFFESR_Q_10_D_SB_LUT4_O_LC.CEN
+Info:      setup  0.10  32.33 Source pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_529f.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_d832.bin_op_eq_uart_mac_h_l196_c588_533c.left_SB_DFFESR_Q_10_D_SB_LUT4_O_LC.CEN
+Info: 13.99 ns logic, 18.34 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge pll_clk_$glb_clk':
+Info:       type curr  total name
+Info:     source  0.00  0.00 Source ICE_27$sb_io.D_IN_0
+Info:    routing  4.34  4.34 Net ICE_27$SB_IO_IN (18,31) -> (9,28)
+Info:                          Sink pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_cfd8.o_bit_stream_mux_uart_mac_h_l85_c5_5b8f.iftrue.data_SB_DFF_Q_DFFLC.I0
+Info:                          Defined in:
+Info:                               top.sv:9.9-9.15
+Info:      setup  1.23  5.57 Source pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_cfd8.o_bit_stream_mux_uart_mac_h_l85_c5_5b8f.iftrue.data_SB_DFF_Q_DFFLC.I0
+Info: 1.23 ns logic, 4.34 ns routing
+
+Info: Critical path report for cross-domain path 'posedge pll_clk_$glb_clk' -> '<async>':
+Info:       type curr  total name
+Info:   clk-to-q  1.39  1.39 Source ICE_34_SB_DFF_Q_DFFLC.O
+Info:    routing  7.60  8.99 Net ICE_34$SB_IO_OUT (5,2) -> (13,31)
+Info:                          Sink ICE_34$sb_io.D_OUT_0
+Info:                          Defined in:
+Info:                               top.sv:23.10-23.16
+Info: 1.39 ns logic, 7.60 ns routing
+
+Info: Max frequency for clock 'pll_clk_$glb_clk': 30.93 MHz (PASS at 25.00 MHz)
+
+Info: Max delay <async>                  -> posedge pll_clk_$glb_clk: 5.57 ns
+Info: Max delay posedge pll_clk_$glb_clk -> <async>                 : 8.99 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [  7674,   9092) |*****************+
+Info: [  9092,  10510) |****************** 
+Info: [ 10510,  11928) |********+
+Info: [ 11928,  13346) |******+
+Info: [ 13346,  14764) |*+
+Info: [ 14764,  16182) |*+
+Info: [ 16182,  17600) |+
+Info: [ 17600,  19018) |***+
+Info: [ 19018,  20436) |****** 
+Info: [ 20436,  21854) |************+
+Info: [ 21854,  23272) |*+
+Info: [ 23272,  24690) |********************+
+Info: [ 24690,  26108) |**************+
+Info: [ 26108,  27526) |*************************+
+Info: [ 27526,  28944) |**************************************+
+Info: [ 28944,  30362) |**************************+
+Info: [ 30362,  31780) |*************************************+
+Info: [ 31780,  33198) |******************************+
+Info: [ 33198,  34616) |*********************************+
+Info: [ 34616,  36034) |************************************************************ 
+
+Info: Program finished normally.

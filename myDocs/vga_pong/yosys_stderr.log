@@ -1,0 +1,172 @@
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:253:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_stream_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:265:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:277:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_rx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(16 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd:111:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_8;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd:131:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_deserializer_o_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer/uart_serializer_0CLK_e02a63ae.vhd:44:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_serializer_o_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd:158:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_8;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd:178:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_serializer_serializer_in_to_out_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd:259:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_tx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd:272:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_tx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint8_t/BIN_OP_GTE_uint16_t_uint8_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(8 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint8_t/BIN_OP_GTE_uint16_t_uint8_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/vga/vga_timing.h/vga_timing/vga_timing_0CLK_0360cf5e.vhd:248:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : vga_signals_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint10_t/BIN_OP_LT_uint12_t_uint10_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(10 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint10_t/BIN_OP_LT_uint12_t_uint10_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint9_t/BIN_OP_LT_uint12_t_uint9_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(9 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint9_t/BIN_OP_LT_uint12_t_uint9_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint10_t/BIN_OP_GTE_uint12_t_uint10_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(10 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint10_t/BIN_OP_GTE_uint12_t_uint10_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint9_t/BIN_OP_GTE_uint12_t_uint9_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(9 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint9_t/BIN_OP_GTE_uint12_t_uint9_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/uart_rx_to_buttons/uart_rx_to_buttons_0CLK_9cd14dcf.vhd:139:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : user_input_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/uart_rx_to_buttons/uart_rx_to_buttons_0CLK_9cd14dcf.vhd:154:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : user_input_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint32_t_uint32_t/BIN_OP_GTE_uint32_t_uint32_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(32 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint32_t_uint32_t/BIN_OP_GTE_uint32_t_uint32_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/render_pixel/render_pixel_0CLK_e2a68fde.vhd:102:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : pixel_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint12_t/BIN_OP_GTE_uint12_t_uint12_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(12 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint12_t/BIN_OP_GTE_uint12_t_uint12_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint13_t/BIN_OP_LT_uint12_t_uint13_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(12 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint13_t/BIN_OP_LT_uint12_t_uint13_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/next_state_func/next_state_func_0CLK_e66e0998.vhd:214:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/next_state_func/next_state_func_0CLK_e66e0998.vhd:225:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : vga_pos_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/next_state_func/next_state_func_0CLK_e66e0998.vhd:244:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : game_state_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/next_state_func/next_state_func_0CLK_e66e0998.vhd:263:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : vga_pos_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/next_state_func/next_state_func_0CLK_e66e0998.vhd:274:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/include/vga/rect.h/rect_move/rect_move_0CLK_0810338e.vhd:85:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : rect_animated_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GT_uint12_t_uint12_t/BIN_OP_GT_uint12_t_uint12_t_0CLK_380ecc95.vhd:35:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(12 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GT_uint12_t_uint12_t/BIN_OP_GT_uint12_t_uint12_t_0CLK_380ecc95.vhd:45:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint5_t/BIN_OP_LT_uint12_t_uint5_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(5 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint5_t/BIN_OP_LT_uint12_t_uint5_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint12_t/BIN_OP_LT_uint12_t_uint12_t_0CLK_380ecc95.vhd:35:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(12 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LT_uint12_t_uint12_t/BIN_OP_LT_uint12_t_uint12_t_0CLK_380ecc95.vhd:45:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GT_uint13_t_uint10_t/BIN_OP_GT_uint13_t_uint10_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(10 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GT_uint13_t_uint10_t/BIN_OP_GT_uint13_t_uint10_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/move_paddle/move_paddle_0CLK_5633c838.vhd:99:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : vga_pos_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint2_t/BIN_OP_GTE_uint12_t_uint2_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(2 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint12_t_uint2_t/BIN_OP_GTE_uint12_t_uint2_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint13_t_uint9_t/BIN_OP_LTE_uint13_t_uint9_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(9 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint13_t_uint9_t/BIN_OP_LTE_uint13_t_uint9_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/reset_state/reset_state_0CLK_b45f1687.vhd:44:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : game_state_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/ball_paddle_inc_vel/ball_paddle_inc_vel_0CLK_d1a5eb1c.vhd:62:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : vga_pos_t;
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GT_uint12_t_uint1_t/BIN_OP_GT_uint12_t_uint1_t_0CLK_5af1a430.vhd:50:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(1 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GT_uint12_t_uint1_t/BIN_OP_GT_uint12_t_uint1_t_0CLK_5af1a430.vhd:60:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/pipelinec_top.vhd:45:11:warning: unhandled attribute "dont_touch" [-Wunhandled-attribute]
+attribute dont_touch of clk_25p0: signal is "true";
+          ^
+/home/devel/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/pipelinec_top.vhd:43:11:warning: unhandled attribute "syn_keep" [-Wunhandled-attribute]
+attribute syn_keep of clk_25p0: signal is true;
+          ^
+Warning: Wire top.\pipelinec_inst.uart_tx_connect_0clk_de264c78.clk is used but has no driver.

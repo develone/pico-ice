@@ -1,0 +1,148 @@
+
+██████╗ ██╗██████╗ ███████╗██╗     ██╗███╗   ██╗███████╗ ██████╗
+██╔══██╗██║██╔══██╗██╔════╝██║     ██║████╗  ██║██╔════╝██╔════╝
+██████╔╝██║██████╔╝█████╗  ██║     ██║██╔██╗ ██║█████╗  ██║     
+██╔═══╝ ██║██╔═══╝ ██╔══╝  ██║     ██║██║╚██╗██║██╔══╝  ██║     
+██║     ██║██║     ███████╗███████╗██║██║ ╚████║███████╗╚██████╗
+╚═╝     ╚═╝╚═╝     ╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝ ╚═════╝
+
+Output directory: /home/devel/pico-ice/PipelineC/vga-pll/ice_makefile_pipelinec/pipelinec_output
+================== Parsing C Code to Logical Hierarchy ================================
+Parsing: /home/devel/pico-ice/PipelineC/vga-pll/ice_makefile_pipelinec/top.c
+Preprocessing file...
+Parsing C syntax...
+Parsing non-function definitions...
+Matching clock domain: main function led_r_connect based on shared global variable led_r used with clock domain for main function blinky_main @ 25.0 MHz, Group: None
+Matching clock domain: main function led_g_connect based on shared global variable led_g used with clock domain for main function blinky_main @ 25.0 MHz, Group: None
+Matching clock domain: main function led_b_connect based on shared global variable led_b used with clock domain for main function blinky_main @ 25.0 MHz, Group: None
+Matching clock domain: main function uart_rx_mac based on shared global variable uart_rx_mac_out_ready used with clock domain for main function uart_main @ 25.0 MHz, Group: None
+Matching clock domain: main function uart_tx_mac based on shared global variable uart_tx_mac_word_in used with clock domain for main function uart_main @ 25.0 MHz, Group: None
+Matching clock domain: main function vga_hs_connect based on shared global variable vga_hs used with clock domain for main function vga_pmod_main @ 25.0 MHz, Group: None
+Matching clock domain: main function vga_vs_connect based on shared global variable vga_vs used with clock domain for main function vga_pmod_main @ 25.0 MHz, Group: None
+Matching clock domain: main function vga_r_connect based on shared global variable vga_r used with clock domain for main function vga_pmod_main @ 25.0 MHz, Group: None
+Matching clock domain: main function vga_g_connect based on shared global variable vga_g used with clock domain for main function vga_pmod_main @ 25.0 MHz, Group: None
+Matching clock domain: main function vga_b_connect based on shared global variable vga_b used with clock domain for main function vga_pmod_main @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_39 based on shared global variable ice_39 used with clock domain for main function led_g_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_40 based on shared global variable ice_40 used with clock domain for main function led_b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_41 based on shared global variable ice_41 used with clock domain for main function led_r_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_1b_o2_connect based on shared global variable pmod_1b_o2 used with clock domain for main function vga_vs_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_1b_o1_connect based on shared global variable pmod_1b_o1 used with clock domain for main function vga_hs_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function uart_tx_connect based on shared global variable uart_tx used with clock domain for main function uart_tx_mac @ 25.0 MHz, Group: None
+Matching clock domain: main function uart_rx_connect based on shared global variable uart_rx used with clock domain for main function uart_rx_mac @ 25.0 MHz, Group: None
+Matching clock domain: main function vga_4b_connect based on shared global variable vga_r_8b_to_4b used with clock domain for main function vga_r_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_25 based on shared global variable ice_25 used with clock domain for main function uart_tx_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_27 based on shared global variable ice_27 used with clock domain for main function uart_rx_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_36 based on shared global variable ice_36 used with clock domain for main function pmod_1b_o2_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_42 based on shared global variable ice_42 used with clock domain for main function pmod_1b_o1_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_0a_o4_connect based on shared global variable pmod_0a_o4 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_0a_o3_connect based on shared global variable pmod_0a_o3 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_0a_o2_connect based on shared global variable pmod_0a_o2 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_0a_o1_connect based on shared global variable pmod_0a_o1 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_0b_o4_connect based on shared global variable pmod_0b_o4 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_0b_o3_connect based on shared global variable pmod_0b_o3 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_0b_o2_connect based on shared global variable pmod_0b_o2 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_0b_o1_connect based on shared global variable pmod_0b_o1 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_1a_o4_connect based on shared global variable pmod_1a_o4 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_1a_o3_connect based on shared global variable pmod_1a_o3 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_1a_o2_connect based on shared global variable pmod_1a_o2 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function pmod_1a_o1_connect based on shared global variable pmod_1a_o1 used with clock domain for main function vga_4b_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_2 based on shared global variable ice_2 used with clock domain for main function pmod_0a_o2_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_3 based on shared global variable ice_3 used with clock domain for main function pmod_0b_o1_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_4 based on shared global variable ice_4 used with clock domain for main function pmod_0a_o1_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_31 based on shared global variable ice_31 used with clock domain for main function pmod_1a_o4_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_34 based on shared global variable ice_34 used with clock domain for main function pmod_1a_o3_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_38 based on shared global variable ice_38 used with clock domain for main function pmod_1a_o2_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_43 based on shared global variable ice_43 used with clock domain for main function pmod_1a_o1_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_44 based on shared global variable ice_44 used with clock domain for main function pmod_0b_o4_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_45 based on shared global variable ice_45 used with clock domain for main function pmod_0a_o4_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_46 based on shared global variable ice_46 used with clock domain for main function pmod_0b_o3_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_47 based on shared global variable ice_47 used with clock domain for main function pmod_0a_o3_connect @ 25.0 MHz, Group: None
+Matching clock domain: main function ice_48 based on shared global variable ice_48 used with clock domain for main function pmod_0b_o2_connect @ 25.0 MHz, Group: None
+Parsing derived fsm logic functions...
+Function skipped: vga_frame_pos_increment
+Doing old-style code generation based on PipelineC supported text patterns...
+Elaborating function dataflow...
+Using OPEN_TOOLS synthesizing for part: ICE40UP5K-SG48
+Elaborating dataflow of function: pll_clk
+Elaborating dataflow of function: ice_39
+Elaborating dataflow of function: ice_40
+Elaborating dataflow of function: ice_41
+Elaborating dataflow of function: led_r_connect
+Elaborating dataflow of function: led_g_connect
+Elaborating dataflow of function: led_b_connect
+Elaborating dataflow of function: ice_2
+Elaborating dataflow of function: ice_3
+Elaborating dataflow of function: ice_4
+Elaborating dataflow of function: ice_25
+Elaborating dataflow of function: ice_27
+Elaborating dataflow of function: ice_31
+Elaborating dataflow of function: ice_34
+Elaborating dataflow of function: ice_36
+Elaborating dataflow of function: ice_38
+Elaborating dataflow of function: ice_42
+Elaborating dataflow of function: ice_43
+Elaborating dataflow of function: ice_44
+Elaborating dataflow of function: ice_45
+Elaborating dataflow of function: ice_46
+Elaborating dataflow of function: ice_47
+Elaborating dataflow of function: ice_48
+Elaborating dataflow of function: pmod_0a_o4_connect
+Elaborating dataflow of function: pmod_0a_o3_connect
+Elaborating dataflow of function: pmod_0a_o2_connect
+Elaborating dataflow of function: pmod_0a_o1_connect
+Elaborating dataflow of function: pmod_0b_o4_connect
+Elaborating dataflow of function: pmod_0b_o3_connect
+Elaborating dataflow of function: pmod_0b_o2_connect
+Elaborating dataflow of function: pmod_0b_o1_connect
+Elaborating dataflow of function: pmod_1a_o4_connect
+Elaborating dataflow of function: pmod_1a_o3_connect
+Elaborating dataflow of function: pmod_1a_o2_connect
+Elaborating dataflow of function: pmod_1a_o1_connect
+Elaborating dataflow of function: pmod_1b_o2_connect
+Elaborating dataflow of function: pmod_1b_o1_connect
+Elaborating dataflow of function: uart_rx_1b
+Elaborating dataflow of function: uart_tx_1b
+Elaborating dataflow of function: uart_deserializer
+Elaborating dataflow of function: uart_serializer_serializer_in_to_out
+Elaborating dataflow of function: uart_serializer
+Elaborating dataflow of function: uart_tx_connect
+Elaborating dataflow of function: uart_rx_connect
+Elaborating dataflow of function: uart_rx_mac
+Elaborating dataflow of function: uart_tx_mac
+Elaborating dataflow of function: vga_hs_connect
+Elaborating dataflow of function: vga_vs_connect
+Elaborating dataflow of function: vga_r_connect
+Elaborating dataflow of function: vga_g_connect
+Elaborating dataflow of function: vga_b_connect
+Elaborating dataflow of function: vga_4b_connect
+Elaborating dataflow of function: vga_timing
+Function skipped: vga_frame_pos_increment
+Elaborating dataflow of function: blinky_main
+Elaborating dataflow of function: uart_main
+Elaborating dataflow of function: moving_box_logic
+Elaborating dataflow of function: get_pixel_color
+Elaborating dataflow of function: test_pattern
+Elaborating dataflow of function: vga_pmod_main
+Elaborating user function hierarchies down to raw HDL logic...
+... found: BIN_OP_GTE_uint16_t_uint16_t
+... found: BIN_OP_GTE_uint16_t_uint8_t
+... found: BIN_OP_GTE_uint8_t_uint8_t
+... found: BIN_OP_LTE_uint8_t_uint8_t
+... found: BIN_OP_LT_uint12_t_uint10_t
+... found: BIN_OP_LT_uint12_t_uint9_t
+... found: BIN_OP_GTE_uint12_t_uint10_t
+... found: BIN_OP_GTE_uint12_t_uint9_t
+... found: BIN_OP_GTE_uint12_t_uint12_t
+... found: BIN_OP_LT_uint12_t_uint13_t
+Doing obvious logic trimming/collapsing...
+Writing generated PipelineC code from elaboration to output directories...
+Writing cache of parsed information to file...
+================== Writing Resulting Logic to File ================================
+Writing log of integer module instances: /home/devel/pico-ice/PipelineC/vga-pll/ice_makefile_pipelinec/pipelinec_output/integer_module_instances.log
+Writing VHDL files for all functions (before any added pipelining)...
+Writing multi main top level files...
+Writing the constant struct+enum definitions as defined from C code...
+Writing global wire definitions as parsed from C code...
+Writing output files before adding pipelining...
+Output VHDL files: /home/devel/pico-ice/PipelineC/vga-pll/ice_makefile_pipelinec/pipelinec_output/vhdl_files.txt
+Done.
