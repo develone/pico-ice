@@ -27,8 +27,8 @@ prog: gateware.bin
 
 gateware.bin: top.sv
 	$(ICEPLL) -q -i 12 -o $(PLL_CLK_MHZ) -p -m -f pll.v
-	$(YOSYS) -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv pll.v; synth_ice40 -top top -json $*.json" 2> yosys_stderr.log
-	$(NEXTPNR) -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json $*.json --asc $*.asc --freq $(PLL_CLK_MHZ)
+	$(YOSYS) -l simple.log -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv pll.v; synth_ice40 -top top -json $*.json" 2> yosys_stderr.log
+	$(NEXTPNR) -l nextpnr.log -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json $*.json --asc $*.asc --freq $(PLL_CLK_MHZ)
 	$(ICEPACK) $*.asc $@
 
 .bin.uf2:
