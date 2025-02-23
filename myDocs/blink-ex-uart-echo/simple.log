@@ -1,0 +1,2038 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.47+135 (git sha1 6f3376cbe, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Running command `ghdl --std=08 -frelaxed /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/pipelinec_fifo_fwft.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/pipelinec_async_fifo_fwft.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/c_structs_pkg.pkg.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/global_wires_pkg.pkg.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/pipelinec_top.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_g_connect/led_g_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_b_connect/led_b_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_wires.c/uart_rx_connect/uart_rx_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_27/ice_27_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_41/ice_41_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_wires.c/uart_tx_connect/uart_tx_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.c/uart_tx_mac/uart_tx_mac_0CLK_494804b3.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_40/ice_40_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/uart_main/uart_main_0CLK_f70fc97c.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_39/ice_39_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_r_connect/led_r_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_25/ice_25_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/blinky_main/blinky_main_0CLK_23f04728.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.c/uart_rx_mac/uart_rx_mac_0CLK_6e5ceb01.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_1_uint8_t/CONST_SR_1_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_MINUS_uint8_t_uint8_t/BIN_OP_MINUS_uint8_t_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_char_char/MUX_uint1_t_char_char_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_7_uint8_t/CONST_SR_7_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_AND_uint1_t_uint1_t/BIN_OP_AND_uint1_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint8_t_uint8_t/BIN_OP_PLUS_uint8_t_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint8_t_uint8_t/BIN_OP_GTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_22_uint23_t/CONST_SR_22_uint23_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint23_t_uint1_t/BIN_OP_PLUS_uint23_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_6_uint8_t/CONST_SR_6_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_2_uint8_t/CONST_SR_2_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint8_t_uint8_t/BIN_OP_LTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_4_uint8_t/CONST_SR_4_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_3_uint8_t/CONST_SR_3_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_0_uint8_t/CONST_SR_0_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/UNARY_OP_NOT_uint1_t/UNARY_OP_NOT_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_5_uint8_t/CONST_SR_5_uint8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer/uart_serializer_0CLK_e02a63ae.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint16_t_uint16_t/MUX_uint1_t_uint16_t_uint16_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint32_t_uint32_t/MUX_uint1_t_uint32_t_uint32_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uart_rx_state_t_uart_rx_state_t/MUX_uint1_t_uart_rx_state_t_uart_rx_state_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint7_t/BIN_OP_GTE_uint16_t_uint7_t_0CLK_e595f783.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint4_t_uint1_t/BIN_OP_PLUS_uint4_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint16_t_uint1_t/BIN_OP_PLUS_uint16_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint1_t_8_uint1_t_8/MUX_uint1_t_uint1_t_8_uint1_t_8_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint2_t_uint2_t/BIN_OP_EQ_uint2_t_uint2_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint4_t_uint4_t/MUX_uint1_t_uint4_t_uint4_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint1_t_uint1_t/MUX_uint1_t_uint1_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uart_tx_state_t_uart_tx_state_t/MUX_uint1_t_uart_tx_state_t_uart_tx_state_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint32_t_uint1_t/BIN_OP_PLUS_uint32_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint4_t_uint4_t/BIN_OP_EQ_uint4_t_uint4_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint1_t_stream_t_uint1_t_stream_t/MUX_uint1_t_uint1_t_stream_t_uint1_t_stream_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint1_t_uint1_t/BIN_OP_EQ_uint1_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_MINUS_int9_t_int9_t/BIN_OP_MINUS_int9_t_int9_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uart_tx_1b_t_uart_tx_1b_t/MUX_uint1_t_uart_tx_1b_t_uart_tx_1b_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint32_t_uint4_t/BIN_OP_EQ_uint32_t_uint4_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_7_uint16_t/CONST_SR_7_uint16_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_OR_uint1_t_uint1_t/BIN_OP_OR_uint1_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_MINUS_int17_t_int17_t/BIN_OP_MINUS_int17_t_int17_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint9_t_uint1_t/BIN_OP_EQ_uint9_t_uint1_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_MINUS_int8_t_int8_t/BIN_OP_MINUS_int8_t_int8_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint32_t_uint3_t/BIN_OP_EQ_uint32_t_uint3_t_0CLK_de264c78.vhd  -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json' --
+
+1. Executing GHDL.
+Importing module pipelinec_top.
+Importing module ice_39_0clk_de264c78.
+Importing module ice_40_0clk_de264c78.
+Importing module ice_41_0clk_de264c78.
+Importing module led_r_connect_0clk_de264c78.
+Importing module led_g_connect_0clk_de264c78.
+Importing module led_b_connect_0clk_de264c78.
+Importing module ice_25_0clk_de264c78.
+Importing module ice_27_0clk_de264c78.
+Importing module uart_tx_connect_0clk_de264c78.
+Importing module uart_rx_connect_0clk_de264c78.
+Importing module uart_rx_mac_0clk_6e5ceb01.
+Importing module uart_tx_mac_0clk_494804b3.
+Importing module blinky_main_0clk_23f04728.
+Importing module uart_main_0clk_f70fc97c.
+Importing module uart_rx_1b_0clk_f4b54c86.
+Importing module uart_deserializer_0clk_f2389995.
+Importing module unary_op_not_uint1_t_0clk_de264c78.
+Importing module bin_op_and_uint1_t_uint1_t_0clk_de264c78.
+Importing module const_sr_0_uint8_t_0clk_de264c78.
+Importing module const_sr_1_uint8_t_0clk_de264c78.
+Importing module const_sr_2_uint8_t_0clk_de264c78.
+Importing module const_sr_3_uint8_t_0clk_de264c78.
+Importing module const_sr_4_uint8_t_0clk_de264c78.
+Importing module const_sr_5_uint8_t_0clk_de264c78.
+Importing module const_sr_6_uint8_t_0clk_de264c78.
+Importing module const_sr_7_uint8_t_0clk_de264c78.
+Importing module uart_serializer_0clk_e02a63ae.
+Importing module uart_tx_1b_0clk_ad3e9e5d.
+Importing module const_sr_22_uint23_t_0clk_de264c78.
+Importing module bin_op_plus_uint23_t_uint1_t_0clk_de264c78.
+Importing module bin_op_gte_uint8_t_uint8_t_0clk_6f2c5aad.
+Importing module bin_op_lte_uint8_t_uint8_t_0clk_6f2c5aad.
+Importing module mux_uint1_t_char_char_0clk_de264c78.
+Importing module bin_op_minus_uint8_t_uint8_t_0clk_de264c78.
+Importing module bin_op_plus_uint8_t_uint8_t_0clk_de264c78.
+Importing module bin_op_eq_uint2_t_uint2_t_0clk_de264c78.
+Importing module mux_uint1_t_uart_rx_state_t_uart_rx_state_t_0clk_de264c78.
+Importing module mux_uint1_t_uint1_t_stream_t_uint1_t_stream_t_0clk_de264c78.
+Importing module mux_uint1_t_uint4_t_uint4_t_0clk_de264c78.
+Importing module mux_uint1_t_uint16_t_uint16_t_0clk_de264c78.
+Importing module bin_op_eq_uint1_t_uint1_t_0clk_de264c78.
+Importing module bin_op_plus_uint16_t_uint1_t_0clk_de264c78.
+Importing module bin_op_gte_uint16_t_uint16_t_0clk_6f2c5aad.
+Importing module bin_op_plus_uint4_t_uint1_t_0clk_de264c78.
+Importing module bin_op_eq_uint4_t_uint4_t_0clk_de264c78.
+Importing module mux_uint1_t_uint32_t_uint32_t_0clk_de264c78.
+Importing module mux_uint1_t_uint1_t_uint1_t_0clk_de264c78.
+Importing module mux_uint1_t_uint1_t_8_uint1_t_8_0clk_de264c78.
+Importing module bin_op_plus_uint32_t_uint1_t_0clk_de264c78.
+Importing module bin_op_eq_uint32_t_uint4_t_0clk_de264c78.
+Importing module uart_serializer_serializer_in_to_out_0clk_73702545.
+Importing module mux_uint1_t_uart_tx_state_t_uart_tx_state_t_0clk_de264c78.
+Importing module mux_uint1_t_uart_tx_1b_t_uart_tx_1b_t_0clk_de264c78.
+Importing module bin_op_gte_uint16_t_uint7_t_0clk_e595f783.
+Importing module bin_op_minus_int9_t_int9_t_0clk_de264c78.
+Importing module bin_op_minus_int17_t_int17_t_0clk_de264c78.
+Importing module bin_op_eq_uint32_t_uint3_t_0clk_de264c78.
+Importing module bin_op_or_uint1_t_uint1_t_0clk_de264c78.
+Importing module const_sr_7_uint16_t_0clk_de264c78.
+Importing module bin_op_eq_uint9_t_uint1_t_0clk_de264c78.
+Importing module bin_op_minus_int8_t_int8_t_0clk_de264c78.
+
+2. Executing Verilog-2005 frontend: top.sv
+Parsing SystemVerilog input from `top.sv' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+3. Executing SYNTH_ICE40 pass.
+
+3.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+3.2. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pipelinec_top
+Used module:         \uart_main_0clk_f70fc97c
+Used module:             \bin_op_plus_uint8_t_uint8_t_0clk_de264c78
+Used module:             \mux_uint1_t_char_char_0clk_de264c78
+Used module:             \bin_op_and_uint1_t_uint1_t_0clk_de264c78
+Used module:             \bin_op_lte_uint8_t_uint8_t_0clk_6f2c5aad
+Used module:                 \unary_op_not_uint1_t_0clk_de264c78
+Used module:                 \bin_op_minus_int9_t_int9_t_0clk_de264c78
+Used module:             \bin_op_gte_uint8_t_uint8_t_0clk_6f2c5aad
+Used module:             \bin_op_minus_uint8_t_uint8_t_0clk_de264c78
+Used module:         \blinky_main_0clk_23f04728
+Used module:             \bin_op_plus_uint23_t_uint1_t_0clk_de264c78
+Used module:             \const_sr_22_uint23_t_0clk_de264c78
+Used module:         \uart_tx_mac_0clk_494804b3
+Used module:             \uart_tx_1b_0clk_ad3e9e5d
+Used module:                 \mux_uint1_t_uart_tx_state_t_uart_tx_state_t_0clk_de264c78
+Used module:                 \bin_op_gte_uint16_t_uint7_t_0clk_e595f783
+Used module:                     \bin_op_minus_int8_t_int8_t_0clk_de264c78
+Used module:                     \mux_uint1_t_uint1_t_uint1_t_0clk_de264c78
+Used module:                     \bin_op_eq_uint9_t_uint1_t_0clk_de264c78
+Used module:                     \const_sr_7_uint16_t_0clk_de264c78
+Used module:                 \bin_op_plus_uint16_t_uint1_t_0clk_de264c78
+Used module:                 \mux_uint1_t_uint16_t_uint16_t_0clk_de264c78
+Used module:                 \bin_op_eq_uint2_t_uint2_t_0clk_de264c78
+Used module:                 \bin_op_eq_uint4_t_uint4_t_0clk_de264c78
+Used module:                 \bin_op_plus_uint4_t_uint1_t_0clk_de264c78
+Used module:                 \mux_uint1_t_uint4_t_uint4_t_0clk_de264c78
+Used module:                 \mux_uint1_t_uart_tx_1b_t_uart_tx_1b_t_0clk_de264c78
+Used module:             \uart_serializer_0clk_e02a63ae
+Used module:                 \uart_serializer_serializer_in_to_out_0clk_73702545
+Used module:                     \mux_uint1_t_uint32_t_uint32_t_0clk_de264c78
+Used module:                     \mux_uint1_t_uint1_t_8_uint1_t_8_0clk_de264c78
+Used module:                     \bin_op_eq_uint32_t_uint4_t_0clk_de264c78
+Used module:                     \bin_op_plus_uint32_t_uint1_t_0clk_de264c78
+Used module:                     \bin_op_or_uint1_t_uint1_t_0clk_de264c78
+Used module:                     \bin_op_eq_uint32_t_uint3_t_0clk_de264c78
+Used module:             \const_sr_7_uint8_t_0clk_de264c78
+Used module:             \const_sr_6_uint8_t_0clk_de264c78
+Used module:             \const_sr_5_uint8_t_0clk_de264c78
+Used module:             \const_sr_4_uint8_t_0clk_de264c78
+Used module:             \const_sr_3_uint8_t_0clk_de264c78
+Used module:             \const_sr_2_uint8_t_0clk_de264c78
+Used module:             \const_sr_1_uint8_t_0clk_de264c78
+Used module:             \const_sr_0_uint8_t_0clk_de264c78
+Used module:         \uart_rx_mac_0clk_6e5ceb01
+Used module:             \uart_deserializer_0clk_f2389995
+Used module:             \uart_rx_1b_0clk_f4b54c86
+Used module:                 \mux_uint1_t_uart_rx_state_t_uart_rx_state_t_0clk_de264c78
+Used module:                 \mux_uint1_t_uint1_t_stream_t_uint1_t_stream_t_0clk_de264c78
+Used module:                 \bin_op_gte_uint16_t_uint16_t_0clk_6f2c5aad
+Used module:                     \bin_op_minus_int17_t_int17_t_0clk_de264c78
+Used module:                 \bin_op_eq_uint1_t_uint1_t_0clk_de264c78
+Used module:         \uart_rx_connect_0clk_de264c78
+Used module:         \uart_tx_connect_0clk_de264c78
+Used module:         \ice_27_0clk_de264c78
+Used module:         \ice_25_0clk_de264c78
+Used module:         \led_b_connect_0clk_de264c78
+Used module:         \led_g_connect_0clk_de264c78
+Used module:         \led_r_connect_0clk_de264c78
+Used module:         \ice_41_0clk_de264c78
+Used module:         \ice_40_0clk_de264c78
+Used module:         \ice_39_0clk_de264c78
+
+3.2.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pipelinec_top
+Used module:         \uart_main_0clk_f70fc97c
+Used module:             \bin_op_plus_uint8_t_uint8_t_0clk_de264c78
+Used module:             \mux_uint1_t_char_char_0clk_de264c78
+Used module:             \bin_op_and_uint1_t_uint1_t_0clk_de264c78
+Used module:             \bin_op_lte_uint8_t_uint8_t_0clk_6f2c5aad
+Used module:                 \unary_op_not_uint1_t_0clk_de264c78
+Used module:                 \bin_op_minus_int9_t_int9_t_0clk_de264c78
+Used module:             \bin_op_gte_uint8_t_uint8_t_0clk_6f2c5aad
+Used module:             \bin_op_minus_uint8_t_uint8_t_0clk_de264c78
+Used module:         \blinky_main_0clk_23f04728
+Used module:             \bin_op_plus_uint23_t_uint1_t_0clk_de264c78
+Used module:             \const_sr_22_uint23_t_0clk_de264c78
+Used module:         \uart_tx_mac_0clk_494804b3
+Used module:             \uart_tx_1b_0clk_ad3e9e5d
+Used module:                 \mux_uint1_t_uart_tx_state_t_uart_tx_state_t_0clk_de264c78
+Used module:                 \bin_op_gte_uint16_t_uint7_t_0clk_e595f783
+Used module:                     \bin_op_minus_int8_t_int8_t_0clk_de264c78
+Used module:                     \mux_uint1_t_uint1_t_uint1_t_0clk_de264c78
+Used module:                     \bin_op_eq_uint9_t_uint1_t_0clk_de264c78
+Used module:                     \const_sr_7_uint16_t_0clk_de264c78
+Used module:                 \bin_op_plus_uint16_t_uint1_t_0clk_de264c78
+Used module:                 \mux_uint1_t_uint16_t_uint16_t_0clk_de264c78
+Used module:                 \bin_op_eq_uint2_t_uint2_t_0clk_de264c78
+Used module:                 \bin_op_eq_uint4_t_uint4_t_0clk_de264c78
+Used module:                 \bin_op_plus_uint4_t_uint1_t_0clk_de264c78
+Used module:                 \mux_uint1_t_uint4_t_uint4_t_0clk_de264c78
+Used module:                 \mux_uint1_t_uart_tx_1b_t_uart_tx_1b_t_0clk_de264c78
+Used module:             \uart_serializer_0clk_e02a63ae
+Used module:                 \uart_serializer_serializer_in_to_out_0clk_73702545
+Used module:                     \mux_uint1_t_uint32_t_uint32_t_0clk_de264c78
+Used module:                     \mux_uint1_t_uint1_t_8_uint1_t_8_0clk_de264c78
+Used module:                     \bin_op_eq_uint32_t_uint4_t_0clk_de264c78
+Used module:                     \bin_op_plus_uint32_t_uint1_t_0clk_de264c78
+Used module:                     \bin_op_or_uint1_t_uint1_t_0clk_de264c78
+Used module:                     \bin_op_eq_uint32_t_uint3_t_0clk_de264c78
+Used module:             \const_sr_7_uint8_t_0clk_de264c78
+Used module:             \const_sr_6_uint8_t_0clk_de264c78
+Used module:             \const_sr_5_uint8_t_0clk_de264c78
+Used module:             \const_sr_4_uint8_t_0clk_de264c78
+Used module:             \const_sr_3_uint8_t_0clk_de264c78
+Used module:             \const_sr_2_uint8_t_0clk_de264c78
+Used module:             \const_sr_1_uint8_t_0clk_de264c78
+Used module:             \const_sr_0_uint8_t_0clk_de264c78
+Used module:         \uart_rx_mac_0clk_6e5ceb01
+Used module:             \uart_deserializer_0clk_f2389995
+Used module:             \uart_rx_1b_0clk_f4b54c86
+Used module:                 \mux_uint1_t_uart_rx_state_t_uart_rx_state_t_0clk_de264c78
+Used module:                 \mux_uint1_t_uint1_t_stream_t_uint1_t_stream_t_0clk_de264c78
+Used module:                 \bin_op_gte_uint16_t_uint16_t_0clk_6f2c5aad
+Used module:                     \bin_op_minus_int17_t_int17_t_0clk_de264c78
+Used module:                 \bin_op_eq_uint1_t_uint1_t_0clk_de264c78
+Used module:         \uart_rx_connect_0clk_de264c78
+Used module:         \uart_tx_connect_0clk_de264c78
+Used module:         \ice_27_0clk_de264c78
+Used module:         \ice_25_0clk_de264c78
+Used module:         \led_b_connect_0clk_de264c78
+Used module:         \led_g_connect_0clk_de264c78
+Used module:         \led_r_connect_0clk_de264c78
+Used module:         \ice_41_0clk_de264c78
+Used module:         \ice_40_0clk_de264c78
+Used module:         \ice_39_0clk_de264c78
+Removed 0 unused modules.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$527 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$520 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$516 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$509 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$506 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$503 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$500 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$497 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$489 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$482 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$478 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$471 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$468 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$465 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$462 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$459 in module SB_DFFSR.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 22 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$530'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$526'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$519'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$515'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$508'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$505'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$502'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$499'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$496'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$494'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$492'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$488'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$481'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$477'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$470'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$467'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$464'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$461'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$458'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$456'.
+  Set init value: \Q = 1'0
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$527'.
+Found async reset \R in `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$516'.
+Found async reset \S in `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$506'.
+Found async reset \R in `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$500'.
+Found async reset \S in `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$489'.
+Found async reset \R in `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$478'.
+Found async reset \S in `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$468'.
+Found async reset \R in `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$462'.
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~18 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$530'.
+Creating decoders for process `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$527'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$526'.
+Creating decoders for process `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$520'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$519'.
+Creating decoders for process `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$516'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$515'.
+Creating decoders for process `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$509'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$508'.
+Creating decoders for process `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$506'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$505'.
+Creating decoders for process `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$503'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$502'.
+Creating decoders for process `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$500'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$499'.
+Creating decoders for process `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$497'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$496'.
+Creating decoders for process `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$495'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$494'.
+Creating decoders for process `\SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$493'.
+Creating decoders for process `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$492'.
+Creating decoders for process `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$489'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$488'.
+Creating decoders for process `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$482'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$481'.
+Creating decoders for process `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$478'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$477'.
+Creating decoders for process `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$471'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$470'.
+Creating decoders for process `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$468'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$467'.
+Creating decoders for process `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$465'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$464'.
+Creating decoders for process `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$462'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$461'.
+Creating decoders for process `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$459'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$458'.
+Creating decoders for process `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$457'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$456'.
+Creating decoders for process `\SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$455'.
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$527'.
+  created $adff cell `$procdff$713' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$520'.
+  created $dff cell `$procdff$714' with negative edge clock.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$516'.
+  created $adff cell `$procdff$717' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$509'.
+  created $dff cell `$procdff$718' with negative edge clock.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$506'.
+  created $adff cell `$procdff$721' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$503'.
+  created $dff cell `$procdff$722' with negative edge clock.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$500'.
+  created $adff cell `$procdff$725' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$497'.
+  created $dff cell `$procdff$726' with negative edge clock.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$495'.
+  created $dff cell `$procdff$727' with negative edge clock.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$493'.
+  created $dff cell `$procdff$728' with negative edge clock.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$489'.
+  created $adff cell `$procdff$731' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$482'.
+  created $dff cell `$procdff$732' with positive edge clock.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$478'.
+  created $adff cell `$procdff$735' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$471'.
+  created $dff cell `$procdff$736' with positive edge clock.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$468'.
+  created $adff cell `$procdff$739' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$465'.
+  created $dff cell `$procdff$740' with positive edge clock.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$462'.
+  created $adff cell `$procdff$743' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$459'.
+  created $dff cell `$procdff$744' with positive edge clock.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$457'.
+  created $dff cell `$procdff$745' with positive edge clock.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$455'.
+  created $dff cell `$procdff$746' with positive edge clock.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$530'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$527'.
+Removing empty process `SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$527'.
+Removing empty process `SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$526'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$520'.
+Removing empty process `SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$520'.
+Removing empty process `SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$519'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$516'.
+Removing empty process `SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$516'.
+Removing empty process `SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$515'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$509'.
+Removing empty process `SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$509'.
+Removing empty process `SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$508'.
+Removing empty process `SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$506'.
+Removing empty process `SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$505'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$503'.
+Removing empty process `SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$503'.
+Removing empty process `SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$502'.
+Removing empty process `SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$500'.
+Removing empty process `SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$499'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$497'.
+Removing empty process `SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$497'.
+Removing empty process `SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$496'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$495'.
+Removing empty process `SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$495'.
+Removing empty process `SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$494'.
+Removing empty process `SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$493'.
+Removing empty process `SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$492'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$489'.
+Removing empty process `SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$489'.
+Removing empty process `SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$488'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$482'.
+Removing empty process `SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$482'.
+Removing empty process `SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$481'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$478'.
+Removing empty process `SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$478'.
+Removing empty process `SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$477'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$471'.
+Removing empty process `SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$471'.
+Removing empty process `SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$470'.
+Removing empty process `SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$468'.
+Removing empty process `SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$467'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$465'.
+Removing empty process `SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$465'.
+Removing empty process `SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$464'.
+Removing empty process `SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$462'.
+Removing empty process `SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$461'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$459'.
+Removing empty process `SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$459'.
+Removing empty process `SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$458'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$457'.
+Removing empty process `SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$457'.
+Removing empty process `SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$456'.
+Removing empty process `SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$455'.
+Cleaned up 18 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module bin_op_minus_int8_t_int8_t_0clk_de264c78.
+Optimizing module bin_op_eq_uint9_t_uint1_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module const_sr_7_uint16_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_or_uint1_t_uint1_t_0clk_de264c78.
+Optimizing module bin_op_eq_uint32_t_uint3_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_minus_int17_t_int17_t_0clk_de264c78.
+Optimizing module bin_op_minus_int9_t_int9_t_0clk_de264c78.
+Optimizing module bin_op_gte_uint16_t_uint7_t_0clk_e595f783.
+Optimizing module mux_uint1_t_uart_tx_1b_t_uart_tx_1b_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module mux_uint1_t_uart_tx_state_t_uart_tx_state_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module uart_serializer_serializer_in_to_out_0clk_73702545.
+Optimizing module bin_op_eq_uint32_t_uint4_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_plus_uint32_t_uint1_t_0clk_de264c78.
+Optimizing module mux_uint1_t_uint1_t_8_uint1_t_8_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module mux_uint1_t_uint1_t_uint1_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module mux_uint1_t_uint32_t_uint32_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_eq_uint4_t_uint4_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_plus_uint4_t_uint1_t_0clk_de264c78.
+Optimizing module bin_op_gte_uint16_t_uint16_t_0clk_6f2c5aad.
+Optimizing module bin_op_plus_uint16_t_uint1_t_0clk_de264c78.
+Optimizing module bin_op_eq_uint1_t_uint1_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module mux_uint1_t_uint16_t_uint16_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module mux_uint1_t_uint4_t_uint4_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module mux_uint1_t_uint1_t_stream_t_uint1_t_stream_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module mux_uint1_t_uart_rx_state_t_uart_rx_state_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_eq_uint2_t_uint2_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_plus_uint8_t_uint8_t_0clk_de264c78.
+Optimizing module bin_op_minus_uint8_t_uint8_t_0clk_de264c78.
+Optimizing module mux_uint1_t_char_char_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_lte_uint8_t_uint8_t_0clk_6f2c5aad.
+Optimizing module bin_op_gte_uint8_t_uint8_t_0clk_6f2c5aad.
+Optimizing module bin_op_plus_uint23_t_uint1_t_0clk_de264c78.
+Optimizing module const_sr_22_uint23_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module uart_tx_1b_0clk_ad3e9e5d.
+Optimizing module uart_serializer_0clk_e02a63ae.
+Optimizing module const_sr_7_uint8_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module const_sr_6_uint8_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module const_sr_5_uint8_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module const_sr_4_uint8_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module const_sr_3_uint8_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module const_sr_2_uint8_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module const_sr_1_uint8_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module const_sr_0_uint8_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module bin_op_and_uint1_t_uint1_t_0clk_de264c78.
+Optimizing module unary_op_not_uint1_t_0clk_de264c78.
+Optimizing module uart_deserializer_0clk_f2389995.
+Optimizing module uart_rx_1b_0clk_f4b54c86.
+Optimizing module uart_main_0clk_f70fc97c.
+Optimizing module blinky_main_0clk_23f04728.
+Optimizing module uart_tx_mac_0clk_494804b3.
+Optimizing module uart_rx_mac_0clk_6e5ceb01.
+Optimizing module uart_rx_connect_0clk_de264c78.
+Optimizing module uart_tx_connect_0clk_de264c78.
+Optimizing module ice_27_0clk_de264c78.
+Optimizing module ice_25_0clk_de264c78.
+Optimizing module led_b_connect_0clk_de264c78.
+Optimizing module led_g_connect_0clk_de264c78.
+Optimizing module led_r_connect_0clk_de264c78.
+Optimizing module ice_41_0clk_de264c78.
+Optimizing module ice_40_0clk_de264c78.
+Optimizing module ice_39_0clk_de264c78.
+Optimizing module pipelinec_top.
+
+3.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module bin_op_minus_int8_t_int8_t_0clk_de264c78.
+Deleting now unused module bin_op_eq_uint9_t_uint1_t_0clk_de264c78.
+Deleting now unused module const_sr_7_uint16_t_0clk_de264c78.
+Deleting now unused module bin_op_or_uint1_t_uint1_t_0clk_de264c78.
+Deleting now unused module bin_op_eq_uint32_t_uint3_t_0clk_de264c78.
+Deleting now unused module bin_op_minus_int17_t_int17_t_0clk_de264c78.
+Deleting now unused module bin_op_minus_int9_t_int9_t_0clk_de264c78.
+Deleting now unused module bin_op_gte_uint16_t_uint7_t_0clk_e595f783.
+Deleting now unused module mux_uint1_t_uart_tx_1b_t_uart_tx_1b_t_0clk_de264c78.
+Deleting now unused module mux_uint1_t_uart_tx_state_t_uart_tx_state_t_0clk_de264c78.
+Deleting now unused module uart_serializer_serializer_in_to_out_0clk_73702545.
+Deleting now unused module bin_op_eq_uint32_t_uint4_t_0clk_de264c78.
+Deleting now unused module bin_op_plus_uint32_t_uint1_t_0clk_de264c78.
+Deleting now unused module mux_uint1_t_uint1_t_8_uint1_t_8_0clk_de264c78.
+Deleting now unused module mux_uint1_t_uint1_t_uint1_t_0clk_de264c78.
+Deleting now unused module mux_uint1_t_uint32_t_uint32_t_0clk_de264c78.
+Deleting now unused module bin_op_eq_uint4_t_uint4_t_0clk_de264c78.
+Deleting now unused module bin_op_plus_uint4_t_uint1_t_0clk_de264c78.
+Deleting now unused module bin_op_gte_uint16_t_uint16_t_0clk_6f2c5aad.
+Deleting now unused module bin_op_plus_uint16_t_uint1_t_0clk_de264c78.
+Deleting now unused module bin_op_eq_uint1_t_uint1_t_0clk_de264c78.
+Deleting now unused module mux_uint1_t_uint16_t_uint16_t_0clk_de264c78.
+Deleting now unused module mux_uint1_t_uint4_t_uint4_t_0clk_de264c78.
+Deleting now unused module mux_uint1_t_uint1_t_stream_t_uint1_t_stream_t_0clk_de264c78.
+Deleting now unused module mux_uint1_t_uart_rx_state_t_uart_rx_state_t_0clk_de264c78.
+Deleting now unused module bin_op_eq_uint2_t_uint2_t_0clk_de264c78.
+Deleting now unused module bin_op_plus_uint8_t_uint8_t_0clk_de264c78.
+Deleting now unused module bin_op_minus_uint8_t_uint8_t_0clk_de264c78.
+Deleting now unused module mux_uint1_t_char_char_0clk_de264c78.
+Deleting now unused module bin_op_lte_uint8_t_uint8_t_0clk_6f2c5aad.
+Deleting now unused module bin_op_gte_uint8_t_uint8_t_0clk_6f2c5aad.
+Deleting now unused module bin_op_plus_uint23_t_uint1_t_0clk_de264c78.
+Deleting now unused module const_sr_22_uint23_t_0clk_de264c78.
+Deleting now unused module uart_tx_1b_0clk_ad3e9e5d.
+Deleting now unused module uart_serializer_0clk_e02a63ae.
+Deleting now unused module const_sr_7_uint8_t_0clk_de264c78.
+Deleting now unused module const_sr_6_uint8_t_0clk_de264c78.
+Deleting now unused module const_sr_5_uint8_t_0clk_de264c78.
+Deleting now unused module const_sr_4_uint8_t_0clk_de264c78.
+Deleting now unused module const_sr_3_uint8_t_0clk_de264c78.
+Deleting now unused module const_sr_2_uint8_t_0clk_de264c78.
+Deleting now unused module const_sr_1_uint8_t_0clk_de264c78.
+Deleting now unused module const_sr_0_uint8_t_0clk_de264c78.
+Deleting now unused module bin_op_and_uint1_t_uint1_t_0clk_de264c78.
+Deleting now unused module unary_op_not_uint1_t_0clk_de264c78.
+Deleting now unused module uart_deserializer_0clk_f2389995.
+Deleting now unused module uart_rx_1b_0clk_f4b54c86.
+Deleting now unused module uart_main_0clk_f70fc97c.
+Deleting now unused module blinky_main_0clk_23f04728.
+Deleting now unused module uart_tx_mac_0clk_494804b3.
+Deleting now unused module uart_rx_mac_0clk_6e5ceb01.
+Deleting now unused module uart_rx_connect_0clk_de264c78.
+Deleting now unused module uart_tx_connect_0clk_de264c78.
+Deleting now unused module ice_27_0clk_de264c78.
+Deleting now unused module ice_25_0clk_de264c78.
+Deleting now unused module led_b_connect_0clk_de264c78.
+Deleting now unused module led_g_connect_0clk_de264c78.
+Deleting now unused module led_r_connect_0clk_de264c78.
+Deleting now unused module ice_41_0clk_de264c78.
+Deleting now unused module ice_40_0clk_de264c78.
+Deleting now unused module ice_39_0clk_de264c78.
+Deleting now unused module pipelinec_top.
+<suppressed ~158 debug messages>
+
+3.5. Executing TRIBUF pass.
+
+3.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+3.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~60 debug messages>
+
+3.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 6 unused cells and 493 unused wires.
+<suppressed ~26 debug messages>
+
+3.9. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+3.10. Executing OPT pass (performing simple optimizations).
+
+3.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+3.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_valid_mux_uart_mac_h_l193_c545_c962.2265: \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_valid_mux_uart_mac_h_l193_c545_c962.iffalse -> 1'0
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~36 debug messages>
+
+3.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+  Optimizing cells in module \top.
+Performed a total of 1 changes.
+
+3.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+3.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~23 debug messages>
+
+3.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+3.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.10.16. Finished OPT passes. (There is nothing left to do.)
+
+3.11. Executing FSM pass (extract and optimize FSM).
+
+3.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_eq_uart_mac_h_l55_c6_9fed.left as FSM state register:
+    Register has an initialization value.
+Not marking top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_eq_uart_mac_h_l131_c6_1393.left as FSM state register:
+    Register has an initialization value.
+
+3.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+3.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+3.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+3.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+3.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.1588 ($dff) from module top (D = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bit_counter_mux_uart_mac_h_l143_c3_4d0b.return_output, Q = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.left).
+Adding SRST signal on pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.2571 ($dff) from module top (D = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.out_counter_mux_uart_mac_h_l196_c915_eed7.iffalse, Q = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_eq_uart_mac_h_l196_c588_1bea.left, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$914 ($sdff) from module top (D = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_plus_uart_mac_h_l196_c851_7ecd.return_output [31:0], Q = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_eq_uart_mac_h_l196_c588_1bea.left).
+Adding EN signal on pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.2569 ($dff) from module top (D = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.in_buffer_valid_mux_uart_mac_h_l196_c915_eed7.return_output, Q = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.in_buffer_valid_mux_uart_mac_h_l196_c663_8406.iffalse).
+Adding EN signal on pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.2567 ($dff) from module top (D = \pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.return_output [7], Q = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.in_buffer [0]).
+Adding EN signal on pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.2567 ($dff) from module top (D = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.in_buffer_mux_uart_mac_h_l196_c915_eed7.return_output [7:1], Q = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.in_buffer [7:1]).
+Adding SRST signal on pipelinec_inst.uart_tx_connect_0clk_de264c78.193 ($dff) from module top (D = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.o_mux_uart_mac_h_l143_c3_4d0b_iffalse [0], Q = \ICE_25, rval = 1'0).
+Adding EN signal on pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.878 ($dff) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bit_counter_mux_uart_mac_h_l55_c3_b5c1.iffalse, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.left).
+Adding EN signal on pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.876 ($dff) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.clk_counter_mux_uart_mac_h_l55_c3_b5c1.return_output, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.left).
+Adding EN signal on pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.874 ($dff) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.reg_comb_state, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_eq_uart_mac_h_l55_c6_9fed.left).
+Adding EN signal on pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.1021 ($dff) from module top (D = { \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [6:0] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.o_bit_stream_mux_uart_mac_h_l55_c3_b5c1_return_output [0] }, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse).
+Adding SRST signal on $auto$ff.cc:266:slice$965 ($dffe) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.o_bit_stream_mux_uart_mac_h_l85_c5_1ad4.iftrue.data, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [0], rval = 1'0).
+Adding SRST signal on pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.1017 ($dff) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_valid_mux_uart_mac_h_l193_c680_2960.iftrue, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_valid_mux_uart_mac_h_l193_c545_c962.iffalse, rval = 1'0).
+
+3.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 5 unused cells and 16 unused wires.
+<suppressed ~21 debug messages>
+
+3.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~6 debug messages>
+
+3.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+3.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+3.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+3.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.12.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.12.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+3.12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.12.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.12.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.12.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.12.23. Finished OPT passes. (There is nothing left to do.)
+
+3.13. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$934 ($ne).
+Removed top 1 bits (of 3) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$907 ($ne).
+Removed top 2 bits (of 5) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$952 ($ne).
+Removed top 1 bits (of 4) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$954 ($ne).
+Removed top 2 bits (of 4) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$960 ($ne).
+Removed top 3 bits (of 10) from port A of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l25_c24_1f5f.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721 ($sub).
+Removed top 2 bits (of 10) from port B of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l25_c24_1f5f.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721 ($sub).
+Removed top 1 bits (of 10) from port Y of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l25_c24_1f5f.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721 ($sub).
+Removed top 1 bits (of 9) from port A of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_minus_top_c_l26_c16_0ca3.1807 ($sub).
+Removed top 3 bits (of 9) from port B of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_minus_top_c_l26_c16_0ca3.1807 ($sub).
+Removed top 1 bits (of 9) from port Y of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_minus_top_c_l26_c16_0ca3.1807 ($sub).
+Removed top 2 bits (of 10) from port A of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l27_c12_8ddf.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721 ($sub).
+Removed top 3 bits (of 10) from port B of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l27_c12_8ddf.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721 ($sub).
+Removed top 1 bits (of 10) from port Y of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l27_c12_8ddf.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721 ($sub).
+Removed top 3 bits (of 10) from port A of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l27_c30_b61e.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721 ($sub).
+Removed top 2 bits (of 10) from port B of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l27_c30_b61e.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721 ($sub).
+Removed top 1 bits (of 10) from port Y of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l27_c30_b61e.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721 ($sub).
+Removed top 1 bits (of 9) from port A of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_plus_top_c_l28_c16_cf8f.1865 ($add).
+Removed top 3 bits (of 9) from port B of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_plus_top_c_l28_c16_cf8f.1865 ($add).
+Removed top 1 bits (of 9) from port Y of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_plus_top_c_l28_c16_cf8f.1865 ($add).
+Removed top 1 bits (of 24) from port A of cell top.pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_8253.1648 ($add).
+Removed top 23 bits (of 24) from port B of cell top.pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_8253.1648 ($add).
+Removed top 1 bits (of 24) from port Y of cell top.pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_8253.1648 ($add).
+Removed top 29 bits (of 32) from port B of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_eq_uart_mac_h_l196_c588_1bea.2827 ($eq).
+Removed top 1 bits (of 33) from port A of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_plus_uart_mac_h_l196_c851_7ecd.2335 ($add).
+Removed top 32 bits (of 33) from port B of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_plus_uart_mac_h_l196_c851_7ecd.2335 ($add).
+Removed top 1 bits (of 33) from port Y of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_plus_uart_mac_h_l196_c851_7ecd.2335 ($add).
+Removed top 28 bits (of 32) from port B of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_eq_uart_mac_h_l196_c872_ff06.2372 ($eq).
+Removed top 2 bits (of 9) from port A of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l161_c8_b451.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962 ($sub).
+Removed top 2 bits (of 9) from port B of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l161_c8_b451.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962 ($sub).
+Removed top 1 bits (of 9) from port Y of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l161_c8_b451.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962 ($sub).
+Removed top 2 bits (of 9) from port A of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l148_c8_ece2.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962 ($sub).
+Removed top 2 bits (of 9) from port B of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l148_c8_ece2.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962 ($sub).
+Removed top 1 bits (of 9) from port Y of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l148_c8_ece2.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962 ($sub).
+Removed top 1 bits (of 5) from port A of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.2179 ($add).
+Removed top 4 bits (of 5) from port B of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.2179 ($add).
+Removed top 1 bits (of 5) from port Y of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.2179 ($add).
+Removed top 1 bits (of 3) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$945 ($ne).
+Removed top 1 bits (of 17) from port A of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l147_c5_4db9.2084 ($add).
+Removed top 16 bits (of 17) from port B of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l147_c5_4db9.2084 ($add).
+Removed top 1 bits (of 17) from port Y of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l147_c5_4db9.2084 ($add).
+Removed top 1 bits (of 2) from port B of cell top.pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_eq_uart_mac_h_l143_c6_dd05.1901 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.2179 ($add).
+Removed top 4 bits (of 5) from port B of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.2179 ($add).
+Removed top 1 bits (of 5) from port Y of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.2179 ($add).
+Removed top 2 bits (of 18) from port A of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l85_c8_1130.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781 ($sub).
+Removed top 11 bits (of 18) from port B of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l85_c8_1130.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781 ($sub).
+Removed top 1 bits (of 18) from port Y of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l85_c8_1130.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781 ($sub).
+Removed top 2 bits (of 18) from port A of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l72_c10_c1dc.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781 ($sub).
+Removed top 12 bits (of 18) from port B of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l72_c10_c1dc.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781 ($sub).
+Removed top 1 bits (of 18) from port Y of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l72_c10_c1dc.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781 ($sub).
+Removed top 1 bits (of 17) from port A of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.2084 ($add).
+Removed top 16 bits (of 17) from port B of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.2084 ($add).
+Removed top 1 bits (of 17) from port Y of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.2084 ($add).
+Removed top 1 bits (of 2) from port B of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_eq_uart_mac_h_l65_c11_5499.1901 ($eq).
+Removed top 28 bits (of 32) from port B of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.bin_op_eq_uart_mac_h_l193_c913_4a89.2372 ($eq).
+Removed top 1 bits (of 33) from port A of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.bin_op_plus_uart_mac_h_l193_c874_ed8a.2335 ($add).
+Removed top 32 bits (of 33) from port B of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.bin_op_plus_uart_mac_h_l193_c874_ed8a.2335 ($add).
+Removed top 1 bits (of 33) from port Y of cell top.pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.bin_op_plus_uart_mac_h_l193_c874_ed8a.2335 ($add).
+Removed top 2 bits (of 10) from port A of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l25_c6_ef5f.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721 ($sub).
+Removed top 3 bits (of 10) from port B of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l25_c6_ef5f.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721 ($sub).
+Removed top 1 bits (of 10) from port Y of cell top.pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l25_c6_ef5f.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721 ($sub).
+
+3.14. Executing PEEPOPT pass (run peephole optimizers).
+
+3.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.16. Executing SHARE pass (SAT-based resource sharing).
+
+3.17. Executing TECHMAP pass (map to technology primitives).
+
+3.17.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+3.17.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+3.18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.20. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module top:
+  creating $macc model for pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_8253.1648 ($add).
+  creating $macc model for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l25_c6_ef5f.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721 ($sub).
+  creating $macc model for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l27_c12_8ddf.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721 ($sub).
+  creating $macc model for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l25_c24_1f5f.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721 ($sub).
+  creating $macc model for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l27_c30_b61e.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721 ($sub).
+  creating $macc model for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_minus_top_c_l26_c16_0ca3.1807 ($sub).
+  creating $macc model for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_plus_top_c_l28_c16_cf8f.1865 ($add).
+  creating $macc model for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.bin_op_plus_uart_mac_h_l193_c874_ed8a.2335 ($add).
+  creating $macc model for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l72_c10_c1dc.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781 ($sub).
+  creating $macc model for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l85_c8_1130.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781 ($sub).
+  creating $macc model for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.2084 ($add).
+  creating $macc model for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.2179 ($add).
+  creating $macc model for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_plus_uart_mac_h_l196_c851_7ecd.2335 ($add).
+  creating $macc model for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l148_c8_ece2.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962 ($sub).
+  creating $macc model for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l161_c8_b451.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962 ($sub).
+  creating $macc model for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l147_c5_4db9.2084 ($add).
+  creating $macc model for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.2179 ($add).
+  creating $alu model for $macc pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.2179.
+  creating $alu model for $macc pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l147_c5_4db9.2084.
+  creating $alu model for $macc pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l161_c8_b451.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962.
+  creating $alu model for $macc pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l148_c8_ece2.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962.
+  creating $alu model for $macc pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_plus_uart_mac_h_l196_c851_7ecd.2335.
+  creating $alu model for $macc pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.2179.
+  creating $alu model for $macc pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.2084.
+  creating $alu model for $macc pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l85_c8_1130.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781.
+  creating $alu model for $macc pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l72_c10_c1dc.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781.
+  creating $alu model for $macc pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.bin_op_plus_uart_mac_h_l193_c874_ed8a.2335.
+  creating $alu model for $macc pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_plus_top_c_l28_c16_cf8f.1865.
+  creating $alu model for $macc pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_minus_top_c_l26_c16_0ca3.1807.
+  creating $alu model for $macc pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l27_c30_b61e.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721.
+  creating $alu model for $macc pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l25_c24_1f5f.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721.
+  creating $alu model for $macc pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l27_c12_8ddf.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721.
+  creating $alu model for $macc pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l25_c6_ef5f.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721.
+  creating $alu model for $macc pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_8253.1648.
+  creating $alu cell for pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_8253.1648: $auto$alumacc.cc:485:replace_alu$974
+  creating $alu cell for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l25_c6_ef5f.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721: $auto$alumacc.cc:485:replace_alu$977
+  creating $alu cell for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_gte_top_c_l27_c12_8ddf.bin_op_minus_bin_op_gte_uint8_t_uint8_t_c_l14_c18_045e.2721: $auto$alumacc.cc:485:replace_alu$980
+  creating $alu cell for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l25_c24_1f5f.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721: $auto$alumacc.cc:485:replace_alu$983
+  creating $alu cell for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_lte_top_c_l27_c30_b61e.bin_op_minus_bin_op_lte_uint8_t_uint8_t_c_l14_c18_ee47.2721: $auto$alumacc.cc:485:replace_alu$986
+  creating $alu cell for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_minus_top_c_l26_c16_0ca3.1807: $auto$alumacc.cc:485:replace_alu$989
+  creating $alu cell for pipelinec_inst.uart_main_0clk_f70fc97c.bin_op_plus_top_c_l28_c16_cf8f.1865: $auto$alumacc.cc:485:replace_alu$992
+  creating $alu cell for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.bin_op_plus_uart_mac_h_l193_c874_ed8a.2335: $auto$alumacc.cc:485:replace_alu$995
+  creating $alu cell for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l72_c10_c1dc.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781: $auto$alumacc.cc:485:replace_alu$998
+  creating $alu cell for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l85_c8_1130.bin_op_minus_bin_op_gte_uint16_t_uint16_t_c_l14_c19_b0c6.2781: $auto$alumacc.cc:485:replace_alu$1001
+  creating $alu cell for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.2084: $auto$alumacc.cc:485:replace_alu$1004
+  creating $alu cell for pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.2179: $auto$alumacc.cc:485:replace_alu$1007
+  creating $alu cell for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_plus_uart_mac_h_l196_c851_7ecd.2335: $auto$alumacc.cc:485:replace_alu$1010
+  creating $alu cell for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l148_c8_ece2.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962: $auto$alumacc.cc:485:replace_alu$1013
+  creating $alu cell for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l161_c8_b451.bin_op_minus_bin_op_gte_uint16_t_uint7_t_c_l17_c18_f5a9.2962: $auto$alumacc.cc:485:replace_alu$1016
+  creating $alu cell for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l147_c5_4db9.2084: $auto$alumacc.cc:485:replace_alu$1019
+  creating $alu cell for pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.2179: $auto$alumacc.cc:485:replace_alu$1022
+  created 17 $alu and 0 $macc cells.
+
+3.21. Executing OPT pass (performing simple optimizations).
+
+3.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+3.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.21.9. Finished OPT passes. (There is nothing left to do.)
+
+3.22. Executing MEMORY pass.
+
+3.22.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+3.22.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+3.22.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+3.22.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+3.22.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+3.22.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.22.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+3.22.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+3.22.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.22.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.24. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+3.25. Executing TECHMAP pass (map to technology primitives).
+
+3.25.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+3.25.2. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+3.25.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.26. Executing ICE40_BRAMINIT pass.
+
+3.27. Executing OPT pass (performing simple optimizations).
+
+3.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~101 debug messages>
+
+3.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+3.27.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:266:slice$905 ($dffe) from module top (D = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bit_counter_mux_uart_mac_h_l143_c3_4d0b.iffalse, Q = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.left, rval = 4'0000).
+Adding SRST signal on $auto$ff.cc:266:slice$950 ($dffe) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.state_mux_uart_mac_h_l55_c3_b5c1.iffalse, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_eq_uart_mac_h_l55_c6_9fed.left, rval = 2'01).
+Adding SRST signal on $auto$ff.cc:266:slice$928 ($dffe) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bit_counter_mux_uart_mac_h_l65_c8_3f4f.iffalse, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.left, rval = 4'0000).
+Adding SRST signal on $auto$ff.cc:266:slice$916 ($dffe) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_valid_mux_uart_mac_h_l193_c545_c962.iffalse, Q = \pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.in_buffer_valid_mux_uart_mac_h_l196_c663_8406.iffalse, rval = 1'0).
+Adding SRST signal on $auto$ff.cc:266:slice$941 ($dffe) from module top (D = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.clk_counter_mux_uart_mac_h_l55_c3_b5c1.iffalse, Q = \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.left, rval = 16'0000000000000000).
+
+3.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 14 unused cells and 36 unused wires.
+<suppressed ~27 debug messages>
+
+3.27.5. Rerunning OPT passes. (Removed registers in this run.)
+
+3.27.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~4 debug messages>
+
+3.27.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.27.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.27.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.27.10. Finished fast OPT passes.
+
+3.28. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+3.29. Executing OPT pass (performing simple optimizations).
+
+3.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+3.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell \pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l27_c9_a8d3.1759:
+      Old ports: A={ \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [0] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [1] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [2] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [3] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [4] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [5] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [6] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [7] }, B={ \pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l27_c9_a8d3.iftrue [7:5] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [3] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [4] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [5] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [6] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [7] }, Y=\pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.iffalse
+      New ports: A={ \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [0] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [1] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [2] }, B=\pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l27_c9_a8d3.iftrue [7:5], Y=\pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.iffalse [7:5]
+      New connections: \pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.iffalse [4:0] = { \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [3] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [4] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [5] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [6] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [7] }
+    Consolidated identical input bits for $mux cell \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.state_mux_uart_mac_h_l65_c8_3f4f.1929:
+      Old ports: A=2'00, B=2'10, Y=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.state_mux_uart_mac_h_l55_c3_b5c1.iffalse
+      New ports: A=1'0, B=1'1, Y=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.state_mux_uart_mac_h_l55_c3_b5c1.iffalse [1]
+      New connections: \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.state_mux_uart_mac_h_l55_c3_b5c1.iffalse [0] = 1'0
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell \pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.1759:
+      Old ports: A=\pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.iffalse, B={ \pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.iftrue [7:5] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [3] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [4] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [5] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [6] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [7] }, Y=\pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.return_output
+      New ports: A=\pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.iffalse [7:5], B=\pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.iftrue [7:5], Y=\pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.return_output [7:5]
+      New connections: \pipelinec_inst.uart_main_0clk_f70fc97c.out_char_mux_top_c_l25_c3_6647.return_output [4:0] = { \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [3] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [4] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [5] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [6] \pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [7] }
+  Optimizing cells in module \top.
+Performed a total of 3 changes.
+
+3.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.29.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.29.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+3.29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.29.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.29.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.29.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.29.16. Finished OPT passes. (There is nothing left to do.)
+
+3.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.31. Executing TECHMAP pass (map to technology primitives).
+
+3.31.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.31.2. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+3.31.3. Continuing TECHMAP pass.
+Using template $paramod$36fdbc18fab0758c8553dda57bd33e3f8f3e8765\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $sdffce.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$4036cc4bf4f6a71988372ada8c45973510ae050c\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_80_ice40_alu for cells of type $alu.
+Using template $paramod$b8c0a997bce700f23568a5ada79cc6781d1f5ca0\_80_ice40_alu for cells of type $alu.
+Using template $paramod$6a42b6fefed750f8a1c58eab59479d960557103c\_80_ice40_alu for cells of type $alu.
+Using template $paramod$7d345e38ed17d1b9b7ad574498fe053cc5e778a7\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$2af30114e9bd4ccb04dad757b3f0a8f6bf0615b0\_80_ice40_alu for cells of type $alu.
+Using template $paramod$5e422c97d4648c7864402691d7b06fc43e6ffb33\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $sdffe.
+Using template $paramod$12f939b61a2dcd484d76a40e620bc076ddd034fe\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $dff.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_80_ice40_alu for cells of type $alu.
+Using template $paramod$60777137479802794c3e46b5ce7128212f5eaeed\_80_ice40_alu for cells of type $alu.
+Using template $paramod$152540317ee2e16bbf239a032c160996f537af98\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~505 debug messages>
+
+3.32. Executing OPT pass (performing simple optimizations).
+
+3.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~793 debug messages>
+
+3.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~174 debug messages>
+Removed a total of 58 cells.
+
+3.32.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 147 unused cells and 425 unused wires.
+<suppressed ~177 debug messages>
+
+3.32.5. Finished fast OPT passes.
+
+3.33. Executing ICE40_OPT pass (performing simple optimizations).
+
+3.33.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1001.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l72_c10_c1dc.left [3]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1001.slice[13].carry: CO=$auto$alumacc.cc:485:replace_alu$1001.C [13]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1004.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l71_c7_445d.left [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1007.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_plus_uart_mac_h_l93_c7_839c.left [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1010.slice[0].carry: CO=\pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_serializer_uart_mac_c_l61_c29_8ae9.uart_serializer_serializer_in_to_out_uart_mac_h_l196_c1331_0805.bin_op_eq_uart_mac_h_l196_c588_1bea.left [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1013.slice[0].carry: CO=\pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l148_c8_ece2.const_sr_7_bin_op_gte_uint16_t_uint7_t_c_l13_c9_462f.x [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1013.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1013.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1016.slice[0].carry: CO=\pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_gte_uart_mac_h_l148_c8_ece2.const_sr_7_bin_op_gte_uint16_t_uint7_t_c_l13_c9_462f.x [1]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1016.slice[6].carry: CO=$auto$alumacc.cc:485:replace_alu$1016.C [6]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1019.slice[0].carry: CO=\pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l147_c5_4db9.left [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1022.slice[0].carry: CO=\pipelinec_inst.uart_tx_mac_0clk_494804b3.uart_tx_1b_uart_mac_c_l72_c33_3410.bin_op_plus_uart_mac_h_l168_c7_2d52.left [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$974.slice[0].carry: CO=\pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_8253.left [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$977.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$977.slice[8].carry: CO=$auto$alumacc.cc:485:replace_alu$977.C [8]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$980.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$980.slice[8].carry: CO=$auto$alumacc.cc:485:replace_alu$980.C [8]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$983.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$983.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$983.slice[8].carry: CO=$auto$alumacc.cc:485:replace_alu$983.C [8]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$986.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$983.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$986.slice[8].carry: CO=$auto$alumacc.cc:485:replace_alu$986.C [8]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$989.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$992.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.uart_deserializer_out_buffer_mux_uart_mac_h_l193_c680_2960.iffalse [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$995.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_deserializer_uart_mac_c_l32_c33_798a.bin_op_plus_uart_mac_h_l193_c874_ed8a.left [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$998.slice[0].carry: CO=\pipelinec_inst.uart_rx_mac_0clk_6e5ceb01.uart_rx_1b_uart_mac_c_l24_c33_057a.bin_op_gte_uart_mac_h_l72_c10_c1dc.left [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$998.slice[14].carry: CO=$auto$alumacc.cc:485:replace_alu$998.C [14]
+
+3.33.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~19 debug messages>
+
+3.33.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+3.33.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 6 unused cells and 8 unused wires.
+<suppressed ~7 debug messages>
+
+3.33.6. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.7. Running ICE40 specific optimizations.
+
+3.33.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~6 debug messages>
+
+3.33.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.33.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.33.12. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.13. Running ICE40 specific optimizations.
+
+3.33.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.33.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.33.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.33.18. Finished OPT passes. (There is nothing left to do.)
+
+3.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+3.35. Executing TECHMAP pass (map to technology primitives).
+
+3.35.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+3.35.2. Continuing TECHMAP pass.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+Using template \$_SDFFCE_PP0P_ for cells of type $_SDFFCE_PP0P_.
+Using template \$_DFFE_PP_ for cells of type $_DFFE_PP_.
+Using template \$_SDFFCE_PP1P_ for cells of type $_SDFFCE_PP1P_.
+Using template \$_SDFF_PP0_ for cells of type $_SDFF_PP0_.
+No more expansions possible.
+<suppressed ~175 debug messages>
+
+3.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1001.slice[13].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1004.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1007.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1010.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1013.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1016.slice[6].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1019.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1022.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$974.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$977.slice[8].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$980.slice[8].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$983.slice[8].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$986.slice[8].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$989.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$992.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$995.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$998.slice[14].carry ($lut).
+
+3.38. Executing ICE40_OPT pass (performing simple optimizations).
+
+3.38.1. Running ICE40 specific optimizations.
+
+3.38.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~284 debug messages>
+
+3.38.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~189 debug messages>
+Removed a total of 63 cells.
+
+3.38.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 7 unused cells and 879 unused wires.
+<suppressed ~8 debug messages>
+
+3.38.6. Rerunning OPT passes. (Removed registers in this run.)
+
+3.38.7. Running ICE40 specific optimizations.
+
+3.38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~7 debug messages>
+
+3.38.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.38.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.38.12. Rerunning OPT passes. (Removed registers in this run.)
+
+3.38.13. Running ICE40 specific optimizations.
+
+3.38.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.38.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.38.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.38.18. Finished OPT passes. (There is nothing left to do.)
+
+3.39. Executing TECHMAP pass (map to technology primitives).
+
+3.39.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+3.39.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.40. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_CARRY_WRAPPER'.
+Successfully finished Verilog frontend.
+
+3.41. Executing ABC9 pass.
+
+3.41.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.3. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module top.
+Found 0 SCCs.
+
+3.41.4. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.5. Executing PROC pass (convert processes to netlists).
+
+3.41.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.41.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.41.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.41.5.4. Executing PROC_INIT pass (extract init attributes).
+
+3.41.5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.41.5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.41.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.41.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.41.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.41.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.41.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.41.5.12. Executing OPT_EXPR pass (perform const folding).
+
+3.41.6. Executing TECHMAP pass (map to technology primitives).
+
+3.41.6.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.41.6.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~126 debug messages>
+
+3.41.7. Executing OPT pass (performing simple optimizations).
+
+3.41.7.1. Executing OPT_EXPR pass (perform const folding).
+
+3.41.7.2. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+3.41.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Removed 0 multiplexer ports.
+
+3.41.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+Performed a total of 0 changes.
+
+3.41.7.5. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+3.41.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.41.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+
+3.41.7.8. Executing OPT_EXPR pass (perform const folding).
+
+3.41.7.9. Finished OPT passes. (There is nothing left to do.)
+
+3.41.8. Executing TECHMAP pass (map to technology primitives).
+
+3.41.8.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/abc9_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/abc9_map.v' to AST representation.
+Successfully finished Verilog frontend.
+
+3.41.8.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~2 debug messages>
+
+3.41.9. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/abc9_model.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ABC9_DELAY'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
+Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
+Successfully finished Verilog frontend.
+
+3.41.10. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~217 debug messages>
+
+3.41.11. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.12. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+3.41.13. Executing TECHMAP pass (map to technology primitives).
+
+3.41.13.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.41.13.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+Using template SB_CARRY for cells of type SB_CARRY.
+Using template $paramod\SB_LUT4\LUT_INIT=16'0110100110010110 for cells of type SB_LUT4.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+No more expansions possible.
+<suppressed ~147 debug messages>
+
+3.41.14. Executing OPT pass (performing simple optimizations).
+
+3.41.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~4 debug messages>
+
+3.41.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~29 debug messages>
+Removed a total of 12 cells.
+
+3.41.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.41.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.41.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.41.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.41.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~1 debug messages>
+
+3.41.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.41.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.41.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.41.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.41.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.41.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.41.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.41.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.41.14.16. Finished OPT passes. (There is nothing left to do.)
+
+3.41.15. Executing AIGMAP pass (map logic to AIG).
+Module top: replaced 7 cells with 43 new cells, skipped 11 cells.
+  replaced 2 cell types:
+       2 $_OR_
+       5 $_MUX_
+  not replaced 3 cell types:
+       8 $specify2
+       1 $_NOT_
+       2 $_AND_
+
+3.41.16. Executing AIGMAP pass (map logic to AIG).
+Module top: replaced 402 cells with 2376 new cells, skipped 793 cells.
+  replaced 2 cell types:
+     146 $_OR_
+     256 $_MUX_
+  not replaced 11 cell types:
+     174 $scopeinfo
+      42 $_NOT_
+      21 $_AND_
+      76 SB_DFF
+      15 SB_DFFE
+       2 SB_DFFSR
+      59 SB_DFFESR
+       1 SB_DFFESS
+      62 $paramod$__ABC9_DELAY\DELAY=32'00000000000000000000000011001011
+     153 $paramod$__ABC9_DELAY\DELAY=32'00000000000000000000000000010101
+     188 $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1
+
+3.41.16.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.16.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.16.3. Executing XAIGER backend.
+<suppressed ~164 debug messages>
+Extracted 935 AND gates and 3525 wires from module `top' to a netlist network with 155 inputs and 227 outputs.
+
+3.41.16.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+
+3.41.16.5. Executing ABC9.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_lut <abc-temp-dir>/input.lut 
+ABC: + read_box <abc-temp-dir>/input.box 
+ABC: + &read <abc-temp-dir>/input.xaig 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =    155/    227  and =     698  lev =   12 (0.76)  mem = 0.04 MB  box = 403  bb = 215
+ABC: + &scorr 
+ABC: Warning: The network is combinational.
+ABC: + &sweep 
+ABC: + &dc2 
+ABC: + &dch -f 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =    155/    227  and =     547  lev =   10 (0.62)  mem = 0.04 MB  ch =   63  box = 399  bb = 215
+ABC: + &if -W 250 -v 
+ABC: K = 4. Memory (bytes): Truth =    0. Cut =   52. Obj =  136. Set =  564. CutMin = no
+ABC: Node =     547.  Ch =    56.  Total mem =    0.38 MB. Peak cut mem =    0.03 MB.
+ABC: P:  Del = 5920.00.  Ar =     205.0.  Edge =      672.  Cut =     2910.  T =     0.00 sec
+ABC: P:  Del = 5920.00.  Ar =     185.0.  Edge =      633.  Cut =     2737.  T =     0.00 sec
+ABC: P:  Del = 5920.00.  Ar =     178.0.  Edge =      615.  Cut =     2798.  T =     0.00 sec
+ABC: F:  Del = 5920.00.  Ar =     176.0.  Edge =      608.  Cut =     2591.  T =     0.00 sec
+ABC: A:  Del = 5920.00.  Ar =     176.0.  Edge =      558.  Cut =     2622.  T =     0.00 sec
+ABC: A:  Del = 5920.00.  Ar =     176.0.  Edge =      558.  Cut =     2573.  T =     0.00 sec
+ABC: Total time =     0.00 sec
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &mfs 
+ABC: + &ps -l 
+ABC: <abc-temp-dir>/input : i/o =    155/    227  and =     428  lev =   11 (0.64)  mem = 0.04 MB  box = 399  bb = 215
+ABC: Mapping (K=4)  :  lut =    144  edge =     492  lev =    7 (0.37)  Boxes are not in a topological order. Switching to level computation without boxes.
+ABC: levB =   11  mem = 0.01 MB
+ABC: LUT = 144 : 2=34 23.6 %  3=16 11.1 %  4=94 65.3 %  Ave = 3.42
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + time 
+ABC: elapse: 0.12 seconds, total: 0.12 seconds
+
+3.41.16.6. Executing AIGER frontend.
+<suppressed ~780 debug messages>
+Removed 600 unused cells and 2696 unused wires.
+
+3.41.16.7. Executing ABC9_OPS pass (helper functions for ABC9).
+ABC RESULTS:              $lut cells:      156
+ABC RESULTS:   $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 cells:      184
+ABC RESULTS:           input signals:       19
+ABC RESULTS:          output signals:      227
+Removing temp directory.
+
+3.41.17. Executing TECHMAP pass (map to technology primitives).
+
+3.41.17.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/abc9_unmap.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `\$__DFF_x__$abc9_flop'.
+Generating RTLIL representation for module `\$__ABC9_SCC_BREAKER'.
+Successfully finished Verilog frontend.
+
+3.41.17.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+No more expansions possible.
+<suppressed ~190 debug messages>
+
+3.42. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.43. Executing TECHMAP pass (map to technology primitives).
+
+3.43.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+3.43.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 91 unused cells and 4628 unused wires.
+
+3.44. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:      279
+  1-LUT               12
+  2-LUT               43
+  3-LUT              129
+  4-LUT               95
+  with \SB_CARRY    (#0)  113
+  with \SB_CARRY    (#1)  121
+
+Eliminating LUTs.
+Number of LUTs:      279
+  1-LUT               12
+  2-LUT               43
+  3-LUT              129
+  4-LUT               95
+  with \SB_CARRY    (#0)  113
+  with \SB_CARRY    (#1)  121
+
+Combining LUTs.
+Number of LUTs:      278
+  1-LUT               12
+  2-LUT               41
+  3-LUT              130
+  4-LUT               95
+  with \SB_CARRY    (#0)  113
+  with \SB_CARRY    (#1)  121
+
+Eliminated 0 LUTs.
+Combined 1 LUTs.
+<suppressed ~1108 debug messages>
+
+3.45. Executing TECHMAP pass (map to technology primitives).
+
+3.45.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+3.45.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11011111 for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod$4888f2121a1fba4d507203534ae54782bc81e02e\$lut for cells of type $lut.
+Using template $paramod$3eb8805ccd6f91bad96dcbf190c2fb4f72f4634f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0010 for cells of type $lut.
+Using template $paramod$e8b805c60b05d29dea83383ec9e8df8657d8e0fa\$lut for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod$609ff53b8e25fddda2f58be8d19c2d47b81baf45\$lut for cells of type $lut.
+Using template $paramod$2c5744b1140d1bffcfbc5b3a5098e5a9ebbec559\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000111 for cells of type $lut.
+Using template $paramod$fb2de0338fd9cb56279bec3d2d5d229fcea1942b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101101 for cells of type $lut.
+Using template $paramod$d6fad69df4b6793100fda03bb83504fe9b335c70\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$fcff9a7b1687e357a40264efcefe8443c8b2971a\$lut for cells of type $lut.
+Using template $paramod$baa9d2fb2d21010939721b85aa9f11effe0b53c4\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00100000 for cells of type $lut.
+Using template $paramod$6a85ea31e7c8b0d2eb955ab669a63b0500fb7482\$lut for cells of type $lut.
+Using template $paramod$c275b57e46a02cb20344b2aa8a2a9f9434a80c66\$lut for cells of type $lut.
+Using template $paramod$364c9ffbffac467d60dfec81bba4e18476c15602\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001010 for cells of type $lut.
+Using template $paramod$29e6d4598488760861f6b73d2b7f65cb302fdcde\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00110110 for cells of type $lut.
+Using template $paramod$101238f3d8d49ab12a9b49a2f01cd503b26e9c61\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000001 for cells of type $lut.
+Using template $paramod$1578333f1a5078051b84dbcbad362e8087bf5284\$lut for cells of type $lut.
+Using template $paramod$126ee936f051099a89238b0c88b2a47a865d5ec1\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00011011 for cells of type $lut.
+Using template $paramod$5348912da867a611a8088b6b8b27a62d65f1de6e\$lut for cells of type $lut.
+Using template $paramod$47a8214374025465e226fa66bee690ff33268a25\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$a7be344af0979c41b8930051bf1455c2976339f4\$lut for cells of type $lut.
+Using template $paramod$714ea59e31ddba7653cdd8d07c8689346aeab5d6\$lut for cells of type $lut.
+Using template $paramod$87d995c9509899eb095b19b358f1d0ee4e974b2d\$lut for cells of type $lut.
+Using template $paramod$aa7c9fa19368523c5f93168fe49ca882dc226955\$lut for cells of type $lut.
+Using template $paramod$0d3ac82cf5b8a192d5ff4c23e3143360366ae882\$lut for cells of type $lut.
+Using template $paramod$ed53936884d8f0c77515f02c43ecf1f4f086a1bf\$lut for cells of type $lut.
+Using template $paramod$5a05aceb4b3a5e65f91bcffb0fccca72a8307af8\$lut for cells of type $lut.
+Using template $paramod$850f48dac4014f6ce06187aa7664648cd494a38b\$lut for cells of type $lut.
+Using template $paramod$4b9b235bc4444ff899bef0c648e4109b26737f1a\$lut for cells of type $lut.
+Using template $paramod$3ff66f66fefd0d30c6e9e85425e68ad2e300cf26\$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~996 debug messages>
+Removed 0 unused cells and 598 unused wires.
+
+3.46. Executing AUTONAME pass.
+Renamed 6504 objects in module top (49 iterations).
+<suppressed ~1020 debug messages>
+
+3.47. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `top'. Setting top module to top.
+
+3.47.1. Analyzing design hierarchy..
+Top module:  \top
+
+3.47.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+3.48. Printing statistics.
+
+=== top ===
+
+   Number of wires:               1524
+   Number of wire bits:          11508
+   Number of public wires:        1524
+   Number of public wire bits:   11508
+   Number of ports:                  6
+   Number of port bits:              6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                782
+     $scopeinfo                    174
+     SB_CARRY                      177
+     SB_DFF                         76
+     SB_DFFE                        15
+     SB_DFFESR                      59
+     SB_DFFESS                       1
+     SB_DFFSR                        2
+     SB_LUT4                       278
+
+3.49. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+3.50. Executing JSON backend.
+
+End of script. Logfile hash: 534e9c6279, CPU: user 3.19s system 0.02s, MEM: 58.59 MB peak
+Yosys 0.47+135 (git sha1 6f3376cbe, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 23% 1x ghdl (0 sec), 18% 27x opt_clean (0 sec), ...

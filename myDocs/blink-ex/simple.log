@@ -1,0 +1,1317 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.47+135 (git sha1 6f3376cbe, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Running command `ghdl --std=08 -frelaxed /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/built_in/pipelinec_fifo_fwft.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/built_in/pipelinec_async_fifo_fwft.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/c_structs_pkg.pkg.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/global_wires_pkg.pkg.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/pipelinec_top.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/blinky_main/blinky_main_0CLK_23f04728.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_r_connect/led_r_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_wires.c/uart_rx_connect/uart_rx_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/uart_main/uart_main_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_wires.c/uart_tx_connect/uart_tx_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_27/ice_27_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_40/ice_40_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_g_connect/led_g_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_25/ice_25_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_39/ice_39_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_b_connect/led_b_connect_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_41/ice_41_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_22_uint23_t/CONST_SR_22_uint23_t_0CLK_de264c78.vhd /home/devel/pico-ice/PipelineC/blink-ex/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint23_t_uint1_t/BIN_OP_PLUS_uint23_t_uint1_t_0CLK_de264c78.vhd  -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json' --
+
+1. Executing GHDL.
+Importing module pipelinec_top.
+Importing module ice_39_0clk_de264c78.
+Importing module ice_40_0clk_de264c78.
+Importing module ice_41_0clk_de264c78.
+Importing module led_r_connect_0clk_de264c78.
+Importing module led_g_connect_0clk_de264c78.
+Importing module led_b_connect_0clk_de264c78.
+Importing module ice_25_0clk_de264c78.
+Importing module ice_27_0clk_de264c78.
+Importing module uart_tx_connect_0clk_de264c78.
+Importing module uart_rx_connect_0clk_de264c78.
+Importing module blinky_main_0clk_23f04728.
+Importing module uart_main_0clk_de264c78.
+Importing module const_sr_22_uint23_t_0clk_de264c78.
+Importing module bin_op_plus_uint23_t_uint1_t_0clk_de264c78.
+
+2. Executing Verilog-2005 frontend: top.sv
+Parsing SystemVerilog input from `top.sv' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+3. Executing SYNTH_ICE40 pass.
+
+3.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+3.2. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pipelinec_top
+Used module:         \uart_main_0clk_de264c78
+Used module:         \blinky_main_0clk_23f04728
+Used module:             \bin_op_plus_uint23_t_uint1_t_0clk_de264c78
+Used module:             \const_sr_22_uint23_t_0clk_de264c78
+Used module:         \uart_rx_connect_0clk_de264c78
+Used module:         \uart_tx_connect_0clk_de264c78
+Used module:         \ice_27_0clk_de264c78
+Used module:         \ice_25_0clk_de264c78
+Used module:         \led_b_connect_0clk_de264c78
+Used module:         \led_g_connect_0clk_de264c78
+Used module:         \led_r_connect_0clk_de264c78
+Used module:         \ice_41_0clk_de264c78
+Used module:         \ice_40_0clk_de264c78
+Used module:         \ice_39_0clk_de264c78
+
+3.2.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pipelinec_top
+Used module:         \uart_main_0clk_de264c78
+Used module:         \blinky_main_0clk_23f04728
+Used module:             \bin_op_plus_uint23_t_uint1_t_0clk_de264c78
+Used module:             \const_sr_22_uint23_t_0clk_de264c78
+Used module:         \uart_rx_connect_0clk_de264c78
+Used module:         \uart_tx_connect_0clk_de264c78
+Used module:         \ice_27_0clk_de264c78
+Used module:         \ice_25_0clk_de264c78
+Used module:         \led_b_connect_0clk_de264c78
+Used module:         \led_g_connect_0clk_de264c78
+Used module:         \led_r_connect_0clk_de264c78
+Used module:         \ice_41_0clk_de264c78
+Used module:         \ice_40_0clk_de264c78
+Used module:         \ice_39_0clk_de264c78
+Removed 0 unused modules.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$279 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$272 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$268 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$261 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$258 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$255 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$252 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$249 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$241 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$234 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$230 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$223 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$220 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$217 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$214 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$211 in module SB_DFFSR.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 22 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$282'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$278'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$271'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$267'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$260'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$257'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$254'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$251'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$248'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$246'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+  Set init value: \Q = 1'0
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$279'.
+Found async reset \R in `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$268'.
+Found async reset \S in `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$258'.
+Found async reset \R in `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$252'.
+Found async reset \S in `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$241'.
+Found async reset \R in `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$230'.
+Found async reset \S in `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$220'.
+Found async reset \R in `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$214'.
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~18 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$282'.
+Creating decoders for process `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$279'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$278'.
+Creating decoders for process `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$272'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$271'.
+Creating decoders for process `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$268'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$267'.
+Creating decoders for process `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$261'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$260'.
+Creating decoders for process `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$258'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$257'.
+Creating decoders for process `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$255'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$254'.
+Creating decoders for process `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$252'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$251'.
+Creating decoders for process `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$249'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$248'.
+Creating decoders for process `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$247'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$246'.
+Creating decoders for process `\SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$245'.
+Creating decoders for process `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+Creating decoders for process `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$241'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+Creating decoders for process `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$234'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+Creating decoders for process `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$230'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+Creating decoders for process `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$223'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+Creating decoders for process `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$220'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+Creating decoders for process `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$217'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+Creating decoders for process `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$214'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+Creating decoders for process `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$211'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+Creating decoders for process `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$209'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+Creating decoders for process `\SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$207'.
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$279'.
+  created $adff cell `$procdff$465' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$272'.
+  created $dff cell `$procdff$466' with negative edge clock.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$268'.
+  created $adff cell `$procdff$469' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$261'.
+  created $dff cell `$procdff$470' with negative edge clock.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$258'.
+  created $adff cell `$procdff$473' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$255'.
+  created $dff cell `$procdff$474' with negative edge clock.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$252'.
+  created $adff cell `$procdff$477' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$249'.
+  created $dff cell `$procdff$478' with negative edge clock.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$247'.
+  created $dff cell `$procdff$479' with negative edge clock.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$245'.
+  created $dff cell `$procdff$480' with negative edge clock.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$241'.
+  created $adff cell `$procdff$483' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$234'.
+  created $dff cell `$procdff$484' with positive edge clock.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$230'.
+  created $adff cell `$procdff$487' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$223'.
+  created $dff cell `$procdff$488' with positive edge clock.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$220'.
+  created $adff cell `$procdff$491' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$217'.
+  created $dff cell `$procdff$492' with positive edge clock.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$214'.
+  created $adff cell `$procdff$495' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$211'.
+  created $dff cell `$procdff$496' with positive edge clock.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$209'.
+  created $dff cell `$procdff$497' with positive edge clock.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$207'.
+  created $dff cell `$procdff$498' with positive edge clock.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$282'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$279'.
+Removing empty process `SB_DFFNES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$279'.
+Removing empty process `SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$278'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$272'.
+Removing empty process `SB_DFFNESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$272'.
+Removing empty process `SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$271'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$268'.
+Removing empty process `SB_DFFNER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$268'.
+Removing empty process `SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$267'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$261'.
+Removing empty process `SB_DFFNESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$261'.
+Removing empty process `SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$260'.
+Removing empty process `SB_DFFNS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$258'.
+Removing empty process `SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$257'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$255'.
+Removing empty process `SB_DFFNSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$255'.
+Removing empty process `SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$254'.
+Removing empty process `SB_DFFNR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$252'.
+Removing empty process `SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$251'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$249'.
+Removing empty process `SB_DFFNSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$249'.
+Removing empty process `SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$248'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$247'.
+Removing empty process `SB_DFFNE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$247'.
+Removing empty process `SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$246'.
+Removing empty process `SB_DFFN.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$245'.
+Removing empty process `SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$241'.
+Removing empty process `SB_DFFES.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$241'.
+Removing empty process `SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$234'.
+Removing empty process `SB_DFFESS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$234'.
+Removing empty process `SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$230'.
+Removing empty process `SB_DFFER.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$230'.
+Removing empty process `SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$223'.
+Removing empty process `SB_DFFESR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$223'.
+Removing empty process `SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+Removing empty process `SB_DFFS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$220'.
+Removing empty process `SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$217'.
+Removing empty process `SB_DFFSS.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$217'.
+Removing empty process `SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+Removing empty process `SB_DFFR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$214'.
+Removing empty process `SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$211'.
+Removing empty process `SB_DFFSR.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$211'.
+Removing empty process `SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$209'.
+Removing empty process `SB_DFFE.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$209'.
+Removing empty process `SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+Removing empty process `SB_DFF.$proc$/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$207'.
+Cleaned up 18 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module bin_op_plus_uint23_t_uint1_t_0clk_de264c78.
+Optimizing module const_sr_22_uint23_t_0clk_de264c78.
+<suppressed ~1 debug messages>
+Optimizing module uart_main_0clk_de264c78.
+Optimizing module blinky_main_0clk_23f04728.
+Optimizing module uart_rx_connect_0clk_de264c78.
+Optimizing module uart_tx_connect_0clk_de264c78.
+Optimizing module ice_27_0clk_de264c78.
+Optimizing module ice_25_0clk_de264c78.
+Optimizing module led_b_connect_0clk_de264c78.
+Optimizing module led_g_connect_0clk_de264c78.
+Optimizing module led_r_connect_0clk_de264c78.
+Optimizing module ice_41_0clk_de264c78.
+Optimizing module ice_40_0clk_de264c78.
+Optimizing module ice_39_0clk_de264c78.
+Optimizing module pipelinec_top.
+
+3.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module bin_op_plus_uint23_t_uint1_t_0clk_de264c78.
+Deleting now unused module const_sr_22_uint23_t_0clk_de264c78.
+Deleting now unused module uart_main_0clk_de264c78.
+Deleting now unused module blinky_main_0clk_23f04728.
+Deleting now unused module uart_rx_connect_0clk_de264c78.
+Deleting now unused module uart_tx_connect_0clk_de264c78.
+Deleting now unused module ice_27_0clk_de264c78.
+Deleting now unused module ice_25_0clk_de264c78.
+Deleting now unused module led_b_connect_0clk_de264c78.
+Deleting now unused module led_g_connect_0clk_de264c78.
+Deleting now unused module led_r_connect_0clk_de264c78.
+Deleting now unused module ice_41_0clk_de264c78.
+Deleting now unused module ice_40_0clk_de264c78.
+Deleting now unused module ice_39_0clk_de264c78.
+Deleting now unused module pipelinec_top.
+<suppressed ~15 debug messages>
+
+3.5. Executing TRIBUF pass.
+
+3.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+3.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~14 debug messages>
+
+3.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 38 unused wires.
+<suppressed ~1 debug messages>
+
+3.9. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+3.10. Executing OPT pass (performing simple optimizations).
+
+3.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+3.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.10.9. Finished OPT passes. (There is nothing left to do.)
+
+3.11. Executing FSM pass (extract and optimize FSM).
+
+3.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+3.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+3.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+3.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+3.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.12.9. Finished OPT passes. (There is nothing left to do.)
+
+3.13. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 24) from port A of cell top.pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_a84c.306 ($add).
+Removed top 23 bits (of 24) from port B of cell top.pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_a84c.306 ($add).
+Removed top 1 bits (of 24) from port Y of cell top.pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_a84c.306 ($add).
+
+3.14. Executing PEEPOPT pass (run peephole optimizers).
+
+3.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.16. Executing SHARE pass (SAT-based resource sharing).
+
+3.17. Executing TECHMAP pass (map to technology primitives).
+
+3.17.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+3.17.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+3.18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.20. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module top:
+  creating $macc model for pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_a84c.306 ($add).
+  creating $alu model for $macc pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_a84c.306.
+  creating $alu cell for pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_a84c.306: $auto$alumacc.cc:485:replace_alu$515
+  created 1 $alu and 0 $macc cells.
+
+3.21. Executing OPT pass (performing simple optimizations).
+
+3.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.21.9. Finished OPT passes. (There is nothing left to do.)
+
+3.22. Executing MEMORY pass.
+
+3.22.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+3.22.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+3.22.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+3.22.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+3.22.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+3.22.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.22.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+3.22.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+3.22.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.22.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.24. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+3.25. Executing TECHMAP pass (map to technology primitives).
+
+3.25.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+3.25.2. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+3.25.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.26. Executing ICE40_BRAMINIT pass.
+
+3.27. Executing OPT pass (performing simple optimizations).
+
+3.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~1 debug messages>
+
+3.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.27.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.27.5. Finished fast OPT passes.
+
+3.28. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+3.29. Executing OPT pass (performing simple optimizations).
+
+3.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.29.9. Finished OPT passes. (There is nothing left to do.)
+
+3.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.31. Executing TECHMAP pass (map to technology primitives).
+
+3.31.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.31.2. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+3.31.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dff.
+Using template $paramod$36fdbc18fab0758c8553dda57bd33e3f8f3e8765\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $mux.
+No more expansions possible.
+<suppressed ~103 debug messages>
+
+3.32. Executing OPT pass (performing simple optimizations).
+
+3.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~46 debug messages>
+
+3.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+3.32.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 23 unused cells and 17 unused wires.
+<suppressed ~24 debug messages>
+
+3.32.5. Finished fast OPT passes.
+
+3.33. Executing ICE40_OPT pass (performing simple optimizations).
+
+3.33.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$515.slice[0].carry: CO=\pipelinec_inst.blinky_main_0clk_23f04728.bin_op_plus_top_c_l12_c3_a84c.left [0]
+
+3.33.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.33.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.33.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.33.6. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.7. Running ICE40 specific optimizations.
+
+3.33.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.33.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.33.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.33.12. Finished OPT passes. (There is nothing left to do.)
+
+3.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+3.35. Executing TECHMAP pass (map to technology primitives).
+
+3.35.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+3.35.2. Continuing TECHMAP pass.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+No more expansions possible.
+<suppressed ~49 debug messages>
+
+3.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping top.$auto$alumacc.cc:485:replace_alu$515.slice[0].carry ($lut).
+
+3.38. Executing ICE40_OPT pass (performing simple optimizations).
+
+3.38.1. Running ICE40 specific optimizations.
+
+3.38.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~14 debug messages>
+
+3.38.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.38.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 112 unused wires.
+<suppressed ~1 debug messages>
+
+3.38.6. Rerunning OPT passes. (Removed registers in this run.)
+
+3.38.7. Running ICE40 specific optimizations.
+
+3.38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.38.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.38.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.38.12. Finished OPT passes. (There is nothing left to do.)
+
+3.39. Executing TECHMAP pass (map to technology primitives).
+
+3.39.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+3.39.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.40. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_CARRY_WRAPPER'.
+Successfully finished Verilog frontend.
+
+3.41. Executing ABC9 pass.
+
+3.41.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.3. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module top.
+Found 0 SCCs.
+
+3.41.4. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.5. Executing PROC pass (convert processes to netlists).
+
+3.41.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.41.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.41.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.41.5.4. Executing PROC_INIT pass (extract init attributes).
+
+3.41.5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.41.5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.41.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.41.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.41.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.41.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.41.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.41.5.12. Executing OPT_EXPR pass (perform const folding).
+
+3.41.6. Executing TECHMAP pass (map to technology primitives).
+
+3.41.6.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.41.6.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~126 debug messages>
+
+3.41.7. Executing OPT pass (performing simple optimizations).
+
+3.41.7.1. Executing OPT_EXPR pass (perform const folding).
+
+3.41.7.2. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+3.41.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Removed 0 multiplexer ports.
+
+3.41.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+Performed a total of 0 changes.
+
+3.41.7.5. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+3.41.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.41.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+
+3.41.7.8. Executing OPT_EXPR pass (perform const folding).
+
+3.41.7.9. Finished OPT passes. (There is nothing left to do.)
+
+3.41.8. Executing TECHMAP pass (map to technology primitives).
+
+3.41.8.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/abc9_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/abc9_map.v' to AST representation.
+Successfully finished Verilog frontend.
+
+3.41.8.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~2 debug messages>
+
+3.41.9. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/abc9_model.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ABC9_DELAY'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
+Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
+Successfully finished Verilog frontend.
+
+3.41.10. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~29 debug messages>
+
+3.41.11. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.12. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+3.41.13. Executing TECHMAP pass (map to technology primitives).
+
+3.41.13.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.41.13.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+Using template $paramod\SB_LUT4\LUT_INIT=16'0110100110010110 for cells of type SB_LUT4.
+Using template SB_CARRY for cells of type SB_CARRY.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+No more expansions possible.
+<suppressed ~146 debug messages>
+
+3.41.14. Executing OPT pass (performing simple optimizations).
+
+3.41.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~4 debug messages>
+
+3.41.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~29 debug messages>
+Removed a total of 12 cells.
+
+3.41.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.41.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.41.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.41.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.41.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~1 debug messages>
+
+3.41.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.41.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.41.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.41.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.41.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.41.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.41.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.41.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.41.14.16. Finished OPT passes. (There is nothing left to do.)
+
+3.41.15. Executing AIGMAP pass (map logic to AIG).
+Module top: replaced 7 cells with 43 new cells, skipped 11 cells.
+  replaced 2 cell types:
+       2 $_OR_
+       5 $_MUX_
+  not replaced 3 cell types:
+       8 $specify2
+       1 $_NOT_
+       2 $_AND_
+
+3.41.16. Executing AIGMAP pass (map logic to AIG).
+Module top: replaced 0 cells with 0 new cells, skipped 92 cells.
+  not replaced 5 cell types:
+      15 $scopeinfo
+       1 $_NOT_
+      27 SB_DFF
+      22 $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1
+      27 $paramod$__ABC9_DELAY\DELAY=32'00000000000000000000000000010101
+
+3.41.16.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.16.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.41.16.3. Executing XAIGER backend.
+<suppressed ~38 debug messages>
+Extracted 0 AND gates and 131 wires from module `top' to a netlist network with 29 inputs and 31 outputs.
+
+3.41.16.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+
+3.41.16.5. Executing ABC9.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_lut <abc-temp-dir>/input.lut 
+ABC: + read_box <abc-temp-dir>/input.box 
+ABC: + &read <abc-temp-dir>/input.xaig 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =     29/     31  and =       0  lev =    0 (0.00)  mem = 0.01 MB  box = 49  bb = 27
+ABC: + &scorr 
+ABC: Warning: The network is combinational.
+ABC: + &sweep 
+ABC: + &dc2 
+ABC: + &dch -f 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =     29/     31  and =       0  lev =    0 (0.00)  mem = 0.01 MB  ch =    0  box = 49  bb = 27
+ABC: + &if -W 250 -v 
+ABC: K = 4. Memory (bytes): Truth =    0. Cut =   52. Obj =  136. Set =  564. CutMin = no
+ABC: Node =       0.  Ch =     0.  Total mem =    0.04 MB. Peak cut mem =    0.00 MB.
+ABC: P:  Del = 3088.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: P:  Del = 3088.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: P:  Del = 3088.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: F:  Del = 3088.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: A:  Del = 3088.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: A:  Del = 3088.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: Total time =     0.00 sec
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &mfs 
+ABC: The network is not changed by "&mfs".
+ABC: + &ps -l 
+ABC: <abc-temp-dir>/input : i/o =     29/     31  and =       0  lev =    0 (0.00)  mem = 0.01 MB  box = 49  bb = 27
+ABC: Mapping (K=0)  :  lut =      0  edge =       0  lev =    0 (0.00)  levB =   23  mem = 0.00 MB
+ABC: LUT = 0 : Ave = 0.00
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + time 
+ABC: elapse: 0.01 seconds, total: 0.01 seconds
+
+3.41.16.6. Executing AIGER frontend.
+<suppressed ~132 debug messages>
+Removed 0 unused cells and 265 unused wires.
+
+3.41.16.7. Executing ABC9_OPS pass (helper functions for ABC9).
+ABC RESULTS:              $lut cells:        1
+ABC RESULTS:   $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 cells:       22
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:       31
+Removing temp directory.
+
+3.41.17. Executing TECHMAP pass (map to technology primitives).
+
+3.41.17.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/abc9_unmap.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `\$__DFF_x__$abc9_flop'.
+Generating RTLIL representation for module `\$__ABC9_SCC_BREAKER'.
+Successfully finished Verilog frontend.
+
+3.41.17.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+No more expansions possible.
+<suppressed ~28 debug messages>
+
+3.42. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.43. Executing TECHMAP pass (map to technology primitives).
+
+3.43.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+3.43.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 1 unused cells and 248 unused wires.
+
+3.44. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:       23
+  1-LUT                1
+  2-LUT                1
+  3-LUT               21
+  with \SB_CARRY    (#0)   21
+  with \SB_CARRY    (#1)   21
+
+Eliminating LUTs.
+Number of LUTs:       23
+  1-LUT                1
+  2-LUT                1
+  3-LUT               21
+  with \SB_CARRY    (#0)   21
+  with \SB_CARRY    (#1)   21
+
+Combining LUTs.
+Number of LUTs:       23
+  1-LUT                1
+  2-LUT                1
+  3-LUT               21
+  with \SB_CARRY    (#0)   21
+  with \SB_CARRY    (#1)   21
+
+Eliminated 0 LUTs.
+Combined 0 LUTs.
+<suppressed ~88 debug messages>
+
+3.45. Executing TECHMAP pass (map to technology primitives).
+
+3.45.1. Executing Verilog-2005 frontend: /home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/home/devel/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+3.45.2. Continuing TECHMAP pass.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+No more expansions possible.
+<suppressed ~52 debug messages>
+Removed 0 unused cells and 46 unused wires.
+
+3.46. Executing AUTONAME pass.
+Renamed 313 objects in module top (7 iterations).
+<suppressed ~115 debug messages>
+
+3.47. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `top'. Setting top module to top.
+
+3.47.1. Analyzing design hierarchy..
+Top module:  \top
+
+3.47.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+3.48. Printing statistics.
+
+=== top ===
+
+   Number of wires:                125
+   Number of wire bits:            598
+   Number of public wires:         125
+   Number of public wire bits:     598
+   Number of ports:                  6
+   Number of port bits:              6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 86
+     $scopeinfo                     15
+     SB_CARRY                       21
+     SB_DFF                         27
+     SB_LUT4                        23
+
+3.49. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+3.50. Executing JSON backend.
+
+End of script. Logfile hash: c3be53c7aa, CPU: user 1.18s system 0.02s, MEM: 46.50 MB peak
+Yosys 0.47+135 (git sha1 6f3376cbe, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 36% 21x read_verilog (0 sec), 35% 1x ghdl (0 sec), ...
