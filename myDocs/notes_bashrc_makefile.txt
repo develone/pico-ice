@@ -1,0 +1,9 @@
+export PIPELINEC_REPO="$HOME/PipelineC"
+export OSS_CAD_SUITE=$HOME/oss-cad-suite/
+
+YOSYS = $(OSS_CAD_SUITE)/bin/yosys
+NEXTPNR = $(OSS_CAD_SUITE)/bin/nextpnr-ice40
+ICEPACK = $(OSS_CAD_SUITE)/bin/icepack
+ICEPLL = $(OSS_CAD_SUITE)/bin/icepll
+
+PIPELINEC = $(PIPELINEC_REPO)/src/pipelinec
