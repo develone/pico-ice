@@ -1,0 +1,55 @@
+04/01/25
+
+working pi5-90
+
+git clone https://github.com/develone/PipelineC.git -b test-dev
+
+cd PipelineC/examples/pico-ice/
+
+rm -rf ice_makefile_pipelinec/
+
+devel@pi5-90:~/PipelineC/examples/pico-ice $ cp -r ~/master-repos/pico-ice/PipelineC/pmod-ethernet/examples/pico-ice/ice_makefile_pipelinec/ .
+
+cd ice_makefile_pipelinec/
+
+devel@pi5-90:~/PipelineC/examples/pico-ice/ice_makefile_pipelinec $ ./build.sh 
+rm -f lextab.py
+rm -f yacctab.py
+rm -f pll_clk_mhz.h
+rm -f -r pipelinec_output
+rm -f pipelinec.log
+rm -f pll.v
+rm -f *.json *.asc *.bin *.uf2
+rm -f yosys_stderr.log
+rm -f dfu_util.log
+echo "#define PLL_CLK_MHZ 25.0\n" > pll_clk_mhz.h
+/home/devel/PipelineC/src/pipelinec ethernet_top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+/home/devel/oss-cad-suite//bin/icepll -q -i 12 -o 25.0 -p -m -f pll.v
+/home/devel/oss-cad-suite//bin/yosys -l simple.log -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv ethernet_top.sv pll.v; synth_ice40 -top ethernet_top -json gateware.json" 2> yosys_stderr.log
+/home/devel/oss-cad-suite//bin/nextpnr-ice40 -l nextpnr.log -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc --pre-pack eth_clocks.py
+/home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
+
+cp gateware.uf2 /media/devel/pico-ice
+
+cd ../../
+
+rm -rf net
+
+cp -r ~/master-repos/pico-ice/PipelineC/pmod-ethernet/examples/net/ .
+
+devel@pi5-90:~/PipelineC/examples/net $ ./compile-work_test.sh 
+devel@pi5-90:~/PipelineC/examples/net $ sudo ./work_test 
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.000257 seconds to execute 
+CPU iteration time: 0.000257 seconds
+CPU bytes per sec: 46689.840445 B/s
+FPGA took 0.000148 seconds to execute 
+FPGA iteration time: 0.000148 seconds
+FPGA bytes per sec: 81049.352657 B/s
+Speedup: 1.735910
+
+
+
