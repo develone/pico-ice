@@ -1,4 +1,4 @@
-03/31/25
+04/01/25
 
 working pi5-90
 
@@ -8,7 +8,8 @@ cd PipelineC/examples/pico-ice/
 
 rm -rf ice_makefile_pipelinec/
 
-devel@pi5-90:~/PipelineC/examples/pico-ice $ cp -r  ~/master-repos/pico-ice/PipelineC/pmod-ethernet-jpeg-8x8/examples/pico/ice_makefile_pipelinec/ 
+devel@pi5-90:~/PipelineC/examples/pico-ice $ cp -r ~/master-repos/pico-ice/PipelineC/pmod-ethernet-jpeg-8x8/examples/pico-ice/ice_makefile_pipelinec/ .
+ 
 
 cd ice_makefile_pipelinec/
 
