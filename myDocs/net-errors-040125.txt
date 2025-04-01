@@ -1,0 +1,40 @@
+devel@pi5-90:~/PipelineC/examples/net $ ./compile-work_test.sh 
+In file included from work.h:27,
+                 from work_test.c:30:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h: In function ‘work_inputs_t_to_bytes’:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:13:21: error: ‘work_inputs_t’ has no member named ‘matrix0’
+   13 |  int8_t_to_bytes(&(x->matrix0[matrix0_dim_0][matrix0_dim_1]), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:22:21: error: ‘work_inputs_t’ has no member named ‘matrix1’
+   22 |  int8_t_to_bytes(&(x->matrix1[matrix1_dim_0][matrix1_dim_1]), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h: In function ‘bytes_to_work_inputs_t’:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:37:36: error: ‘work_inputs_t’ has no member named ‘matrix0’
+   37 |  bytes_to_int8_t(&(bytes[pos]), &(x->matrix0[matrix0_dim_0][matrix0_dim_1]));
+      |                                    ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:46:36: error: ‘work_inputs_t’ has no member named ‘matrix1’
+   46 |  bytes_to_int8_t(&(bytes[pos]), &(x->matrix1[matrix1_dim_0][matrix1_dim_1]));
+      |                                    ^~
+In file included from work.h:37:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_outputs_t_bytes_t.h/work_outputs_t_bytes.h: In function ‘work_outputs_t_to_bytes’:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_outputs_t_bytes_t.h/work_outputs_t_bytes.h:13:21: error: ‘work_outputs_t’ has no member named ‘result’
+   13 |  int8_t_to_bytes(&(x->result[result_dim_0][result_dim_1]), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_outputs_t_bytes_t.h/work_outputs_t_bytes.h: In function ‘bytes_to_work_outputs_t’:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_outputs_t_bytes_t.h/work_outputs_t_bytes.h:28:36: error: ‘work_outputs_t’ has no member named ‘result’
+   28 |  bytes_to_int8_t(&(bytes[pos]), &(x->result[result_dim_0][result_dim_1]));
+      |                                    ^~
+work.h: In function ‘work’:
+work.h:52:33: warning: suggest parentheses around ‘+’ inside ‘>>’ [-Wparentheses]
+   52 |             o.res = (inputs.sam + ((inputs.left + inputs.right) + 2) >> 2));
+      |                      ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+work.h:52:75: error: expected ‘;’ before ‘)’ token
+   52 |        o.res = (inputs.sam + ((inputs.left + inputs.right) + 2) >> 2));
+      |                                                                      ^
+      |                                                                      ;
+work.h:52:75: error: expected statement before ‘)’ token
+work.h: In function ‘work_inputs_init’:
+work.h:77:10: error: ‘work_inputs_t’ has no member named ‘fwd_in’; did you mean ‘fwd_inv’?
+   77 |   inputs.fwd_in = rand()%max_val;
+      |          ^~~~~~
+      |          fwd_inv
