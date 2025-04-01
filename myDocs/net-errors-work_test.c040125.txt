@@ -1,0 +1,44 @@
+devel@pi5-90:~/PipelineC/examples/net $ ./compile-work_test.sh 
+In file included from work.h:26,
+                 from work_test.c:30:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h: In function ‘work_inputs_t_to_bytes’:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:10:21: error: ‘work_inputs_t’ has no member named ‘left’
+   10 | int16_t_to_bytes(&(x->left), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:13:21: error: ‘work_inputs_t’ has no member named ‘right’
+   13 | int16_t_to_bytes(&(x->right), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:16:21: error: ‘work_inputs_t’ has no member named ‘sam’
+   16 | int16_t_to_bytes(&(x->sam), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:19:21: error: ‘work_inputs_t’ has no member named ‘lo_hi’
+   19 | uint8_t_to_bytes(&(x->lo_hi), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:22:21: error: ‘work_inputs_t’ has no member named ‘fwd_inv’
+   22 | uint8_t_to_bytes(&(x->fwd_inv), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h: In function ‘bytes_to_work_inputs_t’:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:31:36: error: ‘work_inputs_t’ has no member named ‘left’
+   31 | bytes_to_int16_t(&(bytes[pos]), &(x->left));
+      |                                    ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:34:36: error: ‘work_inputs_t’ has no member named ‘right’
+   34 | bytes_to_int16_t(&(bytes[pos]), &(x->right));
+      |                                    ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:37:36: error: ‘work_inputs_t’ has no member named ‘sam’
+   37 | bytes_to_int16_t(&(bytes[pos]), &(x->sam));
+      |                                    ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:40:36: error: ‘work_inputs_t’ has no member named ‘lo_hi’
+   40 | bytes_to_uint8_t(&(bytes[pos]), &(x->lo_hi));
+      |                                    ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_inputs_t_bytes_t.h/work_inputs_t_bytes.h:43:36: error: ‘work_inputs_t’ has no member named ‘fwd_inv’
+   43 | bytes_to_uint8_t(&(bytes[pos]), &(x->fwd_inv));
+      |                                    ^~
+In file included from work.h:36:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_outputs_t_bytes_t.h/work_outputs_t_bytes.h: In function ‘work_outputs_t_to_bytes’:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_outputs_t_bytes_t.h/work_outputs_t_bytes.h:9:21: error: ‘work_outputs_t’ has no member named ‘res’
+    9 | int16_t_to_bytes(&(x->res), &(bytes[pos]));
+      |                     ^~
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_outputs_t_bytes_t.h/work_outputs_t_bytes.h: In function ‘bytes_to_work_outputs_t’:
+../pico-ice/ice_makefile_pipelinec/pipelinec_output/type_bytes_t.h/work_outputs_t_bytes_t.h/work_outputs_t_bytes.h:18:36: error: ‘work_outputs_t’ has no member named ‘res’
+   18 | bytes_to_int16_t(&(bytes[pos]), &(x->res));
+      |                                    ^~
