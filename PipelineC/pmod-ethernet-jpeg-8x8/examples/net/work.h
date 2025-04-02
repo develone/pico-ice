@@ -49,7 +49,7 @@ work_outputs_t work(work_inputs_t inputs)
         }
     }else{
         if(inputs.fwd_inv) {
-            o.res = (inputs.sam + ((inputs.left + inputs.right) + 2) >> 2);
+            o.res = (inputs.sam + ((inputs.left + inputs.right) + 2)) >> 2;
         }else{
             o.res = (inputs.sam - (((inputs.left + inputs.right) + 2) >> 2));
         }
