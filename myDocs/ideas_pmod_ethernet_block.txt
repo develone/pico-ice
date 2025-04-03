@@ -1,0 +1,29 @@
+I trying some ideas for sending a row or column, so as to do more work. 
+This would require adding a fsm?
+
+typedef struct work_inputs_t
+{
+    int16_t left;
+    int16_t right;
+    int16_t sam;
+    uint8_t lo_hi;
+    uint8_t fwd_inv;
+    uint16_t mem[128];
+} work_inputs_t;
+
+devel@pi5-90:~/PipelineC/examples/pico-ice/ice_makefile_pipelinec $ cp gateware.uf2 /media/devel/pico-ice/
+
+devel@pi5-90:~/PipelineC/examples/net $ ./compile-work_test.sh
+
+devel@pi5-90:~/PipelineC/examples/net $ sudo ./work_test 
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 264 
+Total rx bytes: 2 
+CPU took 0.000205 seconds to execute 
+CPU iteration time: 0.000205 seconds
+CPU bytes per sec: 1297307.981395 B/s
+FPGA took 0.000181 seconds to execute 
+FPGA iteration time: 0.000181 seconds
+FPGA bytes per sec: 1469940.532279 B/s
+Speedup: 1.133070
