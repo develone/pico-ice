@@ -1,0 +1,21 @@
+YOSYS = $(OSS_CAD_SUITE)/bin/yosys
+NEXTPNR = $(OSS_CAD_SUITE)/bin/nextpnr-ice40
+ICEPACK = $(OSS_CAD_SUITE)/bin/icepack
+ICEPLL = $(OSS_CAD_SUITE)/bin/icepll
+filename = top
+pcf_file = leddigits.pcf
+
+build:
+	$(YOSYS) -p "synth_ice40 -top top  -json $(filename).json" $(filename).v
+	$(NEXTPNR) --up5k --package sg48 --json $(filename).json --pcf $(pcf_file) --asc $(filename).asc
+	$(ICEPACK) $(filename).asc $(filename).bin
+	bin2uf2 -o test-top.uf2 top.bin
+
+prog:
+	iceprog -S $(filename).bin
+
+prog_flash:
+	iceprog $(filename).bin
+
+clean:
+	rm -rf $(filename).blif $(filename).asc $(filename).bin $(filename).uf2
