@@ -25,6 +25,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 04/24/25
+updated master test-dev  
 HEAD is now at 6161654 Merge branch 'JulianKemmerer:master' into test-dev
 devel@pi5-90:~/PipelineC $ cd ~/pico-ice/PipelineC/
 devel@pi5-90:~/pico-ice/PipelineC $ ls
