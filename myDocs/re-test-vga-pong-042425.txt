@@ -1,0 +1,62 @@
+devel@pi5-90:~/PipelineC $ git checkout 6161
+error: Your local changes to the following files would be overwritten by checkout:
+	examples/net/work.h
+	examples/pico-ice/ice_makefile_pipelinec/Makefile
+	examples/pico-ice/ice_makefile_pipelinec/ethernet_top.sv
+Please commit your changes or stash them before you switch branches.
+Aborting
+devel@pi5-90:~/PipelineC $ git checkout examples/net/work.h examples/pico-ice/ice_makefile_pipelinec/Makefile examples/pico-ice/ice_makefile_pipelinec/ethernet_top.sv
+Updated 3 paths from the index
+devel@pi5-90:~/PipelineC $ git checkout 6161
+Note: switching to '6161'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+04/24/25
+HEAD is now at 6161654 Merge branch 'JulianKemmerer:master' into test-dev
+devel@pi5-90:~/PipelineC $ cd ~/pico-ice/PipelineC/
+devel@pi5-90:~/pico-ice/PipelineC $ ls
+blink-ex            leddigtts      pmod-ethernet-jpeg-8x8  vga-pll
+blink-ex-uart-echo  pmod-ethernet  uf2_files               vga-pong
+devel@pi5-90:~/pico-ice/PipelineC $ cd vga-pong/
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong $ cd examples/
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong/examples $ ls
+examples  pico-ice
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong/examples $ cd pico-ice/ice_makefile_pipelinec/
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ make clean
+rm -f lextab.py
+rm -f yacctab.py
+rm -f pll_clk_mhz.h
+rm -f -r pipelinec_output
+rm -f pipelinec.log
+rm -f pll.v
+rm -f *.json *.asc *.bin *.uf2
+rm -f yosys_stderr.log
+rm -f dfu_util.log
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ make pipelinec 
+echo "#define PLL_CLK_MHZ 25.0\n" > pll_clk_mhz.h
+/home/devel/PipelineC/src/pipelinec pong_top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ make gateware.bin 
+/home/devel/oss-cad-suite//bin/icepll -q -i 12 -o 25.0 -p -m -f pll.v
+/home/devel/oss-cad-suite//bin/yosys -l simple.log -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv pll.v; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+/home/devel/oss-cad-suite//bin/nextpnr-ice40 -l nextpnr.log -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc --freq 25.0
+/home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ bin3uf2 -o gateware.uf2 gateware.bin 
+bash: bin3uf2: command not found
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ bin2uf2 -o gateware.uf2 gateware.bin 
+devel@pi5-90:~/pico-ice/PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec $ cp gateware.uf2 /media/devel/pico-ice/
+
+minicom ACM1
+lower case character w left paddle up s left paddle down i right oaddle up k right paddle down.
