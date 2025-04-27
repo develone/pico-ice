@@ -1,0 +1,39 @@
+Note This step curl https://pyenv.run | bash
+Note the 2 environment variables
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+ 
+Note this is running in python virtual environment. Where pip3 install was run
+ 
+where /media/devel/5221-0000/ appears on your system when the pico-ice is connedted 
+
+devel@pi5-~ $ cd /pico-ice/test-mpremote/
+devel@pi5-90/pico-ice/test-mpremote $ .  ./virtp.sh 
+(env) devel@pi5-90/pico-ice/test-mpremote $ 
+
+(env) devel@pi5-90/pico-ice/test-mpremote $ ls
+env                gateware-green.bin  test_gate-green.py  top.bin
+gateware.bin       gateware-red.bin    test_gate-red.py    
+gateware-blue.bin  test_gate-blue.py   test_leddigits.py   virtp.sh
+
+disconnect pico-ice USB connect pico-ice USB 
+(env) devel@pi5-90/pico-ice/test-mpremote $ rm -f /media/devel/5221-0000/gateware-red.bin 
+(env) devel@pi5-90/pico-ice/test-mpremote $ cp gateware-blue.bin /media/devel/5221-0000/
+(env) devel@pi5-90/pico-ice/test-mpremote $ mpremote run test_gate-blue.py 
+
+disconnect pico-ice USB connect pico-ice USB
+(env) devel@pi5-90/pico-ice/test-mpremote $ rm -f /media/devel/5221-0000/*.bin
+(env) devel@pi5-90/pico-ice/test-mpremote $ cp gateware-red.bin /media/devel/5221-0000/
+(env) devel@pi5-90/pico-ice/test-mpremote $ mpremote run test_gate-red.py 
+
+disconnect pico-ice USB connect pico-ice USB
+(env) devel@pi5-90/pico-ice/test-mpremote $ rm -f /media/devel/5221-0000/*.bin
+(env) devel@pi5-90/pico-ice/test-mpremote $ cp gateware-green.bin /media/devel/5221-0000/
+(env) devel@pi5-90/pico-ice/test-mpremote $ mpremote run test_gate-green.py
+
+disconnect pico-ice USB connect pico-ice USB
+(env) devel@pi5-90/pico-ice/test-mpremote $ rm -f /media/devel/5221-0000/*.bin
+(env) devel@pi5-90/pico-ice/test-mpremote $ cp top.bin /media/devel/5221-0000/
+(env) devel@pi5-90/pico-ice/test-mpremote $ mpremote run test_leddigits.py
+
+disconnect pico-ice USB connect pico-ice USB
