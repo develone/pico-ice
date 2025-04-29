@@ -1,0 +1,26 @@
+04/29/25
+short the pin on right of USB on power-up
+pico-ice-micropython/pico-ice-uf2/firmware.uf2 /media/devel/RP1-RP2
+
+devel@pi5-90:~ $ cd pico-ice/PipelineC/blink-ex-uart-echo/
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo $ ls
+ice_makefile_pipelinec
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo $ cd ice_makefile_pipelinec/
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ make clean
+rm -f *.json *.asc *.bin *.uf2
+rm -f yosys_stderr.log
+rm -f pipelinec.log
+rm -f -r pipelinec_output
+rm -f lextab.py
+rm -f yacctab.py
+rm -f dfu_util.log
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ make pipelinec 
+/home/devel/PipelineC/src/pipelinec top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ make gateware.bin 
+/home/devel/oss-cad-suite//bin/yosys -l simple.log -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+/home/devel/oss-cad-suite//bin/nextpnr-ice40 -l nextpnr.log -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc
+/home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
+
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ cp gateware.bin ../../test_mpremote/uart-echo-PipelineC.bin
+
+
