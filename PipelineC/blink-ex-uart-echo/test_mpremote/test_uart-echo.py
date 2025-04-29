@@ -6,5 +6,5 @@ fpga = ice.fpga(cdone=Pin(26), clock=Pin(24), creset=Pin(27), cram_cs=Pin(9), cr
 file = open("uart-echo-PipelineC.bin","br")
 fpga.start()
 fpga.cram(file)
-uart = UART(1, 115200)
-uart.init(115200, bits=8, parity=None, stop=1, tx=1, rx=0) # init with given parameters
+uart = UART(0, 115200)
+uart.init(115200, bits=8, parity=None, stop=1, tx=0, rx=1) # init with given parameters
