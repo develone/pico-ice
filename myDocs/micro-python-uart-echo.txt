@@ -22,5 +22,36 @@ devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ ma
 /home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
 
 devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ cp gateware.bin ../../test_mpremote/uart-echo-PipelineC.bin
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $rm -f /media/devel/5221-000/*.bin
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ . ./virtp.sh
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/cp PipelineC/blink-ex-uart-echo/test_mpremote/uart-echo-PipelineC.bin /media/devel/5221-0000/
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote run test_uart-echo.py
+pico-ice starts blinking red
+
+Next step to add the micropython uart
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote run test_uart-echo.py 
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote
+Connected to MicroPython at /dev/ttyACM0
+Use Ctrl-] or Ctrl-x to exit this shell
+a
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' isn't defined
+>>> from machine import UART
+>>> uart = UART(0, 115200)
+>>> uart.init(115200, bits=8, parity=None, stop=1, tx=0, rx=1)
+>>> buf="abc"
+>>> uart.write(buf)
+3
+>>> uart.readinto(buf,3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: object with buffer protocol required
+>>> uart.read(3)
+b'ABC'
+
+
+
 
 
