@@ -1,0 +1,20 @@
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote
+Connected to MicroPython at /dev/ttyACM0
+Use Ctrl-] or Ctrl-x to exit this shell
+a
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' isn't defined
+>>> from machine import UART
+>>> uart = UART(0, 115200)
+>>> uart.init(115200, bits=8, parity=None, stop=1, tx=0, rx=1)
+>>> buf="abc"
+>>> uart.write(buf)
+3
+>>> uart.readinto(buf,3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: object with buffer protocol required
+>>> uart.read(3)
+b'ABC'
+>>>
