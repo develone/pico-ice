@@ -43,3 +43,51 @@ drwxr-xr-x 4 devel devel  4096 Apr 27 06:48 ..
 -rw-r--r-- 1 devel devel  4669 Apr 27 06:48 work.h
 -rwxr-xr-x 1 devel devel 72912 May  2 13:44 work_test
 -rw-r--r-- 1 devel devel  5810 Apr 27 06:48 work_test.c
+devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/examples/net $ cd ../../test_mpremote/
+devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ ls
+ethernet.bin  virtp.sh
+devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ . ./virtp.sh 
+(env) devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ pip3 install mpremote
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Collecting mpremote
+  Using cached mpremote-1.25.0-py3-none-any.whl (33 kB)
+Collecting pyserial>=3.3
+  Using cached https://www.piwheels.org/simple/pyserial/pyserial-3.5-py2.py3-none-any.whl (90 kB)
+Installing collected packages: pyserial, mpremote
+Successfully installed mpremote-1.25.0 pyserial-3.5
+(env) devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ rm -f /media/devel/5221-0000/*.bin
+(env) devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ cp ethernet.bin /media/devel/5221-0000/
+(env) devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ ls /media/devel/5221-0000/
+ethernet.bin
+(env) devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ mpremote run test_ethernet.py 
+devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/examples/net $ sudo ./work_test
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.000313 seconds to execute 
+CPU iteration time: 0.000313 seconds
+CPU bytes per sec: 38333.319117 B/s
+FPGA took 0.000183 seconds to execute 
+FPGA iteration time: 0.000183 seconds
+FPGA bytes per sec: 65536.000000 B/s
+Speedup: 1.709635
+>>> (env) devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ mpremote
+Connected to MicroPython at /dev/ttyACM0
+Use Ctrl-] or Ctrl-x to exit this shell
+
+>>> from machine import Pin
+>>> from machine import UART
+>>> import ice
+>>> fpga = ice.fpga(cdone=Pin(26), clock=Pin(24), creset=Pin(27), cram_cs=Pin(9), cram_mosi=Pin(8), cram_sck=Pin(10), frequency=12)
+>>> file = open("ethernet.bin","br")
+>>> fpga.start()
+True
+>>> fpga.cram(file)
+>>> uart = UART(0, 115200)
+>>> uart.init(115200, bits=8, parity=None, stop=1, tx=0, rx=1) # init with given parameters
+>>> buffout = "abc"
+>>> uart.write(buffout)
+3
+>>> uart.read(3)
+>>> 
