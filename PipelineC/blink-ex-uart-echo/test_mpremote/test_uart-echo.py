@@ -2,6 +2,8 @@ ver = "Version 0.0.1 05/03/25 "
 print(ver)
 descr = "uart-echo-PipelineC.bin created using PipelineC" 
 print(descr)
+descr = "PipelineC converts C to VHDL default or Verilog" 
+print(descr)
 descr = "uart-echo-PipelineC.bin created using OSS-CAD-SUITE" 
 print(descr)
 descr = "pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec" 
