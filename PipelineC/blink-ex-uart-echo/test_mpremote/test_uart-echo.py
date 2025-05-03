@@ -1,10 +1,26 @@
+ver = "Version 0.0.1 05/03/25 "
+print(ver)
+descr = "uart-echo-PipelineC.bin created using PipelineC" 
+print(descr)
+descr = "uart-echo-PipelineC.bin created using OSS-CAD-SUITE" 
+print(descr)
+descr = "pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec" 
+print(descr)
+descr = "./build.sh" 
+print(descr)
+descr = "In 3 steps make clean make pipelinec make gateware.bin" 
+descr = "rm -f /media/devel/5221-0000/*.bin" 
+descr = "cp gateware.bin /media/devel/5221-0000/uart-echo-PipelineC.bin" 
+print(descr)
+descr = "Loads the iCE40UP5K with uart-echo-PipelineC.bin"
+print(descr)
+descr1 = "mpremote run test_uart-a-z.py"
+print(descr1)
 from machine import Pin
-from machine import UART
 import ice
 #frequency=12 since a pll is used to increase to 25MHz 
-fpga = ice.fpga(cdone=Pin(26), clock=Pin(24), creset=Pin(27), cram_cs=Pin(9), cram_mosi=Pin(8), cram_sck=Pin(10), frequency=12)
+fpga = ice.fpga(cdone=Pin(ICE_DONE), clock=Pin(ICE_CLK), creset=Pin(ICE_RST), cram_cs=Pin(ICE_SS), cram_mosi=Pin(4), cram_sck=Pin(ICE_SCK), frequency=12)
 file = open("uart-echo-PipelineC.bin","br")
 fpga.start()
-fpga.cram(file)
-uart = UART(0, 115200)
-uart.init(115200, bits=8, parity=None, stop=1, tx=0, rx=1) # init with given parameters
+#fpga.cram(file)
+
