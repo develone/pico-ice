@@ -72,10 +72,11 @@ FPGA took 0.000183 seconds to execute
 FPGA iteration time: 0.000183 seconds
 FPGA bytes per sec: 65536.000000 B/s
 Speedup: 1.709635
->>> (env) devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ mpremote
+(env) devel@pi5-90:~/pico-ice/PipelineC/pmod-ethernet/test_mpremote $ mpremote
 Connected to MicroPython at /dev/ttyACM0
 Use Ctrl-] or Ctrl-x to exit this shell
-
+MicroPython v1.25.0 on 2025-04-30; tinyVision.ai pico-ice with RP2040
+Type "help()" for more information.
 >>> from machine import Pin
 >>> from machine import UART
 >>> import ice
@@ -90,4 +91,4 @@ True
 >>> uart.write(buffout)
 3
 >>> uart.read(3)
->>> 
+b'ABC'
