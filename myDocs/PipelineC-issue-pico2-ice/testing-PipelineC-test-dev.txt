@@ -1,0 +1,92 @@
+05/06/25
+This test was needed when I tried rebuilding 
+uart-echo-PipielineC.bin with Pipeline branch test-dev-050125
+
+It is a good thing I had created a new PipelineC when this series of testing 
+started.  This version does not have pico2_ice.h
+
+
+ 
+devel@pi5-90:~ $ git clone https://github.com/develone/PipelineC.git -b test-dev-100424 
+commit 0b93e63a1e76eafe16ffaf0086391aad3961e7d7 (HEAD -> test-dev-100424, origin/test-dev-100424)
+Author: Edward Vidal Jr <develone@sbcglobal.net>
+Date:   Fri May 2 14:17:32 2025 -0600
+ 
+devel@pi5-90:~ $ cd PipelineC
+commit 422abd8ec3496d109e1153989ac848503e1292fe (HEAD -> test-dev, origin/test-dev)
+Merge: ba22d9f 0213aad
+Author: develone <develone@sbcglobal.net>
+Date:   Thu Apr 24 15:12:02 2025 -0600
+
+    Merge branch 'JulianKemmerer:master' into test-dev
+
+devel@pi5-90:~/PipelineC $ git branch -a
+* test-dev
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/test-dev
+  remotes/origin/test-dev-050125
+devel@pi5-90:~ $ rm -rf PipelineC
+devel@pi5-90:~ $ git clone https://github.com/develone/PipelineC.git -b test-dev
+Cloning into 'PipelineC'...
+remote: Enumerating objects: 15247, done.
+remote: Counting objects: 100% (2377/2377), done.
+remote: Compressing objects: 100% (366/366), done.
+remote: Total 15247 (delta 2181), reused 2079 (delta 2003), pack-reused 12870 (from 3)
+Receiving objects: 100% (15247/15247), 86.41 MiB | 43.76 MiB/s, done.
+Resolving deltas: 100% (9162/9162), done.
+devel@pi5-90:~ $ cd pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ ./build.sh 
+rm -f *.json *.asc *.bin *.uf2
+rm -f yosys_stderr.log
+rm -f pipelinec.log
+rm -f -r pipelinec_output
+rm -f lextab.py
+rm -f yacctab.py
+rm -f dfu_util.log
+/home/devel/PipelineC/src/pipelinec top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+/home/devel/oss-cad-suite//bin/yosys -l simple.log -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+/home/devel/oss-cad-suite//bin/nextpnr-ice40 -l nextpnr.log -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc
+/home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ rm -rf /media/devel/5221-0000/*.bin
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+udev             4076160        0   4076160   0% /dev
+tmpfs             824096     8448    815648   2% /run
+/dev/mmcblk0p2 245391588 80346616 152561428  35% /
+tmpfs            4120448      368   4120080   1% /dev/shm
+tmpfs               5120       48      5072   1% /run/lock
+/dev/mmcblk0p1    522230    78650    443580  16% /boot/firmware
+tmpfs             824080      192    823888   1% /run/user/1000
+/dev/sda            3048        0      3048   0% /media/devel/5221-0000
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ cp gateware.bin uart-echo-PipelineC.bin /media/devel/5221-0000/
+cp: cannot stat 'uart-echo-PipelineC.bin': No such file or directory
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ cp gateware.bin /media/devel/5221-0000/uart-echo-PipelineC.bin
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ cd ../test_mpremote/
+devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ . ./virtp.sh 
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote run test_uart.py 
+abc
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ less test_uart.py 
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ ls
+env               test_uart-echo.py  uart-echo-PipelineC.bin
+test_uart-a-z.py  test_uart.py       virtp.sh
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote run test_uart-echo.py 
+Version 0.0.1 05/03/25 
+uart-echo-PipelineC.bin created using PipelineC
+PipelineC converts C to VHDL default or Verilog
+uart-echo-PipelineC.bin created using OSS-CAD-SUITE
+pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec
+./build.sh
+cp gateware.bin /media/devel/5221-0000/uart-echo-PipelineC.bin
+Loads the iCE40UP5K with uart-echo-PipelineC.bin
+mpremote run test_uart-a-z.py
+(env) devel@pi5-90:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote run test_uart-a-z.py 
+sending abc...xyz recieving ABC...XYZ
+abcdefghijklmnopqrstuvwxyz
+b'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+0123456789
+b'0123456789'
+sending ZYX...CBA recieving zyx...cba
+ZYXWUTUSRQPONMLKJIHGFEDCBA
+b'zyxwutusrqponmlkjihgfedcba'
+
