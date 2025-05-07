@@ -1,0 +1,37 @@
+devel@pi5-90:~ $ minicom ACM0
+
+Welcome to minicom 2.8
+
+OPTIONS: I18n 
+Port /dev/ttyACM0, 18:19:57
+
+Press CTRL-A Z for help on special keys
+
+cdcd_control_xfer_cb: coding=200014B2 itf=0
+tud_cdc_line_coding_cb: coding=200014B2 baud=115200
+
+
+pico-ice default firmware
+   https://github.com/tinyvision-ai-inc/pico-ice/tree/main/Firmware/pico-ice-det
+
+Serial port #0 - this shell, with commands:
+  v - print pico-ice-sdk version
+
+Serial port #1 - forwarding to UART
+  UART TX on RP0 = ICE27
+  UART RX on RP1 = ICE25
+
+Serial port #2 - forwarding to SPI:
+  https://pico-ice.tinyvision.ai/group__ice__usb.html#autotoc_md2               
+                                                                                
+pico-ice>
+
+
+Welcome to minicom 2.8                                                    
+                                                                          
+OPTIONS: I18n                                                             
+Port /dev/ttyACM1, 18:20:25                                               
+                                                                          
+Press CTRL-A Z for help on special keys                                   
+                                                                          
+wwwwwwsssssiiiikkkkkpaddles working
