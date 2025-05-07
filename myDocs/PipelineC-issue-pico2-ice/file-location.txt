@@ -1,0 +1,42 @@
+05/96/25: this is the code that broke pico-ice
+PipelineC-059625.tgz
+cd PipelineC-050625/PipelineC/
+
+devel@pi5-90:~/PipelineC-050625/PipelineC $ git branch -a
+* test-dev-050125
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/test-dev
+  remotes/origin/test-dev-050125
+
+commit c741e6fae765a7e4453fd16861908b4e8088335a (HEAD -> test-dev-050125, origin/test-dev-050125)
+Merge: 0e260c0 5790a74
+Author: develone <develone@sbcglobal.net>
+Date:   Sun May 4 12:03:14 2025 -0600
+
+    Merge branch 'JulianKemmerer:master' into test-dev-050125
+
+
+Refresh index: 100% (2696/2696), done.
+On branch test-dev-050125
+Your branch is up to date with 'origin/test-dev-050125'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   examples/net/eth_sw.c
+        modified:   examples/net/work_test.c
+        modified:   examples/pico-ice/ice_makefile_pipelinec/Makefile
+        modified:   examples/pico-ice/ice_makefile_pipelinec/pico2_program_ice.py
+
+devel@pi5-90:~/PipelineC $ git branch -a
+* (HEAD detached at 6161654)
+  test-dev
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/test-dev
+  remotes/origin/test-dev-050125
+
+
+
+

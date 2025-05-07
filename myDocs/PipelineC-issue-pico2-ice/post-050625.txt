@@ -1,0 +1,38 @@
+I have had a question about where the gateware.bin.
+Should it be both at /media/devel/5221-0000 in my case Raspberry Pi5 and the location where the 
+command "mpremote run  pico2_program_ice.py" is being executed.
+I would rm -f /media/devel/5221-0000/*.bin.
+I would then cp gateware.bin /media/devel/5221-0000/.
+(env) devel@pi5-90:~/PipelineC/examples/pico-ice/ice_makefile_pipelinec $ shasum gateware.bin 
+4c99aa32e746ed5262c355da4c92923142f03e89  gateware.bin
+(env) devel@pi5-90:~/PipelineC/examples/pico-ice/ice_makefile_pipelinec $ shasum /media/devel/5221-0000/gateware.bin 
+4c99aa32e746ed5262c355da4c92923142f03e89  /media/devel/5221-0000/gateware.bin
+The program uses a pll to chg 12MHz to 25MHz.
+Checking pico2_program_ice.py it had frequency=48.
+(env) devel@pi5-90:~/PipelineC/examples/pico-ice/ice_makefile_pipelinec $ git diff pico2_program_ice.py
+diff --git a/examples/pico-ice/ice_makefile_pipelinec/pico2_program_ice.py b/examples/pico-ice/ice_makefile_pipelinec/pico2_program_ice.py
+index 5b79cf1..fee1cf3 100644
+--- a/examples/pico-ice/ice_makefile_pipelinec/pico2_program_ice.py
++++ b/examples/pico-ice/ice_makefile_pipelinec/pico2_program_ice.py
+@@ -14,7 +14,7 @@ fpga = ice.fpga(
+     cram_cs=Pin(5),
+     cram_mosi=Pin(4),
+     cram_sck=Pin(6),
+-    frequency=48,
++    frequency=12,
+ )
+ fpga.start()
+ # start() does not reboot FPGA?
+Changing the frequency=12 appears to fix the sudo ./work_test but not the uart-echo.
+devel@pi5-90:~/PipelineC/examples/net $ sudo ./work_test 
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.000314 seconds to execute 
+CPU iteration time: 0.000314 seconds
+CPU bytes per sec: 38216.892938 B/s
+FPGA took 0.000201 seconds to execute 
+FPGA iteration time: 0.000201 seconds
+FPGA bytes per sec: 59705.395018 B/s
+Speedup: 1.562278
