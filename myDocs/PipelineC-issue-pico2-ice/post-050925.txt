@@ -1,0 +1,138 @@
+050925
+pico-ice when program usiing micropython starts blinking red and the uart-echos see line 114 below.
+
+This uses 2 rpeos 
+	https://github.com/develone/pico-ice.git branch test-dev-100424
+	https://github.com/develone/PipelineC.git branch test-dev
+
+The blinking red work on pico2-ice but not the uart echo
+This uses 2 rpeos 
+	https://github.com/develone/pico2-ice.git branch test-dev
+	https://github.com/develone/PipelineC.git branch test-dev-050125
+env variables
+export PIPELINEC_REPO="$HOME/PipelineC"
+export OSS_CAD_SUITE=$HOME/oss-cad-suite/
+export PICO_SDK_PATH=/home/devel/pico2/pico-sdk
+
+devel@pi5-80:~ $ git clone https://github.com/develone/PipelineC.git -b test-dev
+Cloning into 'PipelineC'...
+remote: Enumerating objects: 15262, done.
+remote: Counting objects: 100% (2394/2394), done.
+remote: Compressing objects: 100% (374/374), done.
+remote: Total 15262 (delta 2192), reused 2091 (delta 2011), pack-reused 12868 (from 3)
+Receiving objects: 100% (15262/15262), 86.42 MiB | 44.62 MiB/s, done.
+Resolving deltas: 100% (9170/9170), done.
+devel@pi5-80:~ $ cd master-repos/pico-ice
+devel@pi5-80:~/master-repos/pico-ice $ git pull
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 3), reused 6 (delta 3), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 1.73 KiB | 442.00 KiB/s, done.
+From github.com:develone/pico-ice
+   a5be5e9..b56e379  test-dev-100424 -> origin/test-dev-100424
+Updating a5be5e9..b56e379
+Fast-forward
+ myDocs/PipelineC-issue-pico2-ice/notes-050925.txt | 43 +++++++++++++++++++++++++++++++++++++++++++
+ myDocs/PipelineC-issue-pico2-ice/top.sv           | 31 +++++++++++++++++++++++++++++++
+ 2 files changed, 74 insertions(+)
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/notes-050925.txt
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/top.sv
+devel@pi5-80:~/master-repos/pico-ice $ cd ~/
+devel@pi5-80:~ $ cd pico-ice
+devel@pi5-80:~/pico-ice $ git pull
+remote: Enumerating objects: 99, done.
+remote: Counting objects: 100% (99/99), done.
+remote: Compressing objects: 100% (64/64), done.
+remote: Total 87 (delta 53), reused 54 (delta 20), pack-reused 0 (from 0)
+Unpacking objects: 100% (87/87), 56.47 KiB | 602.00 KiB/s, done.
+From https://github.com/develone/pico-ice
+   39a17e3..b56e379  test-dev-100424 -> origin/test-dev-100424
+Updating 39a17e3..b56e379
+Fast-forward
+ PipelineC/blink-ex-uart-echo/test_mpremote/test_uart-a-z.py                 |  22 +++++++++
+ PipelineC/blink-ex-uart-echo/test_mpremote/test_uart-echo.py                |  28 +++++++++--
+ PipelineC/pmod-ethernet/test_mpremote/test_ethernet.py                      |  12 +++++
+ PipelineC/pmod-ethernet/test_mpremote/virtp.sh                              |   2 +
+ .../examples/pico-ice/ice_makefile_pipelinec/test_mpremote/gateware.bin     | Bin 0 -> 104090 bytes
+ .../pico-ice/ice_makefile_pipelinec/test_mpremote/test_vga-pong-uart.py     |  21 ++++++++
+ .../examples/pico-ice/ice_makefile_pipelinec/test_mpremote/test_vga-pong.py |  28 +++++++++++
+ .../pico-ice/ice_makefile_pipelinec/test_mpremote/vga-pong-PipelineC.bin    | Bin 0 -> 104090 bytes
+ myDocs/PipelineC-issue-pico2-ice/defaut-firmwate.txt                        |  37 ++++++++++++++
+ myDocs/PipelineC-issue-pico2-ice/file-location.txt                          |  42 ++++++++++++++++
+ myDocs/PipelineC-issue-pico2-ice/notes-050925.txt                           |  43 +++++++++++++++++
+ myDocs/PipelineC-issue-pico2-ice/post-050525.txt                            |  87 +++++++++++++++++++++++++++++++++
+ myDocs/PipelineC-issue-pico2-ice/post-050625.txt                            |  38 +++++++++++++++
+ myDocs/PipelineC-issue-pico2-ice/testing-PipelineC-test-dev.txt             |  92 +++++++++++++++++++++++++++++++++++
+ myDocs/PipelineC-issue-pico2-ice/testing-PipelineC-vga-pong.txt             |  76 +++++++++++++++++++++++++++++
+ myDocs/PipelineC-issue-pico2-ice/top.sv                                     |  31 ++++++++++++
+ myDocs/pipelinec-ethernet/testing-pico-ice-pmod-ethernet.txt                |  94 ++++++++++++++++++++++++++++++++++++
+ 17 files changed, 648 insertions(+), 5 deletions(-)
+ create mode 100644 PipelineC/blink-ex-uart-echo/test_mpremote/test_uart-a-z.py
+ create mode 100644 PipelineC/pmod-ethernet/test_mpremote/test_ethernet.py
+ create mode 100755 PipelineC/pmod-ethernet/test_mpremote/virtp.sh
+ create mode 100644 PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/test_mpremote/gateware.bin
+ create mode 100644 PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/test_mpremote/test_vga-pong-uart.py
+ create mode 100644 PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/test_mpremote/test_vga-pong.py
+ create mode 100644 PipelineC/vga-pong/examples/pico-ice/ice_makefile_pipelinec/test_mpremote/vga-pong-PipelineC.bin
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/defaut-firmwate.txt
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/file-location.txt
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/notes-050925.txt
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/post-050525.txt
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/post-050625.txt
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/testing-PipelineC-test-dev.txt
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/testing-PipelineC-vga-pong.txt
+ create mode 100644 myDocs/PipelineC-issue-pico2-ice/top.sv
+ create mode 100644 myDocs/pipelinec-ethernet/testing-pico-ice-pmod-ethernet.txt
+devel@pi5-80:~/pico-ice $ cd PipelineC/blink-ex-uart-echo/
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo $ cd ice_makefile_pipelinec/
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ ./build.sh
+rm -f *.json *.asc *.bin *.uf2
+rm -f yosys_stderr.log
+rm -f pipelinec.log
+rm -f -r pipelinec_output
+rm -f lextab.py
+rm -f yacctab.py
+rm -f dfu_util.log
+/home/devel/PipelineC/src/pipelinec top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+/home/devel/oss-cad-suite//bin/yosys -l simple.log -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+/home/devel/oss-cad-suite//bin/nextpnr-ice40 -l nextpnr.log -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc
+/home/devel/oss-cad-suite//bin/icepack gateware.asc gateware.bin
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ rm -f /media/devel/5221-0000/*.bin
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ cp gateware.bin /media/devel/5221-0000/uart-echo-PipelineC.bin
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ ls ../..
+blink-ex  blink-ex-uart-echo  leddigtts  pmod-ethernet  pmod-ethernet-jpeg-8x8  uf2_files  vga-pll  vga-pong
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ ls ../../blink-ex-uart-echo/test_mpremote/
+test_uart-a-z.py  test_uart-echo.py  uart-echo-PipelineC.bin  virtp.sh
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ cd ../../blink-ex-uart-echo/test_mpremote/
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ . ./virtp.sh
+(env) devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ ls env/
+bin  include  lib  lib64  pyvenv.cfg
+(env) devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ pip3 install mpremote
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Collecting mpremote
+  Downloading mpremote-1.25.0-py3-none-any.whl (33 kB)
+Collecting pyserial>=3.3
+  Downloading https://www.piwheels.org/simple/pyserial/pyserial-3.5-py2.py3-none-any.whl (90 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB 350.6 kB/s eta 0:00:00
+Installing collected packages: pyserial, mpremote
+Successfully installed mpremote-1.25.0 pyserial-3.5
+(env) devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote run test_uart-echo.py
+Version 0.0.1 05/03/25
+uart-echo-PipelineC.bin created using PipelineC
+PipelineC converts C to VHDL default or Verilog
+uart-echo-PipelineC.bin created using OSS-CAD-SUITE
+pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec
+./build.sh
+cp gateware.bin /media/devel/5221-0000/uart-echo-PipelineC.bin
+Loads the iCE40UP5K with uart-echo-PipelineC.bin
+mpremote run test_uart-a-z.py
+(env) devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/test_mpremote $ mpremote run test_uart-a-z.py
+sending abc...xyz recieving ABC...XYZ
+abcdefghijklmnopqrstuvwxyz
+b'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+0123456789
+None
+sending ZYX...CBA recieving zyx...cba
+ZYXWUTUSRQPONMLKJIHGFEDCBA
+b'0123456789zyxwutusrqponmlk'
