@@ -1,0 +1,72 @@
+09/08/25
+
+devel@pi4-50:~/pico-ice/leddigits$ tar xvfz oss-cad-suite-linux-arm64-20250330.tgz
+
+devel@pi4-50:~/pico-ice/leddigits$ git clone https://github.com/tinyvision-ai-inc/uf2-utils.git
+
+devel@pi4-50:~$ cd uf2-utils/
+
+devel@pi4-50:~/uf2-utils$ make
+
+devel@pi4-50:~/uf2-utils$ sudo make install
+
+devel@pi4-50:~/pico-ice/leddigits$ git clone https://github.com/develone/pico-ice.git -b test-dev-100424
+
+devel@pi4-50:~$ cd pico-ice/
+
+devel@pi4-50:~/pico-ice$ cd leddigits/
+
+devel@pi4-50:~/pico-ice/leddigits$ make -f Makefile-OSS
+
+devel@pi4-50:~/pico-ice/leddigits$ scp test-top.uf2 pi5-90:/media/devel/pico-ice/
+
+devel@pi4-50:~/pico-ice/leddigits$ cat ~/.bashrc
+#export WIFI_SSID="ATTtpHTfPi_Guest"
+#export WIFI_PASSWORD="t?bqxvcqh?6t"
+export WIFI_SSID="TMOBILE-CE06"
+export WIFI_PASSWORD="k64ndv2czh8"
+#export PATH="/home/devel/oss-cad-suite/bin:$PATH"
+#export PIPELINEC_REPO="$HOME/PipelineC_pmod-ethernet-jpeg/PipelineC"
+export PIPELINEC_REPO="$HOME/PipelineC"
+export PICO_EXTRAS_PATH=/home/devel/pico-extras
+#export PICO_SDK_PATH=/home/devel/pico/pico-sdk
+export PICO_SDK_PATH=/home/devel/pico2/pico-sdk
+#export PICO_2350=1
+#export FREERTOS_KERNEL_PATH=/home/devel/rp2350-freeRTOS/test-read-crc16/FreeRTOS-Kernel
+export FREERTOS_KERNEL_PATH=/home/devel/pico2/freertos-lib/FreeRTOS-Kernel
+export PICO_FREERTOS=/home/devel/pico2/freertos-lib/FreeRTOS-Kernel
+export PICTOOL_FETCH_FROM_GITHUB=/home/devel/pico2/BUILT_PICOTOOL
+#export PATH="$HOME/.pyenv/bin:$HOME/local/openocd/bin:$HOME/qemu-6.2.0-rpios/bin:$PATH"
+#export PIPELINEC_REPO=$HOME/PipelineC
+export OSS_CAD_SUITE=$HOME/oss-cad-suite/
+export PATH="$HOME/local/openocd/bin:$PATH"
+
+devel@pi4-50:~$ git clone https://github.com/develone/PipelineC.git -b test-dev-060125
+Cloning into 'PipelineC'...
+remote: Enumerating objects: 15648, done.
+remote: Counting objects: 100% (2199/2199), done.
+remote: Compressing objects: 100% (235/235), done.
+remote: Total 15648 (delta 2098), reused 1964 (delta 1964), pack-reused 13449 (from 3)
+Receiving objects: 100% (15648/15648), 86.31 MiB | 6.41 MiB/s, done.
+Resolving deltas: 100% (9492/9492), done.
+Updating files: 100% (2723/2723), done.
+
+cd pico-ice/PipelineC/pmod-ethernet/examples/pico-ice/ice_makefile_pipelinec
+
+#!/bin/bash
+make clean
+make pipelinec TOP_NAME=ethernet_top  NEXTPNR_ARGS="--pre-pack eth_clocks.py"
+make gateware.bin TOP_NAME=ethernet_top  NEXTPNR_ARGS="--pre-pack eth_clocks.py"
+bin2uf2 -o gateware.uf2 gateware.bin
+
+git clone git clone https://github.com/ghdl/ghdl
+
+cd ghdl/
+
+devel@pi4-50:~/ghdl$ sudo apt install gnat
+
+./configure --with-llvm-config
+
+devel@pi4-50:~/ghdl$ make 
+
+devel@pi4-50:~/ghdl$ sudo make install
