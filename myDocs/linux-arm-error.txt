@@ -1,0 +1,228 @@
+devel@pi5-80:~ $ ./oss-cad-suite/bin/yosys -v
+Error parsing options: Option 'v' is missing an argument
+Run '/home/devel/oss-cad-suite/libexec/yosys --help' for help.
+devel@pi5-80:~ $ ./oss-cad-suite/bin/yosys -V
+Yosys 0.57+52 (git sha1 c2291c10a, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+devel@pi5-80:~ $ ls oss-cad-suite-linux-arm64-20250910.tgz 
+oss-cad-suite-linux-arm64-20250910.tgz
+devel@pi5-80:~ $ cd PipelineC/
+devel@pi5-80:~/PipelineC $ git branch -a
+* test-dev
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/test-dev
+  remotes/origin/test-dev-050125
+  remotes/origin/test-dev-060125
+devel@pi5-80:~/PipelineC $ cd ~/pico-ice/
+devel@pi5-80:~/pico-ice $ git branch -a
+* test-dev-100424
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test-dev-100424
+devel@pi5-80:~/pico-ice $ cd PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/
+devel@pi5-80:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec $ ./build.sh
+rm -f *.json *.asc *.bin *.uf2
+rm -f yosys_stderr.log
+rm -f pipelinec.log
+rm -f -r pipelinec_output
+rm -f lextab.py
+rm -f yacctab.py
+rm -f dfu_util.log
+/home/devel/PipelineC/src/pipelinec top.c --top pipelinec_top --verilog --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+Traceback (most recent call last):
+  File "/home/devel/PipelineC/src/pipelinec", line 229, in <module>
+    C_TO_LOGIC.WRITE_0_ADDED_CLKS_FINAL_FILES(parser_state)
+  File "/home/devel/PipelineC/src/C_TO_LOGIC.py", line 10300, in WRITE_0_ADDED_CLKS_FINAL_FILES
+    SYN.WRITE_FINAL_FILES(multimain_timing_params, parser_state)
+  File "/home/devel/PipelineC/src/SYN.py", line 2518, in WRITE_FINAL_FILES
+    OPEN_TOOLS.RENDER_FINAL_TOP_VERILOG(multimain_timing_params, parser_state)
+  File "/home/devel/PipelineC/src/OPEN_TOOLS.py", line 514, in RENDER_FINAL_TOP_VERILOG
+    log_text = C_TO_LOGIC.GET_SHELL_CMD_OUTPUT(bash_cmd, cwd=output_dir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devel/PipelineC/src/C_TO_LOGIC.py", line 254, in GET_SHELL_CMD_OUTPUT
+    raise Exception(e_text)
+Exception: Command failed:
+bash /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/convert_to_verilog.sh
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:253:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_stream_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:265:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:277:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_rx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(16 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd:111:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_8;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd:131:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_deserializer_o_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer/uart_serializer_0CLK_98d16b96.vhd:45:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_serializer_o_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd:158:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_8;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd:179:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_serializer_serializer_in_to_out_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd:259:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_tx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd:272:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_tx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint7_t/BIN_OP_GTE_uint16_t_uint7_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(7 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint7_t/BIN_OP_GTE_uint16_t_uint7_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint8_t_uint8_t/BIN_OP_GTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(8 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint8_t_uint8_t/BIN_OP_GTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint8_t_uint8_t/BIN_OP_LTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(8 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint8_t_uint8_t/BIN_OP_LTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(16 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:253:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_stream_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:265:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd:277:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_rx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd:111:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_8;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd:131:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_deserializer_o_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd:158:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uint1_t_8;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd:179:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_serializer_serializer_in_to_out_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer/uart_serializer_0CLK_98d16b96.vhd:45:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_serializer_o_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint7_t/BIN_OP_GTE_uint16_t_uint7_t_0CLK_e595f783.vhd:54:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(7 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint7_t/BIN_OP_GTE_uint16_t_uint7_t_0CLK_e595f783.vhd:64:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd:259:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_tx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd:272:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : uart_tx_1b_t;
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint8_t_uint8_t/BIN_OP_GTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(8 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint8_t_uint8_t/BIN_OP_GTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint8_t_uint8_t/BIN_OP_LTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:39:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : signed(8 downto 0);
+           ^
+/home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint8_t_uint8_t/BIN_OP_LTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd:49:12:warning: declaration of "return_output" hides port "return_output" [-Whide]
+  variable return_output : unsigned(0 downto 0);
+           ^
+ERROR: Can't load module `./ghdl': /home/devel/oss-cad-suite/lib/../share/yosys/plugins/ghdl.so: cannot open shared object file: No such file or directory
+
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/c_structs_pkg.pkg.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/global_wires_pkg.pkg.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_39/ice_39_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_40/ice_40_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_41/ice_41_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_r_connect/led_r_connect_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_g_connect/led_g_connect_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/rgb_led/led_rgb_wires.c/led_b_connect/led_b_connect_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_25/ice_25_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/board/pico_ice.h/ice_27/ice_27_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_wires.c/uart_tx_connect/uart_tx_connect_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_wires.c/uart_rx_connect/uart_rx_connect_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint2_t_uint2_t/BIN_OP_EQ_uint2_t_uint2_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint1_t_stream_t_uint1_t_stream_t/MUX_uint1_t_uint1_t_stream_t_uint1_t_stream_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint4_t_uint4_t/MUX_uint1_t_uint4_t_uint4_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint16_t_uint16_t/MUX_uint1_t_uint16_t_uint16_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uart_rx_state_t_uart_rx_state_t/MUX_uint1_t_uart_rx_state_t_uart_rx_state_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint1_t_uint1_t/BIN_OP_EQ_uint1_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint16_t_uint1_t/BIN_OP_PLUS_uint16_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_MINUS_int17_t_int17_t/BIN_OP_MINUS_int17_t_int17_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/UNARY_OP_NOT_uint1_t/UNARY_OP_NOT_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint16_t/BIN_OP_GTE_uint16_t_uint16_t_0CLK_6f2c5aad.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint4_t_uint1_t/BIN_OP_PLUS_uint4_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint4_t_uint4_t/BIN_OP_EQ_uint4_t_uint4_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_AND_uint1_t_uint1_t/BIN_OP_AND_uint1_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_rx_1b/uart_rx_1b_0CLK_f4b54c86.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint32_t_uint32_t/MUX_uint1_t_uint32_t_uint32_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint1_t_uint1_t/MUX_uint1_t_uint1_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uint1_t_8_uint1_t_8/MUX_uint1_t_uint1_t_8_uint1_t_8_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint32_t_uint1_t/BIN_OP_PLUS_uint32_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint32_t_uint4_t/BIN_OP_EQ_uint32_t_uint4_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_deserializer/uart_deserializer_0CLK_f2389995.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.c/uart_rx_mac/uart_rx_mac_0CLK_6e5ceb01.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_0_uint8_t/CONST_SR_0_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_1_uint8_t/CONST_SR_1_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_2_uint8_t/CONST_SR_2_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_3_uint8_t/CONST_SR_3_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_4_uint8_t/CONST_SR_4_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_5_uint8_t/CONST_SR_5_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_6_uint8_t/CONST_SR_6_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_7_uint8_t/CONST_SR_7_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint16_t_uint3_t/BIN_OP_EQ_uint16_t_uint3_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_OR_uint1_t_uint1_t/BIN_OP_OR_uint1_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint16_t_uint4_t/BIN_OP_EQ_uint16_t_uint4_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer_serializer_in_to_out/uart_serializer_serializer_in_to_out_0CLK_73702545.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_serializer/uart_serializer_0CLK_98d16b96.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uart_tx_state_t_uart_tx_state_t/MUX_uint1_t_uart_tx_state_t_uart_tx_state_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_uart_tx_1b_t_uart_tx_1b_t/MUX_uint1_t_uart_tx_1b_t_uart_tx_1b_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_7_uint16_t/CONST_SR_7_uint16_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_EQ_uint9_t_uint1_t/BIN_OP_EQ_uint9_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_MINUS_int8_t_int8_t/BIN_OP_MINUS_int8_t_int8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint16_t_uint7_t/BIN_OP_GTE_uint16_t_uint7_t_0CLK_e595f783.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.h/uart_tx_1b/uart_tx_1b_0CLK_ad3e9e5d.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/include/uart/uart_mac.c/uart_tx_mac/uart_tx_mac_0CLK_4b53f928.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/CONST_SR_22_uint23_t/CONST_SR_22_uint23_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint23_t_uint1_t/BIN_OP_PLUS_uint23_t_uint1_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/blinky_main/blinky_main_0CLK_23f04728.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_MINUS_int9_t_int9_t/BIN_OP_MINUS_int9_t_int9_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_GTE_uint8_t_uint8_t/BIN_OP_GTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_LTE_uint8_t_uint8_t/BIN_OP_LTE_uint8_t_uint8_t_0CLK_6f2c5aad.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/MUX_uint1_t_char_char/MUX_uint1_t_char_char_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_MINUS_uint8_t_uint8_t/BIN_OP_MINUS_uint8_t_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/built_in/BIN_OP_PLUS_uint8_t_uint8_t/BIN_OP_PLUS_uint8_t_uint8_t_0CLK_de264c78.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/uart_main/uart_main_0CLK_f70fc97c.vhd
+analyze /home/devel/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec/pipelinec_output/pipelinec_top/pipelinec_top.vhd
+elaborate pipelinec_top
+
+
+make: *** [Makefile:32: pipelinec] Error 1
+/home/devel/oss-cad-suite//bin/yosys -l simple.log -q    read_verilog -sv top.sv; synth_ice40 -top top -json gateware.json" 2> yosys_stderr.log
+/bin/sh: 1: Syntax error: Unterminated quoted string
+make: *** [Makefile:24: gateware.bin] Error 2
+gateware.bin: No such file or directory
