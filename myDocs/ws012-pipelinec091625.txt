@@ -1,0 +1,125 @@
+ws012 09/16/25
+
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+vidal@ws012:~$ ls oss-cad-suite-linux-x64-20250910.tgz
+
+PIPELINEC_REPO=/home/vidal/PipelineC
+
+OSS_CAD_SUITE=/home/vidal/oss-cad-suite/
+
+PATH=/home/vidal/oss-cad-suite/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+
+
+vidal@ws012:~$ git clone https://github.com/develone/pico-ice.git -b test-dev-100424
+
+vidal@ws012:~$ git clone https://github.com/develone/PipelineC -b test-dev
+
+vidal@ws012:~/pico-ice/PipelineC/pmod-ethernet/examples/net$ git diff work_test.c
+diff --git a/PipelineC/pmod-ethernet/examples/net/work_test.c b/PipelineC/pmod-ethernet/examples/net/work_test.c
+index c195969..33f13a8 100644
+--- a/PipelineC/pmod-ethernet/examples/net/work_test.c
++++ b/PipelineC/pmod-ethernet/examples/net/work_test.c
+@@ -23,7 +23,7 @@ double get_wall_time(){
+ // Use eth to transport inputs and outputs
+ #include "fpga_mac.h" // MAC addr to expect from FPGA
+ //#define DEFAULT_IF   "enx0050b6248f73" // host ethernet interface to use
+-#define DEFAULT_IF     "eth0" // host ethernet interface to use
++#define DEFAULT_IF     "wlp1s0" // host ethernet interface to use
+ #include "eth_sw.c"
+ 
+ // Definition of work related stuff
+vidal@ws012:~/pico-ice/PipelineC/pmod-ethernet/examples/net$ git diff eth_sw.c
+diff --git a/PipelineC/pmod-ethernet/examples/net/eth_sw.c b/PipelineC/pmod-ethernet/examples/net/eth_sw.c
+index 4cadd07..abc01d2 100644
+--- a/PipelineC/pmod-ethernet/examples/net/eth_sw.c
++++ b/PipelineC/pmod-ethernet/examples/net/eth_sw.c
+@@ -15,7 +15,8 @@
+ #endif
+ #ifndef DEFAULT_IF
+ //#define DEFAULT_IF   "enx0050b6248f73"
+-#define DEFAULT_IF     "eth0"
++//#define DEFAULT_IF   "eth0"
++#define DEFAULT_IF     "wlp1s0"
+ #endif
+ #define BUF_SIZ                1024
+ #define PAYLOAD_MAX (BUF_SIZ-sizeof(struct ether_header))
+
+vidal@ws012:~/pico-ice/PipelineC/pmod-ethernet/examples/pico-ice/ice_makefile_pipelinec$ ./build.sh 
+rm -f lextab.py
+rm -f yacctab.py
+rm -f pll_clk_mhz.h
+rm -f -r pipelinec_output
+rm -f pipelinec.log
+rm -f pll.v
+rm -f *.json *.asc *.bin *.uf2
+rm -f yosys_stderr.log
+rm -f dfu_util.log
+echo "#define PLL_CLK_MHZ 25.0\n" > pll_clk_mhz.h
+/home/vidal/PipelineC/src/pipelinec ethernet_top.c --top pipelinec_top --out_dir pipelinec_output --comb --no_synth > pipelinec.log
+/home/vidal/oss-cad-suite//bin/icepll -q -i 12 -o 25.0 -p -m -f pll.v
+/home/vidal/oss-cad-suite//bin/yosys -l simple.log -q -m ghdl -p "ghdl --std=08 -frelaxed `cat pipelinec_output/vhdl_files.txt` -e pipelinec_top; read_verilog -sv ethernet_top.sv pll.v; synth_ice40 -top ethernet_top -json gateware.json" 2> yosys_stderr.log
+/home/vidal/oss-cad-suite//bin/nextpnr-ice40 -l nextpnr.log -q --randomize-seed --up5k --package sg48 --pcf ice40.pcf --json gateware.json --asc gateware.asc --pre-pack eth_clocks.py
+/home/vidal/oss-cad-suite//bin/icepack gateware.asc gateware.bin
+
+
+vidal@ws012:~/pico-ice/PipelineC/pmod-ethernet/examples/pico-ice/ice_makefile_pipelinec$ scp gateware.uf2 devel@192.168.12.196:/media/devel/pico-ice/
+gateware.uf2                                  100%  204KB  72.7KB/s   00:02
+
+vidal@ws012:~/pico-ice/PipelineC/pmod-ethernet/examples/net$ ./compile-work_test.sh
+
+vidal@ws012:~/pico-ice/PipelineC/pmod-ethernet/examples/net$ sudo ./work_test 
+[sudo] password for vidal: 
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.000465 seconds to execute 
+CPU iteration time: 0.000465 seconds
+CPU bytes per sec: 25797.871861 B/s
+FPGA took 0.004552 seconds to execute 
+FPGA iteration time: 0.004552 seconds
+FPGA bytes per sec: 2636.130938 B/s
+Speedup: 0.102184
+
+top.c from repo
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ ./build.sh
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ cp gateware.uf2 gateware-red 
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ scp gateware-red devel@192.168.12.196:/media/devel/pico-ice/ blinks red
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ cp top.c.blue top.c
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ ./build.sh
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ cp gateware.uf2 gateware-blue blinks blue
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ scp gateware-blue devel@192.168.12.196:/media/devel/pico-ice/ blinks blue
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ cp top.c.green top.c
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ ./build.sh
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ cp gateware.uf2 gateware-green 
+
+vidal@ws012:~/pico-ice/PipelineC/blink-ex-uart-echo/ice_makefile_pipelinec$ scp gateware-green devel@192.168.12.196:/media/devel/pico-ice/ blinks green
+
+vidal@ws012:~/pico-ice/leddigits$ make -f Makefile-OSS
+
+vidal@ws012:~/pico-ice/leddigits$ cp test-top.uf2 gateware-leds
+
+vidal@ws012:~/pico-ice/leddigits$ scp gateware-leds devel@192.168.12.196:/media/devel/pico-ice/
+gateware-leds                                 100%  204KB  72.5KB/s   00:02
