@@ -1,0 +1,12 @@
+09/12/25
+devel@pi5-80:~ $ cd ghdl-yosys-plugin/
+devel@pi5-80:~/ghdl-yosys-plugin $ make
+make: yosys-config: No such file or directory
+yosys-config --exec --cxx -c --cxxflags -o ghdl.o src/ghdl.cc -fPIC -DYOSYS_ENABLE_GHDL -I/usr/local/include -O -DGHDL_VER_HASH="\"511412f\""
+/bin/sh: 1: yosys-config: not found
+make: *** [Makefile:27: ghdl.o] Error 127
+devel@pi5-80:~ $ sudo unsquashfs -d yosys yosys-81bbd.img
+devel@pi5-80:~ $ cd yosys
+devel@pi5-80:~ $ sudo make install
+
+
