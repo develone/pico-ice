@@ -1,0 +1,71 @@
+09/26/25 pi5-70 & pi5-80
+diff --git a/examples/ice_makefile_verilator_counter/ice40.pcf b/examples/ice_makefile_verilator_counter/ice40.pcf
+index 4d94331..0d1d47b 100644
+--- a/examples/ice_makefile_verilator_counter/ice40.pcf
++++ b/examples/ice_makefile_verilator_counter/ice40.pcf
+@@ -1,4 +1,4 @@
+ set_io --warn-no-port led_blue 40
+-set_io --warn-no-port led_green 30
++set_io --warn-no-port led_green 39
+ set_io --warn-no-port led_red 41
+ set_io --warn-no-port clk 35
+devel@pi5-80:~ $ cd test-pi4-50/pico-ice-sdk/
+commit 4ebe348ffcb4feb3e2756d101f594679eb02d97c (HEAD -> test-dev, origin/test-dev, origin/main, origin/HEAD)
+Author: Josuah Demangeon <me@josuah.net>
+Date:   Thu Jun 20 23:12:41 2024 +0200
+
+    examples: ice_makefile_blinky: allow blinking with R, G or B easily
+devel@pi5-80:~/test-pi4-50/pico-ice-sdk $ find . -name *.uf2
+./examples/pico_fpga/pico-ice-sdk/examples/rp2_ice_i2c_7seg/build/rp2_ice_blinky.uf2
+./examples/pico_fpga/pico-ice-sdk/examples/rp2_usb_uf2/blinky.uf2
+./examples/pico_fpga/pico-ice-sdk/examples/rp2_usb_uf2/null.uf2
+./examples/pico_fpga/build/pico_fpga.uf2
+./examples/pico_usb_uf2/null.uf2
+./examples/pico_usb_uf2/rgb_blink.uf2
+./examples/pico_cram/build/pico_cram.uf2
+./examples/pico_hello_world/build/pico_hello_world.uf2
+./examples/pico_flash/pico-ice-sdk/examples/rp2_ice_i2c_7seg/build/rp2_ice_blinky.uf2
+./examples/pico_flash/pico-ice-sdk/examples/rp2_usb_uf2/blinky.uf2
+./examples/pico_flash/pico-ice-sdk/examples/rp2_usb_uf2/null.uf2
+./examples/pico_blinky/build/pico_blinky.uf2
+./examples/pico_sram/build/pico_sram.uf2
+    
+Commit 447dd65
+develone
+develone
+committed
+on Aug 15, 2024
+devel@pi5-80: cd pico2
+devel@pi5-80:~/pico2 $ git clone https://github.com/develone/pico-sdk.git -b my-2.1.1
+devel@pi5-80:~/pico2 $ cd pico-sdk
+devel@pi5-80:~/pico2/pico-sdk $ git submodule update --init
+devel@pi5-80:~/pico2/pico-sdk $ cd ~/pico2
+devel@pi5-80:~/pico2 $ mkdir BUILT_PICOTOOL
+devel@pi5-80:~/pico2 $ cd BUILT_PICOTOOL/
+devel@pi5-80:~/pico2/BUILT_PICOTOOL $ git clone https://github.com/raspberrypi/picotool.git
+devel@pi5-80:~/pico2/BUILT_PICOTOOL/picotool $ git branch -a
+* master
+devel@pi5-80:~/pico2/BUILT_PICOTOOL/picotool $ mkdir build
+devel@pi5-80:~/pico2/BUILT_PICOTOOL/picotool $ cd build
+devel@pi5-80:~/pico2/BUILT_PICOTOOL/picotool/build $ cmake ..
+devel@pi5-80:~/pico2/BUILT_PICOTOOL/picotool/build $ make
+devel@pi5-80:~/pico2/BUILT_PICOTOOL/picotool/build $ sudo make install
+devel@pi5-80:~/pico2/BUILT_PICOTOOL/picotool/build $ cd ~/
+devel@pi5-80: git clone https://github.com/develone/pico-ice-sdk.git -b test-dev
+devel@pi5-80: cd pico-ice-sdk/
+devel@pi5-80:~/pico-ice-sdk $  git submodule update --init
+devel@pi5-80:~/pico-ice-sdk $ cd ~/
+
+devel@pi5-80: cd pico-ice/examples-tested-1_6_1/rp2040/pico_sram/
+devel@pi5-80:~/pico-ice/examples-tested-1_6_1/rp2040/pico_sram $ rm -rf pico-ice-sdk pico-sdk
+devel@pi5-80:~/pico-ice/examples-tested-1_6_1/rp2040/pico_sram $ rsync -avl --delete /home/devel/pico-ice-sdk .
+devel@pi5-80:~/pico-ice/examples-tested-1_6_1/rp2040/pico_sram $ rsync -avl --delete /home/devel/pico2/pico-sdk .
+devel@pi5-80:~/pico-ice/examples-tested-1_6_1/rp2040/pico_sram $ mkdir build
+devel@pi5-80:~/pico-ice/examples-tested-1_6_1/rp2040/pico_sram $ cd build
+devel@pi5-80:~/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/build $ cmake ..
+devel@pi5-80:~/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/build $ make
+[ 14%] Building C object CMakeFiles/pico_sram.dir/main.c.o
+/home/devel/pico-ice/examples-tested-1_6_1/rp2040/pico_sram/main.c:33:10: fatal error: ice_sram.h: No such file or directory
+   33 | #include "ice_sram.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
