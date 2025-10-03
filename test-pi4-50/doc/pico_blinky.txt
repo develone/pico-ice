@@ -1,0 +1,12 @@
+10/01/25
+devel@pi5-90:~/master-repos/test-pi4-50 $ ls uf2-files/
+blinky.uf2  pico_blinky.uf2  pico_cram.uf2  pico_fpga.uf2  pico_hello_world.uf2  pico_sram.uf2  rgb_blink.uf2  rp2_ice_blinky.uf2
+
+shorted pins on pico-ice and pwr-up
+
+devel@pi5-90:~/pico-ice df
+/dev/sda1         130924         8    130916   1% /media/devel/RPI-RP2
+
+devel@pi5-90:~ $ cp pico-ice/test-pi4-50/uf2-files/pico_blinky.uf2 /media/devel/RPI-RP2/
+
+pico-ice starts blinky red.
