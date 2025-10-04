@@ -1,0 +1,22 @@
+
+devel@pi5-90:~/pico-ice-sdk $ git log
+
+commit 764f4956eb91c17d96d8c553a3fd595f5a88a881 (HEAD -> test-dev, origin/test-dev)
+Merge: 3fa16ab fdcf237
+Author: develone <develone@sbcglobal.net>
+Date:   Tue Sep 23 20:28:37 2025 -0600
+
+    Merge branch 'tinyvision-ai-inc:main' into test-dev
+
+evel@pi5-90:~/pico-ice-sdk/include $ ls 
+boards  boards.h  ice_cram.h  ice_flash.h  ice_fpga_data.h  ice_fpga.h  ice_HAL.h  ice_led.h  ice_pmod.h  ice_usb.h
+
+devel@pi5-80:~/test-pi4-50/pico-ice-sdk/include $ git log
+commit 4ebe348ffcb4feb3e2756d101f594679eb02d97c (HEAD -> test-dev, origin/test-dev, origin/main, origin/HEAD)
+Author: Josuah Demangeon <me@josuah.net>
+Date:   Thu Jun 20 23:12:41 2024 +0200
+
+    examples: ice_makefile_blinky: allow blinking with R, G or B easily
+
+devel@pi5-80:~/test-pi4-50/pico-ice-sdk/include $ ls
+boards  boards.h  ice_cram.h  ice_flash.h  ice_fpga.h  ice_led.h  ice_pmod.h  ice_spi.h  ice_sram.h  ice_usb.h  ice_wishbone.h
