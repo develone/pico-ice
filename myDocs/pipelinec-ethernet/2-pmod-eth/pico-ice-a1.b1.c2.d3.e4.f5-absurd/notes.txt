@@ -1,0 +1,37 @@
+// Network, big endian, byte order
+// MAC0 is most signficant byte
+// MAC5 is least signficant byte
+// "0:1:2:3:4:5"
+#define FPGA_MAC0       0xA1
+#define FPGA_MAC1       0xB1
+#define FPGA_MAC2       0xC2
+#define FPGA_MAC3       0xD3
+#define FPGA_MAC4       0xE4
+#define FPGA_MAC5       0xF5
+
+uint8_t FPGA_MAC_BYTES[6] = {FPGA_MAC0, FPGA_MAC1, FPGA_MAC2, FPGA_MAC3, FPGA_MAC4, FPGA_MAC5};
+
+#define FPGA_MAC uint8_array6_be(FPGA_MAC_BYTES)
+
+devel@pi5-70:~/pico-ice-a1.b1.c2.d3.e4.f5-absurd $ bin2uf2 -o gateware.uf2 gateware.bin
+
+devel@pi5-70:~ $ rsync -avl --delete pico-ice-a1.b1.c2.d3.e4.f5-absurd pi3-28:~/
+sending incremental file list
+pico-ice-a1.b1.c2.d3.e4.f5-absurd/
+pico-ice-a1.b1.c2.d3.e4.f5-absurd/.notes.txt.swp
+pico-ice-a1.b1.c2.d3.e4.f5-absurd/gateware.bin
+pico-ice-a1.b1.c2.d3.e4.f5-absurd/gateware.uf2
+pico-ice-a1.b1.c2.d3.e4.f5-absurd/notes.txt
+
+sent 325,654 bytes  received 96 bytes  217,166.67 bytes/sec
+total size is 325,201  speedup is 1.00
+
+devel@pi5-70:~/pico-ice-a1.b1.c2.d3.e4.f5-absurd $ cp ~/pico-ice/PipelineC/pmod-ethernet/examples/net/work_test .
+devel@pi5-70:~/pico-ice-a1.b1.c2.d3.e4.f5-absurd $ rsync -avl --delete /home/devel/pmod-a1.b1.c2.d3.e4.f5 pi3-28:~/
+sending incremental file list
+deleting pmod-a1.b1.c2.d3.e4.f5/a1.b1.c2.d3.e4.f5.png
+pmod-a1.b1.c2.d3.e4.f5/
+
+sent 205 bytes  received 64 bytes  179.33 bytes/sec
+total size is 214,089  speedup is 795.87
+

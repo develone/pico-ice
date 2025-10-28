@@ -1,0 +1,57 @@
+111 & & 112 cat a0:b1:c2:d3:e4:f5
+
+131 & 132 pico-ice a1:b1:c2:d3:e4:f5
+
+devel@pi3-28:~/pmod-a0.b1.c2.d3.e4.f5 $ sudo config_cat gateware.bin 
+
+GPIO 25 not exported, trying to export...
+GPIO 17 not exported, trying to export...
+GPIO 22 not exported, trying to export...
+
+OK: SPI driver loaded
+
+Setting GPIO directions
+out
+out
+in
+Setting output to low
+0
+Reseting FPGA
+0
+1
+Checking DONE pin
+0
+Continuing with configuration procedure
+263+1 records in
+263+1 records out
+135100 bytes (135 kB, 132 KiB) copied, 0.0368741 s, 3.7 MB/s
+Setting output to high
+1
+Checking DONE pin
+1
+devel@pi3-28:~/pmod-a0.b1.c2.d3.e4.f5 $ sudo ./work_test 
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001477 seconds to execute 
+CPU iteration time: 0.001477 seconds
+CPU bytes per sec: 8124.559806 B/s
+FPGA took 0.000930 seconds to execute 
+FPGA iteration time: 0.000930 seconds
+FPGA bytes per sec: 12902.242502 B/s
+Speedup: 1.588054
+
+devel@pi3-28:~/pico-ice-a1.b1.c2.d3.e4.f5-absurd $ sudo ./work_test 
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001667 seconds to execute 
+CPU iteration time: 0.001667 seconds
+CPU bytes per sec: 7199.491918 B/s
+FPGA took 0.000969 seconds to execute 
+FPGA iteration time: 0.000969 seconds
+FPGA bytes per sec: 12384.755906 B/s
+Speedup: 1.720226
+Output 0: 0,0 does not match! FPGA: 87, CPU: 105
