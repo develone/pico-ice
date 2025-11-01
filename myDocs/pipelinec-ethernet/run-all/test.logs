@@ -1,0 +1,258 @@
+Sat Nov  1 10:10:41 AM MDT 2025
+a0:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001213 seconds to execute 
+CPU iteration time: 0.001213 seconds
+CPU bytes per sec: 9892.226415 B/s
+FPGA took 0.000812 seconds to execute 
+FPGA iteration time: 0.000812 seconds
+FPGA bytes per sec: 14777.348209 B/s
+Speedup: 1.493834
+ : 8 
+ : 4 
+a7:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001233 seconds to execute 
+CPU iteration time: 0.001233 seconds
+CPU bytes per sec: 9731.563805 B/s
+FPGA took 0.000845 seconds to execute 
+FPGA iteration time: 0.000845 seconds
+FPGA bytes per sec: 14201.932280 B/s
+Speedup: 1.459368
+a8:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001261 seconds to execute 
+CPU iteration time: 0.001261 seconds
+CPU bytes per sec: 9516.288145 B/s
+FPGA took 0.000817 seconds to execute 
+FPGA iteration time: 0.000817 seconds
+FPGA bytes per sec: 14686.795448 B/s
+Speedup: 1.543332
+a9:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001251 seconds to execute 
+CPU iteration time: 0.001251 seconds
+CPU bytes per sec: 9592.461978 B/s
+FPGA took 0.000804 seconds to execute 
+FPGA iteration time: 0.000804 seconds
+FPGA bytes per sec: 14921.923510 B/s
+Speedup: 1.555588
+Iteration number: 0
+a0:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001292 seconds to execute 
+CPU iteration time: 0.001292 seconds
+CPU bytes per sec: 9287.995571 B/s
+FPGA took 0.000829 seconds to execute 
+FPGA iteration time: 0.000829 seconds
+FPGA bytes per sec: 14475.596204 B/s
+Speedup: 1.558527
+ : 16 
+ : 8 
+a7:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001301 seconds to execute 
+CPU iteration time: 0.001301 seconds
+CPU bytes per sec: 9223.318307 B/s
+FPGA took 0.000800 seconds to execute 
+FPGA iteration time: 0.000800 seconds
+FPGA bytes per sec: 15001.981520 B/s
+Speedup: 1.626528
+a8:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001156 seconds to execute 
+CPU iteration time: 0.001156 seconds
+CPU bytes per sec: 10381.940594 B/s
+FPGA took 0.000782 seconds to execute 
+FPGA iteration time: 0.000782 seconds
+FPGA bytes per sec: 15345.014634 B/s
+Speedup: 1.478049
+a9:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001179 seconds to execute 
+CPU iteration time: 0.001179 seconds
+CPU bytes per sec: 10178.290799 B/s
+FPGA took 0.000823 seconds to execute 
+FPGA iteration time: 0.000823 seconds
+FPGA bytes per sec: 14580.431054 B/s
+Speedup: 1.432503
+Iteration number: 1
+a0:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001168 seconds to execute 
+CPU iteration time: 0.001168 seconds
+CPU bytes per sec: 10273.861604 B/s
+FPGA took 0.000831 seconds to execute 
+FPGA iteration time: 0.000831 seconds
+FPGA bytes per sec: 14438.223752 B/s
+Speedup: 1.405336
+ : 24 
+ : 12 
+a7:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001226 seconds to execute 
+CPU iteration time: 0.001226 seconds
+CPU bytes per sec: 9788.340723 B/s
+FPGA took 0.000819 seconds to execute 
+FPGA iteration time: 0.000819 seconds
+FPGA bytes per sec: 14648.325960 B/s
+Speedup: 1.496508
+a8:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001463 seconds to execute 
+CPU iteration time: 0.001463 seconds
+CPU bytes per sec: 8201.343979 B/s
+FPGA took 0.000798 seconds to execute 
+FPGA iteration time: 0.000798 seconds
+FPGA bytes per sec: 15037.839259 B/s
+Speedup: 1.833582
+a9:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001230 seconds to execute 
+CPU iteration time: 0.001230 seconds
+CPU bytes per sec: 9756.086063 B/s
+FPGA took 0.000829 seconds to execute 
+FPGA iteration time: 0.000829 seconds
+FPGA bytes per sec: 14475.596204 B/s
+Speedup: 1.483750
+Iteration number: 2
+a0:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001208 seconds to execute 
+CPU iteration time: 0.001208 seconds
+CPU bytes per sec: 9933.224393 B/s
+FPGA took 0.000813 seconds to execute 
+FPGA iteration time: 0.000813 seconds
+FPGA bytes per sec: 14760.014076 B/s
+Speedup: 1.485924
+ : 32 
+ : 16 
+a7:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001194 seconds to execute 
+CPU iteration time: 0.001194 seconds
+CPU bytes per sec: 10050.249201 B/s
+FPGA took 0.000819 seconds to execute 
+FPGA iteration time: 0.000819 seconds
+FPGA bytes per sec: 14648.325960 B/s
+Speedup: 1.457509
+a8:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001202 seconds to execute 
+CPU iteration time: 0.001202 seconds
+CPU bytes per sec: 9984.457052 B/s
+FPGA took 0.000768 seconds to execute 
+FPGA iteration time: 0.000768 seconds
+FPGA bytes per sec: 15621.243948 B/s
+Speedup: 1.564556
+a9:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001199 seconds to execute 
+CPU iteration time: 0.001199 seconds
+CPU bytes per sec: 10008.281567 B/s
+FPGA took 0.000804 seconds to execute 
+FPGA iteration time: 0.000804 seconds
+FPGA bytes per sec: 14926.348754 B/s
+Speedup: 1.491400
+Iteration number: 3
+a0:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001232 seconds to execute 
+CPU iteration time: 0.001232 seconds
+CPU bytes per sec: 9740.980840 B/s
+FPGA took 0.000830 seconds to execute 
+FPGA iteration time: 0.000830 seconds
+FPGA bytes per sec: 14458.962367 B/s
+Speedup: 1.484344
+ : 40 
+ : 20 
+a7:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001219 seconds to execute 
+CPU iteration time: 0.001219 seconds
+CPU bytes per sec: 9843.858400 B/s
+FPGA took 0.000837 seconds to execute 
+FPGA iteration time: 0.000837 seconds
+FPGA bytes per sec: 14335.416690 B/s
+Speedup: 1.456280
+a8:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001212 seconds to execute 
+CPU iteration time: 0.001212 seconds
+CPU bytes per sec: 9900.009441 B/s
+FPGA took 0.000798 seconds to execute 
+FPGA iteration time: 0.000798 seconds
+FPGA bytes per sec: 15037.839259 B/s
+Speedup: 1.518972
+a9:b1:c2:d3:e4:f5
+CPU threads: 1
+n 'work()'s: 1 
+Total tx bytes: 8 
+Total rx bytes: 4 
+CPU took 0.001194 seconds to execute 
+CPU iteration time: 0.001194 seconds
+CPU bytes per sec: 10050.249201 B/s
+FPGA took 0.000829 seconds to execute 
+FPGA iteration time: 0.000829 seconds
+FPGA bytes per sec: 14475.596204 B/s
+Speedup: 1.440322
+Iteration number: 4
+txytes : 40 
+rxytes : 20 
